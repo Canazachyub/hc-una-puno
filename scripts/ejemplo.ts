@@ -26,7 +26,9 @@ export const VALORES_EJEMPLO: Record<string, string> = {
   'ea.tiempo_unidad': 'días',
   'ea.forma_inicio': 'Insidioso',
   'ea.curso': 'Progresivo',
-  'ea.signos_sintomas': 'dolor de cintura | dolor que sube a la espalda | no puede agacharse',
+  'ea.signos_sintomas':
+    'Lumbalgia opresiva de intensidad 5/10 en la escala visual análoga (3 días) | Dorsalgia irradiada desde la región lumbar (2 días) | Limitación de la flexión del tronco (2 días)',
+  'ea.sintomas_accesorios': 'Contractura de la musculatura paravertebral lumbar (3 días) | Sueño no reparador por el dolor (2 días)',
   'ea.sintoma_guia': 'Lumbalgia',
   'ea.relato_cronologico':
     'Paciente refiere que hace tres días, tras cargar mercadería, presenta lumbalgia de inicio insidioso, de tipo opresivo, de intensidad 5/10 en la escala visual análoga, que se irradia a la región dorsal, se exacerba con la flexión del tronco y la bipedestación prolongada, y cede parcialmente con el reposo en decúbito. Se automedica con naproxeno 550 mg vía oral cada 12 horas, con mejoría parcial.\nHace un día el dolor se intensifica hasta 7/10 y limita la deambulación, motivo por el que acude a consulta. Actualmente persiste la lumbalgia irradiada a la región dorsal, sin parestesias ni alteración del control de esfínteres.',

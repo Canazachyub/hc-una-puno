@@ -22,8 +22,11 @@ ea.tiempo,alerta,"Regla rápida (apuntes 2018): 10 días o menos sugiere cuadro 
 ea.tiempo,alerta,"Clasificación formal: agudo hasta 3 meses, subagudo de 3 meses a 1 año, subcrónico de 1 a 5 años, crónico más de 5 años.",02b
 ea.tiempo,alerta,"Cada síntoma tiene su corte: disnea aguda menos de 30 días, tos aguda menos de 3 semanas y crónica más de 8 semanas.",07a
 ea.tiempo,consejo,"Si el síntoma va y viene, pídale anotar cada episodio en un calendario: rara vez recuerda cuántos tuvo en el mes.",11g
-ea.signos_sintomas,pregunta,¿Qué otras molestias ha notado desde que empezó?,02a
+ea.signos_sintomas,consejo,"Escriba hasta tres: término semiológico, su caracterización y el tiempo entre paréntesis («Fiebre intermitente de hasta 39 °C, de predominio vespertino (4 días)»).",02a
 ea.signos_sintomas,consejo,Registre todos los datos positivos y solo los negativos que tengan importancia.,02a
+ea.sintomas_accesorios,pregunta,¿Qué otras molestias ha notado desde que empezó?,02a
+ea.sintomas_accesorios,consejo,"Los demás síntomas del mismo cuadro, escritos igual que los principales: término, caracterización y tiempo.",02a
+ea.sintomas_accesorios,consejo,"Un síntoma va en los principales o en los accesorios, nunca en los dos.",02a
 ea.signos_sintomas,consejo,"Al redactar, traduzca a términos médicos: edema y no hinchazón, disnea y no falta de aire.",02a
 ea.signos_sintomas,consejo,"Haga la revisión por sistemas, de la cabeza a los pies, para captar síntomas que el paciente no mencionó.",02c
 ea.signos_sintomas,pregunta,"¿Ha tenido fiebre, cansancio, pérdida de peso o sudor por las noches?",02c

@@ -94,6 +94,7 @@ export const ESTRUCTURA: Bloque[] = [
   { tipo: 'campo', id: 'ea.forma_inicio', label: '2. Forma de inicio' },
   { tipo: 'campo', id: 'ea.curso', label: '3. Curso' },
   { tipo: 'lista', id: 'ea.signos_sintomas', label: '4. Signos y síntomas principales' },
+  { tipo: 'lista', id: 'ea.sintomas_accesorios', label: 'Signos y síntomas accesorios' },
   { tipo: 'campo', id: 'ea.sintoma_guia' },
   { tipo: 'narrativa', id: 'ea.relato_cronologico', label: '5. Relato cronológico' },
   { tipo: 'resto', seccion: 'enfermedad_actual' },

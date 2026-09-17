@@ -10,7 +10,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import vm from 'node:vm';
 import { evaluar, recalcular } from '../shared/calc';
-import { escalasDeCampo, filasAEsquema, filasAOpciones, indexarListas, reglaConValores, valorNormal } from '../shared/catalogo';
+import { escalasDeCampo, filasAEsquema, filasAOpciones, indexarListas, maximoDeLista, reglaConValores, valorNormal } from '../shared/catalogo';
 import { redactarSintoma } from '../shared/sintoma';
 import { comaDecimal, detectarAbreviaturas, detectarDiminutivos, expandirAbreviaturas } from '../shared/abreviaturas';
 import { parsearCsv, serializarCsv } from '../shared/csv';
@@ -62,8 +62,8 @@ const campo = (id: string) => {
 };
 
 console.log('Semillas');
-await prueba('cada plantilla trae sus campos: 152 la de Clínica Médica, más de 350 la detallada', () => {
-  assert.equal(esquema.filter((c) => c.plantilla === 'fmh').length, 152);
+await prueba('cada plantilla trae sus campos: 153 la de Clínica Médica, más de 350 la detallada', () => {
+  assert.equal(esquema.filter((c) => c.plantilla === 'fmh').length, 153);
   assert.ok(esquema.filter((c) => c.plantilla === 'ochoa').length > 350);
 });
 await prueba('todo lista_id del esquema existe en Opciones', () => {
@@ -874,6 +874,15 @@ await prueba('el prompt dice dónde va cada dato y cómo se escriben los síntom
   assert.match(sistema, /cada dato va en UNA sola sección/i);
   assert.match(sistema, /Fiebre intermitente de hasta 39/);
   assert.ok(!/palabras del paciente, sin tecnicismos/.test(sistema.split('ea.signos_sintomas')[1] ?? ''), 'el campo ya no pide las palabras del paciente');
+  // Los principales son tres; los demás no se pierden, pasan a los accesorios.
+  assert.match(sistema, /Máximo 3 elementos/);
+  assert.match(sistema, /van en ea\.sintomas_accesorios/);
+  assert.match(sistema, /Máximo 6 elementos/);
+});
+await prueba('el tope de una lista sale de sus reglas', () => {
+  assert.equal(maximoDeLista(campo('ea.signos_sintomas')), 3);
+  assert.equal(maximoDeLista(campo('ea.sintomas_accesorios')), 6);
+  assert.equal(maximoDeLista(campo('dx.presuntivo')), Infinity);
 });
 await prueba('organizar escala con detalles en examen físico', () => {
   // Con la plantilla de Clínica Médica, que tiene el campo de edema con la escala de godet.

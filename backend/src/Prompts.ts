@@ -12,7 +12,8 @@ import { clave } from '../../shared/valores';
  */
 export const REPARTO_SECCIONES = `DÓNDE VA CADA DATO (cada dato va en UNA sola sección)
 - Filiación: quién es el paciente (nombre, edad, procedencia, ocupación, con quién vive). Nada clínico.
-- Enfermedad actual: el cuadro que lo trae ahora. Tiempo de enfermedad, forma de inicio, curso, síntomas principales caracterizados, relato cronológico con el síntoma guía como hilo, lo que tomó por su cuenta y la atención que ya recibió por ESTE cuadro.
+- Enfermedad actual: el cuadro que lo trae ahora. Tiempo de enfermedad, forma de inicio, curso, síntomas principales caracterizados, síntomas accesorios, relato cronológico con el síntoma guía como hilo, lo que tomó por su cuenta y la atención que ya recibió por ESTE cuadro.
+- Síntomas principales y accesorios: los tres que motivan la consulta van en los principales; los demás síntomas del mismo cuadro van en los accesorios, con la misma caracterización. Un síntoma está en uno o en el otro, nunca en los dos.
 - Funciones biológicas: cómo están apetito, sed, sueño, deposiciones, orina, peso, sudoración y ánimo. Si una de ellas está alterada por el cuadro actual (diarrea, disuria, insomnio por el dolor), el detalle va en el relato y aquí solo se anota el cambio respecto a lo habitual, en una línea.
 - Antecedentes personales: cómo vive y sus hábitos, antes de este cuadro.
 - Antecedentes fisiológicos: nacimiento, desarrollo, vida sexual y antecedentes gineco-obstétricos.
@@ -34,7 +35,6 @@ export const REGLAS_TEXTO: Record<string, string> = {
   palabras_paciente: 'Con las propias palabras del paciente, sin tecnicismos y sin comillas.',
   termino_caracterizacion:
     'Cada síntoma con su término semiológico y su caracterización principal (tipo, valor, patrón o grado) y, entre paréntesis, el tiempo: «Fiebre intermitente de hasta 39 °C, de predominio vespertino (4 días)». Sin repetir aquí todo el relato.',
-  max_3: 'Máximo tres elementos, en el orden en que aparecieron.',
   describir_no_interpretar:
     'Describe el hallazgo, no lo interpretes: "matidez en base derecha" sí, "derrame pleural" no.',
   con_lateralidad: 'Cada hallazgo con lateralidad y localización (hemitórax, campo, tercio, región).',
@@ -48,6 +48,17 @@ export const REGLAS_TEXTO: Record<string, string> = {
   valor_unidad_rango: 'Cada resultado con fecha, valor, unidad y rango de referencia si se dictó.',
   soap: 'En formato SOAP (S, O, A, P), precedido de la fecha.',
 };
+
+/**
+ * Texto de una regla. Además de las de la tabla, dos llevan parámetro:
+ * `max_3` (cuántos elementos acepta la lista) y `sigue_en:campo` (dónde van los que no entran).
+ */
+export function textoRegla(regla: string): string {
+  if (REGLAS_TEXTO[regla]) return REGLAS_TEXTO[regla];
+  if (/^max_\d+$/.test(regla)) return `Máximo ${regla.slice(4)} elementos, en el orden en que aparecieron.`;
+  if (regla.startsWith('sigue_en:')) return `Los que no entren en ese máximo van en ${regla.slice(9)}, no se descartan.`;
+  return '';
+}
 
 /** Palabra del paciente → término semiológico (los primeros vienen tal cual de las notas de Semiología). */
 export const GLOSARIO: [string, string][] = [
@@ -147,7 +158,7 @@ No inventes. Si la entrada no contiene un dato, el campo va vacío y el dato se 
 
 REDACCIÓN, SIEMPRE
 - Tercera persona. Pasado para el relato, presente para el examen físico.
-- El motivo de consulta (signos y síntomas principales) va con las palabras del paciente. De ahí en adelante, términos médicos: edema y no hinchazón, disnea y no falta de aire, ictericia y no color amarillo, lumbalgia y no dolor lumbar.
+- Términos médicos desde la primera línea, también en los signos y síntomas principales: edema y no hinchazón, disnea y no falta de aire, ictericia y no color amarillo, lumbalgia y no dolor lumbar.
 - No basta con traducir: el síntoma se describe con su semiología completa, en prosa continua. Ejemplo: no "dolor lumbar", sino "lumbalgia de tres días de evolución, de inicio insidioso, de tipo opresivo, de intensidad 6/10 en la escala visual análoga, que se irradia a la región dorsal, se exacerba con la bipedestación y cede parcialmente con el reposo".
 - Para un dolor, los diez puntos: época de aparición y duración, modo de inicio, factores desencadenantes, agravantes y atenuantes, carácter, localización, irradiación, intensidad, curso, síntomas acompañantes y respuesta al tratamiento. Los que no se dictaron no se escriben: van a "dudas".
 - El relato va en orden cronológico (cómo inició, cómo evolucionó, cómo está actualmente), con el síntoma guía como hilo conductor y las demás molestias colgando del momento en que aparecieron. Incluye automedicación, tratamientos, dosis y respuesta si se dictaron. Nunca "está mejor" o "está peor" sin decir en qué.
@@ -156,7 +167,7 @@ REDACCIÓN, SIEMPRE
 - No confundas: disnea con astenia, síncope con lipotimia, vértigo con mareo, hemoptisis con hematemesis, regurgitación con vómito. Si el dato no permite distinguirlos, usa el término más prudente y pregunta en "dudas".
 - Si se dictó que no hubo un cuadro similar antes, escribe "No refiere cuadro similar previo".
 - Registra todos los datos positivos y solo los negativos importantes que se dictaron. Estado actual concreto, nunca "está mejor" o "está peor" sin decir en qué.
-- Signos y síntomas principales: máximo tres, con las palabras del paciente, en el orden en que aparecieron. Síntoma guía: el término semiológico del síntoma principal (Lumbalgia, Cefalea, Disnea…). Tiempo de enfermedad: desde el primer síntoma del cuadro.
+- Signos y síntomas principales: los tres que motivan la consulta, en el orden en que aparecieron, cada uno con su término semiológico, su caracterización principal y el tiempo entre paréntesis («Fiebre intermitente de hasta 39 °C, de predominio vespertino (4 días)»). Los demás síntomas del cuadro van en los signos y síntomas accesorios, escritos igual; ninguno se descarta por falta de sitio. Síntoma guía: el término semiológico del síntoma principal (Lumbalgia, Cefalea, Disnea…). Tiempo de enfermedad: desde el primer síntoma del cuadro.
 - Los tiempos se expresan como los dijo el paciente ("hace tres días"); no conviertas a fechas que nadie dio.
 - El examen físico describe, no interpreta. "Matidez en base derecha" es un hallazgo; "derrame pleural" es un diagnóstico y no va ahí.
 - Todo hallazgo lleva lateralidad, localización e intensidad si corresponde.
@@ -228,7 +239,7 @@ function lineaCampo(c: Campo, listas: Map<string, Opcion[]>): string {
   if (c.obligatorio) partes.push('obligatorio');
   const escalas = escalasDeCampo(c, listas);
   partes.push(escalas.length ? `escalas que corresponden: ${escalas.join(', ')}` : 'sin escalas');
-  const reglas = c.reglas.map((r) => REGLAS_TEXTO[r]).filter(Boolean);
+  const reglas = c.reglas.map(textoRegla).filter(Boolean);
   if (reglas.length) partes.push(`reglas: ${reglas.join(' ')}`);
   return `- ${partes.join(' · ')}`;
 }

@@ -109,6 +109,12 @@ export function tieneRegla(campo: Campo, nombre: string): boolean {
   return reglaConValores(campo, nombre) !== null;
 }
 
+/** Tope de elementos de una lista, escrito en las reglas como `max_3` o `max_6`. Sin regla, sin tope. */
+export function maximoDeLista(campo: Campo): number {
+  const r = campo.reglas.find((x) => /^max_\d+$/.test(x));
+  return r ? Number(r.slice(4)) : Infinity;
+}
+
 /**
  * Escalas que tienen sentido en este campo, según la teoría: las que declara `escalas:` en reglas
  * y, si el campo es una escala, la suya. Nada de Bristol en la cabeza.

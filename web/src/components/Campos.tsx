@@ -1,7 +1,7 @@
 // Un control por tipo de campo. Elegir antes que escribir.
 
 import { memo, useRef, useState } from 'react';
-import { escalasDeCampo, tieneRegla, valorNormal } from '../../../shared/catalogo';
+import { escalasDeCampo, maximoDeLista, tieneRegla, valorNormal } from '../../../shared/catalogo';
 import { marcadores, opcionDeTexto, textoOpcion } from '../../../shared/formato';
 import { CAMPOS_CLAVE } from '../../../shared/secciones';
 import type { Campo, Duda, EscalaSugerida, Opcion } from '../../../shared/types';
@@ -416,7 +416,7 @@ function CampoTexto({ campo, valor, cambiar, id }: PropsControl) {
 function CampoLista({ campo, valor, cambiar, id }: PropsControl) {
   const items = partes(valor);
   const [nuevo, setNuevo] = useState('');
-  const max = campo.reglas.includes('max_3') ? 3 : Infinity;
+  const max = maximoDeLista(campo);
   const agregar = () => {
     const t = nuevo.trim().replace(/\|/g, '/');
     if (!t || items.length >= max) return;
@@ -475,7 +475,9 @@ function CampoLista({ campo, valor, cambiar, id }: PropsControl) {
           </button>
         </form>
       ) : (
-        <span className="sub">Máximo {max}.</span>
+        <span className="sub">
+          Máximo {max}.{tieneRegla(campo, 'sigue_en') ? ' Los demás van en el campo de accesorios, aquí debajo.' : ''}
+        </span>
       )}
     </>
   );
