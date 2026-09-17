@@ -1,0 +1,1442 @@
+[
+ {
+  "area": "01",
+  "area_titulo": "Filiación, funciones biológicas y antecedentes",
+  "documento": "01-anamnesis-filiacion-y-antecedentes.md",
+  "n": 1,
+  "tema": "",
+  "texto": "Guías en otra sección que su campo. Las preguntas de alergias, transfusiones y vacunas están en 2.4.3 Antecedentes patológicos (como en la nota 02b), pero los campos afi.alergias, afi.transfusiones y afi.inmunizaciones están en 2.4.2 Antecedentes fisiológicos. La pregunta de contacto con animales está en 2.4.4 Antecedentes familiares (02b la pone ahí), pero el campo apn.crianza_animales está en 2.4.1. Conviene mover la guía o el campo para que coincidan.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "01",
+  "area_titulo": "Filiación, funciones biológicas y antecedentes",
+  "documento": "01-anamnesis-filiacion-y-antecedentes.md",
+  "n": 2,
+  "tema": "",
+  "texto": "Guía de deposiciones marcada «fuera de notas» sin serlo. La nota 09a dice que el ritmo normal va de 3 evacuaciones al día a 1 cada 3 días, sin esfuerzo y con heces de consistencia normal; la guía dice «de 3 por día a 3 por semana». Ajustar el texto a 09a y cambiar su fuente.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "01",
+  "area_titulo": "Filiación, funciones biológicas y antecedentes",
+  "documento": "01-anamnesis-filiacion-y-antecedentes.md",
+  "n": 3,
+  "tema": "",
+  "texto": "Volumen urinario sin valor de referencia. La nota 10a da 800 a 1800 mililitros en 24 horas (término medio 1400) y la capacidad vesical de 350 a 450 mililitros; el campo fb.orina_vol no tiene valor normal y la guía de balance hídrico (05b) solo menciona los 1400 mililitros.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "01",
+  "area_titulo": "Filiación, funciones biológicas y antecedentes",
+  "documento": "01-anamnesis-filiacion-y-antecedentes.md",
+  "n": 4,
+  "tema": "",
+  "texto": "Nicturia definida de dos formas. La nota 10a la define como aumento del número de micciones nocturnas; la nota 08a2, como aumento del volumen urinario nocturno. La guía usa la de 10a.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "01",
+  "area_titulo": "Filiación, funciones biológicas y antecedentes",
+  "documento": "01-anamnesis-filiacion-y-antecedentes.md",
+  "n": 5,
+  "tema": "",
+  "texto": "Duración de la enfermedad: dos clasificaciones. La lista duracion_enf usa la de 2020 en cuatro niveles (02b). La nota 02a advierte que los apuntes de 2018 usan otra regla para el tiempo de enfermedad del motivo de consulta (agudo hasta 10 días, crónico más de 60 días). Si la lista se reutiliza en la enfermedad actual, aclarar cuál aplica.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "01",
+  "area_titulo": "Filiación, funciones biológicas y antecedentes",
+  "documento": "01-anamnesis-filiacion-y-antecedentes.md",
+  "n": 6,
+  "tema": "",
+  "texto": "Tipo de parto. La nota 02b nombra eutócico, cesárea y con fórceps; «Distócico» no aparece en las notas. Además, en 02b el tipo de parto se refiere al nacimiento del propio paciente, mientras que la misma sección tiene fecha de último parto y fórmula obstétrica (partos de la paciente): la etiqueta «Tipo de parto» puede confundirse. Sugerencia: «Tipo de parto al nacer» y «Lugar del parto al nacer».",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "01",
+  "area_titulo": "Filiación, funciones biológicas y antecedentes",
+  "documento": "01-anamnesis-filiacion-y-antecedentes.md",
+  "n": 7,
+  "tema": "",
+  "texto": "Fórmula obstétrica incompleta. La etiqueta dice «(gestaciones y partos)», pero 02b pide número de embarazos, partos y abortos, y la guía también pregunta por abortos.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "01",
+  "area_titulo": "Filiación, funciones biológicas y antecedentes",
+  "documento": "01-anamnesis-filiacion-y-antecedentes.md",
+  "n": 8,
+  "tema": "",
+  "texto": "Hitos del desarrollo. La nota 02b pide edad de dentición, gateo, marcha y primeras palabras; el mapeo no tiene gateo y agrega control de esfínteres, que no está en las notas. Las edades esperadas de cada hito no están en las notas, por eso la lista hito no puede definir «Normal para la edad» con cifras.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "01",
+  "area_titulo": "Filiación, funciones biológicas y antecedentes",
+  "documento": "01-anamnesis-filiacion-y-antecedentes.md",
+  "n": 9,
+  "tema": "",
+  "texto": "Datos de 02b sin campo. Orden de nacimiento, peso y tamaño al nacer, rendimiento escolar, edad de la pubertad, número de personas que dependen económicamente del paciente, salario aproximado, nivel cultural (bajo, medio o elevado) y vida conyugal. Tres preguntas de la guía («¿Qué número de hijo es?», «¿Cómo le fue en el colegio? ¿A qué edad empezó su pubertad?» y «¿Cuántas personas dependen económicamente de usted?») no tienen dónde anotarse. La nota 02a también pide las admisiones previas al hospital (guía «Anote quién da la información… y si tuvo ingresos previos») y el teléfono del propio paciente; el mapeo solo tiene el celular del responsable.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "01",
+  "area_titulo": "Filiación, funciones biológicas y antecedentes",
+  "documento": "01-anamnesis-filiacion-y-antecedentes.md",
+  "n": 10,
+  "tema": "",
+  "texto": "Otras patologías. La nota 02b lista enfermedades de la infancia (sarampión, varicela, rubéola, tos ferina, parotiditis, fiebre reumática, amigdalitis) y malaria, que no están en la lista patologias; la guía (08a2) insiste en la fiebre reumática. Tuberculosis, hepatitis, neumonía, gastritis, infarto de miocardio y cáncer quedaron sin definición por ser evidentes.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "01",
+  "area_titulo": "Filiación, funciones biológicas y antecedentes",
+  "documento": "01-anamnesis-filiacion-y-antecedentes.md",
+  "n": 11,
+  "tema": "",
+  "texto": "Escala de Bristol sin fuente. La escala bristol (descripciones de los 7 tipos) no aparece en las notas de Semiología, Fisiología ni Fisiopatología; 09a solo describe el estreñimiento (heces duras) y la diarrea (heces de menor consistencia). Sus descripciones deben tratarse como «fuera de notas».",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "01",
+  "area_titulo": "Filiación, funciones biológicas y antecedentes",
+  "documento": "01-anamnesis-filiacion-y-antecedentes.md",
+  "n": 12,
+  "tema": "",
+  "texto": "Tóxicos. La nota 02b agrupa «anabolizantes y anfetaminas»; la lista solo tiene Anabolizantes. «Humo de biomasa» y «Solventes» no aparecen en las notas. La intoxicación por plomo sí aparece (09a, 06b) y no está en la lista.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "01",
+  "area_titulo": "Filiación, funciones biológicas y antecedentes",
+  "documento": "01-anamnesis-filiacion-y-antecedentes.md",
+  "n": 13,
+  "tema": "",
+  "texto": "Características de las heces. Las notas 09a y 09e distinguen enterorragia (sangre roja, mayor volumen) de hematoquecia (sangre roja viva, escasa, de origen proctológico); la lista solo tiene Hematoquecia. Faltan hipocolia (09a, ictericia hepatocelular) y esteatorrea (09d).",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "01",
+  "area_titulo": "Filiación, funciones biológicas y antecedentes",
+  "documento": "01-anamnesis-filiacion-y-antecedentes.md",
+  "n": 14,
+  "tema": "",
+  "texto": "Características de la orina. La nota 10a incluye urgencia miccional, retención urinaria, orina turbia o piuria, orina con espuma (proteinuria) y orina de mal olor; no están en la lista orina_car.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "01",
+  "area_titulo": "Filiación, funciones biológicas y antecedentes",
+  "documento": "01-anamnesis-filiacion-y-antecedentes.md",
+  "n": 15,
+  "tema": "",
+  "texto": "Sueño. La guía pregunta si necesita varias almohadas para dormir (ortopnea, 08a), pero la lista sueno no tiene esa opción. Los subtipos de insomnio, el sueño no reparador y la hipersomnia no aparecen en las notas (solo «insomnio» en 08a, 08a2 y 13a); las definiciones del archivo van marcadas «fuera de notas». La guía de 7 a 8 horas de sueño está bien marcada como fuera de notas.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "01",
+  "area_titulo": "Filiación, funciones biológicas y antecedentes",
+  "documento": "01-anamnesis-filiacion-y-antecedentes.md",
+  "n": 16,
+  "tema": "",
+  "texto": "Funciones biológicas sin campo para la termorregulación. La guía pregunta por intolerancia al frío o al calor y sudoración (13a), pero no hay campo para anotarlo.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "01",
+  "area_titulo": "Filiación, funciones biológicas y antecedentes",
+  "documento": "01-anamnesis-filiacion-y-antecedentes.md",
+  "n": 17,
+  "tema": "",
+  "texto": "Apetito. Los términos hiporexia e hiperorexia no aparecen en las notas; 13a habla de «mayor apetito» en el hipertiroidismo y la anorexia se nombra como síntoma (01, 08a2, 10a) sin definirse.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "01",
+  "area_titulo": "Filiación, funciones biológicas y antecedentes",
+  "documento": "01-anamnesis-filiacion-y-antecedentes.md",
+  "n": 18,
+  "tema": "",
+  "texto": "Régimen catamenial. La nota 02b solo nombra la dismenorrea; regular, irregular, con coágulos, hipermenorrea e hipomenorrea se definieron «fuera de notas». No hay opción de amenorrea, que 13a menciona en el hipotiroidismo.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "01",
+  "area_titulo": "Filiación, funciones biológicas y antecedentes",
+  "documento": "01-anamnesis-filiacion-y-antecedentes.md",
+  "n": 19,
+  "tema": "",
+  "texto": "Abreviaturas en el mapeo. La etiqueta «DNI» y los valores «DIU», «BCG», «EPOC», «VIH» y «COVID-19» contradicen la regla de escribir sin siglas. Propuesta: «Documento nacional de identidad», «Dispositivo intrauterino», «Vacuna del bacilo de Calmette-Guérin», «Enfermedad pulmonar obstructiva crónica», «Infección por el virus de la inmunodeficiencia humana» y «Enfermedad por coronavirus 2019».",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "01",
+  "area_titulo": "Filiación, funciones biológicas y antecedentes",
+  "documento": "01-anamnesis-filiacion-y-antecedentes.md",
+  "n": 20,
+  "tema": "",
+  "texto": "Ortografía. El campo y la lista dicen «Papanicolau»; la guía y la nota 02a escriben «Papanicolaou».",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "01",
+  "area_titulo": "Filiación, funciones biológicas y antecedentes",
+  "documento": "01-anamnesis-filiacion-y-antecedentes.md",
+  "n": 21,
+  "tema": "",
+  "texto": "Negación no uniforme. La lista si_no_nr usa «No refiere», mientras que hta_dx, dm_dx y asma_dx usan «Niega». La menopausia usa la lista «Sí o no» con «No refiere», que suena poco natural para ese dato (mejor «No» o la edad de la menopausia).",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "01",
+  "area_titulo": "Filiación, funciones biológicas y antecedentes",
+  "documento": "01-anamnesis-filiacion-y-antecedentes.md",
+  "n": 22,
+  "tema": "",
+  "texto": "Frases de antecedentes familiares. En f_familiares la frase está guardada en la etiqueta y el formato de salida está vacío; no hay código n (el «normal» es a6) y el orden empieza en 20. Faltan frases para cónyuge, hijos y tíos, que 02b pide explícitamente junto con abuelos paternos y maternos; a5 no distingue la línea paterna de la materna.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "01",
+  "area_titulo": "Filiación, funciones biológicas y antecedentes",
+  "documento": "01-anamnesis-filiacion-y-antecedentes.md",
+  "n": 23,
+  "tema": "",
+  "texto": "Opciones sin respaldo en las notas. Informante «Mixto» (02a solo describe directa e indirecta), crianza de «Camélidos» y «Cuyes» (las notas solo hablan de pastores de ganado y de contacto con animales), control prenatal con corte en 6 atenciones, edad gestacional y lugar del parto.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "01",
+  "area_titulo": "Filiación, funciones biológicas y antecedentes",
+  "documento": "01-anamnesis-filiacion-y-antecedentes.md",
+  "n": 24,
+  "tema": "",
+  "texto": "Detalle de hábitos incompleto. La nota 02b pide marca, frecuencia, años de consumo y tiempo de abstinencia del tabaco, y tipo, frecuencia, tiempo de consumo y tiempo de abstinencia del alcohol; los campos de detalle no piden la abstinencia (la guía sí pregunta «Si lo dejó, ¿hace cuánto?»).",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "01",
+  "area_titulo": "Filiación, funciones biológicas y antecedentes",
+  "documento": "01-anamnesis-filiacion-y-antecedentes.md",
+  "n": 25,
+  "tema": "",
+  "texto": "Grado de instrucción y raza. La nota 02b distingue analfabeto de alfabetizado; «Sin estudios» no equivale necesariamente a analfabeto. En raza, las notas hablan de raza mestiza, negra y de población nativa (02a, 09h); «Quechua» y «Aymara» son pueblos originarios que se repiten en la lista de idioma.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "02",
+  "area_titulo": "Enfermedad actual, síntomas y semiología del dolor",
+  "documento": "02-enfermedad-actual-y-sintomas.md",
+  "n": 1,
+  "tema": "",
+  "texto": "Súbito y brusco no están definidos en las notas. 02a los nombra juntos («súbito, brusco o insidioso y progresivo») y 02a también dice «modo de aparición (súbito o gradual)». La diferencia usada en definiciones-02.csv (súbito: instantáneo, máximo en el primer minuto, 11g; brusco: se instala en minutos u horas, 08i) es una deducción de ejemplos: confirmar en clase.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "02",
+  "area_titulo": "Enfermedad actual, síntomas y semiología del dolor",
+  "documento": "02-enfermedad-actual-y-sintomas.md",
+  "n": 2,
+  "tema": "",
+  "texto": "Curso sin sustento en notas: «Estacionario», «En brotes» y «Regresivo» se definieron fuera de notas. Además, curso y patron_sintoma se pisan: «Intermitente» frente a «de curso intermitente» y «Recurrente» frente a «en episodios recurrentes»; si se eligen ambos, el relato repite la idea. Conviene decidir cuál de las dos listas lleva el curso.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "02",
+  "area_titulo": "Enfermedad actual, síntomas y semiología del dolor",
+  "documento": "02-enfermedad-actual-y-sintomas.md",
+  "n": 3,
+  "tema": "",
+  "texto": "Signos y síntomas principales (ea.signos_sintomas) tiene las reglas del motivo de consulta (con las palabras del paciente, máximo tres; 02a), pero su guía pide traducir a términos médicos («edema y no hinchazón»). Definir si el campo es el motivo de consulta o la lista de síntomas de la enfermedad actual.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "02",
+  "area_titulo": "Enfermedad actual, síntomas y semiología del dolor",
+  "documento": "02-enfermedad-actual-y-sintomas.md",
+  "n": 4,
+  "tema": "",
+  "texto": "Guía de los campos: ea.forma_inicio y ea.curso no tienen entradas en seed/guias.csv. El ámbito ea.tiempo llega con título crudo («ea.tiempo») en lugar de «Tiempo de enfermedad». El umbral agudo o crónico tiene dos versiones en las notas (10 días o menos frente a más de 60 días en 2018; agudo hasta 3 meses, subagudo, subcrónico y crónico en 2020) y el área no tiene umbrales cargados.",
+  "estado": "Corregido en parte"
+ },
+ {
+  "area": "02",
+  "area_titulo": "Enfermedad actual, síntomas y semiología del dolor",
+  "documento": "02-enfermedad-actual-y-sintomas.md",
+  "n": 5,
+  "tema": "",
+  "texto": "«Dolor lumbar» y «Lumbalgia». 10a separa el dolor lumbar de origen renal (distensión de la cápsula, profundo, empeora de pie) de la lumbalgia muscular. La etiqueta de «Dolor lumbar» ya lo describe, pero el nombre es genérico y choca con la preferencia de redactar «lumbalgia»; propuesta: renombrar a «Dolor lumbar de origen renal». En el ejemplo de la app, «lumbalgia a nivel de la región lumbar» es redundante: cuando el síntoma ya nombra la región, la localización podría omitirse.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "02",
+  "area_titulo": "Enfermedad actual, síntomas y semiología del dolor",
+  "documento": "02-enfermedad-actual-y-sintomas.md",
+  "n": 6,
+  "tema": "",
+  "texto": "Nicturia: 10a la define como aumento del número de micciones nocturnas (igual que la etiqueta); 08a2, como aumento del volumen urinario nocturno.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "02",
+  "area_titulo": "Enfermedad actual, síntomas y semiología del dolor",
+  "documento": "02-enfermedad-actual-y-sintomas.md",
+  "n": 7,
+  "tema": "",
+  "texto": "Decúbito en el dolor torácico: 07a dice que en la pleuritis el paciente se echa sobre el lado afectado; 07b dice que en los dolores torácicos se busca el decúbito sobre el lado sano para evitar el roce. La opción «el decúbito sobre el lado afectado» sigue a 07a.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "02",
+  "area_titulo": "Enfermedad actual, síntomas y semiología del dolor",
+  "documento": "02-enfermedad-actual-y-sintomas.md",
+  "n": 8,
+  "tema": "",
+  "texto": "Carácter del dolor: 03b escribe «gravitativo» y 09a «gravativo» (la lista usa gravativo); 03b incluye «esquisito», que no está en la lista; 03b agrupa «lancinante o en punzada», mientras la lista separa lancinante (lanza) de punzante; «transfixiante» y «desgarrante» solo aparecen nombrados en 03b, sin orientación clínica (08a describe la disección aórtica como lancinante, no desgarrante). La etiqueta «Holocraneana» usa otra forma que 11g («holocraneal»).",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "02",
+  "area_titulo": "Enfermedad actual, síntomas y semiología del dolor",
+  "documento": "02-enfermedad-actual-y-sintomas.md",
+  "n": 9,
+  "tema": "",
+  "texto": "Agravantes y atenuantes: «la bipedestación» y «la posición erecta» son sinónimos (sobra una). «la flexión del tronco» no tiene sustento en las notas. La relación clásica de «la ingesta de alimentos» y «el ayuno» con la úlcera péptica no está en las notas; solo se documentan la dispepsia (09a) y el ayuno como desencadenante de cefalea (11g).",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "02",
+  "area_titulo": "Enfermedad actual, síntomas y semiología del dolor",
+  "documento": "02-enfermedad-actual-y-sintomas.md",
+  "n": 10,
+  "tema": "",
+  "texto": "Etiquetas mejorables: «en accesos» tiene como etiqueta un ejemplo («Tos quintosa») y no una definición; «Distensión abdominal» se define a sí misma («Abdomen distendido»); «Fiebre» («Alza térmica») es más vaga que 05e (aumento de la temperatura corporal por acción del centro termorregulador); «Parestesias», «Anorexia» e «Intolerancia al frío» no tienen definición en las notas (fuera de notas).",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "02",
+  "area_titulo": "Enfermedad actual, síntomas y semiología del dolor",
+  "documento": "02-enfermedad-actual-y-sintomas.md",
+  "n": 11,
+  "tema": "",
+  "texto": "Guía por síntoma en la app (ambitoDeSintoma), error a corregir: «Vómitos» abre la guía de Tos y expectoración, porque «vomitos» contiene «tos» y esa regla se revisa antes que la de vómitos; hay que mover la regla de vómitos antes o buscar la palabra completa. Además, «Distensión abdominal» abre la guía de Dolor abdominal (la regla busca «abdominal»), aunque no es un dolor; «Odinofagia» sí abre el bloque del dolor (su etiqueta empieza con «Dolor») pero no recibe ninguna guía; «Orina espumosa» no abre la guía de Síntomas urinarios, que sí pregunta por la espuma.",
+  "estado": "Corregido"
+ },
+ {
+  "area": "02",
+  "area_titulo": "Enfermedad actual, síntomas y semiología del dolor",
+  "documento": "02-enfermedad-actual-y-sintomas.md",
+  "n": 12,
+  "tema": "",
+  "texto": "Frase del tratamiento en la app: el botón siempre escribe «Se automedica con…», aunque el tratamiento lo haya indicado un médico (para eso existe la frase a5). Si se elige «no recibió tratamiento» y además se escribe un fármaco, sale una oración contradictoria; si se elige una respuesta sin fármaco, queda suelta («Con mejoría parcial.»).",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "02",
+  "area_titulo": "Enfermedad actual, síntomas y semiología del dolor",
+  "documento": "02-enfermedad-actual-y-sintomas.md",
+  "n": 13,
+  "tema": "",
+  "texto": "Texto de la guía con abreviatura: dos entradas de seed/guias.csv abrevian «por ejemplo» (ea.signos_sintomas, fuente 02c, y s.fiebre, fuente 05e). Aquí se escribió completo; conviene corregirlo en el seed.",
+  "estado": "Corregido"
+ },
+ {
+  "area": "02",
+  "area_titulo": "Enfermedad actual, síntomas y semiología del dolor",
+  "documento": "02-enfermedad-actual-y-sintomas.md",
+  "n": 14,
+  "tema": "",
+  "texto": "Localizaciones sin definición en Semiología: las regiones de la cabeza, la región dorsal, la sacra, la glútea, la lumbar y el periné no tienen límites en las notas de Semiología; se usaron el wiki de Anatomía y la orientación clínica de cada nota. La lista f_relato no tiene código n: todas sus frases (a1 a a8) quedaron definidas.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "02",
+  "area_titulo": "Enfermedad actual, síntomas y semiología del dolor",
+  "documento": "02-enfermedad-actual-y-sintomas.md",
+  "n": 15,
+  "tema": "",
+  "texto": "Posibles faltantes en sintoma: las notas describen síntomas que no están en la lista, como vómica, cornaje o estridor (07a), hipo, halitosis y prurito anal (09a), estranguria (10a), fotofobia y sonofobia (11g).",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "03",
+  "area_titulo": "Ectoscopía, examen físico general, signos vitales y escalas generales",
+  "documento": "03-ectoscopia-y-examen-general.md",
+  "n": 1,
+  "tema": "",
+  "texto": "Frase normal de la ectoscopía (n). Dice «aparente regular estado general, regular estado nutricional y regular estado de hidratación». La nota 05a define el estado general del paciente sano como bueno y la 05b describe la hidratación normal; además, los tres campos de la lista estado no tienen valor normal. Decidir si la frase por defecto debe decir «buen estado» o si se mantiene «regular» por costumbre hospitalaria, y alinear ambos.",
+  "estado": "Corregido"
+ },
+ {
+  "area": "03",
+  "area_titulo": "Ectoscopía, examen físico general, signos vitales y escalas generales",
+  "documento": "03-ectoscopia-y-examen-general.md",
+  "n": 2,
+  "tema": "",
+  "texto": "Frase a2 incompleta. «Porta vía periférica permeable en» termina en «en» sin marcador; falta algo como {sitio} (miembro y lado).",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "03",
+  "area_titulo": "Ectoscopía, examen físico general, signos vitales y escalas generales",
+  "documento": "03-ectoscopia-y-examen-general.md",
+  "n": 3,
+  "tema": "",
+  "texto": "Marcadores sin lista en el paquete. {decubito} (a7), {facies} (a8), {region_ganglio} y {cm} (a13) no tienen lista de opciones en esta área y listas_de_otras_areas_que_usa está vacío. Pendiente: listas de decúbitos (05a: dorsal, ventral, lateral, genupectoral, gatillo de fusil), facies (05k: 25 patrones) y cadenas ganglionares (05j). {fio2} (a1) parece venir del campo efg.fio2, que es texto libre; la frase fija además «cánula binasal», que no cubre otros dispositivos.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "03",
+  "area_titulo": "Ectoscopía, examen físico general, signos vitales y escalas generales",
+  "documento": "03-ectoscopia-y-examen-general.md",
+  "n": 4,
+  "tema": "",
+  "texto": "Lista conciencia. «Obnubilado» no aparece en 05a (sí en 11a: despierta con irritabilidad y vuelve a dormirse), y su etiqueta «Respuestas lentas y desorientadas» se parece más al estado confusional de 05a. «Comatoso: No responde» contradice 05a: el coma grado I atiende órdenes simples y el grado II responde al dolor enérgico. «Estuporoso: Solo responde al dolor» mezcla 05a (despierta con estímulos intensos y responde de forma inadecuada al dolor) y 11a (no capta ni estímulos dolorosos). Faltan los niveles crepuscular, confusional y delirio de 05a, y los grados de coma.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "03",
+  "area_titulo": "Ectoscopía, examen físico general, signos vitales y escalas generales",
+  "documento": "03-ectoscopia-y-examen-general.md",
+  "n": 5,
+  "tema": "",
+  "texto": "Glasgow. Apertura ocular 3 = «A la orden verbal» (11e dice «A la orden»; 05a dice «Al sonido») y respuesta motora 4 = «Retira al dolor» (05a: «Flexión y retiro»). No cambia el puntaje, solo el nombre.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "03",
+  "area_titulo": "Ectoscopía, examen físico general, signos vitales y escalas generales",
+  "documento": "03-ectoscopia-y-examen-general.md",
+  "n": 6,
+  "tema": "",
+  "texto": "Lista deshidratacion. Las etiquetas «Menos del 5 %», «5 a 9 %» y «10 % o más» no coinciden con 05b: leve hasta 5 %, moderada de 5 a 10 %, grave más de 10 %. Los signos asignados por grado (mucosas secas y pliegue en moderada; hipotensión y oliguria en grave) no están separados por grado en 05b; FISIOPATOLOGIA 2026/esquemas/Esquema_05_Deshidratacion.md pone oliguria, ojos hundidos e hipotensión postural en la moderada, e hipotensión en decúbito y compromiso neurológico en la grave. Además, el formato Deshidratación {valor} escribe el grado con mayúscula en medio de la frase («Deshidratación Leve»).",
+  "estado": "Corregido"
+ },
+ {
+  "area": "03",
+  "area_titulo": "Ectoscopía, examen físico general, signos vitales y escalas generales",
+  "documento": "03-ectoscopia-y-examen-general.md",
+  "n": 7,
+  "tema": "",
+  "texto": "Lista llenado_capilar. Las opciones se superponen («Mayor de 2 segundos» incluye a «Mayor de 3 segundos»), «De 2 segundos: Límite» no tiene respaldo y las causas «enfermedad vascular, hipotermia» no están en notas. Ninguna nota de Semiología describe la prueba (la propia guía lo reconoce); FISIOLOGIA 2026/concepts/Perfusión-Tisular.md respalda «más de 2 segundos = hipoperfusión».",
+  "estado": "Corregido"
+ },
+ {
+  "area": "03",
+  "area_titulo": "Ectoscopía, examen físico general, signos vitales y escalas generales",
+  "documento": "03-ectoscopia-y-examen-general.md",
+  "n": 8,
+  "tema": "",
+  "texto": "Umbrales de presión arterial. «Presión sistólica ideal» (hasta 119) se superpone con «Hipotensión arterial» (hasta 89): una sistólica de 85 cumple ambas. 05h define normal como «menor de 130/85» (incluye la ideal) y grado III como «mayor de 180/110», mientras la app incluye 180 y 110. La hipertensión sistólica aislada de 05h (sistólica mayor de 140 con diastólica menor de 90) no tiene umbral porque combina dos campos.",
+  "estado": "Corregido en parte"
+ },
+ {
+  "area": "03",
+  "area_titulo": "Ectoscopía, examen físico general, signos vitales y escalas generales",
+  "documento": "03-ectoscopia-y-examen-general.md",
+  "n": 9,
+  "tema": "",
+  "texto": "Umbrales de temperatura. La app pone «Febrícula» de 37.1 a 37.5 °C, pero 05e fija la febrícula o fiebre leve en 37.5 °C y acepta hasta 37.2 °C por la tarde como normal. Quedan huecos decimales sin categoría (37.01 a 37.09 y 38.51 a 38.59). La guía dice «fiebre elevada más de 38.6 °C» y el umbral incluye 38.6. 05e da la hipotermia ligera como 28 a 34 °C y la profunda como 17 a 28 °C (el 28 se repite); la app lo resuelve con 34.9 y 27.9. El campo es de temperatura axilar: si se toma oral o rectal (normales 37 y 37.5 °C), estos umbrales no aplican.",
+  "estado": "Corregido"
+ },
+ {
+  "area": "03",
+  "area_titulo": "Ectoscopía, examen físico general, signos vitales y escalas generales",
+  "documento": "03-ectoscopia-y-examen-general.md",
+  "n": 10,
+  "tema": "",
+  "texto": "Umbrales del índice de masa corporal. 05c da «bajo peso menor de 18» y «normal 19 a 23»: la franja de 18 a 18.9 no tiene categoría en la nota y la app la pone en bajo peso (la guía, en cambio, dice «menos de 18»). «Obesidad mayor de 26» se aplica desde 26 incluido. Es la clasificación de 2020 (05c); la de la Organización Mundial de la Salud es distinta.",
+  "estado": "Corregido"
+ },
+ {
+  "area": "03",
+  "area_titulo": "Ectoscopía, examen físico general, signos vitales y escalas generales",
+  "documento": "03-ectoscopia-y-examen-general.md",
+  "n": 11,
+  "tema": "",
+  "texto": "Dolor (eva). Las etiquetas leve (1 a 3), moderado (4 a 6) y severo (7 a 9) están fuera de notas (11g solo da la escala de 0 a 10 y que quien consulta suele tener más de 4). El 10 figura como «Máximo», mientras la guía (fuera de notas) lo incluye en «7 a 10 dolor severo».",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "03",
+  "area_titulo": "Ectoscopía, examen físico general, signos vitales y escalas generales",
+  "documento": "03-ectoscopia-y-examen-general.md",
+  "n": 12,
+  "tema": "",
+  "texto": "«Fuera de notas» con respaldo en otros cursos. Saturación: FISIOPATOLOGIA 2026/Saturacion-Oxigeno.md (más de 95 % a nivel del mar, 88 a 92 % en poblaciones de altura, menos de 90 % define hipoxemia; la app llama «hipoxemia leve» a 91 a 94 %). Glasgow de 8 o menos, proteger la vía aérea: FISIOLOGIA 2026/conceptos/Coma.md y FISIOPATOLOGIA 2026/entities/signos/Confusion.md. La franja de altura (88 a 92 %) cae entre dos umbrales, así que en Puno la app puede mostrar «hipoxemia moderada» a un paciente normal: el texto lo advierte, pero conviene revisarlo.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "03",
+  "area_titulo": "Ectoscopía, examen físico general, signos vitales y escalas generales",
+  "documento": "03-ectoscopia-y-examen-general.md",
+  "n": 13,
+  "tema": "",
+  "texto": "Textos de guía con abreviaturas o datos incompletos. «Hb reducida» (guía de saturación) debería decir «hemoglobina reducida»; «4.º espacio intercostal» y «la 2.ª o 3.ª toma» (presión arterial) usan ordinales abreviados. El ámbito efg.estado no tiene título legible (ambito_titulo = «efg.estado»). Las guías escriben «ectoscopia» y la sección «Ectoscopía».",
+  "estado": "Corregido en parte"
+ },
+ {
+  "area": "03",
+  "area_titulo": "Ectoscopía, examen físico general, signos vitales y escalas generales",
+  "documento": "03-ectoscopia-y-examen-general.md",
+  "n": 14,
+  "tema": "",
+  "texto": "Hallazgos guiados sin frase. La guía de ectoscopía pide biotipo (ángulo de Charpy), lenguaje (disfonía, disartria, disfasia), marcha y movimientos involuntarios (asterixis), pero f_ectoscopia no tiene frases para ellos. Tampoco hay campo para los ganglios, aunque la guía del examen general los pide (solo existe la frase a13).",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "03",
+  "area_titulo": "Ectoscopía, examen físico general, signos vitales y escalas generales",
+  "documento": "03-ectoscopia-y-examen-general.md",
+  "n": 15,
+  "tema": "",
+  "texto": "Clasificación de Glasgow. La gravedad leve, moderada y grave viene de la clasificación del traumatismo craneoencefálico (fuera de notas); la app la aplica a cualquier paciente con la etiqueta «Compromiso».",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "04",
+  "area_titulo": "Examen regional: cabeza, ojos, nariz, oídos, boca y cuello",
+  "documento": "04-cabeza-y-cuello.md",
+  "n": 1,
+  "tema": "Frases que conviene revisar",
+  "texto": "f_cabeza a1 («Se palpan puntos dolorosos en») y f_cuello a2 («Se palpan adenopatías en cadena») quedan abiertas, sin dato entre llaves. Si se toca otro botón antes de escribir el sitio, la app pone un punto y la frase queda trunca. Sugerencia: «Se palpan puntos dolorosos en {sitio}.». Además, f_cuello a2 hace casi lo mismo que a9 («Adenopatía en cadena {cadena}, de {cm} cm.»); conviene dejar solo una.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "04",
+  "area_titulo": "Examen regional: cabeza, ojos, nariz, oídos, boca y cuello",
+  "documento": "04-cabeza-y-cuello.md",
+  "n": 2,
+  "tema": "Frases que conviene revisar",
+  "texto": "f_ojos a1 («Conjuntivas pálidas») y a2 («Escleras ictéricas») no terminan en punto. Si después se usa el botón de cruces, el párrafo queda «Conjuntivas pálidas. Palidez ++/+++», que repite el hallazgo. Sugerencia: que el grado se pida dentro de la misma frase.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "04",
+  "area_titulo": "Examen regional: cabeza, ojos, nariz, oídos, boca y cuello",
+  "documento": "04-cabeza-y-cuello.md",
+  "n": 3,
+  "tema": "Frases que conviene revisar",
+  "texto": "f_cuello a1 ya trae «con reflujo hepatoyugular positivo» y a3 es ese mismo signo. Si se marcan los dos, se repite. Además, no toda ingurgitación yugular tiene reflujo positivo. Sugerencia: que a1 termine en «…sobre el ángulo esternal.».",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "04",
+  "area_titulo": "Examen regional: cabeza, ojos, nariz, oídos, boca y cuello",
+  "documento": "04-cabeza-y-cuello.md",
+  "n": 4,
+  "tema": "Frases que conviene revisar",
+  "texto": "f_boca a1 junta dos hallazgos con significado distinto: la mucosa seca habla de hidratación y la lengua saburral tiene poco valor por sí sola (06b). Sugerencia: separarlos en dos botones.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "04",
+  "area_titulo": "Examen regional: cabeza, ojos, nariz, oídos, boca y cuello",
+  "documento": "04-cabeza-y-cuello.md",
+  "n": 5,
+  "tema": "Frases que conviene revisar",
+  "texto": "f_oidos a9 («Rinne patológico») interpreta en vez de describir, y la regla del campo pide describir. Sugerencia: «Prueba de Rinne en oído {lado}: la vía ósea se percibe igual o más que la aérea.» (11d).",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "04",
+  "area_titulo": "Examen regional: cabeza, ojos, nariz, oídos, boca y cuello",
+  "documento": "04-cabeza-y-cuello.md",
+  "n": 6,
+  "tema": "Frases que conviene revisar",
+  "texto": "f_cabeza a2 («Cabeza inclinada lateralmente.») no pide hacia qué lado. Sugerencia: agregar el lado, sin la opción bilateral.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "04",
+  "area_titulo": "Examen regional: cabeza, ojos, nariz, oídos, boca y cuello",
+  "documento": "04-cabeza-y-cuello.md",
+  "n": 7,
+  "tema": "Frases que conviene revisar",
+  "texto": "Valor normal de Boca: «Dentadura en regular estado de conservación» es una valoración, no un hallazgo normal. Las notas piden anotar el número de piezas (20 o 32) y su conservación (06b). Sugerencia: «Dentadura completa y conservada».",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "04",
+  "area_titulo": "Examen regional: cabeza, ojos, nariz, oídos, boca y cuello",
+  "documento": "04-cabeza-y-cuello.md",
+  "n": 8,
+  "tema": "Frases que conviene revisar",
+  "texto": "Valor normal de Cuello: «Tráquea centrada» no aparece en las notas (fuera de notas) y la lista no tiene ninguna frase para una tráquea desviada.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "04",
+  "area_titulo": "Examen regional: cabeza, ojos, nariz, oídos, boca y cuello",
+  "documento": "04-cabeza-y-cuello.md",
+  "n": 9,
+  "tema": "Datos entre llaves",
+  "texto": "{lado} y {lado_f} ofrecen «bilateral». En algunas frases eso no tiene sentido: Weber lateralizado (f_oidos a8), lengua desviada (f_boca a9) y hemicara (f_cabeza a6), que describe una parálisis de un solo lado. En otras se lee mal: «en ojo bilateral», «por oído bilateral», «en párpado bilateral», «fosa nasal bilateral», «membrana timpánica bilateral» (f_ojos a9, a11, a12, a13; f_oidos a1 a a4, a6, a7, a9; f_nariz a4, a7). Sugerencia: quitar «bilateral» en Weber, lengua y hemicara, y en las demás escribir «en ambos ojos» o «en ambos oídos».",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "04",
+  "area_titulo": "Examen regional: cabeza, ojos, nariz, oídos, boca y cuello",
+  "documento": "04-cabeza-y-cuello.md",
+  "n": 10,
+  "tema": "Datos entre llaves",
+  "texto": "A {otorrea} le falta «clara». Según 06b, el líquido claro sugiere líquido cefalorraquídeo por fractura de base de cráneo, que es un hallazgo de alarma. A {rinorrea} se le podría sumar «con falsas membranas» (difteria, 06b).",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "04",
+  "area_titulo": "Examen regional: cabeza, ojos, nariz, oídos, boca y cuello",
+  "documento": "04-cabeza-y-cuello.md",
+  "n": 11,
+  "tema": "Datos entre llaves",
+  "texto": "{cadena} no incluye las cadenas amigdaliana, submentoniana ni retroauricular. La retroauricular orienta a rubeola, sarampión o toxoplasmosis (05j).",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "04",
+  "area_titulo": "Examen regional: cabeza, ojos, nariz, oídos, boca y cuello",
+  "documento": "04-cabeza-y-cuello.md",
+  "n": 12,
+  "tema": "Datos entre llaves",
+  "texto": "{timpano} dice «perforada» y la nota dice «desgarrada». Significan lo mismo; no hay que cambiar nada.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "04",
+  "area_titulo": "Examen regional: cabeza, ojos, nariz, oídos, boca y cuello",
+  "documento": "04-cabeza-y-cuello.md",
+  "n": 13,
+  "tema": "Valores o definiciones dudosas",
+  "texto": "Tamaño de la pupila: 06a da 2 a 4 mm como normal y midriasis por encima de 4 a 7 mm. 11j da 2 a 6 mm (promedio 3 mm) y midriasis por encima de 6 mm. La guía de Ojos sigue a 06a, pero {pupila_d} y {pupila_i} llegan hasta 6 mm.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "04",
+  "area_titulo": "Examen regional: cabeza, ojos, nariz, oídos, boca y cuello",
+  "documento": "04-cabeza-y-cuello.md",
+  "n": 14,
+  "tema": "Valores o definiciones dudosas",
+  "texto": "Membrana timpánica normal: blanca translúcida según el apunte de 2020 y rosa pálida y lustrosa según el de 2018 (06b).",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "04",
+  "area_titulo": "Examen regional: cabeza, ojos, nariz, oídos, boca y cuello",
+  "documento": "04-cabeza-y-cuello.md",
+  "n": 15,
+  "tema": "Valores o definiciones dudosas",
+  "texto": "Escala deshidratacion (área 03): el seed dice leve menos del 5 %, moderada 5 a 9 % y grave 10 % o más. 05b dice leve 5 %, moderada 5 a 10 % y grave más de 10 %. Revisar en el área 03.",
+  "estado": "Corregido"
+ },
+ {
+  "area": "04",
+  "area_titulo": "Examen regional: cabeza, ojos, nariz, oídos, boca y cuello",
+  "documento": "04-cabeza-y-cuello.md",
+  "n": 16,
+  "tema": "Valores o definiciones dudosas",
+  "texto": "f_cuello a1 pide la altura de la ingurgitación «hasta {cm} cm sobre el ángulo esternal». Ese método no aparece en las notas (fuera de notas). 08e solo estima la presión venosa central levantando el brazo (normal de 8 a 12 cm de agua).",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "04",
+  "area_titulo": "Examen regional: cabeza, ojos, nariz, oídos, boca y cuello",
+  "documento": "04-cabeza-y-cuello.md",
+  "n": 17,
+  "tema": "Valores o definiciones dudosas",
+  "texto": "f_nariz a3 (rinofima): las notas la describen pero no dicen qué enfermedad la produce (fuera de notas).",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "04",
+  "area_titulo": "Examen regional: cabeza, ojos, nariz, oídos, boca y cuello",
+  "documento": "04-cabeza-y-cuello.md",
+  "n": 18,
+  "tema": "Valores o definiciones dudosas",
+  "texto": "f_cabeza a1: las notas no nombran puntos dolorosos del cráneo. La definición usa lo que 11g manda palpar en la cefalea.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "04",
+  "area_titulo": "Examen regional: cabeza, ojos, nariz, oídos, boca y cuello",
+  "documento": "04-cabeza-y-cuello.md",
+  "n": 19,
+  "tema": "Valores o definiciones dudosas",
+  "texto": "f_ojos a7 (miosis bilateral): 06a solo la define; su significado sale de la tabla de coma de 11e.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "04",
+  "area_titulo": "Examen regional: cabeza, ojos, nariz, oídos, boca y cuello",
+  "documento": "04-cabeza-y-cuello.md",
+  "n": 20,
+  "tema": "Textos de la guía con diminutivo o abreviatura (seed/guias.csv)",
+  "texto": "Ojos, «Qué usar»: el seed usa el diminutivo de «gasa». Aquí se escribió «Una gasa».",
+  "estado": "Corregido en parte"
+ },
+ {
+  "area": "04",
+  "area_titulo": "Examen regional: cabeza, ojos, nariz, oídos, boca y cuello",
+  "documento": "04-cabeza-y-cuello.md",
+  "n": 21,
+  "tema": "Textos de la guía con diminutivo o abreviatura (seed/guias.csv)",
+  "texto": "Cuello, «Cómo explorar» (maniobra de De Quervain): el seed nombra la vértebra con su sigla. Aquí se escribió «(séptima vértebra cervical)».",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "04",
+  "area_titulo": "Examen regional: cabeza, ojos, nariz, oídos, boca y cuello",
+  "documento": "04-cabeza-y-cuello.md",
+  "n": 22,
+  "tema": "Hallazgos de las notas que la lista no tiene (sugerencias; no se agregaron)",
+  "texto": "Cabeza: macrocefalia o microcefalia (circunferencia menor de 51 cm); fontanela hundida o abombada en el lactante; movimientos anormales (temblor, tics, corea); abultamiento parotídeo; telangiectasias faciales; hiperpigmentación facial de altura (06a, 06b).",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "04",
+  "area_titulo": "Examen regional: cabeza, ojos, nariz, oídos, boca y cuello",
+  "documento": "04-cabeza-y-cuello.md",
+  "n": 23,
+  "tema": "Hallazgos de las notas que la lista no tiene (sugerencias; no se agregaron)",
+  "texto": "Ojos: - Movimientos oculares alterados o diplopía. El valor normal dice «Movimientos oculares conservados», pero no hay frase para cuando están alterados (parálisis del tercer, cuarto y sexto par, 11j). - Nistagmo. - Enoftalmos: bilateral en la deshidratación y unilateral en el síndrome de Horner. - Tríada de Claude Bernard Horner y miosis de un solo lado. - Reflejo corneal ausente. - Opacidad de la córnea y arco senil. - Quemosis, ectropión, entropión, orzuelo, chalazión y blefaritis. - Globo ocular duro (glaucoma) o blando (deshidratación) al palparlo. - Fuentes: 06a y 11j.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "04",
+  "area_titulo": "Examen regional: cabeza, ojos, nariz, oídos, boca y cuello",
+  "documento": "04-cabeza-y-cuello.md",
+  "n": 24,
+  "tema": "Hallazgos de las notas que la lista no tiene (sugerencias; no se agregaron)",
+  "texto": "Nariz: anosmia; rubicundez con telangiectasias por alcoholismo (la guía la menciona, pero no hay botón); nariz ancha y chata del mixedema (06b, 11d).",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "04",
+  "area_titulo": "Examen regional: cabeza, ojos, nariz, oídos, boca y cuello",
+  "documento": "04-cabeza-y-cuello.md",
+  "n": 25,
+  "tema": "Hallazgos de las notas que la lista no tiene (sugerencias; no se agregaron)",
+  "texto": "Oídos: anomalías del pabellón (aotía, microtia, macrotia); cuerpo extraño en el conducto; signo de Romberg positivo, si no está en el área neurológica (06b, 11d).",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "04",
+  "area_titulo": "Examen regional: cabeza, ojos, nariz, oídos, boca y cuello",
+  "documento": "04-cabeza-y-cuello.md",
+  "n": 26,
+  "tema": "Hallazgos de las notas que la lista no tiene (sugerencias; no se agregaron)",
+  "texto": "Boca: - La guía menciona manchas de Koplik (sarampión), lengua en fresa (escarlatina) y pigmentación de Addison, pero no tienen botón. - Lengua blanca por cándida, macroglosia, lengua escrotal y glositis. - Trismus. - Hiperplasia de encías por hidantoínas y ribete de plomo en las encías. - Dientes de Hutchinson. - Ictericia en el frenillo lingual. - Úvula desviada y reflejo nauseoso ausente. - Fuentes: 06b, 05f y 11d.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "04",
+  "area_titulo": "Examen regional: cabeza, ojos, nariz, oídos, boca y cuello",
+  "documento": "04-cabeza-y-cuello.md",
+  "n": 27,
+  "tema": "Hallazgos de las notas que la lista no tiene (sugerencias; no se agregaron)",
+  "texto": "Cuello: - Soplo tiroideo. Es el dato que separa el bocio tóxico del no tóxico (06c, 13a). - Tiroides dura como piedra (pétrea) o fija (orienta a cáncer) y nódulo tiroideo. - Características del ganglio: duro, fijo, fluctuante o fistulizado (escrófulas), o separados y duros como en el collar de caballo del linfoma. - Signos de Kernig y Brudzinski, si no están en el área neurológica. - Tortícolis, cicatriz de tiroidectomía, edema en esclavina, collar de Casal y latido carotídeo disminuido. - Fuentes: 06c, 05j y 08e.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "05",
+  "area_titulo": "Examen regional: tórax, pulmones y aparato cardiovascular",
+  "documento": "05-torax-y-cardiovascular.md",
+  "n": 1,
+  "tema": "Frases",
+  "texto": "Cuatro frases incompletas. f_torax_p a1 «Vibraciones vocales disminuidas en», f_torax_pe a1 «Matidez en», f_torax_pe a2 «Hipersonoridad en» y f_cv a1 «Choque de punta desplazado hacia abajo y afuera, en» terminan en «en » sin dato entre llaves ni punto final (así están en seed/opciones.csv). Las frases hermanas usan {localizacion}. Propuesta: «… en {localizacion}.»; para el choque de punta, un dato del espacio intercostal y la línea.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "05",
+  "area_titulo": "Examen regional: tórax, pulmones y aparato cardiovascular",
+  "documento": "05-torax-y-cardiovascular.md",
+  "n": 2,
+  "tema": "Frases",
+  "texto": "«Roncantes» (escala agregados y f_torax_a a4) no aparece en las notas: 07d y la guía dicen roncus. Conviene un solo término en el campo.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "05",
+  "area_titulo": "Examen regional: tórax, pulmones y aparato cardiovascular",
+  "documento": "05-torax-y-cardiovascular.md",
+  "n": 3,
+  "tema": "Frases",
+  "texto": "«Choque de punta» (valor normal y a1 de f_cv) e «ictus cordis» (a3) son sinónimos en 08b; conviene usar uno solo en el campo.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "05",
+  "area_titulo": "Examen regional: tórax, pulmones y aparato cardiovascular",
+  "documento": "05-torax-y-cardiovascular.md",
+  "n": 4,
+  "tema": "Frases",
+  "texto": "Valor normal cardiovascular: «normofonéticos» no figura en las notas (fuera de notas) y el llenado capilar no está en Semiología; solo aparece en FISIOLOGIA 2026/concepts/Perfusión-Tisular.md (mayor de 2 segundos como signo de hipoperfusión).",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "05",
+  "area_titulo": "Examen regional: tórax, pulmones y aparato cardiovascular",
+  "documento": "05-torax-y-cardiovascular.md",
+  "n": 5,
+  "tema": "Frases",
+  "texto": "Redundancia: f_torax_i a8 repite «respiración superficial», que ya forma parte de la definición de taquipnea (07b), y a1 usa la misma expresión.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "05",
+  "area_titulo": "Examen regional: tórax, pulmones y aparato cardiovascular",
+  "documento": "05-torax-y-cardiovascular.md",
+  "n": 6,
+  "tema": "Frases",
+  "texto": "f_torax_a a7 fija la «región axilar inferior»: las notas dicen que el frote se ausculta *con más frecuencia* allí, no siempre. Valorar {localizacion}.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "05",
+  "area_titulo": "Examen regional: tórax, pulmones y aparato cardiovascular",
+  "documento": "05-torax-y-cardiovascular.md",
+  "n": 7,
+  "tema": "Frases",
+  "texto": "f_cv a11 obliga a escribir la irradiación; los soplos funcionales suelen quedar localizados (08d). Falta una variante sin irradiación.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "05",
+  "area_titulo": "Examen regional: tórax, pulmones y aparato cardiovascular",
+  "documento": "05-torax-y-cardiovascular.md",
+  "n": 8,
+  "tema": "Frases",
+  "texto": "f_torax_p a7 (dolor a la palpación): las notas no dan sus causas; el significado se dejó solo descriptivo.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "05",
+  "area_titulo": "Examen regional: tórax, pulmones y aparato cardiovascular",
+  "documento": "05-torax-y-cardiovascular.md",
+  "n": 9,
+  "tema": "Frases",
+  "texto": "f_torax_a a10 (pectoriloquia áfona): 07d es ambigua (la da como signo de caverna y la menciona en condensación o derrame); conviene contrastarla con el libro.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "05",
+  "area_titulo": "Examen regional: tórax, pulmones y aparato cardiovascular",
+  "documento": "05-torax-y-cardiovascular.md",
+  "n": 10,
+  "tema": "Frases",
+  "texto": "Opciones que las notas describen y las listas no tienen: resonancia vocal disminuida (atelectasia, paquipleuritis, derrame), estridor, soplos pleurítico, cavitario y anfórico, murmullo vesicular aumentado (07d); ictus inmóvil (pericarditis constrictiva) y latido de hipertrofia del ventrículo derecho (08b); segundo ruido reforzado y primer ruido debilitado (08c); soplo continuo (08d); patrones respiratorios suspiroso y bradipnea (07b).",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "05",
+  "area_titulo": "Examen regional: tórax, pulmones y aparato cardiovascular",
+  "documento": "05-torax-y-cardiovascular.md",
+  "n": 11,
+  "tema": "Frases",
+  "texto": "Datos entre llaves sin lista en el paquete: no vienen las opciones de {patron_resp}, {tipo_pulso}, {tiempo_cardiaco}, {foco} ni {irradiacion_soplo}, así que no se pudo comprobar que salgan de las notas. Si {tipo_pulso} ofrece «bisferiens», 08e advierte que ese pulso no está en Sotomayor (fuera de notas).",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "05",
+  "area_titulo": "Examen regional: tórax, pulmones y aparato cardiovascular",
+  "documento": "05-torax-y-cardiovascular.md",
+  "n": 12,
+  "tema": "Escalas",
+  "texto": "Levine (comparada con la escala de Freeman-Levine de 08d): I «Apenas audible» coincide; II «Leve pero clara» (notas: débil); III «Moderada, sin frémito» (notas: moderado; no dicen que no tenga frémito); IV «Con frémito» (notas: fuerte; el frémito acompaña *casi siempre* a los grados IV, V y VI); V «Audible con el borde del estetoscopio» no está en las notas (notas: fuertísimo); VI «Audible sin contacto» coincide. La lista dice «Levine» y la guía «Freeman-Levine». 08d recuerda además que algunos autores usan cuatro grados, y 08b gradúa el frémito de 1 a 4 cruces.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "05",
+  "area_titulo": "Examen regional: tórax, pulmones y aparato cardiovascular",
+  "documento": "05-torax-y-cardiovascular.md",
+  "n": 13,
+  "tema": "Escalas",
+  "texto": "Amplitud de pulsos: la escala de 0 a 4+ no está en las notas (fuera de notas). 05d describe la amplitud como amplia, mediana o pequeña (parvus), y el pulso filiforme. «Saltón» no es un término de las notas; su equivalente es pulso amplio o céler (insuficiencia aórtica).",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "05",
+  "area_titulo": "Examen regional: tórax, pulmones y aparato cardiovascular",
+  "documento": "05-torax-y-cardiovascular.md",
+  "n": 14,
+  "tema": "Escalas",
+  "texto": "Ruidos agregados: «Subcrepitantes: Húmedos» no los distingue de los crepitantes, que también son húmedos (07d los describe como gruesos, con burbujeo). «Sibilancias: Espiratorias» simplifica: se oyen en ambas fases, más en la espiración, y no cambian con la tos. Faltan estridor y los soplos pleurítico, cavitario y anfórico.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "05",
+  "area_titulo": "Examen regional: tórax, pulmones y aparato cardiovascular",
+  "documento": "05-torax-y-cardiovascular.md",
+  "n": 15,
+  "tema": "Escalas",
+  "texto": "Murmullo vesicular: «Pasa en ambos campos» es coloquial (07d: ruido suave en toda la inspiración y al inicio de la espiración). Falta el nivel «Aumentado» (compensador o por hiperventilación).",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "05",
+  "area_titulo": "Examen regional: tórax, pulmones y aparato cardiovascular",
+  "documento": "05-torax-y-cardiovascular.md",
+  "n": 16,
+  "tema": "Escalas",
+  "texto": "Los formatos de salida con {valor} en mitad de la frase se escriben bien: la app pasa el valor a minúscula (shared/formato.ts), como se muestra en las tablas.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "05",
+  "area_titulo": "Examen regional: tórax, pulmones y aparato cardiovascular",
+  "documento": "05-torax-y-cardiovascular.md",
+  "n": 17,
+  "tema": "Guías",
+  "texto": "Abreviaturas en seed/guias.csv: C7, 5.º, 2.º, 2.ª, 1.º, 1.er, 3.º, 4.º. En este documento se escribieron completas; conviene corregirlas en la fuente. Varios textos no terminan en punto, y 05d escribe «celer» sin tilde donde 08e dice «céler».",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "05",
+  "area_titulo": "Examen regional: tórax, pulmones y aparato cardiovascular",
+  "documento": "05-torax-y-cardiovascular.md",
+  "n": 18,
+  "tema": "Guías",
+  "texto": "Guías en ámbito equivocado: en efr.torax_percusion están «Los movimientos del tórax deben ser simétricos» (07b, es de inspección) y «Vibraciones vocales… aumentadas: condensación» (es de palpación). La inspección no tiene ninguna guía de «Valores normales».",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "05",
+  "area_titulo": "Examen regional: tórax, pulmones y aparato cardiovascular",
+  "documento": "05-torax-y-cardiovascular.md",
+  "n": 19,
+  "tema": "Guías",
+  "texto": "Guías de pulsos: «Arteria radial de elección…» y «Sitios…» están como «Valores normales» pero son técnica. Hay duplicados: palpar ambas radiales (Cómo explorar y Valores normales), paro cardiorrespiratorio (Qué buscar y No olvidar) y pared arterial (Qué buscar y Valores normales).",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "05",
+  "area_titulo": "Examen regional: tórax, pulmones y aparato cardiovascular",
+  "documento": "05-torax-y-cardiovascular.md",
+  "n": 20,
+  "tema": "Guías",
+  "texto": "Fuente cruzada: la guía «Onda: céler…, parvus…, filiforme (shock)…» cita 08e, pero el pulso filiforme solo está en 05d.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "05",
+  "area_titulo": "Examen regional: tórax, pulmones y aparato cardiovascular",
+  "documento": "05-torax-y-cardiovascular.md",
+  "n": 21,
+  "tema": "Notas por contrastar",
+  "texto": "Relación inspiración a espiración (guía y 07d): 2020 da 1:2 a 1:1,5 con espiración prolongada en la obstrucción; 2018 da 1:3 y dice que se invierte a 3:1. El profesor lo dejó como tarea y avisó que lo preguntaría.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "05",
+  "area_titulo": "Examen regional: tórax, pulmones y aparato cardiovascular",
+  "documento": "05-torax-y-cardiovascular.md",
+  "n": 22,
+  "tema": "Notas por contrastar",
+  "texto": "08b, ictus del normolíneo: dice «6-10 cm de la línea medioclavicular», lo que no cuadra con el foco mitral «en la línea medioclavicular» (08c); probablemente se refiere a la línea medioesternal.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "05",
+  "area_titulo": "Examen regional: tórax, pulmones y aparato cardiovascular",
+  "documento": "05-torax-y-cardiovascular.md",
+  "n": 23,
+  "tema": "Notas por contrastar",
+  "texto": "08c, desdoblamiento del segundo ruido: la nota lo atribuye a «bloqueo auriculoventricular» y respiración forzada; 08h lo añade en la comunicación interauricular. Conviene contrastar con el libro (en la misma tabla, el bloqueo de rama figura en el desdoblamiento del primer ruido).",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "06",
+  "area_titulo": "Examen regional: abdomen, genitourinario, columna, extremidades y neurológico",
+  "documento": "06-abdomen-extremidades-y-neurologico.md",
+  "n": 1,
+  "tema": "",
+  "texto": "Orden del abdomen. Los campos de la app van inspección, auscultación, percusión y palpación (orden 150 a 180). Las notas 09b y 03, y la propia guía de inspección, ponen la palpación antes de la percusión. Decidir si se reordenan los campos o si se agrega un aviso.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "06",
+  "area_titulo": "Examen regional: abdomen, genitourinario, columna, extremidades y neurológico",
+  "documento": "06-abdomen-extremidades-y-neurologico.md",
+  "n": 2,
+  "tema": "",
+  "texto": "Frases abiertas sin marcador. f_abd_p a2 («Doloroso a la palpación en»), f_columna a1 («… en región») y f_ext a1 («Edema con fóvea hasta») terminan sin marcador (en la semilla terminan en un espacio). Faltan {region_abd} y una lista de regiones de la columna (cervical, dorsal, lumbar, sacra). Además f_ext a1 se superpone con el formato de godet («Edema … hasta {nivel}, {lateralidad}, con fóvea»): si se usan juntos, el texto repite «edema» y «con fóvea».",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "06",
+  "area_titulo": "Examen regional: abdomen, genitourinario, columna, extremidades y neurológico",
+  "documento": "06-abdomen-extremidades-y-neurologico.md",
+  "n": 3,
+  "tema": "",
+  "texto": "Marcador {signo_abd}. Con las opciones «del psoas» y «del obturador», la frase a9 produce «Signo de del psoas positivo». Propuesta: opciones «de Rovsing», «del psoas», «del obturador» y frase «Signo {signo_abd} positivo».",
+  "estado": "Corregido"
+ },
+ {
+  "area": "06",
+  "area_titulo": "Examen regional: abdomen, genitourinario, columna, extremidades y neurológico",
+  "documento": "06-abdomen-extremidades-y-neurologico.md",
+  "n": 4,
+  "tema": "",
+  "texto": "«Bilateral» en {lado} y {lado_f}. Genera frases incoherentes: «Hemiparesia bilateral», «Escoliosis de convexidad bilateral», «Signo de Babinski positivo en el lado bilateral», «Riñón bilateral palpable», «Punto ureteral bilateral doloroso», «Soplo sistólico en flanco bilateral», «… en miembro inferior bilateral» (Lasègue), «Parálisis facial bilateral que …». Conviene una lista sin «bilateral» para esas frases.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "06",
+  "area_titulo": "Examen regional: abdomen, genitourinario, columna, extremidades y neurológico",
+  "documento": "06-abdomen-extremidades-y-neurologico.md",
+  "n": 5,
+  "tema": "",
+  "texto": "Lista f_ext compartida por los cuatro miembros. Varias frases solo sirven para miembros inferiores (Homans, pérdida de vello, «pulso femoral, poplíteo, tibial posterior, pedio») o para ambos a la vez («dorso de pies y manos»), y {region_mi} ofrece «el antebrazo» (que permite «Várices en el antebrazo»). Los marcadores se llaman pulso_mi y region_mi aunque incluyen el miembro superior; faltan los pulsos braquial y cubital. El valor normal dice «Simétrico» para un solo miembro.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "06",
+  "area_titulo": "Examen regional: abdomen, genitourinario, columna, extremidades y neurológico",
+  "documento": "06-abdomen-extremidades-y-neurologico.md",
+  "n": 6,
+  "tema": "",
+  "texto": "Hepatomegalia en dos frases y dos unidades. a1 mide en centímetros y fija «borde romo y superficie lisa»; a11 mide en traveses de dedo, que es la clasificación de 09b. No hay opción para borde duro, cortante o nodular (cirrosis, cáncer; 09b, 09d).",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "06",
+  "area_titulo": "Examen regional: abdomen, genitourinario, columna, extremidades y neurológico",
+  "documento": "06-abdomen-extremidades-y-neurologico.md",
+  "n": 7,
+  "tema": "",
+  "texto": "Frase normal de palpación. Incluye «Puño-percusión lumbar negativa bilateral», que es maniobra del campo genitourinario (Giordano, 10b); el valor normal del campo genitourinario no la menciona. La frase normal genitourinaria dice «puntos renoureterales», término que no está en las notas (09b habla de puntos ureterales).",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "06",
+  "area_titulo": "Examen regional: abdomen, genitourinario, columna, extremidades y neurológico",
+  "documento": "06-abdomen-extremidades-y-neurologico.md",
+  "n": 8,
+  "tema": "",
+  "texto": "Escala godet. Los milímetros (2, 4, 6 y 8) y los tiempos de recuperación (inmediato, 15 y 30 segundos, más de 1 minuto) están fuera de notas; 05g solo gradúa de 1 cruz (leve) a 4 cruces (anasarca) por la profundidad de la fóvea. Las etiquetas usan símbolos («≈», «~») y «recupera inmediato» (falta «de»).",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "06",
+  "area_titulo": "Examen regional: abdomen, genitourinario, columna, extremidades y neurológico",
+  "documento": "06-abdomen-extremidades-y-neurologico.md",
+  "n": 9,
+  "tema": "",
+  "texto": "Escalas fuerza y rot. Las descripciones de cada grado están fuera de notas. El nombre «Fuerza muscular (MRC)» lleva una sigla. La guía de reflejos (tipo «Valores normales») muestra la escala de 2018, donde 3 es normal, junto a la de la app, donde 2+ es normal; además «Escala de 2020» y «Escala de 2018» se leen como nombres de escalas y no como versiones de los apuntes. La nota no da la raíz del bicipital, y el tricipital y el estilorradial no figuran en notas ni en guías.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "06",
+  "area_titulo": "Examen regional: abdomen, genitourinario, columna, extremidades y neurológico",
+  "documento": "06-abdomen-extremidades-y-neurologico.md",
+  "n": 10,
+  "tema": "",
+  "texto": "Porcentaje de trombosis venosa profunda. La guía dice «Edema unilateral de miembro inferior: en 80 a 90 % se debe a trombosis venosa profunda» (tomado de una tarjeta de 05g), pero 08i usa esas cifras para otra cosa: el edema aparece en el 90 % (2020) u 80 % (2018) de las trombosis venosas profundas. Revisar el enunciado.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "06",
+  "area_titulo": "Examen regional: abdomen, genitourinario, columna, extremidades y neurológico",
+  "documento": "06-abdomen-extremidades-y-neurologico.md",
+  "n": 11,
+  "tema": "",
+  "texto": "Guías con tipo o ámbito dudoso. La técnica de la oleada ascítica está en el ámbito de percusión, pero 09b la ubica en la palpación superficial (y la frase a10 está en palpación). Varias filas de tipo «Valores normales» son técnica repetida (edema, fuerza y reflejos), y hay textos casi duplicados en edema, fuerza y reflejos. Los ámbitos efr.abdomen, efr.extremidades y efr.edema no tienen título legible (ambito_titulo repite el identificador).",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "06",
+  "area_titulo": "Examen regional: abdomen, genitourinario, columna, extremidades y neurológico",
+  "documento": "06-abdomen-extremidades-y-neurologico.md",
+  "n": 12,
+  "tema": "",
+  "texto": "Guías que faltan. Genitourinario, columna, extremidades y neurológico no tienen «Valores normales» ni «Cómo interpretar». Extremidades no guía la palpación de pulsos, Homans, várices ni llenado capilar, aunque tienen frase. Neurológico no guía parálisis facial, temblor, disartria ni orientación. La guía de genitourinario describe el tacto rectal, pero no hay frases para sus hallazgos.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "06",
+  "area_titulo": "Examen regional: abdomen, genitourinario, columna, extremidades y neurológico",
+  "documento": "06-abdomen-extremidades-y-neurologico.md",
+  "n": 13,
+  "tema": "",
+  "texto": "Redacción de las guías. La guía de columna dice «dolor lumbar» (preferencia del usuario: «lumbalgia»). Usan ordinales abreviados («5.º espacio», «1.er dedo») y nomenclatura vertebral abreviada («C7», «L1», «T8-L3»). La guía de la oleada ascítica usa el diminutivo «golpecitos».",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "06",
+  "area_titulo": "Examen regional: abdomen, genitourinario, columna, extremidades y neurológico",
+  "documento": "06-abdomen-extremidades-y-neurologico.md",
+  "n": 14,
+  "tema": "",
+  "texto": "Frase normal neurológica. «reflejos osteotendinosos 2+/4+» empieza con minúscula tras un punto. Además repite fuerza y reflejos, que tienen campos y escalas propios (efr.fuerza, efr.rot): riesgo de informar lo mismo dos veces.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "06",
+  "area_titulo": "Examen regional: abdomen, genitourinario, columna, extremidades y neurológico",
+  "documento": "06-abdomen-extremidades-y-neurologico.md",
+  "n": 15,
+  "tema": "",
+  "texto": "Contradicciones entre notas. 05i atribuye la espasticidad de la hemiplejía a la vía extrapiramidal; 11b y 11e la atribuyen a la piramidal. El estupor: 05a (despierta con estímulos intensos y responde mal al dolor) frente a 11a (no capta ni estímulos dolorosos); la frase f_neuro a2 («responde solo al estímulo doloroso») mezcla ambas. La lordosis: 05a dice «convexidad hacia atrás» y 07b «convexidad anterior».",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "06",
+  "area_titulo": "Examen regional: abdomen, genitourinario, columna, extremidades y neurológico",
+  "documento": "06-abdomen-extremidades-y-neurologico.md",
+  "n": 16,
+  "tema": "",
+  "texto": "Contenido fuera de notas. Contenido de los cuatro cuadrantes, raíces del bicipital, tricipital y estilorradial, significado de f_columna a1, llenado capilar (f_ext a11, con respaldo en FISIOLOGIA 2026/concepts/Perfusión-Tisular.md y FISIOPATOLOGIA 2026/entities/enfermedades/Hipovolemia.md) y f_gu a1, que no es un hallazgo. El predominio braquial o crural de la hemiparesia ({predominio}) no se explica en las notas (11b solo define «braquiocrural»).",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "06",
+  "area_titulo": "Examen regional: abdomen, genitourinario, columna, extremidades y neurológico",
+  "documento": "06-abdomen-extremidades-y-neurologico.md",
+  "n": 17,
+  "tema": "",
+  "texto": "Opciones que las notas sugieren y faltan. Dirección del flujo de la circulación colateral (05i); marchas tabética, del pato y polineurítica (05b, 11a); signos de Olow y Trendelenburg (08i); roséolas tíficas (09b).",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "07",
+  "area_titulo": "Diagnóstico, síndromes, tratamiento, plan de trabajo y evolución",
+  "documento": "07-diagnostico-tratamiento-y-evolucion.md",
+  "n": 1,
+  "tema": "Duplicados y superposiciones",
+  "texto": "«Síndrome varicoso» y «Várices de miembros inferiores» (ambos de 08i) tienen el mismo texto palabra por palabra. Dejar uno; la nota usa «Várices en miembros inferiores».",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "07",
+  "area_titulo": "Diagnóstico, síndromes, tratamiento, plan de trabajo y evolución",
+  "documento": "07-diagnostico-tratamiento-y-evolucion.md",
+  "n": 2,
+  "tema": "Duplicados y superposiciones",
+  "texto": "Guía del diagnóstico diferencial repetida (09f): «Cambia con edad, sexo y procedencia…» y «Cambia con la edad y el sexo…». Dejar una. La segunda es la fiel a 09f, que ordena el contexto por edad, sexo, dolor y temperatura; la procedencia no está en ese bloque de 09f (aparece en el ejemplo de la fiebre tifoidea de la nota 01).",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "07",
+  "area_titulo": "Diagnóstico, síndromes, tratamiento, plan de trabajo y evolución",
+  "documento": "07-diagnostico-tratamiento-y-evolucion.md",
+  "n": 3,
+  "tema": "Duplicados y superposiciones",
+  "texto": "Síndrome coledociano (01) es la forma obstructiva del síndrome ictérico (09e); pueden quedar ambos, pero conviene que el cuadro del ictérico diga que la acolia y la coluria son del patrón obstructivo.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "07",
+  "area_titulo": "Diagnóstico, síndromes, tratamiento, plan de trabajo y evolución",
+  "documento": "07-diagnostico-tratamiento-y-evolucion.md",
+  "n": 4,
+  "tema": "Duplicados y superposiciones",
+  "texto": "Síndrome convulsivo incluye la epilepsia, que 11e trata como síndrome aparte (síndrome epiléptico). No es un error, pero la nota los diferencia.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "07",
+  "area_titulo": "Diagnóstico, síndromes, tratamiento, plan de trabajo y evolución",
+  "documento": "07-diagnostico-tratamiento-y-evolucion.md",
+  "n": 5,
+  "tema": "Cuadros incompletos o imprecisos",
+  "texto": "Síndrome cavitario: 07e también nombra la vómica entre los síntomas.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "07",
+  "area_titulo": "Diagnóstico, síndromes, tratamiento, plan de trabajo y evolución",
+  "documento": "07-diagnostico-tratamiento-y-evolucion.md",
+  "n": 6,
+  "tema": "Cuadros incompletos o imprecisos",
+  "texto": "Hipertensión portal: 09e advierte que el material no la desarrolla como entidad propia; el cuadro se armó con menciones dispersas.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "07",
+  "area_titulo": "Diagnóstico, síndromes, tratamiento, plan de trabajo y evolución",
+  "documento": "07-diagnostico-tratamiento-y-evolucion.md",
+  "n": 7,
+  "tema": "Cuadros incompletos o imprecisos",
+  "texto": "Cor pulmonale crónico e insuficiencia respiratoria: 07e dice que no tienen un patrón propio de los cuatro métodos. El cuadro del cor pulmonale no trae signos; el correlato de 07e da ingurgitación yugular y edema de miembros inferiores.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "07",
+  "area_titulo": "Diagnóstico, síndromes, tratamiento, plan de trabajo y evolución",
+  "documento": "07-diagnostico-tratamiento-y-evolucion.md",
+  "n": 8,
+  "tema": "Cuadros incompletos o imprecisos",
+  "texto": "Abdomen agudo: solo define y clasifica; no trae síntomas ni signos.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "07",
+  "area_titulo": "Diagnóstico, síndromes, tratamiento, plan de trabajo y evolución",
+  "documento": "07-diagnostico-tratamiento-y-evolucion.md",
+  "n": 9,
+  "tema": "Cuadros incompletos o imprecisos",
+  "texto": "Coartación de aorta: 08h ubica el soplo sistólico de eyección en el borde esternal izquierdo y el soplo continuo en el dorso; el cuadro dice «soplo sistólico y continuo dorsal».",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "07",
+  "area_titulo": "Diagnóstico, síndromes, tratamiento, plan de trabajo y evolución",
+  "documento": "07-diagnostico-tratamiento-y-evolucion.md",
+  "n": 10,
+  "tema": "Cuadros incompletos o imprecisos",
+  "texto": "Síndrome isquémico agudo: 08i dice que el dolor es súbito en el 70 % de los casos y puede ser insidioso; el cuadro dice «dolor súbito».",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "07",
+  "area_titulo": "Diagnóstico, síndromes, tratamiento, plan de trabajo y evolución",
+  "documento": "07-diagnostico-tratamiento-y-evolucion.md",
+  "n": 11,
+  "tema": "Cuadros incompletos o imprecisos",
+  "texto": "Trombosis venosa profunda: en 08i el signo de Homans aparece como signo de tromboflebitis; la confirmación es la ecografía Doppler, que el cuadro no menciona.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "07",
+  "area_titulo": "Diagnóstico, síndromes, tratamiento, plan de trabajo y evolución",
+  "documento": "07-diagnostico-tratamiento-y-evolucion.md",
+  "n": 12,
+  "tema": "Cuadros incompletos o imprecisos",
+  "texto": "Síndrome meníngeo: mezcla signos cardinales (rigidez de nuca, Kernig, Brudzinski, Lasègue) con accesorios (fiebre, vómitos) sin separarlos, como sí hace 11e.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "07",
+  "area_titulo": "Diagnóstico, síndromes, tratamiento, plan de trabajo y evolución",
+  "documento": "07-diagnostico-tratamiento-y-evolucion.md",
+  "n": 13,
+  "tema": "Cuadros incompletos o imprecisos",
+  "texto": "Coma: 05a y el repaso R1 también lo gradúan en grados I a III (o IV); el cuadro solo cita Glasgow.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "07",
+  "area_titulo": "Diagnóstico, síndromes, tratamiento, plan de trabajo y evolución",
+  "documento": "07-diagnostico-tratamiento-y-evolucion.md",
+  "n": 14,
+  "tema": "Cuadros incompletos o imprecisos",
+  "texto": "Infección urinaria alta: dice «dolor lumbar»; en la redacción semiológica que usa el estudiante corresponde «lumbalgia».",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "07",
+  "area_titulo": "Diagnóstico, síndromes, tratamiento, plan de trabajo y evolución",
+  "documento": "07-diagnostico-tratamiento-y-evolucion.md",
+  "n": 15,
+  "tema": "Cuadros incompletos o imprecisos",
+  "texto": "Embarazo ectópico roto: es de causa ginecológica; se catalogó en digestivo porque 09g lo trata como abdomen agudo hemorrágico.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "07",
+  "area_titulo": "Diagnóstico, síndromes, tratamiento, plan de trabajo y evolución",
+  "documento": "07-diagnostico-tratamiento-y-evolucion.md",
+  "n": 16,
+  "tema": "Frases",
+  "texto": "Evolución con abreviaturas: a1 a a4 escriben «S:», «O:», «A:» y «P:», letras sueltas que contradicen la regla de escribir sin abreviaturas (nota 02a). Propuesta: «Subjetivo:», «Objetivo:», «Análisis:» y «Plan:». El formato de cuatro partes no está en las notas; 02c solo enumera su contenido.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "07",
+  "area_titulo": "Diagnóstico, síndromes, tratamiento, plan de trabajo y evolución",
+  "documento": "07-diagnostico-tratamiento-y-evolucion.md",
+  "n": 17,
+  "tema": "Frases",
+  "texto": "f_evolucion a1 solo pone la fecha; 02c pide fecha y hora.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "07",
+  "area_titulo": "Diagnóstico, síndromes, tratamiento, plan de trabajo y evolución",
+  "documento": "07-diagnostico-tratamiento-y-evolucion.md",
+  "n": 18,
+  "tema": "Frases",
+  "texto": "f_tratamiento a6 (oxígeno): ninguna nota menciona «cánula binasal» ni «fracción inspirada». FISIOPATOLOGIA 2026/clases/Clase_33_COR_PULMONALE_CRONICO.md indica, en el cor pulmonale crónico, oxígeno húmedo por catéter nasal a 1 a 2 litros por minuto durante 16 horas: la dosis se expresa como flujo, no como fracción inspirada. Además, en Puno la saturación normal puede ser de 88 a 92 %.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "07",
+  "area_titulo": "Diagnóstico, síndromes, tratamiento, plan de trabajo y evolución",
+  "documento": "07-diagnostico-tratamiento-y-evolucion.md",
+  "n": 19,
+  "tema": "Frases",
+  "texto": "f_tratamiento a3: «reposo relativo» no está en las notas; solo aparecen el reposo en cama con movilización de los miembros inferiores (Fisiopatología, clase 42) y el reposo prolongado como riesgo de trombosis venosa profunda (08i).",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "07",
+  "area_titulo": "Diagnóstico, síndromes, tratamiento, plan de trabajo y evolución",
+  "documento": "07-diagnostico-tratamiento-y-evolucion.md",
+  "n": 20,
+  "tema": "Frases",
+  "texto": "f_tratamiento a4: dice «funciones vitales»; las notas dicen «signos vitales». Unificar con las demás áreas.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "07",
+  "area_titulo": "Diagnóstico, síndromes, tratamiento, plan de trabajo y evolución",
+  "documento": "07-diagnostico-tratamiento-y-evolucion.md",
+  "n": 21,
+  "tema": "Frases",
+  "texto": "f_plan a3: «Se solicita urea y creatinina» debería concordar en plural: «Se solicitan urea y creatinina».",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "07",
+  "area_titulo": "Diagnóstico, síndromes, tratamiento, plan de trabajo y evolución",
+  "documento": "07-diagnostico-tratamiento-y-evolucion.md",
+  "n": 22,
+  "tema": "Frases",
+  "texto": "f_plan a5: el término «perfil hepático» no está en las notas; 09c nombra sus componentes (bilirrubinas, transaminasas, fosfatasa alcalina, tiempo de protrombina).",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "07",
+  "area_titulo": "Diagnóstico, síndromes, tratamiento, plan de trabajo y evolución",
+  "documento": "07-diagnostico-tratamiento-y-evolucion.md",
+  "n": 23,
+  "tema": "Frases",
+  "texto": "Exámenes que las notas piden a menudo y no tienen frase: urocultivo (10c), electrolitos (08g; 10c), amilasa y lipasa (09g), perfil lipídico (10c), grupo sanguíneo y factor Rh (09g), endoscopia digestiva alta (09c; 09e), tomografía (09c), cultivo de esputo y prueba de tuberculina (07g), ecografía Doppler (08i), fondo de ojo (08g; 10c).",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "07",
+  "area_titulo": "Diagnóstico, síndromes, tratamiento, plan de trabajo y evolución",
+  "documento": "07-diagnostico-tratamiento-y-evolucion.md",
+  "n": 24,
+  "tema": "Escalas",
+  "texto": "NYHA: no está en las notas de Semiología (sí en Fisiopatología y Farmacología, con las mismas etiquetas). La clase I es «sin limitación», así que la frase «Disnea en clase funcional I de la NYHA» se contradice un poco: en la clase I la actividad ordinaria no da síntomas. La escala gradúa también fatiga y palpitaciones, no solo disnea.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "07",
+  "area_titulo": "Diagnóstico, síndromes, tratamiento, plan de trabajo y evolución",
+  "documento": "07-diagnostico-tratamiento-y-evolucion.md",
+  "n": 25,
+  "tema": "Escalas",
+  "texto": "mMRC y ECOG: fuera de notas; sus etiquetas no pueden verificarse con el wiki.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "07",
+  "area_titulo": "Diagnóstico, síndromes, tratamiento, plan de trabajo y evolución",
+  "documento": "07-diagnostico-tratamiento-y-evolucion.md",
+  "n": 26,
+  "tema": "Escalas",
+  "texto": "Coherencia por campo: la evolución admite bristol y deshidratacion pero no levine ni ecog; el resumen semiológico admite levine y ecog pero no bristol ni deshidratacion. Si el resumen reúne todos los datos positivos, quizá deba admitir las mismas escalas que el examen físico.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "07",
+  "area_titulo": "Diagnóstico, síndromes, tratamiento, plan de trabajo y evolución",
+  "documento": "07-diagnostico-tratamiento-y-evolucion.md",
+  "n": 27,
+  "tema": "Estructura del formulario",
+  "texto": "Orden de los diagnósticos: el presuntivo (orden 20) va antes que el sindrómico (orden 30), mientras la nota 01 pone el síndrome como primer paso. Además, el sindrómico es opcional.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "07",
+  "area_titulo": "Diagnóstico, síndromes, tratamiento, plan de trabajo y evolución",
+  "documento": "07-diagnostico-tratamiento-y-evolucion.md",
+  "n": 28,
+  "tema": "Estructura del formulario",
+  "texto": "Sin campos para pronóstico ni epicrisis: 02c los pone al final de la historia; hoy solo aparecen como consejos en la guía de la evolución.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "07",
+  "area_titulo": "Diagnóstico, síndromes, tratamiento, plan de trabajo y evolución",
+  "documento": "07-diagnostico-tratamiento-y-evolucion.md",
+  "n": 29,
+  "tema": "Estructura del formulario",
+  "texto": "Capas funcional, anatómica y etiológica (nota 01): no tienen campo propio; la guía las manda al diagnóstico presuntivo.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "08",
+  "area_titulo": "Exámenes auxiliares: indicaciones, valores normales e interpretación",
+  "documento": "08-examenes-auxiliares.md",
+  "n": 1,
+  "tema": "Pendientes",
+  "texto": "Hemoglobina y oxígeno en altura. Las notas no traen un rango normal de hemoglobina para 3 800 m, ni una presión arterial de oxígeno de referencia en altura. Solo traen el umbral de eritrocitosis excesiva, el comentario de clase de 05k y la saturación de 88 a 92%. Conviene buscarlos en Fisiología o Fisiopatología de altura.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "08",
+  "area_titulo": "Exámenes auxiliares: indicaciones, valores normales e interpretación",
+  "documento": "08-examenes-auxiliares.md",
+  "n": 2,
+  "tema": "Pendientes",
+  "texto": "Tuberculina negativa. 07g solo define la prueba positiva (más de 10 mm). La lectura \"negativa: 10 mm o menos\" de la guía es una inferencia.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "08",
+  "area_titulo": "Exámenes auxiliares: indicaciones, valores normales e interpretación",
+  "documento": "08-examenes-auxiliares.md",
+  "n": 3,
+  "tema": "Pendientes",
+  "texto": "Fuentes incompletas en la guía. Hay entradas que citan una sola nota cuando el dato está repartido en varias: - glucosa, \"cuándo pedirlo\": cita solo 09c, pero el cardiópata está en 08f y el síndrome nefrótico en 10c; - función renal, \"cuándo pedirlo\": cita solo 09c, pero la oliguria y el hipertenso están en 08g y el cardiópata en 08f; - orina, \"cuantificar en 24 horas\": cita solo 10c, pero la preferencia por la orina de 24 horas está en 10b.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "08",
+  "area_titulo": "Exámenes auxiliares: indicaciones, valores normales e interpretación",
+  "documento": "08-examenes-auxiliares.md",
+  "n": 4,
+  "tema": "Pendientes",
+  "texto": "Creatina fosfocinasa sin valor en la guía. BIOQUIMICA 2026/concepts/Creatina-Quinasa-(CK).md da de 20 a 200 U/L en varones y de 20 a 170 U/L en mujeres (\"varían según el laboratorio\"). La guía de enzimas no lo incluye.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "08",
+  "area_titulo": "Exámenes auxiliares: indicaciones, valores normales e interpretación",
+  "documento": "08-examenes-auxiliares.md",
+  "n": 5,
+  "tema": "Pendientes",
+  "texto": "Prueba de esfuerzo. 08f también la contraindica en la insuficiencia cardíaca congestiva, y la entrada de la guía lo omite. En este documento ya se agregó. Datos de la app",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "08",
+  "area_titulo": "Exámenes auxiliares: indicaciones, valores normales e interpretación",
+  "documento": "08-examenes-auxiliares.md",
+  "n": 6,
+  "tema": "Pendientes",
+  "texto": "Abreviaturas y diminutivos en seed/guias.csv. Hay que corregir el texto de origen: - \"TGO y TGP\" (línea 810); - \"vacunación con BCG\" (línea 847); - \"cuadradito\" y \"cuadraditos\" (líneas 891 y 894); - \"CPK\" y \"CK-MB\" (líneas 915 y 916); - \"PH\" con mayúscula inicial (línea 830). En este documento ya se escribieron completos.",
+  "estado": "Corregido en parte"
+ },
+ {
+  "area": "08",
+  "area_titulo": "Exámenes auxiliares: indicaciones, valores normales e interpretación",
+  "documento": "08-examenes-auxiliares.md",
+  "n": 7,
+  "tema": "Pendientes",
+  "texto": "Exámenes con guía pero sin frase en f_examenes. Se escriben a mano: - electrolitos; - gasometría arterial; - prueba de tuberculina; - espirometría; - radiografía de abdomen; - tomografía; - Holter y prueba de esfuerzo; - ecocardiograma; - enzimas cardíacas; - endoscopía; - parasitológico de heces; - paracentesis; - toracocentesis; - líquido cefalorraquídeo. Se podría valorar agregar frases, sobre todo para electrolitos, gasometría y enzimas cardíacas.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "08",
+  "area_titulo": "Exámenes auxiliares: indicaciones, valores normales e interpretación",
+  "documento": "08-examenes-auxiliares.md",
+  "n": 8,
+  "tema": "Pendientes",
+  "texto": "Ámbito del campo. exc.examenes declara el ámbito de guía exc.examenes, que no tiene ninguna entrada. La guía llega por el prefijo ex., que la pantalla recorre en las secciones de exámenes y de plan de trabajo.",
+  "estado": "Pendiente"
+ },
+ {
+  "area": "08",
+  "area_titulo": "Exámenes auxiliares: indicaciones, valores normales e interpretación",
+  "documento": "08-examenes-auxiliares.md",
+  "n": 9,
+  "tema": "Pendientes",
+  "texto": "Ecografía y baciloscopia sin cifra normal. Las notas no dan un \"resultado normal\" para ninguna de las dos. Las definiciones de a8 y a9 describen qué se anota, sin inventar una referencia.",
+  "estado": "Pendiente"
+ }
+]

@@ -2,7 +2,7 @@ node_modules/
 dist/
 dist-local/
 # Datos de pacientes, respaldos, audios y certificados del servidor local
-datos/
+/datos/
 *.log
 .env
 .env.local
