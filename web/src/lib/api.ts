@@ -27,10 +27,43 @@ export function enLinea(): boolean {
   return navigator.onLine && hayBackend();
 }
 
+/** Esperas antes de reintentar cuando Google pierde la respuesta en el camino. */
+const REINTENTOS = [1500, 4000];
+
+/** Error de entrega: la acción pudo ejecutarse en el servidor, pero la respuesta no llegó. */
+class ErrorEntrega extends ErrorApi {
+  constructor(message: string) {
+    super(message, 'red');
+  }
+}
+
+const esperar = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
+/**
+ * Apps Script entrega cada respuesta por un enlace de un solo uso (script.googleusercontent.com/macros/echo).
+ * A veces ese enlace ya no está cuando el navegador lo pide y Google responde 404 u otra página.
+ * Se reintenta con el mismo opId: las acciones que escriben devuelven lo que ya hicieron, sin repetirlo.
+ */
 export async function llamar<A extends Accion>(
   action: A,
   payload: ApiMapa[A][0],
   opciones: { opId?: string; timeoutMs?: number; url?: string } = {},
+): Promise<ApiMapa[A][1]> {
+  const opId = opciones.opId ?? uuid();
+  for (let intento = 0; ; intento++) {
+    try {
+      return await unaLlamada(action, payload, { ...opciones, opId });
+    } catch (e) {
+      if (!(e instanceof ErrorEntrega) || intento >= REINTENTOS.length || !navigator.onLine) throw e;
+      await esperar(REINTENTOS[intento]);
+    }
+  }
+}
+
+async function unaLlamada<A extends Accion>(
+  action: A,
+  payload: ApiMapa[A][0],
+  opciones: { opId: string; timeoutMs?: number; url?: string },
 ): Promise<ApiMapa[A][1]> {
   const publica = ACCIONES_PUBLICAS.includes(action);
   const url = opciones.url ?? urlServidor();
@@ -51,16 +84,22 @@ export async function llamar<A extends Accion>(
       signal: control.signal,
     });
   } catch {
-    throw new ErrorApi(control.signal.aborted ? 'El servidor tardó demasiado' : 'No se pudo conectar con el servidor', 'red');
+    if (control.signal.aborted) throw new ErrorApi('El servidor tardó demasiado', 'red');
+    // Una redirección de Google sin permisos de CORS también llega aquí.
+    throw new ErrorEntrega('No se pudo conectar con el servidor');
   } finally {
     clearTimeout(timer);
   }
-  if (!res.ok) throw new ErrorApi(`El servidor respondió ${res.status}`, 'red');
+  if (!res.ok) throw new ErrorEntrega(`Google no entregó la respuesta del servidor (${res.status}). Intenta de nuevo.`);
   let cuerpo: Respuesta<ApiMapa[A][1]>;
   try {
     cuerpo = (await res.json()) as Respuesta<ApiMapa[A][1]>;
   } catch {
-    throw new ErrorApi('Respuesta no válida. ¿La dirección del servidor es correcta?', 'red');
+    throw new ErrorEntrega(
+      /^https:\/\/script\.google\.com\/macros\/s\/[\w-]+\/exec$/.test(url) || url.endsWith('/api')
+        ? 'Google no entregó una respuesta válida del servidor. Intenta de nuevo.'
+        : 'Respuesta no válida. ¿La dirección del servidor es correcta?',
+    );
   }
   if (!cuerpo.ok) {
     // Sesión vencida o cerrada en otro lado: se vuelve a pedir el ingreso, sin tocar los datos locales.
