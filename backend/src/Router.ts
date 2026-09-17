@@ -7,7 +7,7 @@ import { cambiarClave, login, salir, sesionValida } from './Auth';
 import { obtenerCatalogos, catalogos } from './Catalogos';
 import { organizar, transcribir } from './Entrada';
 import { geminiConfigurado, modelo } from './Gemini';
-import { crear, guardar, listar, obtener } from './HC';
+import { cambiarPlantilla, crear, guardar, listar, obtener } from './HC';
 import { conLock, leerRegistro, registrar } from './Repo';
 import { revisar } from './Revisar';
 import { listarDecisiones, decidir } from './Decisiones';
@@ -36,6 +36,7 @@ const MANEJADORES: Manejadores = {
   'hc.get': obtener,
   'hc.crear': crear,
   'hc.guardar': guardar,
+  'hc.plantilla': cambiarPlantilla,
   'entrada.transcribir': transcribir,
   'entrada.organizar': organizar,
   'hc.revisar': revisar,
@@ -48,7 +49,7 @@ const MANEJADORES: Manejadores = {
 };
 
 /** Acciones que escriben: se protegen con opId (el resultado queda en caché y en Registro). */
-const IDEMPOTENTES = new Set<Accion>(['hc.crear', 'hc.guardar', 'entrada.transcribir', 'entrada.organizar', 'entrada.laboratorio', 'revision.decidir']);
+const IDEMPOTENTES = new Set<Accion>(['hc.crear', 'hc.guardar', 'hc.plantilla', 'entrada.transcribir', 'entrada.organizar', 'entrada.laboratorio', 'revision.decidir']);
 /** Solo leen pero tardan (Gemini): si la respuesta se pierde, el reintento recoge lo ya calculado (solo en caché). */
 const RECUPERABLES = new Set<Accion>(['entrada.redactar', 'hc.revisar']);
 

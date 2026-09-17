@@ -14,6 +14,7 @@ import type {
   ListarPayload,
   ListarRespuesta,
   ObtenerRespuesta,
+  PlantillaPayload,
 } from '../../shared/types';
 import { validarValor } from '../../shared/valores';
 import { catalogos } from './Catalogos';
@@ -104,6 +105,29 @@ export function crear(p: CrearPayload): CrearRespuesta {
     };
     escribirFilaHC(siguienteFilaHC(), cab, mapa);
     registrar([{ tipo: 'auditoria', dni, episodio, contenido: 'crear' }]);
+    return { fila: mapaAFila(mapa) };
+  });
+}
+
+/**
+ * Cambia la plantilla de una historia ya creada. Los datos se guardan por campo_id, así que no se
+ * pierde nada: los campos que la otra plantilla no tiene quedan guardados, sin mostrarse.
+ */
+export function cambiarPlantilla(p: PlantillaPayload): CrearRespuesta {
+  const dni = dniValido(p.dni);
+  const ep = requerirEpisodio(p.episodio);
+  const plantilla = plantillaValida(String(p.plantilla ?? ''));
+  return conLock(() => {
+    const cab = asegurarColumnas([]);
+    const n = buscarFila(dni, ep, cab);
+    if (n === null) throw new ErrorApi('No existe esa historia', 'payload');
+    const mapa = leerFilaHC(n, cab);
+    if (plantillaGuardada(mapa.plantilla) !== plantilla) {
+      mapa.plantilla = plantilla;
+      mapa.actualizado_en = ahora();
+      escribirFilaHC(n, cab, mapa);
+      registrar([{ tipo: 'auditoria', dni, episodio: ep, contenido: `plantilla: ${plantilla}` }]);
+    }
     return { fila: mapaAFila(mapa) };
   });
 }

@@ -12,6 +12,7 @@ import { PanelRedacciones } from '../components/Redacciones';
 import { PanelSindromes } from '../components/Sindromes';
 import { PanelVigilar } from '../components/Vigilar';
 import { edadLegible } from '../../../shared/contexto';
+import { PLANTILLAS } from '../../../shared/plantillas';
 import { CAMPO_EVOLUCIONES, CAMPO_LABORATORIO, leerEvoluciones, leerLaboratorio } from '../../../shared/seguimiento';
 import { revisarEscritura } from '../lib/escritura';
 import { PanelConflictos, PanelDudas } from '../components/Paneles';
@@ -20,7 +21,7 @@ import { enLinea, mensaje } from '../lib/api';
 import { db, plantillaDe, partirClave } from '../lib/db';
 import type { HistoriaLocal } from '../lib/db';
 import { compartirWord, descargarWord, puedeCompartirArchivos } from '../lib/docx/descargar';
-import { borrarLocal, calcularCompletitud, camposVisibles, editar, nombrePaciente } from '../lib/historia';
+import { borrarLocal, calcularCompletitud, camposVisibles, cambiarPlantillaHistoria, editar, nombrePaciente } from '../lib/historia';
 import { ir, rutas } from '../lib/router';
 import { useCatalogo } from '../lib/schema';
 import { descargarHistoria } from '../lib/sync';
@@ -139,6 +140,7 @@ function Cabecera({ h, porcentaje }: { h: HistoriaLocal; porcentaje: number }) {
         {v['ea.sintoma_guia'] && <div className="sub">Síntoma guía: {v['ea.sintoma_guia']}</div>}
       </div>
       <BarraProgreso valor={porcentaje} etiqueta="Obligatorios" />
+      <SelectorPlantilla h={h} />
       <div className="fila">
         <span className="insignia">{porcentaje}% obligatorios</span>
         {h.estado === 'completa' && <span className="insignia verde">Completa</span>}
@@ -148,6 +150,44 @@ function Cabecera({ h, porcentaje }: { h: HistoriaLocal; porcentaje: number }) {
       <a className="boton chico solo-escritorio" href={rutas.historia(h.clave)}>
         Resumen y acciones
       </a>
+    </div>
+  );
+}
+
+/**
+ * Con qué plantilla se llena esta historia: decide qué secciones y campos pide el formulario.
+ * Se puede cambiar en cualquier momento; los datos se guardan por campo y no se pierden.
+ */
+function SelectorPlantilla({ h }: { h: HistoriaLocal }) {
+  const actual = plantillaDe(h);
+  const [cambiando, setCambiando] = useState('');
+  const cambiar = (p: { id: string; nombre: string }) => {
+    if (p.id === actual || cambiando) return;
+    setCambiando(p.id);
+    cambiarPlantillaHistoria(h, p.id)
+      .then(() => avisar(`Esta historia se llena ahora con la ${p.nombre.toLowerCase()}. Lo ya escrito se conserva.`, 'exito'))
+      .catch((e) => avisar(`No se pudo cambiar la plantilla: ${mensaje(e)}`, 'error'))
+      .finally(() => setCambiando(''));
+  };
+  return (
+    <div className="pila" style={{ gap: 4 }}>
+      <span className="sub">Se llena con la plantilla</span>
+      <div className="chips" role="radiogroup" aria-label="Plantilla de la historia">
+        {PLANTILLAS.map((p) => (
+          <button
+            key={p.id}
+            type="button"
+            role="radio"
+            aria-checked={actual === p.id}
+            disabled={!!cambiando}
+            className={`chip ${actual === p.id ? 'activo' : ''}`}
+            onClick={() => cambiar(p)}
+            title={p.descripcion}
+          >
+            {cambiando === p.id ? '…' : p.nombre}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }

@@ -174,6 +174,13 @@ export interface CrearRespuesta {
   fila: FilaHC;
 }
 
+/** Cambiar la plantilla de una historia ya creada, sin tocar sus datos. */
+export interface PlantillaPayload {
+  dni: string;
+  episodio: number;
+  plantilla: string;
+}
+
 export interface CampoGuardar {
   id: string;
   valor: string;
@@ -372,6 +379,7 @@ export interface ApiMapa {
   'hc.get': [ClavePayload, ObtenerRespuesta];
   'hc.crear': [CrearPayload, CrearRespuesta];
   'hc.guardar': [GuardarPayload, GuardarRespuesta];
+  'hc.plantilla': [PlantillaPayload, CrearRespuesta];
   'entrada.transcribir': [TranscribirPayload, TranscribirRespuesta];
   'entrada.organizar': [OrganizarPayload, OrganizarRespuesta];
   'hc.revisar': [RevisarPayload, RevisarRespuesta];

@@ -936,6 +936,25 @@ await prueba('cada historia guarda su plantilla y por defecto usa la detallada',
   assert.equal(vieja.filas.find((f) => f.dni === dni2 && f.episodio === ep2)?.plantilla, 'fmh');
   hc.getRange(2, col, 1, 1).setValues([[antes]]);
 });
+await prueba('una historia ya creada puede cambiar de plantilla sin perder lo escrito', () => {
+  const a = ok(post<{ fila: { episodio: number } }>('hc.crear', { dni: '40123456', plantilla: 'fmh' }, 'op-cambiar-plantilla-1'));
+  const episodio = a.fila.episodio;
+  ok(
+    post('hc.guardar', {
+      dni: '40123456',
+      episodio,
+      version: 1,
+      campos: [{ id: 'ea.sintoma_guia', valor: 'Cefalea', base: '' }],
+    }, 'op-cambiar-plantilla-2'),
+  );
+  const r = ok(post<{ fila: { plantilla: string } }>('hc.plantilla', { dni: '40123456', episodio, plantilla: 'ochoa' }));
+  assert.equal(r.fila.plantilla, 'ochoa');
+  const despues = ok(post<{ fila: { plantilla: string; valores: Record<string, string> } }>('hc.get', { dni: '40123456', episodio }));
+  assert.equal(despues.fila.plantilla, 'ochoa');
+  assert.equal(despues.fila.valores['ea.sintoma_guia'], 'Cefalea', 'los datos se guardan por campo, no por plantilla');
+  const sinFila = post('hc.plantilla', { dni: '40123456', episodio: 99, plantilla: 'ochoa' });
+  assert.equal(sinFila.ok, false, 'una historia que no existe no cambia de plantilla');
+});
 await prueba('el formulario solo muestra los campos de su plantilla', () => {
   const soloFmh = armarVista({ version: 'x', esquema, opciones, knowledge: [] }, 'fmh');
   assert.equal(soloFmh.plantilla, 'fmh');

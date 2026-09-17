@@ -4,7 +4,7 @@ import { recalcular } from '../../../shared/calc';
 import { hoyISO } from '../../../shared/fechas';
 import { VERSION_MIGRACION, migrarValores } from '../../../shared/migraciones';
 import { CAMPOS_CLAVE, esVisible } from '../../../shared/secciones';
-import { PLANTILLA_POR_DEFECTO } from '../../../shared/plantillas';
+import { PLANTILLA_POR_DEFECTO, plantillaGuardada, plantillaValida } from '../../../shared/plantillas';
 import type { Campo, FilaHC, OrganizarRespuesta } from '../../../shared/types';
 import { estaLleno } from '../../../shared/valores';
 import { leerAjustes } from './ajustes';
@@ -97,6 +97,19 @@ export async function crearHistoria(dni: string, cat: CatalogoVista, plantilla =
   await db.historias.put(h);
   programarSync();
   return h.clave;
+}
+
+/**
+ * Cambia la plantilla con la que se llena una historia ya creada. Los valores se guardan por
+ * campo_id, así que nada se borra: los campos que la otra plantilla no tiene quedan guardados.
+ */
+export async function cambiarPlantillaHistoria(h: HistoriaLocal, plantilla: string): Promise<void> {
+  const nueva = plantillaValida(plantilla);
+  if (nueva === plantillaGuardada(h.plantilla)) return;
+  // Si la historia todavía no llegó al servidor, viaja con ella en el primer guardado.
+  if (h.version > 0) await llamar('hc.plantilla', { dni: h.dni, episodio: h.episodio, plantilla: nueva });
+  await db.historias.update(h.clave, { plantilla: nueva });
+  programarSync();
 }
 
 function aplicarCambio(h: HistoriaLocal, id: string, valor: string): boolean {
