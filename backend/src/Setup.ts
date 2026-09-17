@@ -49,7 +49,7 @@ function carpeta(): GoogleAppsScript.Drive.Folder {
     try {
       f = DriveApp.getFolderById(id);
     } catch {
-      throw new ErrorApi(`No se puede abrir la carpeta de Drive ${id}: revisa el enlace y que sea de esta cuenta`, 'config');
+      throw new ErrorApi(`No se puede abrir la carpeta de Drive ${id}: revisa el enlace y compártela como Editor con la cuenta que ejecuta este script`, 'config');
     }
   } else {
     f = DriveApp.createFolder('HC App');

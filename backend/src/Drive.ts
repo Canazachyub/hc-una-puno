@@ -20,9 +20,9 @@ export function configurado(clave: 'hoja' | 'carpeta'): string {
 }
 
 export const AVISO_CARPETA_PUBLICA =
-  'La carpeta de Drive está compartida con cualquiera que tenga el enlace y ahí van audios, fotos y respaldos de pacientes. En Drive: clic derecho → Compartir → Acceso general → «Restringido». Luego vuelve a abrir esta página.';
+  'La carpeta de Drive está compartida con cualquiera que tenga el enlace y ahí van audios, fotos y respaldos de pacientes. En Drive: clic derecho → Compartir → Acceso general → «Restringido». Luego vuelve a ejecutar setup (o abre la página de configuración).';
 export const AVISO_HOJA_PUBLICA =
-  'La hoja de cálculo está compartida con cualquiera que tenga el enlace y guarda nombres y DNI de pacientes. En la hoja: Compartir → Acceso general → «Restringido». Luego vuelve a abrir esta página.';
+  'La hoja de cálculo está compartida con cualquiera que tenga el enlace y guarda nombres y DNI de pacientes. En la hoja: Compartir → Acceso general → «Restringido». Luego vuelve a ejecutar setup (o abre la página de configuración).';
 
 /** Compartido con cualquiera que tenga el enlace, o público en la web. */
 export function esPublico(item: object): boolean {
