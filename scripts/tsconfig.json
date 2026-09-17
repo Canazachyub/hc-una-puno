@@ -1,0 +1,8 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2023", "DOM"],
+    "types": ["node"]
+  },
+  "include": ["./*.ts", "../local","../shared", "../web/src/lib/vista.ts", "../web/src/lib/texto.ts", "../web/src/lib/docx/builder.ts", "../web/src/lib/docx/estructura.ts"]
+}

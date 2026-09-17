@@ -1,0 +1,34 @@
+{
+  "name": "hc-app",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Historia clínica al pie de la cama · FMH UNA Puno",
+  "type": "module",
+  "workspaces": [
+    "web",
+    "backend"
+  ],
+  "scripts": {
+    "local": "tsx local/servidor.ts",
+    "dev": "npm run dev -w web",
+    "build": "npm run build -w web",
+    "typecheck": "tsc -p web && tsc -p backend && tsc -p scripts",
+    "test": "tsx scripts/pruebas.ts",
+    "backend:build": "npm run build -w backend",
+    "backend:push": "npm run push -w backend",
+    "kb:build": "tsx scripts/kb-build.ts",
+    "migrar": "tsx scripts/migrar.ts",
+    "desplegar": "tsx scripts/desplegar-en-linea.ts",
+    "membrete": "py scripts/extraer-membrete.py",
+    "word:ejemplo": "tsx scripts/word-ejemplo.ts",
+    "mapeo": "tsx scripts/mapeo.ts && py scripts/mapeo_excel.py"
+  },
+  "dependencies": {
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.3",
+    "tsx": "^4.23.13",
+    "typescript": "~5.9.3"
+  }
+}

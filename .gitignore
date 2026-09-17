@@ -1,0 +1,20 @@
+node_modules/
+dist/
+dist-local/
+# Datos de pacientes, respaldos, audios y certificados del servidor local
+datos/
+*.log
+.env
+.env.local
+.clasp.json
+.deployment
+.clasprc.json
+seed/knowledge.csv
+salida/
+
+# Excel abierto (bloqueo) y generados; se regeneran con npm run mapeo
+~$*
+docs/*.xlsx
+# Plantilla de la facultad: solo se usa para extraer el membrete (ya está en web/public)
+plantilla-historia-clinica.pdf
+__pycache__/

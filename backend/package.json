@@ -1,0 +1,17 @@
+{
+  "name": "hc-backend",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "push": "node build.mjs && clasp push --force",
+    "deploy": "node build.mjs && clasp push --force && node desplegar.mjs",
+    "logs": "clasp logs"
+  },
+  "devDependencies": {
+    "@google/clasp": "^3.4.1",
+    "@types/google-apps-script": "^2.0.13",
+    "esbuild": "^0.28.2"
+  }
+}
