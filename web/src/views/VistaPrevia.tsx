@@ -157,7 +157,6 @@ export function VistaPrevia({ clave }: { clave: string }) {
                         <span className="opciones">
                           {f.opciones.map((o) => (
                             <span key={o.texto} className={o.marcada ? 'marcada' : ''}>
-                              {o.marcada && <b>X </b>}
                               {o.texto}
                             </span>
                           ))}

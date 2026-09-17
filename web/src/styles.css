@@ -1613,8 +1613,23 @@ label.campo-ajuste {
   color: var(--texto-2);
 }
 
+/* La opción elegida va tachada en equis, de esquina a esquina, como se marca en el papel. */
 .hoja-forma .opciones .marcada {
-  border: 1.5px solid var(--texto);
+  position: relative;
+  border: 1px solid var(--texto);
   color: var(--texto);
   font-weight: 700;
+  padding: 0 8px;
+}
+
+.hoja-forma .opciones .marcada::before,
+.hoja-forma .opciones .marcada::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, transparent calc(50% - 0.6px), var(--texto) calc(50% - 0.6px), var(--texto) calc(50% + 0.6px), transparent calc(50% + 0.6px));
+}
+
+.hoja-forma .opciones .marcada::after {
+  background: linear-gradient(to bottom left, transparent calc(50% - 0.6px), var(--texto) calc(50% - 0.6px), var(--texto) calc(50% + 0.6px), transparent calc(50% + 0.6px));
 }
