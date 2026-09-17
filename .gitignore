@@ -18,3 +18,5 @@ docs/*.xlsx
 # Plantilla de la facultad: solo se usa para extraer el membrete (ya está en web/public)
 plantilla-historia-clinica.pdf
 __pycache__/
+# Documentos de la facultad: no se publican
+*.docx

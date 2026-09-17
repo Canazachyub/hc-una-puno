@@ -1,6 +1,7 @@
 // Vista previa del Word: lo mismo que se imprimirá, con cada parte enlazada a su campo.
 
 import { useLiveQuery } from 'dexie-react-hooks';
+import { PLANTILLAS } from '../../../shared/plantillas';
 import { useMemo, useState } from 'react';
 import { CAMPO_EVOLUCIONES, CAMPO_LABORATORIO } from '../../../shared/seguimiento';
 import { Girador } from '../components/Basicos';
@@ -18,8 +19,10 @@ import { useCatalogo } from '../lib/schema';
 const LINEA = '______________________________';
 
 export function VistaPrevia({ clave }: { clave: string }) {
-  const cat = useCatalogo();
   const h = useLiveQuery(() => db.historias.get(clave), [clave]);
+  // La historia se llenó con una plantilla, pero el Word puede salir con cualquiera de las dos.
+  const [formato, setFormato] = useState('');
+  const cat = useCatalogo(formato || h?.plantilla);
   const [op, setOp] = useState<OpcionesDocumento>(opcionWord);
   const [generando, setGenerando] = useState(false);
   const elementos = useMemo(() => (h ? armarDocumento(h, cat, opcionesCompletas(h, op)) : []), [h, cat, op]);
@@ -163,6 +166,21 @@ export function VistaPrevia({ clave }: { clave: string }) {
       </div>
 
       <div className="tarjeta pila">
+        <div className="chips" role="radiogroup" aria-label="Plantilla del Word">
+          {PLANTILLAS.map((p) => (
+            <button
+              key={p.id}
+              type="button"
+              role="radio"
+              aria-checked={(formato || h.plantilla) === p.id}
+              className={`chip ${(formato || h.plantilla) === p.id ? 'activo' : ''}`}
+              onClick={() => setFormato(p.id)}
+              title={p.descripcion}
+            >
+              {p.nombre}
+            </button>
+          ))}
+        </div>
         <div className="chips" role="radiogroup" aria-label="Campos vacíos">
           <button type="button" role="radio" aria-checked={op.vacios === 'lineas'} className={`chip ${op.vacios === 'lineas' ? 'activo' : ''}`} onClick={() => cambiarOpcion('lineas')}>
             Con líneas para llenar a mano

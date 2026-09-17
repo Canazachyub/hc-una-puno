@@ -3,7 +3,8 @@
 // Cada petición es una ejecución nueva de Apps Script: lo leído se guarda en la caché del script
 // para no volver a leer la hoja en cada una (con la hoja, una petición pasaba de 30 segundos y Google perdía la respuesta).
 
-import { filasAEsquema, filasAKnowledge, filasAOpciones, indexarListas } from '../../shared/catalogo';
+import { camposDePlantilla, filasAEsquema, filasAKnowledge, filasAOpciones, indexarListas } from '../../shared/catalogo';
+import { plantillaValida } from '../../shared/plantillas';
 import type { Campo, CatalogosPayload, CatalogosRespuesta, KnowledgeFila, KnowledgeIndice, Opcion } from '../../shared/types';
 import { borrarGrande, guardarGrande, leerGrande } from './Cache';
 import { HOJAS, leerTabla } from './Repo';
@@ -69,6 +70,13 @@ export function catalogos(): Cargado {
   }
   memo = { ...g, listas: indexarListas(g.opciones) };
   return memo;
+}
+
+/** Los campos de una plantilla; si la hoja aún no la tiene, todos los que haya. */
+export function camposDe(plantilla: string): Campo[] {
+  const { esquema } = catalogos();
+  const propios = camposDePlantilla(esquema, plantillaValida(plantilla));
+  return propios.length ? propios : esquema;
 }
 
 export function knowledge(): KnowledgeFila[] {

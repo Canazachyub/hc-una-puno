@@ -77,3 +77,19 @@ Intervalo PR,ecg,pr|intervalo pr,segundos,,,0.12,0.2,Intervalo PR corto,1,Interv
 Complejo QRS,ecg,qrs|complejo qrs|duracion qrs|duracion del qrs,segundos,,,,0.11,,,Complejo QRS ensanchado,1,,,,,,,08j
 Intervalo QT,ecg,qt|intervalo qt,segundos,,,0.34,0.44,Intervalo QT corto,1,Intervalo QT prolongado,1,,,,,,,08j
 Eje eléctrico del complejo QRS,ecg,eje|eje electrico|eje qrs|eje del qrs|aqrs,grados,,,0,90,Desviación del eje a la izquierda,1,Desviación del eje a la derecha,1,,,,,,,08j
+Abastonados,hemograma,abastonados|bastones|bandas|neutrofilos en banda|cayados|baciliformes|no segmentados,% de los leucocitos,,,0,5,,,Desviación a la izquierda,2,,,,,,,07e; 07f; 09d
+Linfocitos,hemograma,linfocitos|linf|linfo|lin %|linfocitos %,% de los leucocitos,,,20,40,Linfopenia,1,Linfocitosis,1,,,,,,,fuera de notas; 05e
+Monocitos,hemograma,monocitos|mono|mon %|monocitos %,% de los leucocitos,,,2,8,Monocitopenia,1,Monocitosis,1,,,,,,,fuera de notas; 05e
+Eosinófilos,hemograma,eosinofilos|eos|eo %|eosinofilos %,% de los leucocitos,,,1,4,,,Eosinofilia,1,,,,,,,fuera de notas
+Basófilos,hemograma,basofilos|bas|baso|ba %|basofilos %,% de los leucocitos,,,0,1,,,Basofilia,1,,,,,,,fuera de notas
+Tiempo de coagulación,coagulacion,tiempo de coagulacion|tc|tpo de coagulacion,minutos,,,5,10,,,Tiempo de coagulación prolongado,2,,,,,,,fuera de notas; 09c
+Tiempo de sangría,coagulacion,tiempo de sangria|ts|tpo de sangria|tiempo de sangrado,minutos,,,1,3,,,Tiempo de sangría prolongado,2,,,,,,,fuera de notas; 09c
+Tiempo de protrombina,coagulacion,tiempo de protrombina|tp|tpo de protrombina|protrombina,segundos,,,11,14,,,Tiempo de protrombina prolongado,2,,,,,,,09a; 09c
+Tiempo de tromboplastina parcial activada,coagulacion,tiempo de tromboplastina|ttp|ttpa|aptt|tiempo de tromboplastina parcial|tiempo de tromboplastina parcial activada,segundos,,,25,35,,,Tiempo de tromboplastina prolongado,2,,,,,,,fuera de notas
+Dímero D,coagulacion,dimero d|dimero-d|dd|d dimero,ng/ml,,,,500,,,Dímero D elevado,2,,,,,,,fuera de notas; 08i
+Ácido úrico,bioquimico,acido urico|au|uricemia|urato|uratos,mg/dl,M,,3.5,7.2,Ácido úrico disminuido,1,Hiperuricemia,1,,,,,,,fuera de notas; 08g; 10b
+Ácido úrico,bioquimico,acido urico|au|uricemia|urato|uratos,mg/dl,F,,2.6,6.0,Ácido úrico disminuido,1,Hiperuricemia,1,,,,,,,fuera de notas; 08g; 10b
+Células epiteliales en orina,orina,celulas epiteliales|celulas epiteliales en orina|cel epiteliales|epiteliales,por campo,,,,5,,,"Células epiteliales aumentadas, posible contaminación de la muestra",1,,,,,,,fuera de notas; 10b
+Gérmenes en orina,orina,germenes|germenes en orina|bacterias|bacterias en orina|flora bacteriana,por campo,,,,,,,Bacteriuria,2,,,,,,,10b; FISIOPATOLOGIA 2026/esquemas/Esquema_29_ITU.md
+Reacción de Vidal,serologia,reaccion de vidal|vidal|aglutinaciones febriles|serologia para fiebre tifoidea,título,,,,,,,"Reacción de Vidal reactiva, compatible con fiebre tifoidea",2,,,,,,,01
+Proteína C reactiva,inflamacion,pcr|proteina c reactiva|pcr cuantitativa|reactante de fase aguda,mg/L,,,,5,,,Proteína C reactiva elevada,1,50,Elevación marcada de la proteína C reactiva,2,,,,09f

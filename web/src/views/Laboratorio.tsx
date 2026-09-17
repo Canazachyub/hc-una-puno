@@ -112,8 +112,8 @@ function Revision({ h, filas, setFilas, fecha, setFecha, advertencias, guardar, 
 }
 
 export function Laboratorio({ clave }: { clave: string }) {
-  const cat = useCatalogo();
   const h = useLiveQuery(() => db.historias.get(clave), [clave]);
+  const cat = useCatalogo(h?.plantilla);
   const archivo = useRef<HTMLInputElement>(null);
   const [leyendo, setLeyendo] = useState(false);
   const [filas, setFilas] = useState<Fila[] | null>(null);

@@ -4,6 +4,7 @@
 // (Extensiones → Apps Script); si no, se crean. Si alguna está compartida con cualquiera, no se usa.
 
 import esquemaCsv from '../../seed/esquema.csv';
+import esquemaOchoaCsv from '../../seed/esquema-ochoa.csv';
 import opcionesCsv from '../../seed/opciones.csv';
 import { parsearCsv } from '../../shared/csv';
 import { filasAEsquema } from '../../shared/catalogo';
@@ -29,6 +30,13 @@ import { AVISO_CARPETA_PUBLICA, AVISO_HOJA_PUBLICA, configurado, esPublico } fro
 import { ErrorApi, MODELO_POR_DEFECTO, PROPS, prop, setProp, uuid } from './Util';
 
 const CARPETA_RESPALDOS = 'Respaldos';
+
+/** Las filas de Esquema de todas las plantillas, con una sola cabecera. */
+function filasEsquema(): string[][] {
+  const [cabecera, ...filas] = parsearCsv(esquemaCsv);
+  const otras = parsearCsv(esquemaOchoaCsv).slice(1);
+  return [cabecera, ...filas, ...otras].filter((f) => f.some((c) => c !== ''));
+}
 const DIAS_RETENCION = 30;
 
 function asegurarHoja(ss: GoogleAppsScript.Spreadsheet.Spreadsheet, nombre: string, cabecera: string[]): void {
@@ -108,8 +116,9 @@ export function setup(): InfoSetup {
   if (ssId !== prop(PROPS.SPREADSHEET_ID)) setProp(PROPS.SPREADSHEET_ID, ssId);
   usarLibro(ss);
 
-  const esquema = filasAEsquema(parsearCsv(esquemaCsv));
-  asegurarHoja(ss, HOJAS.HC, [...COLUMNAS_CONTROL, ...esquema.map((c) => c.campo_id)]);
+  const esquema = filasAEsquema(filasEsquema());
+  // Un campo que está en las dos plantillas es una sola columna.
+  asegurarHoja(ss, HOJAS.HC, [...COLUMNAS_CONTROL, ...new Set(esquema.map((c) => c.campo_id))]);
   asegurarHoja(ss, HOJAS.ESQUEMA, CABECERA_ESQUEMA);
   asegurarHoja(ss, HOJAS.OPCIONES, CABECERA_OPCIONES);
   asegurarHoja(ss, HOJAS.KNOWLEDGE, [...COLUMNAS_KNOWLEDGE]);
@@ -119,7 +128,7 @@ export function setup(): InfoSetup {
   if (hoja1 && hoja1.getLastRow() === 0 && ss.getSheets().length > 1) ss.deleteSheet(hoja1);
 
   // Las semillas solo se importan si la hoja está vacía, para no pisar lo que edites a mano.
-  if (hoja(HOJAS.ESQUEMA).getLastRow() <= 1) escribirTabla(HOJAS.ESQUEMA, parsearCsv(esquemaCsv));
+  if (hoja(HOJAS.ESQUEMA).getLastRow() <= 1) escribirTabla(HOJAS.ESQUEMA, filasEsquema());
   if (hoja(HOJAS.OPCIONES).getLastRow() <= 1) escribirTabla(HOJAS.OPCIONES, parsearCsv(opcionesCsv));
   asegurarColumnas([...esquema.map((c) => c.campo_id), ...CAMPOS_SISTEMA]);
   if (!prop(PROP_SEMILLAS)) setProp(PROP_SEMILLAS, SEMILLA_VERSION);
@@ -147,9 +156,9 @@ export function setup(): InfoSetup {
 /** Sobrescribe Esquema y Opciones con los CSV semilla del repositorio. */
 export function reimportarSemillas(): void {
   conLock(() => {
-    escribirTabla(HOJAS.ESQUEMA, parsearCsv(esquemaCsv));
+    escribirTabla(HOJAS.ESQUEMA, filasEsquema());
     escribirTabla(HOJAS.OPCIONES, parsearCsv(opcionesCsv));
-    asegurarColumnas([...filasAEsquema(parsearCsv(esquemaCsv)).map((c) => c.campo_id), ...CAMPOS_SISTEMA]);
+    asegurarColumnas([...filasAEsquema(filasEsquema()).map((c) => c.campo_id), ...CAMPOS_SISTEMA]);
   });
   setProp(PROP_SEMILLAS, SEMILLA_VERSION);
   olvidarCatalogos();

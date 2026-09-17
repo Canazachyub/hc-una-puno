@@ -18,7 +18,7 @@ export type TipoCampo = (typeof TIPOS_CAMPO)[number];
 export const TIPOS_OPCION = ['opcion', 'escala', 'frase'] as const;
 export type TipoOpcion = (typeof TIPOS_OPCION)[number];
 
-/** Una fila de la hoja `Esquema`. */
+/** Una fila de la hoja `Esquema`. Cada plantilla trae sus propias filas; los datos se guardan por `campo_id`. */
 export interface Campo {
   campo_id: string;
   seccion: string;
@@ -30,6 +30,10 @@ export interface Campo {
   valor_normal: string;
   reglas: string[];
   ayuda_kb: string;
+  /** Plantilla de historia clínica a la que pertenece esta fila. */
+  plantilla: string;
+  /** Título del grupo bajo el que va el campo en el formulario y en el Word. */
+  subtitulo: string;
 }
 
 /** Una fila de la hoja `Opciones`. */
@@ -64,6 +68,7 @@ export interface Catalogos {
 export const COLUMNAS_CONTROL = [
   'dni',
   'episodio',
+  'plantilla',
   'estado',
   'completitud',
   'version',
@@ -96,6 +101,7 @@ export type EstadoHC = 'borrador' | 'completa';
 export interface FilaHC {
   dni: string;
   episodio: number;
+  plantilla: string;
   estado: EstadoHC;
   completitud: number;
   version: number;
@@ -108,6 +114,7 @@ export interface FilaHC {
 export interface ResumenHC {
   dni: string;
   episodio: number;
+  plantilla: string;
   estado: EstadoHC;
   completitud: number;
   version: number;
@@ -160,6 +167,7 @@ export interface ObtenerRespuesta {
 
 export interface CrearPayload {
   dni: string;
+  plantilla?: string;
   valores?: Record<string, string>;
 }
 export interface CrearRespuesta {
@@ -175,6 +183,8 @@ export interface CampoGuardar {
 export interface GuardarPayload {
   dni: string;
   episodio: number;
+  /** Solo se usa si la fila aún no existe (historia creada sin señal). */
+  plantilla?: string;
   version: number;
   campos: CampoGuardar[];
   estado?: EstadoHC;
@@ -213,6 +223,8 @@ export interface OrganizarPayload {
   dni: string;
   episodio: number;
   seccion: string;
+  /** Plantilla de la historia: decide qué campos existen. */
+  plantilla?: string;
   /** Si se indica, solo se devuelve ese campo (pulir la redacción de un campo). */
   campo_objetivo?: string;
   /** Valores ya registrados en el dispositivo (pueden ir por delante del servidor). */
@@ -250,6 +262,7 @@ export interface OrganizarRespuesta {
 export interface RevisarPayload {
   dni: string;
   episodio: number;
+  plantilla?: string;
   valores: Record<string, string>;
 }
 export interface RevisarRespuesta {
@@ -322,6 +335,7 @@ export type TipoRedaccion = 'presentacion' | 'epicrisis' | 'evolucion';
 export interface RedactarPayload {
   dni: string;
   episodio: number;
+  plantilla?: string;
   tipo: TipoRedaccion;
   /** Valores de la historia, incluidas las columnas de sistema (evoluciones y laboratorio). */
   valores: Record<string, string>;

@@ -4,6 +4,7 @@ import { recalcular } from '../../../shared/calc';
 import { hoyISO } from '../../../shared/fechas';
 import { VERSION_MIGRACION, migrarValores } from '../../../shared/migraciones';
 import { CAMPOS_CLAVE, esVisible } from '../../../shared/secciones';
+import { PLANTILLA_POR_DEFECTO } from '../../../shared/plantillas';
 import type { Campo, FilaHC, OrganizarRespuesta } from '../../../shared/types';
 import { estaLleno } from '../../../shared/valores';
 import { leerAjustes } from './ajustes';
@@ -58,7 +59,7 @@ function valoresIniciales(): Record<string, string> {
 }
 
 export function historiaDesdeFila(fila: FilaHC): HistoriaLocal {
-  const h = historiaVacia(fila.dni, fila.episodio);
+  const h = historiaVacia(fila.dni, fila.episodio, fila.plantilla);
   return {
     ...h,
     valores: { ...fila.valores, 'fil.dni': fila.dni },
@@ -73,11 +74,11 @@ export function historiaDesdeFila(fila: FilaHC): HistoriaLocal {
 }
 
 /** Crea una historia. Con señal, el servidor asigna el episodio; sin señal, se asigna aquí. */
-export async function crearHistoria(dni: string, cat: CatalogoVista): Promise<string> {
+export async function crearHistoria(dni: string, cat: CatalogoVista, plantilla = PLANTILLA_POR_DEFECTO): Promise<string> {
   const iniciales = valoresIniciales();
   if (enLinea()) {
     try {
-      const { fila } = await llamar('hc.crear', { dni, valores: iniciales });
+      const { fila } = await llamar('hc.crear', { dni, plantilla, valores: iniciales });
       const h = historiaDesdeFila(fila);
       h.completitud = calcularCompletitud(h.valores, cat).porcentaje;
       await db.historias.put(h);
@@ -89,7 +90,7 @@ export async function crearHistoria(dni: string, cat: CatalogoVista): Promise<st
   const locales = await db.historias.where('dni').equals(dni).toArray();
   const remotas = await db.remotas.where('dni').equals(dni).toArray();
   const episodio = Math.max(0, ...locales.map((h) => h.episodio), ...remotas.map((r) => r.episodio)) + 1;
-  const h = historiaVacia(dni, episodio);
+  const h = historiaVacia(dni, episodio, plantilla);
   h.valores = { ...h.valores, ...iniciales };
   h.sucio = Object.keys(iniciales);
   h.completitud = calcularCompletitud(h.valores, cat).porcentaje;

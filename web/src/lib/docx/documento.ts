@@ -90,6 +90,26 @@ function soloRegistrado(elementos: Elemento[]): Elemento[] {
   });
 }
 
+/**
+ * Word de una plantilla sin estructura escrita a mano: se arma con el propio esquema
+ * (cada sección, sus subtítulos y sus campos, en el orden en que se llenan).
+ */
+function estructuraDelEsquema(cat: CatalogoVista): Bloque[] {
+  const bloques: Bloque[] = [];
+  for (const s of cat.secciones) {
+    bloques.push({ tipo: 'seccion', titulo: s.titulo.toUpperCase() });
+    let subtitulo = '';
+    for (const c of cat.porSeccion.get(s.id) ?? []) {
+      if (c.subtitulo && c.subtitulo !== subtitulo) bloques.push({ tipo: 'subtitulo', titulo: c.subtitulo });
+      subtitulo = c.subtitulo;
+      if (c.tipo === 'narrativa') bloques.push({ tipo: 'narrativa', id: c.campo_id });
+      else if (c.tipo === 'lista') bloques.push({ tipo: 'lista', id: c.campo_id, label: c.label });
+      else bloques.push({ tipo: 'campo', id: c.campo_id });
+    }
+  }
+  return bloques;
+}
+
 export function armarDocumento(h: DatosDocumento, cat: CatalogoVista, op: OpcionesDocumento): Elemento[] {
   const valores: Record<string, string> = { ...h.valores, 'fil.dni': h.dni };
   const impresos = new Set<string>(IDS_VITALES);
@@ -171,10 +191,14 @@ export function armarDocumento(h: DatosDocumento, cat: CatalogoVista, op: Opcion
         break;
     }
   };
-  ESTRUCTURA.forEach(bloque);
+  const estructura = cat.plantilla === 'fmh' ? ESTRUCTURA : estructuraDelEsquema(cat);
+  estructura.forEach(bloque);
 
   // Secciones que el esquema tenga y la estructura no conozca.
-  const conocidas = new Set(ESTRUCTURA.filter((b) => b.tipo === 'resto').map((b) => (b as { seccion: string }).seccion));
+  const conocidas = new Set(
+    estructura.flatMap((b) => (b.tipo === 'resto' ? [(b as { seccion: string }).seccion] : b.tipo === 'seccion' ? [] : [])),
+  );
+  if (cat.plantilla !== 'fmh') for (const s of cat.secciones) conocidas.add(s.id);
   for (const s of cat.secciones) {
     if (conocidas.has(s.id)) continue;
     out.push({ t: 'seccion', texto: s.titulo.toUpperCase() });

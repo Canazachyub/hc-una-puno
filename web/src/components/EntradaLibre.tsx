@@ -223,6 +223,7 @@ export function EntradaLibre({
             origen,
             dni: h.dni,
             episodio: h.episodio,
+            plantilla: h.plantilla,
             seccion,
             contexto: valoresClinicos(actual?.valores ?? h.valores),
           },

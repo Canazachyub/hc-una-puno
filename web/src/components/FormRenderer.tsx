@@ -3,7 +3,6 @@
 
 import { describirContexto } from '../../../shared/contexto';
 import { VARIABLES_UMBRAL, ambitosDeCampo, repartirAmbitos } from '../../../shared/guias';
-import { SUBTITULOS } from '../../../shared/secciones';
 import type { Campo, Duda, EscalaSugerida } from '../../../shared/types';
 import { estaLleno } from '../../../shared/valores';
 import type { HistoriaLocal } from '../lib/db';
@@ -32,9 +31,12 @@ type Grupo = { subtitulo: string | null; compacto: boolean; campos: Campo[] };
 
 function agrupar(campos: Campo[]): Grupo[] {
   const grupos: Grupo[] = [];
+  let anterior = '';
   for (const c of campos) {
     const compacto = c.tipo === 'numero' || c.tipo === 'calculado';
-    const subtitulo = SUBTITULOS[c.campo_id] ?? null;
+    // El título del grupo se escribe una sola vez, cuando cambia.
+    const subtitulo = c.subtitulo && c.subtitulo !== anterior ? c.subtitulo : null;
+    anterior = c.subtitulo;
     const ultimo = grupos[grupos.length - 1];
     if (ultimo && ultimo.compacto && compacto && !subtitulo) ultimo.campos.push(c);
     else grupos.push({ subtitulo, compacto, campos: [c] });

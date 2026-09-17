@@ -3,6 +3,7 @@
 
 import Dexie from 'dexie';
 import type { DBCore, DBCoreTable, Table } from 'dexie';
+import { PLANTILLA_POR_DEFECTO, plantillaValida } from '../../../shared/plantillas';
 import { aBase64, cifradoActivo, cifrar, deBase64, descifrar } from './cifrado';
 import type {
   Catalogos,
@@ -27,6 +28,8 @@ export interface HistoriaLocal {
   clave: string;
   dni: string;
   episodio: number;
+  /** Plantilla de historia clínica con la que se llena y se exporta. */
+  plantilla: string;
   valores: Record<string, string>;
   /** Último valor conocido del servidor por campo. */
   base: Record<string, string>;
@@ -227,12 +230,13 @@ export function partirClave(clave: string): { dni: string; episodio: number } {
   return { dni, episodio: Number(ep) || 1 };
 }
 
-export function historiaVacia(dni: string, episodio: number): HistoriaLocal {
+export function historiaVacia(dni: string, episodio: number, plantilla = PLANTILLA_POR_DEFECTO): HistoriaLocal {
   const t = new Date().toISOString();
   return {
     clave: claveDe(dni, episodio),
     dni,
     episodio,
+    plantilla: plantillaValida(plantilla),
     valores: { 'fil.dni': dni },
     base: {},
     sucio: [],

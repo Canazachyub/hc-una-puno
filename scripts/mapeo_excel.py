@@ -141,8 +141,10 @@ def reglas(lista):
 filas = []
 for c in m['campos']:
     filas.append([
+        c.get('plantilla_nombre', ''),
         AREA.get(c['area'], ''),
-        c['seccion_titulo'],
+        c.get('seccion_titulo_plantilla', c['seccion_titulo']),
+        c.get('subtitulo', ''),
         c['orden'],
         c['etiqueta'],
         c['campo_id'],
@@ -155,8 +157,8 @@ for c in m['campos']:
         sum(1 for g in m['guias'] if g['ambito'] in c['ambitos_guia']),
         f"mapeo/{ARCHIVO_AREA.get(c['area'], '')}",
     ])
-hoja('Campos', ['Área', 'Sección', 'Orden', 'Campo', 'Identificador', 'Tipo', 'Obligatorio', 'Lista de opciones', 'Valor normal (botón Normal)', 'Escalas que admite', 'Reglas de redacción', 'Entradas de guía', 'Documento'],
-     filas, [30, 26, 8, 30, 24, 18, 11, 24, 60, 30, 32, 10, 34])
+hoja('Campos', ['Plantilla', 'Área', 'Sección', 'Grupo', 'Orden', 'Campo', 'Identificador', 'Tipo', 'Obligatorio', 'Lista de opciones', 'Valor normal (botón Normal)', 'Escalas que admite', 'Reglas de redacción', 'Entradas de guía', 'Documento'],
+     filas, [26, 30, 30, 24, 8, 30, 24, 18, 11, 24, 60, 30, 32, 10, 34])
 
 # ---------- Opciones (listas de una opción o varias) ----------
 filas, colores = [], []

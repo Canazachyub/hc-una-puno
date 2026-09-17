@@ -8,6 +8,7 @@ import opcionesCsv from '../../../seed/opciones.csv?raw';
 import { filasAEsquema, filasAOpciones } from '../../../shared/catalogo';
 import { parsearCsv } from '../../../shared/csv';
 import type { Campo, Catalogos, KnowledgeIndice } from '../../../shared/types';
+import { PLANTILLA_POR_DEFECTO } from '../../../shared/plantillas';
 import { llamar } from './api';
 import { db } from './db';
 import { armarVista } from './vista';
@@ -29,24 +30,25 @@ export function catalogosSemilla(): Catalogos {
   return semilla;
 }
 
-let vistaCache: { fuente: Catalogos; vista: CatalogoVista } | null = null;
+const vistaCache = new Map<string, { fuente: Catalogos; vista: CatalogoVista }>();
 
-export function vistaDe(c: Catalogos): CatalogoVista {
-  if (vistaCache && (vistaCache.fuente === c || vistaCache.vista.version === c.version)) return vistaCache.vista;
-  const vista = armarVista(c);
-  vistaCache = { fuente: c, vista };
+export function vistaDe(c: Catalogos, plantilla = PLANTILLA_POR_DEFECTO): CatalogoVista {
+  const guardada = vistaCache.get(plantilla);
+  if (guardada && (guardada.fuente === c || guardada.vista.version === c.version)) return guardada.vista;
+  const vista = armarVista(c, plantilla);
+  vistaCache.set(plantilla, { fuente: c, vista });
   return vista;
 }
 
-export async function catalogoActual(): Promise<CatalogoVista> {
+export async function catalogoActual(plantilla = PLANTILLA_POR_DEFECTO): Promise<CatalogoVista> {
   const g = await db.catalogos.get('actual');
-  return vistaDe(g?.catalogos ?? catalogosSemilla());
+  return vistaDe(g?.catalogos ?? catalogosSemilla(), plantilla);
 }
 
-export function useCatalogo(): CatalogoVista {
+export function useCatalogo(plantilla = PLANTILLA_POR_DEFECTO): CatalogoVista {
   const guardado = useLiveQuery(() => db.catalogos.get('actual'), []);
   const c = guardado?.catalogos ?? catalogosSemilla();
-  return useMemo(() => vistaDe(c), [c]);
+  return useMemo(() => vistaDe(c, plantilla), [c, plantilla]);
 }
 
 /** Pide los catálogos a la hoja. Devuelve true si cambiaron. */

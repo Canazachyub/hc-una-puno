@@ -93,7 +93,7 @@ function Presentacion({ h, cat, cerrar }: { h: HistoriaLocal; cat: CatalogoVista
   const conGemini = async () => {
     setOcupado(true);
     try {
-      const r = await llamar('entrada.redactar', { dni: h.dni, episodio: h.episodio, tipo: 'presentacion', valores: { ...valoresClinicos(h.valores), 'seg.evoluciones': h.valores['seg.evoluciones'] ?? '', 'seg.laboratorio': h.valores['seg.laboratorio'] ?? '' }, extra: {} }, { timeoutMs: 180_000 });
+      const r = await llamar('entrada.redactar', { dni: h.dni, episodio: h.episodio, plantilla: h.plantilla, tipo: 'presentacion', valores: { ...valoresClinicos(h.valores), 'seg.evoluciones': h.valores['seg.evoluciones'] ?? '', 'seg.laboratorio': h.valores['seg.laboratorio'] ?? '' }, extra: {} }, { timeoutMs: 180_000 });
       setTexto(r.texto);
       guardarCache(h.clave, 'presentacion', r.texto);
     } catch (e) {
@@ -193,7 +193,7 @@ function Epicrisis({ h, cerrar }: { h: HistoriaLocal; cerrar: () => void }) {
   const redactar = async () => {
     setOcupado(true);
     try {
-      const r = await llamar('entrada.redactar', { dni: h.dni, episodio: h.episodio, tipo: 'epicrisis', valores: h.valores, extra: alta }, { timeoutMs: 180_000 });
+      const r = await llamar('entrada.redactar', { dni: h.dni, episodio: h.episodio, plantilla: h.plantilla, tipo: 'epicrisis', valores: h.valores, extra: alta }, { timeoutMs: 180_000 });
       setTexto(r.texto);
       guardarCache(h.clave, 'epicrisis', r.texto);
     } catch (e) {

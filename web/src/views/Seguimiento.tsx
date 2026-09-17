@@ -155,6 +155,7 @@ function Formulario({ h, cat, inicial, anterior, cerrar }: { h: HistoriaLocal; c
         {
           dni: h.dni,
           episodio: h.episodio,
+          plantilla: h.plantilla,
           tipo: 'evolucion',
           valores: { ...valoresClinicos(h.valores), [CAMPO_EVOLUCIONES]: h.valores[CAMPO_EVOLUCIONES] ?? '' },
           extra: { fecha: e.fecha, vitales, notas: [notas, e.subjetivo, e.objetivo].filter(Boolean).join('\n') },
@@ -235,8 +236,8 @@ function Formulario({ h, cat, inicial, anterior, cerrar }: { h: HistoriaLocal; c
 }
 
 export function Seguimiento({ clave }: { clave: string }) {
-  const cat = useCatalogo();
   const h = useLiveQuery(() => db.historias.get(clave), [clave]);
+  const cat = useCatalogo(h?.plantilla);
   const [editando, setEditando] = useState<Evolucion | null>(null);
   if (!h) return <div className="pagina vacio">Cargando…</div>;
 

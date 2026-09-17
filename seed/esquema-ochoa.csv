@@ -1,0 +1,384 @@
+campo_id,seccion,orden,label,tipo,obligatorio,lista_id,valor_normal,reglas,ayuda_kb,plantilla,subtitulo
+efg.estado_general,ectoscopia,10,Paciente en estado general,opcion,si,estado,Bueno,,kb.ectoscopia,ochoa,
+ect.edad_aparente,ectoscopia,20,Edad aparente,opcion,,ecto_edad_aparente,Aparenta la edad que refiere,,kb.ectoscopia,ochoa,
+ect.signos_destacados,ectoscopia,30,Signos destacados,multi,,ecto_signos,Ninguno,"solo_datos_positivos,escalas:conciencia|deshidratacion",kb.ectoscopia,ochoa,
+fil.informante,filiacion,10,Tipo de anamnesis,opcion,si,informante,,,kb.relato,ochoa,Anamnesis
+fil.apellidos,filiacion,20,Apellidos,texto,si,,,,kb.filiacion,ochoa,
+fil.nombres,filiacion,30,Nombres,texto,si,,,,kb.filiacion,ochoa,
+fil.edad,filiacion,40,Edad (años),numero,si,,,,kb.filiacion,ochoa,
+fil.raza,filiacion,50,Raza,opcion,,raza,,,kb.filiacion,ochoa,
+fil.sexo,filiacion,60,Sexo,opcion,si,sexo,,,kb.filiacion,ochoa,
+fil.lugar_nacimiento,filiacion,70,Lugar de nacimiento,texto,,,,,kb.filiacion,ochoa,
+fil.fecha_nacimiento,filiacion,80,Fecha de nacimiento,fecha,,,,,,ochoa,
+fil.lugar_procedencia,filiacion,90,Lugar de procedencia,texto,,,,,kb.filiacion,ochoa,
+fil.idioma,filiacion,100,Idioma,multi,,idioma,,,,ochoa,
+fil.direccion,filiacion,110,Domicilio actual,texto,,,,,kb.filiacion,ochoa,
+apn.residencias_anteriores,filiacion,120,Domicilio anterior,texto,,,,,kb.filiacion,ochoa,
+fil.grado_instruccion,filiacion,130,Grado de instrucción,opcion,,grado_instruccion,,,kb.filiacion,ochoa,
+fil.estado_civil,filiacion,140,Estado civil,opcion,,estado_civil,,,kb.filiacion,ochoa,
+fil.ocupacion,filiacion,150,Ocupación actual,opcion_otro,,ocupacion,,,kb.filiacion,ochoa,
+apn.ocupaciones_anteriores,filiacion,160,Ocupación anterior,opcion_otro,,ocupacion,,,kb.personales,ochoa,
+fil.religion,filiacion,170,Religión,opcion,,religion,,,kb.filiacion,ochoa,
+fil.fecha_ingreso,filiacion,180,Fecha de ingreso,fecha,si,,,con_hora,kb.filiacion,ochoa,
+fil.modo_ingreso,filiacion,190,Modo de ingreso,opcion,,modo_ingreso,,,,ochoa,
+fil.sala,filiacion,200,Sala,opcion_otro,,sala,,,,ochoa,
+fil.numero_cama,filiacion,210,Número de cama,texto,,,,,,ochoa,
+fil.persona_responsable,filiacion,220,Persona responsable,texto,,,,,,ochoa,
+fil.informante_vinculo,filiacion,230,Informante,opcion_otro,,informante_vinculo,,,kb.filiacion,ochoa,
+fil.informante_confiable,filiacion,240,Informante confiable,opcion,,confiable,,,kb.filiacion,ochoa,
+fil.fecha_elaboracion,filiacion,250,Fecha de elaboración de la historia clínica,fecha,si,,,con_hora,,ochoa,
+fil.elaborado_por,filiacion,260,Persona responsable de elaborar la historia clínica,texto,si,,,,,ochoa,
+ea.tiempo_valor,enfermedad_actual,10,Tiempo de enfermedad,numero,si,,,,kb.relato,ochoa,
+ea.tiempo_unidad,enfermedad_actual,20,Unidad de tiempo,opcion,si,unidad_tiempo,,,kb.relato,ochoa,
+ea.episodio_actual,enfermedad_actual,30,Episodio actual,opcion,si,episodio_actual,,,kb.relato,ochoa,
+ea.forma_inicio,enfermedad_actual,40,Forma de inicio,opcion,si,forma_inicio,,,kb.relato,ochoa,
+ea.curso,enfermedad_actual,50,Curso de la enfermedad,opcion,si,curso,,,kb.relato,ochoa,
+ea.signos_sintomas,enfermedad_actual,60,Síntomas principales,lista,si,sintoma,,"termino_caracterizacion,terminos_medicos,max_3",kb.sintomas,ochoa,
+ea.relato_cronologico,enfermedad_actual,70,Relato cronológico,narrativa,si,f_relato,,"tercera_persona,terminos_medicos,orden_cronologico,hilo_sintoma_guia,constructor_sintoma,escalas:eva|nyha|mmrc|bristol|ecog",kb.relato,ochoa,
+ea.sintoma_guia,enfermedad_actual,80,Síntoma guía,opcion_otro,si,sintoma,,,kb.sintomas,ochoa,
+fb.apetito,funciones_biologicas,10,Apetito,opcion,,apetito,Conservado,,kb.funciones,ochoa,
+fb.sed,funciones_biologicas,20,Sed,opcion,,sed,Conservada,,kb.funciones,ochoa,
+fb.orina_color,funciones_biologicas,30,Color,opcion,,orina_color,Amarillo pálido a ámbar,,kb.sintomas,ochoa,Orina
+fb.orina_vol,funciones_biologicas,40,Volumen,opcion_otro,,orina_volumen,Diuresis normal,,kb.sintomas,ochoa,Orina
+fb.orina_frec,funciones_biologicas,50,Frecuencia,opcion,,orina_frecuencia,Conservada,,kb.sintomas,ochoa,Orina
+fb.orina_ritmo,funciones_biologicas,60,Ritmo,opcion,,orina_ritmo,Predominio diurno,,kb.sintomas,ochoa,Orina
+fb.heces_color,funciones_biologicas,70,Color,opcion,,heces_color,Marrón,,kb.sintomas,ochoa,Deposiciones
+fb.heces_bristol,funciones_biologicas,80,Consistencia,escala,,bristol,4,,kb.sintomas,ochoa,Deposiciones
+fb.heces_frec,funciones_biologicas,90,Frecuencia (deposiciones por día),numero,,,1,,kb.funciones,ochoa,Deposiciones
+fb.heces_ritmo,funciones_biologicas,100,Ritmo,opcion,,heces_ritmo,Conservado,,kb.sintomas,ochoa,Deposiciones
+fb.sueno,funciones_biologicas,110,Sueño,opcion,,sueno,Conservado,,kb.funciones,ochoa,
+fb.sudoracion,funciones_biologicas,120,Sudoración,opcion,,sudoracion,Conservada,,kb.funciones,ochoa,
+fb.peso_var,funciones_biologicas,130,Variación de peso,opcion,,peso_var,Sin variación,,kb.funciones,ochoa,
+fb.peso_kg,funciones_biologicas,140,Kilogramos y tiempo,texto,,,,,kb.funciones,ochoa,
+fb.estado_animo,funciones_biologicas,150,Estado de ánimo,opcion,,estado_animo,Tranquilo,,kb.funciones,ochoa,
+apn.vivienda_material,ant_personales,10,Material de construcción,multi,,viv_pared,,,kb.personales,ochoa,Generales · Vivienda
+apn.vivienda_piso,ant_personales,20,Piso,opcion,,viv_piso,,,,ochoa,Generales · Vivienda
+apn.vivienda_techo,ant_personales,30,Techo,opcion,,viv_techo,,,,ochoa,Generales · Vivienda
+apn.vivienda_habitaciones,ant_personales,40,Número de habitaciones,numero,,,,,,ochoa,Generales · Vivienda
+apn.vivienda_personas,ant_personales,50,Número de personas,numero,,,,,,ochoa,Generales · Vivienda
+apn.hacinamiento_indice,ant_personales,60,Índice de hacinamiento (personas por habitación),calculado,,,,formula:personas/habitaciones,,ochoa,Generales · Vivienda
+apn.vivienda_agua,ant_personales,70,Agua,opcion,,viv_agua,,,,ochoa,Generales · Vivienda
+apn.vivienda_luz,ant_personales,80,Luz,opcion,,viv_luz,,,,ochoa,Generales · Vivienda
+apn.vivienda_desague,ant_personales,90,Desagüe,opcion,,viv_desague,,,,ochoa,Generales · Vivienda
+apn.crianza_animales,ant_personales,100,Crianza de animales,multi,,animales,,,,ochoa,Generales
+apn.vestimenta,ant_personales,110,Vestido,opcion,,vestimenta,,,,ochoa,Generales
+apn.higiene,ant_personales,120,Higiene,opcion,,higiene,,,,ochoa,Generales
+apn.comidas_dia,ant_personales,130,Número de comidas al día,numero,,,,,,ochoa,Alimentación
+apn.alimentacion_menu,ant_personales,140,Comida habitual,texto_largo,,,,,kb.personales,ochoa,Alimentación
+apn.consumo_frutas,ant_personales,150,Frutas,opcion,,frecuencia_consumo,,,,ochoa,Alimentación
+apn.consumo_vegetales,ant_personales,160,Vegetales,opcion,,frecuencia_consumo,,,,ochoa,Alimentación
+apn.consumo_carnes,ant_personales,170,Carnes,opcion,,frecuencia_consumo,,,,ochoa,Alimentación
+apn.consumo_pescado,ant_personales,180,Pescado,opcion,,frecuencia_consumo,,,,ochoa,Alimentación
+apn.alcohol,ant_personales,190,Alcohol,opcion,,alcohol_estado,,,kb.personales,ochoa,Hábitos nocivos · Alcohol
+apn.alcohol_frecuencia,ant_personales,200,Frecuencia,opcion,,frecuencia_consumo,,,,ochoa,Hábitos nocivos · Alcohol
+apn.alcohol_cantidad,ant_personales,210,Cantidad (vasos por ocasión),numero,,,,,,ochoa,Hábitos nocivos · Alcohol
+apn.tabaco,ant_personales,220,Tabaco,opcion,,tabaco,,,kb.personales,ochoa,Hábitos nocivos · Tabaco
+apn.tabaco_frecuencia,ant_personales,230,Frecuencia,opcion,,frecuencia_consumo,,,,ochoa,Hábitos nocivos · Tabaco
+apn.tabaco_cantidad,ant_personales,240,Cantidad (cigarrillos al día),numero,,,,,,ochoa,Hábitos nocivos · Tabaco
+apn.cafe_mate_te,ant_personales,250,Café,multi,,bebidas,,,,ochoa,Hábitos nocivos · Café
+apn.cafe_frecuencia,ant_personales,260,Frecuencia,opcion,,frecuencia_consumo,,,,ochoa,Hábitos nocivos · Café
+apn.cafe_cantidad,ant_personales,270,Cantidad (tazas al día),numero,,,,,,ochoa,Hábitos nocivos · Café
+apn.drogas,ant_personales,280,Drogas,multi,,drogas,,,kb.personales,ochoa,Hábitos nocivos · Drogas
+apn.drogas_frecuencia,ant_personales,290,Frecuencia,opcion,,frecuencia_consumo,,,,ochoa,Hábitos nocivos · Drogas
+apn.drogas_cantidad,ant_personales,300,Cantidad,texto,,,,,,ochoa,Hábitos nocivos · Drogas
+afi.inmunizaciones,ant_personales,310,Inmunizaciones,multi,,inmunizaciones,,,kb.patologicos,ochoa,
+afi.transfusiones,ant_personales,320,Transfusiones,opcion_otro,,si_no_nr,,,kb.patologicos,ochoa,Transfusiones
+apn.transfusion_fecha,ant_personales,330,Fecha,fecha,,,,,,ochoa,Transfusiones
+apn.transfusion_razon,ant_personales,340,Razón,texto,,,,,,ochoa,Transfusiones
+apn.grupo_sanguineo,ant_personales,350,Grupo sanguíneo,opcion,,grupo_sanguineo,,,,ochoa,Transfusiones
+afi.prenatales_patologias,ant_fisiologicos,10,Patologías en la gestación,texto,,,,,kb.fisiologicos,ochoa,Antecedentes prenatales
+afi.prenatales_control,ant_fisiologicos,20,Control prenatal,opcion,,control_prenatal,,,kb.fisiologicos,ochoa,Antecedentes prenatales
+afi.parto,ant_fisiologicos,30,Tipo de parto,opcion,,parto_tipo,,,kb.fisiologicos,ochoa,Antecedentes posnatales
+afi.peso_nacer,ant_fisiologicos,40,Peso al nacer (gramos),numero,,,,,kb.fisiologicos,ochoa,Antecedentes posnatales
+afi.talla_nacer,ant_fisiologicos,50,Talla al nacer (centímetros),numero,,,,,kb.fisiologicos,ochoa,Antecedentes posnatales
+afi.lactancia,ant_fisiologicos,60,Lactancia,opcion,,lactancia,,,,ochoa,Antecedentes posnatales
+afi.ablactancia,ant_fisiologicos,70,Ablactancia,opcion,,ablactancia,,,,ochoa,Antecedentes posnatales
+afi.primeros_pasos,ant_fisiologicos,80,Primeros pasos,opcion,,hito,,,kb.fisiologicos,ochoa,Antecedentes posnatales
+afi.primeras_palabras,ant_fisiologicos,90,Primeras palabras,opcion,,hito,,,kb.fisiologicos,ochoa,Antecedentes posnatales
+afi.rendimiento_escolar,ant_fisiologicos,100,Rendimiento escolar,opcion,,rendimiento_escolar,,,kb.fisiologicos,ochoa,Antecedentes posnatales
+afi.vida_sexual_inicio,ant_fisiologicos,110,Inicio de vida sexual (años),numero,,,,,,ochoa,Antecedentes posnatales
+afi.preferencia_sexual,ant_fisiologicos,120,Preferencia sexual,opcion,,preferencia_sexual,,,,ochoa,Antecedentes posnatales
+afi.parejas_sexuales,ant_fisiologicos,130,Número de parejas sexuales,numero,,,,,,ochoa,Antecedentes posnatales
+afi.ultima_relacion_sexual,ant_fisiologicos,140,Última relación sexual,opcion,,ultima_relacion,,,,ochoa,Antecedentes posnatales
+afi.anticonceptivos,ant_fisiologicos,150,Uso de anticonceptivo,opcion,,anticonceptivo,,,,ochoa,Antecedentes posnatales
+afi.menarquia,ant_fisiologicos,160,Menarquia (años),numero,,,,,kb.fisiologicos,ochoa,Antecedentes gineco-obstétricos
+afi.fur,ant_fisiologicos,170,Fecha de última regla,fecha,,,,,kb.fisiologicos,ochoa,Antecedentes gineco-obstétricos
+afi.menopausia,ant_fisiologicos,180,Menopausia,opcion,,si_no_nr,,,,ochoa,Antecedentes gineco-obstétricos
+afi.regimen_catamenial,ant_fisiologicos,190,Régimen catamenial (días de menstruación y duración del ciclo),texto,,,,,kb.fisiologicos,ochoa,Antecedentes gineco-obstétricos
+afi.dismenorrea,ant_fisiologicos,200,Dismenorrea,opcion,,si_no_nr,,,kb.fisiologicos,ochoa,Antecedentes gineco-obstétricos
+afi.dispareunia,ant_fisiologicos,210,Dispareunia,opcion,,si_no_nr,,,,ochoa,Antecedentes gineco-obstétricos
+afi.leucorrea,ant_fisiologicos,220,Leucorrea,opcion_otro,,si_no_nr,,,,ochoa,Antecedentes gineco-obstétricos
+afi.gestaciones,ant_fisiologicos,230,Número de gestaciones,numero,,,,,kb.fisiologicos,ochoa,Fórmula obstétrica
+afi.partos_termino,ant_fisiologicos,240,Nacidos a término,numero,,,,,kb.fisiologicos,ochoa,Fórmula obstétrica
+afi.partos_prematuros,ant_fisiologicos,250,Nacidos prematuros,numero,,,,,kb.fisiologicos,ochoa,Fórmula obstétrica
+afi.abortos,ant_fisiologicos,260,Abortos,numero,,,,,kb.fisiologicos,ochoa,Fórmula obstétrica
+afi.hijos_vivos,ant_fisiologicos,270,Hijos vivos,numero,,,,,kb.fisiologicos,ochoa,Fórmula obstétrica
+afi.formula_obstetrica,ant_fisiologicos,280,Fórmula obstétrica,calculado,,,,formula:G{gestaciones} P{partos_termino}{partos_prematuros}{abortos}{hijos_vivos},kb.fisiologicos,ochoa,Fórmula obstétrica
+afi.fup,ant_fisiologicos,290,Fecha de último parto,fecha,,,,,kb.fisiologicos,ochoa,Antecedentes gineco-obstétricos
+afi.preeclampsia_eclampsia,ant_fisiologicos,300,Preeclampsia o eclampsia,opcion,,toxemia_gravidica,,,kb.ef_edema,ochoa,Antecedentes gineco-obstétricos
+afi.lactancia_hijos,ant_fisiologicos,310,Lactancia a los hijos,opcion,,lactancia,,,,ochoa,Antecedentes gineco-obstétricos
+afi.examen_ginecologico,ant_fisiologicos,320,Último examen ginecológico,opcion,,papanicolau,,,,ochoa,Antecedentes gineco-obstétricos
+afi.papanicolau,ant_fisiologicos,330,Último Papanicolaou,opcion,,papanicolau,,,,ochoa,Antecedentes gineco-obstétricos
+apa.congenitas,ant_patologicos,10,Enfermedades congénitas,multi,,enf_congenitas,Ninguna,,kb.patologicos,ochoa,Patológicos
+apa.congenitas_detalle,ant_patologicos,20,"Enfermedades congénitas: cuándo, dónde, resultados y tratamiento",texto,,,,"terminos_medicos,orden_cronologico",kb.patologicos,ochoa,Patológicos
+apa.infancia,ant_patologicos,30,Enfermedades de la infancia y adolescencia,multi,,enf_infancia,Ninguna,,kb.patologicos,ochoa,Patológicos
+apa.infancia_detalle,ant_patologicos,40,"Enfermedades de la infancia y adolescencia: cuándo, dónde, resultados y tratamiento",texto,,,,"terminos_medicos,orden_cronologico",kb.patologicos,ochoa,Patológicos
+apa.otras_patologias,ant_patologicos,50,Enfermedades de la juventud y adultez,multi,,patologias,Ninguna,,kb.patologicos,ochoa,Patológicos
+apa.otras_detalle,ant_patologicos,60,"Enfermedades de la juventud y adultez: cuándo, dónde, resultados y tratamiento",texto_largo,,,,"terminos_medicos,orden_cronologico",kb.patologicos,ochoa,Patológicos
+apa.cirugias,ant_patologicos,70,Intervenciones quirúrgicas,texto_largo,,,,"terminos_medicos,orden_cronologico",kb.patologicos,ochoa,Patológicos
+apa.parasitos,ant_patologicos,80,Eliminación de parásitos,multi,,parasitos,Niega,,kb.patologicos,ochoa,Patológicos
+apa.parasitos_detalle,ant_patologicos,90,Eliminación de parásitos: cuándo y tratamiento recibido,texto,,,,orden_cronologico,kb.patologicos,ochoa,Patológicos
+apa.traumatismos,ant_patologicos,100,Accidentes y secuelas,texto_largo,,,,"terminos_medicos,orden_cronologico",kb.patologicos,ochoa,Patológicos
+afi.alergias,ant_patologicos,110,Alergia medicamentosa,opcion_otro,si,si_no_nr,No refiere,,kb.patologicos,ochoa,Patológicos
+apa.alergia_farmaco,ant_patologicos,120,Medicamento que produjo la alergia,texto,,,,terminos_medicos,kb.patologicos,ochoa,Patológicos
+apa.alergia_reaccion,ant_patologicos,130,Tipo de reacción alérgica,multi,,reaccion_alergica,,,kb.patologicos,ochoa,Patológicos
+apa.intoxicaciones,ant_patologicos,140,Intoxicaciones,multi,,intoxicaciones,Ninguna,,kb.patologicos,ochoa,Patológicos
+apa.intoxicaciones_detalle,ant_patologicos,150,"Intoxicaciones: cuándo, dónde, resultados y tratamiento",texto,,,,orden_cronologico,kb.patologicos,ochoa,Patológicos
+apa.historial_enfermedad,ant_patologicos,160,Historial de enfermedad,multi,si,historial_enf,Ninguna,,kb.patologicos,ochoa,Historial de enfermedad
+apa.hta,ant_patologicos,170,Hipertensión arterial,opcion,,hta_dx,Niega,,kb.patologicos,ochoa,Historial de enfermedad
+apa.hta_detalle,ant_patologicos,180,"Hipertensión arterial: año, cifras y tratamiento",texto,,,,terminos_medicos,kb.patologicos,ochoa,Historial de enfermedad
+apa.diabetes,ant_patologicos,190,Diabetes mellitus,opcion,,dm_dx,Niega,,kb.patologicos,ochoa,Historial de enfermedad
+apa.diabetes_detalle,ant_patologicos,200,"Diabetes mellitus: año, tratamiento y último control",texto,,,,terminos_medicos,kb.patologicos,ochoa,Historial de enfermedad
+apa.asma,ant_patologicos,210,Asma bronquial,opcion,,asma_dx,Niega,,kb.patologicos,ochoa,Historial de enfermedad
+apa.historial_otros,ant_patologicos,220,Otras enfermedades del historial,texto,,,,terminos_medicos,kb.patologicos,ochoa,Historial de enfermedad
+apa.historial_inicio,ant_patologicos,230,Tiempo de inicio,texto,,,,orden_cronologico,kb.patologicos,ochoa,Historial de enfermedad
+apa.duracion_enfermedad,ant_patologicos,240,Clasificación del tiempo de enfermedad,opcion,,duracion_enf,,,kb.patologicos,ochoa,Historial de enfermedad
+apa.medicamentos,ant_patologicos,250,Tratamiento,texto_largo,,,,farmaco_dosis_via_intervalo,kb.patologicos,ochoa,Historial de enfermedad
+apa.adherencia,ant_patologicos,260,Cumplimiento del tratamiento,opcion,,adherencia,,,kb.patologicos,ochoa,Historial de enfermedad
+apa.historial_complicaciones,ant_patologicos,270,Complicaciones,texto_largo,,,,terminos_medicos,kb.patologicos,ochoa,Historial de enfermedad
+afa.padre_enfermedades,ant_familiares,10,Enfermedades del padre,multi,,enf_familiares,Ninguna,,kb.familiares,ochoa,Padre
+afa.padre_vivo,ant_familiares,20,Estado vital del padre,opcion,,estado_vital,Vive,,kb.familiares,ochoa,Padre
+afa.madre_enfermedades,ant_familiares,30,Enfermedades de la madre,multi,,enf_familiares,Ninguna,,kb.familiares,ochoa,Madre
+afa.madre_viva,ant_familiares,40,Estado vital de la madre,opcion,,estado_vital,Vive,,kb.familiares,ochoa,Madre
+afa.hermanos_enfermedades,ant_familiares,50,Enfermedades de los hermanos consanguíneos,multi,,enf_familiares,Ninguna,,kb.familiares,ochoa,Hermanos consanguíneos
+afa.hermanos_numero,ant_familiares,60,Número de hermanos consanguíneos,numero,,,,,,ochoa,Hermanos consanguíneos
+afa.hermanos_vivos,ant_familiares,70,Número de hermanos vivos,numero,,,,,,ochoa,Hermanos consanguíneos
+afa.descendientes_enfermedades,ant_familiares,80,Enfermedades de los descendientes,multi,,enf_familiares,Ninguna,,kb.familiares,ochoa,Descendientes
+afa.descendientes_numero,ant_familiares,90,Número de descendientes,numero,,,,,,ochoa,Descendientes
+afa.descendientes_vivos,ant_familiares,100,Número de descendientes vivos,numero,,,,,,ochoa,Descendientes
+afa.pareja_enfermedades,ant_familiares,110,Enfermedades de la pareja,multi,,enf_familiares,Ninguna,,kb.familiares,ochoa,Pareja
+afa.familiares,ant_familiares,120,Resumen de los antecedentes familiares,narrativa,,f_familiares,,tercera_persona,kb.familiares,ochoa,
+efg.temperatura,ef_general,10,Temperatura axilar (grados centígrados),numero,si,,36.5,valor_unidad_rango,kb.ef_vitales,ochoa,Funciones vitales
+efg.fr,ef_general,20,Frecuencia respiratoria (respiraciones por minuto),numero,si,,18,valor_unidad_rango,kb.ef_vitales,ochoa,Funciones vitales
+efg.fc,ef_general,30,Frecuencia cardíaca (latidos por minuto),numero,si,,70,valor_unidad_rango,kb.ef_vitales,ochoa,Funciones vitales
+efg.pulso,ef_general,40,Pulso,multi,,pulso_car,"Rítmico, de amplitud mediana y pared elástica",,kb.ef_vitales,ochoa,Funciones vitales
+efg.pa_sistolica,ef_general,50,Presión arterial sistólica (milímetros de mercurio),numero,si,,120,valor_unidad_rango,kb.ef_vitales,ochoa,Funciones vitales
+efg.pa_diastolica,ef_general,60,Presión arterial diastólica (milímetros de mercurio),numero,si,,80,valor_unidad_rango,kb.ef_vitales,ochoa,Funciones vitales
+efg.peso,ef_general,70,Peso (kilogramos),numero,,,,valor_unidad_rango,kb.ef_somatometria,ochoa,Somatometría
+efg.talla,ef_general,80,Talla (metros),numero,,,,valor_unidad_rango,kb.ef_somatometria,ochoa,Somatometría
+efg.imc,ef_general,90,Índice de masa corporal (kilogramos por metro cuadrado),calculado,,,,formula:peso/talla^2,kb.ef_somatometria,ochoa,Somatometría
+efg.estado_nutricional,ef_general,100,Estado nutricional,opcion,si,estado,Bueno,,kb.ef_somatometria,ochoa,Aspecto General
+efg.estado_hidratacion,ef_general,110,Estado de hidratación,opcion,si,estado,Bueno,escalas:deshidratacion,kb.ectoscopia,ochoa,Aspecto General
+efg.facies,ef_general,120,Facies,opcion,,facies,Atípica o normal,,kb.ectoscopia,ochoa,Aspecto General
+efg.grado_enfermedad,ef_general,130,Grado de enfermedad,opcion,,grado_enfermedad,No aparenta enfermedad,,kb.ectoscopia,ochoa,Aspecto General
+efg.signo_destacado,ef_general,140,Signo destacado,opcion_otro,,signo_destacado,Ninguno destacable,,kb.ectoscopia,ochoa,Aspecto General
+efg.tipo_constitucional,ef_general,150,Tipo constitucional,opcion,,biotipo,Normolíneo,,kb.ectoscopia,ochoa,Aspecto General
+efg.piel_color,ef_general,160,Color de la piel,multi,,piel_color,Rosada,escalas:cruces,kb.ectoscopia,ochoa,Piel
+efg.piel_temperatura,ef_general,170,Temperatura de la piel,opcion,,piel_temp,Tibia y simétrica,,kb.ectoscopia,ochoa,Piel
+efg.piel_elasticidad,ef_general,180,Elasticidad de la piel,opcion,,piel_elasticidad,Conservada,,kb.ectoscopia,ochoa,Piel
+efg.piel_anormalidades,ef_general,190,Anormalidades de la piel,multi,,piel_lesiones,Sin lesiones,con_lateralidad,kb.ectoscopia,ochoa,Piel
+efg.unas_color,ef_general,200,Color de las uñas,opcion,,unas_color,Rosadas,,kb.ectoscopia,ochoa,Uñas
+efg.unas_forma,ef_general,210,Forma de las uñas,opcion,,unas_forma,"Normal, con ángulo de implantación menor de 160 grados",,kb.ectoscopia,ochoa,Uñas
+efg.unas_estrias,ef_general,220,Estrías de las uñas,opcion,,unas_estrias,Ausentes,,kb.ectoscopia,ochoa,Uñas
+efg.llenado_capilar,ef_general,230,Llenado capilar,opcion,,llenado_capilar,Menor de 2 segundos,,kb.ectoscopia,ochoa,Uñas
+efg.pelo_color,ef_general,240,Color del cabello y del vello,opcion,,pelo_color,Negro,,kb.ectoscopia,ochoa,Sistema piloso
+efg.pelo_sequedad,ef_general,250,Sequedad del cabello,opcion,,pelo_sequedad,"Normal, con brillo conservado",,kb.ectoscopia,ochoa,Sistema piloso
+efg.pelo_fragilidad,ef_general,260,Fragilidad del cabello,opcion,,pelo_fragilidad,"Ausente, resiste la tracción",,kb.ectoscopia,ochoa,Sistema piloso
+efg.pelo_distribucion,ef_general,270,Distribución del sistema piloso,multi,,pelo_distribucion,Acorde al sexo y a la edad,,kb.ectoscopia,ochoa,Sistema piloso
+efg.tcs_cantidad,ef_general,280,Cantidad de tejido celular subcutáneo,opcion,,tcs_cantidad,Normal,,kb.ectoscopia,ochoa,Tejido celular subcutáneo
+efg.tcs_distribucion,ef_general,290,Distribución del tejido celular subcutáneo,opcion,,tcs_distribucion,Normal para el sexo y la edad,,kb.ectoscopia,ochoa,Tejido celular subcutáneo
+efg.tcs_tumoraciones,ef_general,300,Tumoraciones del tejido celular subcutáneo,multi,,tcs_tumoracion,Ninguna,con_lateralidad,kb.ectoscopia,ochoa,Tejido celular subcutáneo
+efg.tcs_nodulo,ef_general,310,Nódulo,opcion,,tcs_nodulo,Ausente,con_lateralidad,kb.ectoscopia,ochoa,Tejido celular subcutáneo
+efg.tcs_edema,ef_general,320,Edema,opcion,,tcs_edema,Ausente,"con_lateralidad,escalas:godet",kb.ef_edema,ochoa,Tejido celular subcutáneo
+efg.tcs_enfisema,ef_general,330,Enfisema subcutáneo,opcion,,tcs_enfisema,Ausente,con_lateralidad,kb.ectoscopia,ochoa,Tejido celular subcutáneo
+efr.cabeza_forma,ef_regiones,10,Forma del cráneo,opcion,,craneo_forma,Normocéfalo,describir_no_interpretar,kb.ef_cabeza,ochoa,Cabeza y cráneo
+efr.cabeza_tamano,ef_regiones,20,Tamaño del cráneo,opcion,,craneo_tamano,Normal,describir_no_interpretar,kb.ef_cabeza,ochoa,Cabeza y cráneo
+efr.cabeza_simetria,ef_regiones,30,Simetría de la cara,opcion,,simetria_facial,Simétrica,"describir_no_interpretar,con_lateralidad",kb.ef_cabeza,ochoa,Cabeza y cráneo
+efr.cabeza_frente,ef_regiones,40,Frente (líneas de expresión),opcion,,frente_lineas,Líneas de expresión conservadas,describir_no_interpretar,kb.ef_cabeza,ochoa,Cabeza y cráneo
+efr.parpados,ef_regiones,50,Párpados,multi,,parpados,Sin alteraciones,"describir_no_interpretar,con_lateralidad",kb.ef_cabeza,ochoa,Párpados
+efr.ojos_globos,ef_regiones,60,Globos oculares y movimientos oculares,multi,,globos_oculares,Sin alteraciones,"describir_no_interpretar,con_lateralidad",kb.ef_cabeza,ochoa,Ojos
+efr.glandula_lagrimal,ef_regiones,70,Glándulas lagrimales,opcion,,glandula_lagrimal,Sin alteraciones,con_lateralidad,kb.ef_cabeza,ochoa,Ojos
+efr.conjuntiva,ef_regiones,80,Conjuntiva,multi,,conjuntiva,Rosada,"describir_no_interpretar,escalas:cruces",kb.ef_cabeza,ochoa,Ojos
+efr.esclerotica,ef_regiones,90,Esclerótica,opcion,,esclerotica,Anictérica,escalas:cruces,kb.ef_cabeza,ochoa,Ojos
+efr.cornea,ef_regiones,100,Córnea,multi,,cornea,Transparente,"describir_no_interpretar,con_lateralidad",kb.ef_cabeza,ochoa,Ojos
+efr.pupilas_simetria,ef_regiones,110,Simetría pupilar,opcion,,pupilas_simetria,Isocóricas,,kb.ef_cabeza,ochoa,Pupilas
+efr.pupilas_tamano,ef_regiones,120,Tamaño pupilar,opcion,,pupilas_tamano,"Normal, de 2 a 4 milímetros",con_lateralidad,kb.ef_cabeza,ochoa,Pupilas
+efr.pupilas_forma,ef_regiones,130,Forma pupilar,opcion,,pupilas_forma,Redondeadas y centrales,,kb.ef_cabeza,ochoa,Pupilas
+efr.reflejo_fotomotor,ef_regiones,140,Reflejo fotomotor,opcion,,reflejo_pupilar,Presente,con_lateralidad,kb.ef_cabeza,ochoa,Pupilas
+efr.reflejo_consensual,ef_regiones,150,Reflejo consensual,opcion,,reflejo_pupilar,Presente,con_lateralidad,kb.ef_cabeza,ochoa,Pupilas
+efr.reflejo_acomodacion,ef_regiones,160,Reflejo de acomodación,opcion,,reflejo_pupilar,Presente,,kb.ef_cabeza,ochoa,Pupilas
+efr.cristalino,ef_regiones,170,Cristalino,opcion,,cristalino,Transparente,con_lateralidad,kb.ef_cabeza,ochoa,Ojos
+efr.nariz_forma,ef_regiones,180,Forma de la nariz,opcion,,nariz_forma,"Normal, sin deformaciones",describir_no_interpretar,kb.ef_cabeza,ochoa,Nariz
+efr.nariz_aleteo,ef_regiones,190,Aleteo nasal,opcion,,presente_ausente,Ausente,,kb.ef_cabeza,ochoa,Nariz
+efr.mucosa_nasal,ef_regiones,200,Mucosa nasal,multi,,mucosa_nasal,Rosada y húmeda,"describir_no_interpretar,con_lateralidad",kb.ef_cabeza,ochoa,Nariz
+efr.tabique_nasal,ef_regiones,210,Tabique nasal,opcion,,tabique_nasal,Centrado,,kb.ef_cabeza,ochoa,Nariz
+efr.pabellones_auriculares,ef_regiones,220,Pabellones auriculares,multi,,pabellones_auriculares,Simétricos y de implantación normal,"describir_no_interpretar,con_lateralidad",kb.ef_cabeza,ochoa,Oídos
+efr.conducto_auditivo,ef_regiones,230,Conducto auditivo externo,multi,,conducto_auditivo,"Permeable, sin secreciones","describir_no_interpretar,con_lateralidad",kb.ef_cabeza,ochoa,Oídos
+efr.aliento,ef_regiones,240,Olor del aliento,opcion,,aliento,Sin olor particular,,kb.ef_cabeza,ochoa,Boca
+efr.labios,ef_regiones,250,Labios,multi,,labios,Rosados y simétricos,"describir_no_interpretar,escalas:cruces",kb.ef_cabeza,ochoa,Boca
+efr.dientes,ef_regiones,260,Dientes,multi,,dientes,Completos y en buen estado de conservación,describir_no_interpretar,kb.ef_cabeza,ochoa,Boca
+efr.encias,ef_regiones,270,Encías,multi,,encias,Rosadas,describir_no_interpretar,kb.ef_cabeza,ochoa,Boca
+efr.mucosa_oral,ef_regiones,280,Mucosa oral,multi,,mucosa_oral,Rosada y húmeda,"describir_no_interpretar,escalas:deshidratacion|cruces",kb.ef_cabeza,ochoa,Boca
+efr.lengua,ef_regiones,290,Lengua,multi,,lengua,"Rojo rosada, húmeda y de superficie discretamente rugosa",describir_no_interpretar,kb.ef_cabeza,ochoa,Boca
+efr.orofaringe,ef_regiones,300,Orofaringe,multi,,orofaringe,"Rosada, sin exudados ni hipertrofia amigdalina",describir_no_interpretar,kb.ef_cabeza,ochoa,Boca
+efr.glandulas_salivales,ef_regiones,310,Glándulas salivales,multi,,glandulas_salivales,Sin alteraciones,"describir_no_interpretar,con_lateralidad",kb.ef_cuello,ochoa,Boca
+efr.cuello_longitud,ef_regiones,320,Longitud del cuello,opcion,,cuello_longitud,Normal,,kb.ef_cuello,ochoa,Cuello
+efr.cuello_forma,ef_regiones,330,Forma del cuello,multi,,cuello_forma,Cilíndrico y de contorno regular,describir_no_interpretar,kb.ef_cuello,ochoa,Cuello
+efr.cuello_movilidad,ef_regiones,340,Movilidad del cuello,opcion,,cuello_movilidad,Conservada en todos los planos,,kb.ef_cuello,ochoa,Cuello
+efr.cuello_rigidez,ef_regiones,350,Rigidez del cuello,opcion,,cuello_rigidez,Ausente,,kb.ef_cuello,ochoa,Cuello
+efr.cuello_dolor,ef_regiones,360,Dolor del cuello,opcion,,presente_ausente,Ausente,escalas:eva,kb.ef_cuello,ochoa,Cuello
+efr.cuello_cicatrices,ef_regiones,370,Cicatrices y tumoraciones del cuello,multi,,cuello_cicatrices,Sin cicatrices ni tumoraciones,"describir_no_interpretar,con_lateralidad",kb.ef_cuello,ochoa,Cuello
+efr.tiroides_tamano,ef_regiones,380,Tamaño de la tiroides,opcion,,tiroides_tamano,No palpable o de tamaño normal,describir_no_interpretar,kb.ef_cuello,ochoa,Tiroides
+efr.tiroides_simetria,ef_regiones,390,Simetría de la tiroides,opcion,,tiroides_simetria,Simétrica,con_lateralidad,kb.ef_cuello,ochoa,Tiroides
+efr.tiroides_consistencia,ef_regiones,400,Consistencia de la tiroides,opcion,,tiroides_consistencia,"Normal, firme",,kb.ef_cuello,ochoa,Tiroides
+efr.tiroides_movilidad,ef_regiones,410,Movilidad y nódulos de la tiroides,multi,,tiroides_movilidad,"Móvil con la deglución, sin nódulos",describir_no_interpretar,kb.ef_cuello,ochoa,Tiroides
+efr.tiroides_sensibilidad,ef_regiones,420,Sensibilidad de la tiroides,opcion,,tiroides_sensibilidad,Indolora,escalas:eva,kb.ef_cuello,ochoa,Tiroides
+efr.tiroides_soplo,ef_regiones,430,Soplos tiroideos,opcion,,tiroides_soplo,Ausente,,kb.ef_cuello,ochoa,Tiroides
+efr.traquea_posicion,ef_regiones,440,Posición de la tráquea,opcion,,traquea_posicion,Centrada,con_lateralidad,kb.ef_cuello,ochoa,Tráquea
+efr.traquea_movilidad,ef_regiones,450,Movilidad de la tráquea,opcion,,traquea_movilidad,Móvil con la deglución,,kb.ef_cuello,ochoa,Tráquea
+efr.cuello_fremitos,ef_regiones,460,Frémitos en los vasos del cuello,opcion,,presente_ausente,Ausente,con_lateralidad,kb.ef_cuello,ochoa,Vasos del cuello
+efr.cuello_soplos,ef_regiones,470,Soplos en los vasos del cuello,opcion,,cuello_soplos,Ausente,"con_lateralidad,escalas:levine",kb.ef_cuello,ochoa,Vasos del cuello
+efr.mamas_desarrollo,ef_regiones,480,Desarrollo mamario,opcion,,mamas_desarrollo,Desarrollo acorde a la edad y el sexo,describir_no_interpretar,kb.ef_cardio,ochoa,Mamas
+efr.mamas_simetria,ef_regiones,490,Simetría de las mamas,opcion,,mamas_simetria,Simétricas,,kb.ef_cardio,ochoa,Mamas
+efr.mamas_pezon_areola,ef_regiones,500,Características de los pezones y las areolas,multi,,pezon_areola,"Pezón prominente, areola sin alteraciones","describir_no_interpretar,con_lateralidad",kb.ef_cardio,ochoa,Mamas
+efr.mamas_secrecion,ef_regiones,510,Secreciones del pezón,opcion,,mamas_secrecion,Ausente,con_lateralidad,kb.ef_cardio,ochoa,Mamas
+efr.mamas_ulceraciones,ef_regiones,520,Ulceraciones de la mama,opcion,,presente_ausente,Ausente,con_lateralidad,kb.ef_cardio,ochoa,Mamas
+efr.mamas_pigmentacion,ef_regiones,530,Pigmentación de la mama,opcion,,mamas_pigmentacion,Normal,con_lateralidad,kb.ef_cardio,ochoa,Mamas
+efr.mamas_sensibilidad,ef_regiones,540,Sensibilidad mamaria,opcion,,sensibilidad_palpacion,Indolora,"con_lateralidad,escalas:eva",kb.ef_cardio,ochoa,Mamas
+efr.mamas_inflamacion,ef_regiones,550,Inflamación de la mama,opcion,,mamas_inflamacion,Ausente,con_lateralidad,kb.ef_cardio,ochoa,Mamas
+efr.mamas_tumoracion,ef_regiones,560,Tumoración mamaria,multi,,mamas_tumoracion,No se palpan tumoraciones,"describir_no_interpretar,con_lateralidad",kb.ef_cardio,ochoa,Mamas
+efr.torax_forma,ef_regiones,570,Forma,opcion,,torax_forma,"Normal, sin forma patológica",describir_no_interpretar,kb.ef_torax,ochoa,Tórax y pulmones · Inspección estática
+efr.torax_simetria,ef_regiones,580,Simetría,opcion,,torax_simetria,Simétrico,"describir_no_interpretar,con_lateralidad",kb.ef_torax,ochoa,Tórax y pulmones · Inspección estática
+efr.torax_tamano,ef_regiones,590,Tamaño,opcion,,torax_tamano,"Normolíneo, proporcionado al biotipo",describir_no_interpretar,kb.ef_torax,ochoa,Tórax y pulmones · Inspección estática
+efr.torax_diametros,ef_regiones,600,Diámetro anteroposterior y transverso,opcion,,torax_diametros,Diámetro anteroposterior menor que el transverso,describir_no_interpretar,kb.ef_torax,ochoa,Tórax y pulmones · Inspección estática
+efr.torax_costillas,ef_regiones,610,Dirección de las costillas,opcion,,torax_costillas,"Oblicua, dirigida hacia abajo y hacia adelante",describir_no_interpretar,kb.ef_torax,ochoa,Tórax y pulmones · Inspección estática
+efr.torax_angulo_subcostal,ef_regiones,620,Ángulo subcostal,opcion,,angulo_subcostal,"Recto, de aproximadamente 90 grados",describir_no_interpretar,kb.ef_torax,ochoa,Tórax y pulmones · Inspección estática
+efr.torax_deformidades,ef_regiones,630,Deformidades,multi,,torax_deformidades,Ninguna,"describir_no_interpretar,con_lateralidad",kb.ef_torax,ochoa,Tórax y pulmones · Inspección estática
+efr.torax_tipo_respiracion,ef_regiones,640,Tipo de respiración,opcion,,tipo_respiracion,Normal,describir_no_interpretar,kb.ef_torax,ochoa,Tórax y pulmones · Inspección dinámica
+efr.torax_amplitud,ef_regiones,650,Amplitud,opcion,,amplitud_resp,Normal,describir_no_interpretar,kb.ef_torax,ochoa,Tórax y pulmones · Inspección dinámica
+efr.torax_ritmo,ef_regiones,660,Ritmo respiratorio,opcion,,ritmo_resp,"Eupnea, ritmo regular de 16 a 20 respiraciones por minuto",describir_no_interpretar,kb.ef_torax,ochoa,Tórax y pulmones · Inspección dinámica
+efr.torax_retracciones,ef_regiones,670,Retracciones,multi,,retracciones,Ninguna,describir_no_interpretar,kb.ef_torax,ochoa,Tórax y pulmones · Inspección dinámica
+efr.torax_amplexacion,ef_regiones,680,Amplexación,opcion,,amplexacion,Conservada y simétrica,"describir_no_interpretar,con_lateralidad",kb.ef_torax,ochoa,Tórax y pulmones · Palpación
+efr.torax_vv,ef_regiones,690,Vibraciones vocales,opcion,,vibraciones_vocales,Conservadas y simétricas,"describir_no_interpretar,con_lateralidad",kb.ef_torax,ochoa,Tórax y pulmones · Palpación
+efr.torax_dolorabilidad,ef_regiones,700,"Dolorabilidad, frémitos y enfisema subcutáneo",multi,,palpacion_torax,Ninguno,"describir_no_interpretar,con_lateralidad",kb.ef_torax,ochoa,Tórax y pulmones · Palpación
+efr.torax_sonoridad,ef_regiones,710,Sonoridad,opcion,,sonoridad_torax,Sonoridad pulmonar conservada en ambos campos,"describir_no_interpretar,con_lateralidad",kb.ef_torax,ochoa,Tórax y pulmones · Percusión
+efr.torax_ruido_traqueal,ef_regiones,720,Ruido traqueal,opcion,,ruido_traqueal,"Presente, de características normales sobre la tráquea",describir_no_interpretar,kb.ef_torax,ochoa,Tórax y pulmones · Auscultación · Ruidos respiratorios normales
+efr.torax_ruido_traqueobronquial,ef_regiones,730,Ruido traqueobronquial,opcion,,ruido_traqueobronquial,Presente solo en su localización habitual,describir_no_interpretar,kb.ef_torax,ochoa,Tórax y pulmones · Auscultación · Ruidos respiratorios normales
+efr.torax_mv,ef_regiones,740,Murmullo vesicular,escala,,mv,Conservado,"describir_no_interpretar,con_lateralidad",kb.ef_torax,ochoa,Tórax y pulmones · Auscultación · Ruidos respiratorios normales
+efr.torax_soplos,ef_regiones,750,Soplos,opcion,,soplos_pulmonares,Ausentes,"describir_no_interpretar,con_lateralidad",kb.ef_torax,ochoa,Tórax y pulmones · Auscultación · Ruidos respiratorios anormales
+efr.torax_agregados,ef_regiones,760,Ruidos agregados,multi,,agregados,Ninguno,"describir_no_interpretar,con_lateralidad",kb.ef_torax,ochoa,Tórax y pulmones · Auscultación · Ruidos respiratorios anormales
+efr.torax_frote_pleural,ef_regiones,770,Frote pleural,opcion,,frote_pleural,Ausente,"describir_no_interpretar,con_lateralidad",kb.ef_torax,ochoa,Tórax y pulmones · Auscultación · Ruidos respiratorios anormales
+efr.torax_broncofonia,ef_regiones,780,Broncofonía,opcion,,broncofonia,Ausente,"describir_no_interpretar,con_lateralidad",kb.ef_torax,ochoa,Tórax y pulmones · Auscultación de la voz
+efr.torax_pectoriloquia,ef_regiones,790,Pectoriloquia,opcion,,pectoriloquia,Ausente,"describir_no_interpretar,con_lateralidad",kb.ef_torax,ochoa,Tórax y pulmones · Auscultación de la voz
+efr.torax_pectoriloquia_afona,ef_regiones,800,Pectoriloquia áfona,opcion,,pectoriloquia_afona,Ausente,"describir_no_interpretar,con_lateralidad",kb.ef_torax,ochoa,Tórax y pulmones · Auscultación de la voz
+efr.torax_egofonia,ef_regiones,810,Egofonía,opcion,,egofonia,Ausente,"describir_no_interpretar,con_lateralidad",kb.ef_torax,ochoa,Tórax y pulmones · Auscultación de la voz
+efr.torax_ausc_tos,ef_regiones,820,Auscultación de la tos,multi,,ausc_tos,Sin tos durante el examen,describir_no_interpretar,kb.ef_torax,ochoa,Tórax y pulmones · Auscultación
+efr.torax_percusion_auscultatoria,ef_regiones,830,Percusión auscultatoria,opcion,,percusion_auscultatoria,Transmisión conservada y simétrica,"describir_no_interpretar,con_lateralidad",kb.ef_torax,ochoa,Tórax y pulmones · Auscultación
+efr.cuello_vasos,ef_regiones,840,Examen de los vasos arteriales y venosos del cuello,multi,,vasos_cuello,Latidos carotídeos normales y simétricos,"describir_no_interpretar,con_lateralidad",kb.ef_cuello,ochoa,Cardiovascular · Región del cuello
+efr.ingurgitacion_yugular,ef_regiones,850,Ingurgitación yugular,opcion,,ingurgitacion_yugular,Ausente: yugulares no ingurgitadas con el tronco a 30 o 45 grados,describir_no_interpretar,kb.ef_cuello,ochoa,Cardiovascular · Región del cuello
+efr.cuello_fremito,ef_regiones,860,Frémitos,opcion,,fremito_cuello,Ausentes,"describir_no_interpretar,con_lateralidad",kb.ef_cuello,ochoa,Cardiovascular · Región del cuello
+efr.cuello_soplo,ef_regiones,870,Soplos,opcion,,soplo_cuello,Ausentes,"describir_no_interpretar,con_lateralidad",kb.ef_cuello,ochoa,Cardiovascular · Región del cuello
+efr.choque_punta,ef_regiones,880,Choque de punta,opcion,,choque_punta,"Palpable en el quinto espacio intercostal izquierdo, línea medioclavicular",describir_no_interpretar,kb.ef_cardio,ochoa,Cardiovascular · Región precordial · Inspección
+efr.precordio_deformaciones,ef_regiones,890,Deformaciones,multi,,precordio_deformaciones,Ninguna,describir_no_interpretar,kb.ef_cardio,ochoa,Cardiovascular · Región precordial · Inspección
+efr.vibraciones_valvulares,ef_regiones,900,Vibraciones valvulares,opcion,,vibraciones_valvulares,No palpables,describir_no_interpretar,kb.ef_cardio,ochoa,Cardiovascular · Región precordial · Palpación
+efr.fremito_precordial,ef_regiones,910,Frémitos,multi,,fremito_precordial,Ausentes,describir_no_interpretar,kb.ef_cardio,ochoa,Cardiovascular · Región precordial · Palpación
+efr.ruidos_intensidad,ef_regiones,920,Intensidad del primer y del segundo ruido,multi,,intensidad_ruidos,Primer y segundo ruidos de intensidad normal,describir_no_interpretar,kb.ef_cardio,ochoa,Cardiovascular · Región precordial · Auscultación
+efr.frote_pericardico,ef_regiones,930,Frote pericárdico,opcion,,frote_pericardico,Ausente,describir_no_interpretar,kb.ef_cardio,ochoa,Cardiovascular · Región precordial · Auscultación
+efr.chasquidos,ef_regiones,940,Chasquidos,opcion,,chasquidos,Ausentes,describir_no_interpretar,kb.ef_cardio,ochoa,Cardiovascular · Región precordial · Auscultación
+efr.soplos_cardiacos,ef_regiones,950,Soplos,multi,,soplos_cardiacos,No se auscultan soplos,"describir_no_interpretar,escalas:levine",kb.ef_cardio,ochoa,Cardiovascular · Región precordial · Auscultación
+efr.soplo_levine,ef_regiones,960,Intensidad del soplo,escala,,levine,,,kb.ef_cardio,ochoa,Cardiovascular · Región precordial · Auscultación
+efr.desdoblamientos,ef_regiones,970,Desdoblamientos,opcion,,desdoblamientos,Ausentes,describir_no_interpretar,kb.ef_cardio,ochoa,Cardiovascular · Región precordial · Auscultación
+efr.epigastrio_latidos,ef_regiones,980,"Latidos aórtico, ventricular derecho y hepático",multi,,latidos_epigastricos,Sin latidos visibles ni palpables en el epigastrio,describir_no_interpretar,kb.ef_cardio,ochoa,Cardiovascular · Región epigástrica
+efr.reflujo_hepatoyugular,ef_regiones,990,Reflujo hepatoyugular,opcion,,reflujo_hepatoyugular,Negativo,describir_no_interpretar,kb.ef_cardio,ochoa,Cardiovascular · Región epigástrica
+efr.pulsos,ef_regiones,1000,Amplitud de los pulsos arteriales periféricos,escala,,pulsos,2+,,kb.ef_cardio,ochoa,Cardiovascular · Examen del pulso arterial periférico
+efr.pulsos_alterados,ef_regiones,1010,"Pulsos con amplitud disminuida o ausente (temporales, carótidas, humerales, radiales, femorales, poplíteas, tibiales posteriores y pedias)",multi,,arterias_perifericas,Ninguna: todos los pulsos presentes y simétricos,"describir_no_interpretar,con_lateralidad",kb.ef_cardio,ochoa,Cardiovascular · Examen del pulso arterial periférico
+efr.sistema_venoso,ef_regiones,1020,"Várices, dilatación venosa, flebitis, úlceras varicosas, cambios tróficos y signo de Homans",multi,,sistema_venoso,Sin alteraciones del sistema venoso,"describir_no_interpretar,con_lateralidad",kb.ef_cardio,ochoa,Cardiovascular · Examen del sistema venoso
+efr.abd_forma,ef_regiones,1030,Forma,opcion,,abd_forma,Plano,describir_no_interpretar,kb.ef_abdomen,ochoa,Abdomen · Inspección
+efr.abd_volumen,ef_regiones,1040,Volumen,opcion,,abd_volumen,Conservado,describir_no_interpretar,kb.ef_abdomen,ochoa,Abdomen · Inspección
+efr.abd_simetria,ef_regiones,1050,Simetría,opcion,,abd_simetria,Simétrico,describir_no_interpretar,kb.ef_abdomen,ochoa,Abdomen · Inspección
+efr.abd_movilidad,ef_regiones,1060,Movilidad con la respiración,opcion,,abd_movilidad,Conservada con la respiración,describir_no_interpretar,kb.ef_abdomen,ochoa,Abdomen · Inspección
+efr.abd_cicatrices,ef_regiones,1070,Cicatrices,multi,,abd_cicatriz,Ausentes,describir_no_interpretar,kb.ef_abdomen,ochoa,Abdomen · Inspección
+efr.abd_circulacion_colateral,ef_regiones,1080,Circulación colateral,opcion,,circulacion_colateral,Ausente,describir_no_interpretar,kb.ef_abdomen,ochoa,Abdomen · Inspección
+efr.abd_caput_medusae,ef_regiones,1090,Caput medusae,opcion,,presencia,Ausente,describir_no_interpretar,kb.ef_abdomen,ochoa,Abdomen · Inspección
+efr.abd_peristaltismo,ef_regiones,1100,Peristaltismo visible,opcion,,peristaltismo_visible,Ausente,describir_no_interpretar,kb.ef_abdomen,ochoa,Abdomen · Inspección
+efr.abd_region_umbilical,ef_regiones,1110,Región umbilical,opcion,,region_umbilical,"Ombligo centrado, sin protrusión",describir_no_interpretar,kb.ef_abdomen,ochoa,Abdomen · Inspección
+efr.abd_retracciones,ef_regiones,1120,Retracciones,opcion_otro,,abd_retraccion,Ausentes,describir_no_interpretar,kb.ef_abdomen,ochoa,Abdomen · Inspección
+efr.abd_desplazamientos,ef_regiones,1130,Desplazamientos,opcion_otro,,abd_desplazamiento,Ausentes,describir_no_interpretar,kb.ef_abdomen,ochoa,Abdomen · Inspección
+efr.abd_ruidos_hidroaereos,ef_regiones,1140,Ruidos hidroaéreos,opcion,,rha,"Presentes, de 4 a 5 por minuto",describir_no_interpretar,kb.ef_abdomen,ochoa,Abdomen · Auscultación
+efr.abd_soplos,ef_regiones,1150,Soplos,opcion,,soplo_abd,Ausentes,describir_no_interpretar,kb.ef_abdomen,ochoa,Abdomen · Auscultación
+efr.abd_frotes,ef_regiones,1160,Frotes,opcion,,presencia,Ausente,describir_no_interpretar,kb.ef_abdomen,ochoa,Abdomen · Auscultación
+efr.abd_bazuqueo,ef_regiones,1170,Signo del bazuqueo gástrico,opcion,,signo_pos_neg,Negativo,describir_no_interpretar,kb.ef_abdomen,ochoa,Abdomen · Auscultación
+efr.abd_palpacion_superficial,ef_regiones,1180,"Palpación superficial (tono, tensión abdominal, contracturas musculares y sensibilidad)",multi,,abd_palp_superficial,"Blando, depresible y no doloroso",describir_no_interpretar,kb.ef_abdomen,ochoa,Abdomen · Palpación
+efr.abdomen_palpacion,ef_regiones,1190,"Palpación profunda (órganos intraabdominales: tamaño, forma, consistencia, movilidad, dolorabilidad y desplazamiento con la inspiración)",narrativa,,f_abd_p,n,"describir_no_interpretar,escalas:eva",kb.ef_abdomen,ochoa,Abdomen · Palpación
+efr.abd_murphy,ef_regiones,1200,Signo de Murphy,opcion,,signo_pos_neg,Negativo,describir_no_interpretar,kb.ef_abdomen,ochoa,Abdomen · Palpación · Puntos dolorosos
+efr.abd_mcburney,ef_regiones,1210,Punto de McBurney,opcion,,signo_pos_neg,Negativo,describir_no_interpretar,kb.ef_abdomen,ochoa,Abdomen · Palpación · Puntos dolorosos
+efr.abd_blumberg,ef_regiones,1220,Signo de Blumberg,opcion,,signo_pos_neg,Negativo,describir_no_interpretar,kb.ef_abdomen,ochoa,Abdomen · Palpación · Puntos dolorosos
+efr.abd_chauffard,ef_regiones,1230,Punto de Chauffard,opcion,,signo_pos_neg,Negativo,describir_no_interpretar,kb.ef_abdomen,ochoa,Abdomen · Palpación · Puntos dolorosos
+efr.abd_oleada,ef_regiones,1240,Signo de la oleada ascítica,opcion,,signo_pos_neg,Negativo,describir_no_interpretar,kb.ef_abdomen,ochoa,Abdomen · Palpación · Puntos dolorosos
+efr.abd_peloteo,ef_regiones,1250,Signo del peloteo,opcion,,signo_pos_neg,Negativo,describir_no_interpretar,kb.ef_abdomen,ochoa,Abdomen · Palpación · Puntos dolorosos
+efr.gu_puno_percusion_der,ef_regiones,1260,Puño-percusión lumbar derecha,opcion,,signo_pos_neg,Negativo,"describir_no_interpretar,con_lateralidad",kb.ef_gu,ochoa,Aparato genitourinario · Puño-percusión lumbar
+efr.gu_puno_percusion_izq,ef_regiones,1270,Puño-percusión lumbar izquierda,opcion,,signo_pos_neg,Negativo,"describir_no_interpretar,con_lateralidad",kb.ef_gu,ochoa,Aparato genitourinario · Puño-percusión lumbar
+efr.gu_tacto_vaginal,ef_regiones,1280,Tacto vaginal,opcion,,tacto_vaginal,No realizado por no ser pertinente al cuadro actual,describir_no_interpretar,kb.ef_gu,ochoa,Aparato genitourinario · Tacto vaginal
+efr.gu_vulva,ef_regiones,1290,Vulva,opcion_otro,,vulva,Sin lesiones,describir_no_interpretar,kb.ef_gu,ochoa,Aparato genitourinario · Tacto vaginal
+efr.gu_flujo,ef_regiones,1300,Flujo vaginal,opcion_otro,,flujo_vaginal,Sin flujo,describir_no_interpretar,kb.ef_gu,ochoa,Aparato genitourinario · Tacto vaginal
+efr.gu_sensibilidad,ef_regiones,1310,Sensibilidad,opcion,,sensib_tacto_vaginal,Indolora,describir_no_interpretar,kb.ef_gu,ochoa,Aparato genitourinario · Tacto vaginal
+efr.gu_fondo_saco,ef_regiones,1320,Fondo de saco vaginal,opcion,,fondo_saco,"No abombado, indoloro y depresible",describir_no_interpretar,kb.ef_gu,ochoa,Aparato genitourinario · Tacto vaginal
+efg.conciencia,ef_regiones,1330,Estado de conciencia,escala,si,conciencia,Lúcido,,,ochoa,Sistema nervioso
+efg.glasgow_ao,ef_regiones,1340,Glasgow · apertura ocular,escala,si,glasgow_ao,4,,,ochoa,Sistema nervioso · Glasgow
+efg.glasgow_rm,ef_regiones,1350,Glasgow · respuesta motora,escala,si,glasgow_rm,6,,,ochoa,Sistema nervioso · Glasgow
+efr.gu_cuello_uterino,ef_regiones,1360,Cuello uterino,opcion_otro,,cuello_uterino,Sin alteraciones a la palpación,describir_no_interpretar,kb.ef_gu,ochoa,Aparato genitourinario · Tacto vaginal
+efg.glasgow_rv,ef_regiones,1370,Glasgow · respuesta verbal,escala,si,glasgow_rv,5,,,ochoa,Sistema nervioso · Glasgow
+efg.glasgow_total,ef_regiones,1380,Glasgow total,calculado,,,,formula:ao+rv+rm,,ochoa,Sistema nervioso · Glasgow
+efr.neuro_conducta,ef_regiones,1390,Conducta,opcion,,conducta,Colaboradora y tranquila,describir_no_interpretar,kb.ef_neuro,ochoa,Sistema nervioso
+efr.neuro_lenguaje,ef_regiones,1400,Lenguaje,opcion,,lenguaje,Conservado,describir_no_interpretar,kb.ef_neuro,ochoa,Sistema nervioso
+efr.neuro_pares_craneales,ef_regiones,1410,Pares craneales,multi,,pares_craneales,Del primer par al doceavo sin alteraciones,"describir_no_interpretar,con_lateralidad",kb.ef_neuro,ochoa,Sistema nervioso
+efr.neuro_fotomotor,ef_regiones,1420,Reflejo fotomotor,opcion,,reflejo_pupilar,Presente y simétrico,"describir_no_interpretar,con_lateralidad",kb.ef_neuro,ochoa,Sistema nervioso · Reflejos
+efr.neuro_acomodacion,ef_regiones,1430,Reflejo de acomodación,opcion,,reflejo_pupilar,Presente y simétrico,"describir_no_interpretar,con_lateralidad",kb.ef_neuro,ochoa,Sistema nervioso · Reflejos
+efr.rot,ef_regiones,1440,Reflejos osteotendinosos,escala,,rot,2+,"describir_no_interpretar,con_lateralidad,escalas:rot",kb.ef_neuro,ochoa,Sistema nervioso · Reflejos
+efr.neuro_babinski,ef_regiones,1450,Signo de Babinski,opcion,,signo_lat,Negativo bilateral,"describir_no_interpretar,con_lateralidad",kb.ef_neuro,ochoa,Sistema nervioso · Reflejos
+efr.neuro_hoffmann,ef_regiones,1460,Signo de Hoffmann,opcion,,signo_lat,Negativo bilateral,"describir_no_interpretar,con_lateralidad",kb.ef_neuro,ochoa,Sistema nervioso · Reflejos
+efr.neuro_temblor,ef_regiones,1470,Temblor,opcion,,temblor,Ausente,describir_no_interpretar,kb.ectoscopia,ochoa,Sistema nervioso
+efr.neuro_romberg,ef_regiones,1480,Signo de Romberg,opcion,,signo_pos_neg,Negativo,describir_no_interpretar,kb.ef_neuro,ochoa,Sistema nervioso
+efr.neuro_taxia,ef_regiones,1490,Taxia,multi,,taxia,Conservada,describir_no_interpretar,kb.ef_neuro,ochoa,Sistema nervioso
+efr.neuro_dismetria,ef_regiones,1500,Dismetría,opcion,,dismetria,Ausente,describir_no_interpretar,kb.ef_neuro,ochoa,Sistema nervioso
+efr.neuro_rigidez_nuca,ef_regiones,1510,Rigidez de nuca,opcion,,rigidez_nuca,Ausente,describir_no_interpretar,,ochoa,Sistema nervioso
+efr.neuro_sens_profunda,ef_regiones,1520,Sensibilidad profunda,multi,,sens_profunda,Conservada,"describir_no_interpretar,con_lateralidad",kb.ef_neuro,ochoa,Sistema nervioso
+efr.neuro_sens_superficial,ef_regiones,1530,Sensibilidad superficial,multi,,sens_superficial,Conservada y simétrica,"describir_no_interpretar,con_lateralidad",kb.ef_neuro,ochoa,Sistema nervioso
+efr.neuro_fondo_ojo,ef_regiones,1540,Fondo de ojo,multi,,fondo_ojo,Papila y retina sin alteraciones,describir_no_interpretar,kb.ef_neuro,ochoa,Sistema nervioso
+efr.oma_marcha,ef_regiones,1550,Marcha,opcion,,marcha_tipo,Normal,describir_no_interpretar,kb.ectoscopia,ochoa,Osteomioarticular
+efr.oma_postura,ef_regiones,1560,Postura,opcion,,postura,"Erguida, sin desviaciones",describir_no_interpretar,kb.ectoscopia,ochoa,Osteomioarticular
+efr.columna,ef_regiones,1570,Columna vertebral,narrativa,,f_columna,n,"describir_no_interpretar,escalas:eva|fuerza",,ochoa,Osteomioarticular
+efr.oma_lasegue,ef_regiones,1580,Signo de Lasègue,opcion,,signo_lat,Negativo bilateral,"describir_no_interpretar,con_lateralidad",,ochoa,Osteomioarticular
+efr.oma_ejes_oseos,ef_regiones,1590,Ejes óseos,opcion_otro,,ejes_oseos,Conservados y alineados,"describir_no_interpretar,con_lateralidad",,ochoa,Osteomioarticular
+efr.oma_articulaciones,ef_regiones,1600,Articulaciones,multi,,articulaciones,"Sin dolor, sin deformidad y con movilidad conservada","describir_no_interpretar,con_lateralidad",,ochoa,Osteomioarticular
+efr.oma_miembros,ef_regiones,1610,Miembros,narrativa,,f_ext,n,"describir_no_interpretar,con_lateralidad,escalas:godet|pulsos|fuerza",,ochoa,Osteomioarticular
+efr.oma_trofismo,ef_regiones,1620,Trofismo muscular,opcion,,trofismo,Conservado,"describir_no_interpretar,con_lateralidad",kb.ef_neuro,ochoa,Osteomioarticular
+dx.sindromico,diagnostico,10,Diagnóstico sindrómico,lista,si,,,con_sustento,kb.dx,ochoa,Impresión diagnóstica
+dx.presuntivo,diagnostico,20,Diagnóstico clínico,lista,si,,,"sin_codigos,con_sustento",kb.dx,ochoa,Impresión diagnóstica
+dx.funcional,diagnostico,30,Diagnóstico funcional,lista,,,,con_sustento,kb.dx,ochoa,Impresión diagnóstica
+dx.anatomopatologico,diagnostico,40,Diagnóstico anatomopatológico,lista,,,,con_sustento,kb.dx,ochoa,Impresión diagnóstica
+dx.etiologico,diagnostico,50,Diagnóstico etiológico,lista,,,,con_sustento,kb.dx,ochoa,Impresión diagnóstica
+dx.definitivo,diagnostico,60,Diagnóstico definitivo,lista,,,,"sin_codigos,con_sustento",kb.dx,ochoa,Impresión diagnóstica
+tx.tratamiento,tratamiento,10,Tratamiento,narrativa,,f_tratamiento,,farmaco_dosis_via_intervalo,kb.dx,ochoa,
+plan.plan,plan_trabajo,10,Plan de trabajo,narrativa,,f_plan,,examen_con_pregunta,kb.examenes,ochoa,
+exc.hemocultivo,examenes,10,Hemocultivo,opcion,,cultivo,No se realizó,,kb.examenes,ochoa,Laboratorio · Cultivos
+exc.urocultivo,examenes,20,Urocultivo,opcion,,cultivo,No se realizó,,kb.examenes,ochoa,Laboratorio · Cultivos
+exc.otros_cultivos,examenes,30,Otros cultivos,texto_largo,,,,,kb.examenes,ochoa,Laboratorio · Cultivos
+exc.ecg_ritmo,examenes,40,Ritmo,opcion_otro,,ecg_ritmo,Ritmo sinusal,,kb.examenes,ochoa,Electrocardiograma
+exc.ecg_fc,examenes,50,Frecuencia cardíaca en el electrocardiograma (latidos por minuto),numero,,,60 a 100,valor_unidad_rango,kb.examenes,ochoa,Electrocardiograma
+exc.ecg_eje,examenes,60,Eje eléctrico del complejo QRS,opcion_otro,,ecg_eje,"Normal, de 0° a +90°",,kb.examenes,ochoa,Electrocardiograma
+exc.ecg_onda_p,examenes,70,Onda P,opcion,,ecg_onda_p,Normal,,kb.examenes,ochoa,Electrocardiograma
+exc.ecg_qrs,examenes,80,Complejo QRS,opcion,,ecg_qrs,Normal,,kb.examenes,ochoa,Electrocardiograma
+exc.ecg_onda_t,examenes,90,Onda T,opcion,,ecg_onda_t,Normal,,kb.examenes,ochoa,Electrocardiograma
+exc.ecg_st,examenes,100,Segmento ST,opcion,,ecg_st,Isoeléctrico,,kb.examenes,ochoa,Electrocardiograma
+exc.ecg_pr,examenes,110,Intervalo PR (segundos),numero,,,0.12 a 0.20,valor_unidad_rango,kb.examenes,ochoa,Electrocardiograma
+exc.ecg_qtc,examenes,120,Intervalo QT corregido (segundos),numero,,,0.34 a 0.44,valor_unidad_rango,kb.examenes,ochoa,Electrocardiograma
+exc.ecg_conclusion,examenes,130,Conclusión del electrocardiograma,multi,,ecg_conclusion,Electrocardiograma dentro de límites normales,con_sustento,kb.examenes,ochoa,Electrocardiograma
+exc.rx_partes_blandas,examenes,140,Partes blandas,opcion_otro,,rx_partes_blandas,Sin alteraciones,describir_no_interpretar,kb.examenes,ochoa,Radiografía de tórax
+exc.rx_partes_oseas,examenes,150,Partes óseas,opcion_otro,,rx_partes_oseas,Sin alteraciones,describir_no_interpretar,kb.examenes,ochoa,Radiografía de tórax
+exc.rx_campos_pulmonares,examenes,160,Campos pulmonares,multi,,rx_campos_pulmonares,"Bien ventilados, con trama vascular conservada","describir_no_interpretar,con_lateralidad",kb.examenes,ochoa,Radiografía de tórax
+exc.rx_silueta_cardiovascular,examenes,170,Silueta cardiovascular,multi,,rx_silueta,De tamaño y forma normales,describir_no_interpretar,kb.examenes,ochoa,Radiografía de tórax
+exc.rx_ict,examenes,180,Índice cardiotorácico,numero,,,Menor de 0.50,valor_unidad_rango,kb.examenes,ochoa,Radiografía de tórax
+exc.rx_conclusiones,examenes,190,Conclusiones de la radiografía de tórax,multi,,rx_conclusion,Radiografía de tórax sin alteraciones,con_sustento,kb.examenes,ochoa,Radiografía de tórax
+exc.examenes,examenes,200,Otros estudios,narrativa,,f_otros_estudios,,valor_unidad_rango,kb.examenes,ochoa,Otros estudios
+evo.epicrisis,evolucion,10,Epicrisis,narrativa,,f_epicrisis,,"tercera_persona,orden_cronologico",kb.resumen,ochoa,

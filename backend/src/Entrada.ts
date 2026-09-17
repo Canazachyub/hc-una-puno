@@ -16,7 +16,8 @@ import type {
   TranscribirRespuesta,
 } from '../../shared/types';
 import { clave, partes, unir, unirSinRepetir, validarValor } from '../../shared/valores';
-import { catalogos, knowledge } from './Catalogos';
+import { camposDe, catalogos, knowledge } from './Catalogos';
+import { plantillaDeHistoria } from './HC';
 import { geminiJson, llamarGemini } from './Gemini';
 import { PROMPT_TRANSCRIBIR, promptOrganizar } from './Prompts';
 import { conLock, registrar } from './Repo';
@@ -100,7 +101,8 @@ export function organizar(p: OrganizarPayload): OrganizarRespuesta {
   const contexto: Record<string, string> = {};
   for (const [k, v] of Object.entries(valoresClinicos(p.contexto ?? {}))) if (typeof v === 'string' && v.trim()) contexto[k] = v;
 
-  const { esquema, opciones, listas } = catalogos();
+  const { opciones, listas } = catalogos();
+  const esquema = camposDe(plantillaDeHistoria(p.plantilla, dni, episodio));
   let campos = esquema.filter(
     (c) =>
       (seccion === '*' || c.seccion === seccion) &&

@@ -37,6 +37,7 @@ interface PropsControl {
 
 const REGLA_AYUDA: Record<string, string> = {
   palabras_paciente: 'Con las palabras del paciente',
+  termino_caracterizacion: 'Término, caracterización y tiempo',
   farmaco_dosis_via_intervalo: 'Fármaco, dosis, vía y frecuencia',
   examen_con_pregunta: 'Examen y qué pregunta responde',
   valor_unidad_rango: 'Fecha, valor, unidad y rango',
@@ -568,6 +569,7 @@ function CampoNarrativa({ campo, valor, cambiar, cat, id, clave: claveHc }: Prop
             origen: 'texto',
             dni: h.dni,
             episodio: h.episodio,
+            plantilla: h.plantilla,
             seccion: campo.seccion,
             campo_objetivo: campo.campo_id,
             contexto: valoresClinicos(h.valores),

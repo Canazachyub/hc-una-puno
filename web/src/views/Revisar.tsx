@@ -18,8 +18,8 @@ import { rutas } from '../lib/router';
 import { useCatalogo } from '../lib/schema';
 
 export function Revisar({ clave }: { clave: string }) {
-  const cat = useCatalogo();
   const h = useLiveQuery(() => db.historias.get(clave), [clave]);
+  const cat = useCatalogo(h?.plantilla);
   const [revisando, setRevisando] = useState(false);
   const [revision, setRevision] = useState<RevisarRespuesta | null>(null);
   const [aplicados, setAplicados] = useState<string[]>([]);
@@ -41,7 +41,7 @@ export function Revisar({ clave }: { clave: string }) {
   const revisarConGemini = async () => {
     setRevisando(true);
     try {
-      setRevision(await llamar('hc.revisar', { dni: h.dni, episodio: h.episodio, valores: valoresClinicos(h.valores) }, { timeoutMs: 180_000 }));
+      setRevision(await llamar('hc.revisar', { dni: h.dni, episodio: h.episodio, plantilla: h.plantilla, valores: valoresClinicos(h.valores) }, { timeoutMs: 180_000 }));
       setAplicados([]);
     } catch (e) {
       avisar(mensaje(e), 'error');

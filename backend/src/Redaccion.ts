@@ -8,7 +8,8 @@ import { GeminiLaboratorioSchema, GeminiRedactarSchema } from '../../shared/sche
 import { SECCIONES } from '../../shared/secciones';
 import { CAMPO_EVOLUCIONES, CAMPO_LABORATORIO, VITALES_DIA, diaHospitalizacion, leerEvoluciones, leerLaboratorio, valoresClinicos } from '../../shared/seguimiento';
 import type { LaboratorioPayload, LaboratorioRespuesta, RedactarPayload, RedactarRespuesta } from '../../shared/types';
-import { catalogos } from './Catalogos';
+import { camposDe } from './Catalogos';
+import { plantillaDeHistoria } from './HC';
 import { carpetaDatos } from './Drive';
 import { geminiJson } from './Gemini';
 import { conLock, registrar } from './Repo';
@@ -106,8 +107,8 @@ REGLAS
 
 // ---------- Datos de la historia en texto ----------
 
-function datosHistoria(valores: Record<string, string>): string {
-  const { esquema } = catalogos();
+function datosHistoria(valores: Record<string, string>, plantilla: string): string {
+  const esquema = camposDe(plantilla);
   const clinicos = valoresClinicos(valores);
   const lineas: string[] = [];
   for (const s of SECCIONES) {
@@ -206,6 +207,7 @@ export function redactar(p: RedactarPayload): RedactarRespuesta {
   const extra: Record<string, string> = {};
   for (const [k, v] of Object.entries(p.extra ?? {})) if (typeof v === 'string') extra[k] = v.slice(0, 4000);
 
+  const plantilla = plantillaDeHistoria(p.plantilla, p.dni, p.episodio);
   let instruccion: string;
   if (p.tipo === 'presentacion') instruccion = instruccionPresentacion();
   else if (p.tipo === 'epicrisis') instruccion = instruccionEpicrisis(extra);
@@ -215,7 +217,7 @@ export function redactar(p: RedactarPayload): RedactarRespuesta {
   const r = geminiJson(
     {
       sistema: `Eres el asistente de redacción de un estudiante de medicina de la UNA Puno.\n\n${REGLAS_REDACCION}\n\n${instruccion}`,
-      partes: [{ type: 'text', text: `DATOS REGISTRADOS DE LA HISTORIA CLÍNICA\n${datosHistoria(valores) || '(sin datos)'}` }],
+      partes: [{ type: 'text', text: `DATOS REGISTRADOS DE LA HISTORIA CLÍNICA\n${datosHistoria(valores, plantilla) || '(sin datos)'}` }],
       esquema: p.tipo === 'evolucion' ? ESQUEMA_SOAP : ESQUEMA_TEXTO,
       pensamiento: 'medium',
       maxTokens: 12000,

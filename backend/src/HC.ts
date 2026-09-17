@@ -1,5 +1,6 @@
 // Acciones sobre las historias: listar, obtener, crear y guardar.
 
+import { PLANTILLA_POR_DEFECTO, plantillaValida } from '../../shared/plantillas';
 import { CAMPOS_CLAVE } from '../../shared/secciones';
 import { CAMPOS_SISTEMA, esCampoSistema, validarSistema } from '../../shared/seguimiento';
 import { COLUMNAS_CONTROL } from '../../shared/types';
@@ -40,6 +41,20 @@ function dniValido(v: unknown): string {
   return dni;
 }
 
+/** La plantilla con la que se llena una historia: la que manda la app o, si no, la de su fila. */
+export function plantillaDeHistoria(pedida: string | undefined, dni: string, episodio: number): string {
+  const p = String(pedida ?? '').trim();
+  if (p && plantillaValida(p) === p) return p;
+  try {
+    const cab = asegurarColumnas([]);
+    const n = buscarFila(dniValido(dni), Number(episodio) || 0, cab);
+    if (n !== null) return plantillaValida(leerFilaHC(n, cab).plantilla ?? '');
+  } catch {
+    // historia todavía sin fila: se usa la de siempre
+  }
+  return PLANTILLA_POR_DEFECTO;
+}
+
 export function listar(p: ListarPayload): ListarRespuesta {
   const limite = Math.min(Math.max(Number(p.limite) || 100, 1), 500);
   const cursor = Math.max(Number(p.cursor) || 0, 0);
@@ -78,6 +93,7 @@ export function crear(p: CrearPayload): CrearRespuesta {
       ...iniciales,
       dni,
       episodio: String(episodio),
+      plantilla: plantillaValida(String(p.plantilla ?? '')),
       estado: 'borrador',
       completitud: '0',
       version: '1',
@@ -131,6 +147,7 @@ export function guardar(p: GuardarPayload): GuardarRespuesta {
       mapa = {
         dni,
         episodio: String(ep),
+        plantilla: plantillaValida(String(p.plantilla ?? '')),
         estado: 'borrador',
         completitud: '0',
         version: '0',

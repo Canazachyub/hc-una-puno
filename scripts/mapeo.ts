@@ -10,13 +10,20 @@ import { parsearCsv } from '../shared/csv';
 import { TITULO_AMBITO, TITULO_TIPO, VARIABLES_UMBRAL, ambitoDeSintoma, ambitosDeCampo, parsearGuias, umbrales } from '../shared/guias';
 import { ABREVIATURAS } from '../shared/abreviaturas';
 import { GRAVEDAD, NOMBRE_GRAVEDAD, gravedadDe } from '../shared/gravedad';
-import { SECCIONES } from '../shared/secciones';
+import { infoPlantilla } from '../shared/plantillas';
+import { SECCIONES, infoSeccion } from '../shared/secciones';
 import type { Campo } from '../shared/types';
 
 const RAIZ = join(import.meta.dirname, '..');
 const leer = (f: string) => readFileSync(join(RAIZ, f), 'utf8');
 
-const esquema = filasAEsquema(parsearCsv(leer('seed/esquema.csv')));
+// Las dos plantillas: cada campo lleva la suya.
+const filasEsquema = (): string[][] => {
+  const [cab, ...fmh] = parsearCsv(leer('seed/esquema.csv'));
+  const ochoa = parsearCsv(leer('seed/esquema-ochoa.csv')).slice(1);
+  return [cab, ...fmh, ...ochoa].filter((f) => f.some((c) => c !== ''));
+};
+const esquema = filasAEsquema(filasEsquema());
 const opciones = filasAOpciones(parsearCsv(leer('seed/opciones.csv')));
 const listas = indexarListas(opciones);
 const guias = parsearGuias(leer('seed/guias.csv'));
@@ -133,7 +140,11 @@ const areaDeLista = (listaId: string) =>
 
 const campos = esquema.map((c) => ({
   area: areaDeCampo(c)?.id ?? '',
+  plantilla: c.plantilla,
+  plantilla_nombre: infoPlantilla(c.plantilla).nombre,
   seccion: c.seccion,
+  seccion_titulo_plantilla: infoSeccion(c.seccion, c.plantilla).titulo,
+  subtitulo: c.subtitulo,
   seccion_titulo: tituloSeccion(c.seccion),
   orden: c.orden,
   campo_id: c.campo_id,

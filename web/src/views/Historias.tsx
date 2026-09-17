@@ -8,6 +8,7 @@ import { avisar } from '../lib/avisos';
 import { enLinea, mensaje } from '../lib/api';
 import { db } from '../lib/db';
 import type { HistoriaLocal, ResumenRemoto } from '../lib/db';
+import { PLANTILLAS, PLANTILLA_POR_DEFECTO } from '../../../shared/plantillas';
 import { crearHistoria, nombrePaciente } from '../lib/historia';
 import { ir, rutas } from '../lib/router';
 import { useCatalogo } from '../lib/schema';
@@ -165,8 +166,8 @@ export function Historias() {
         <NuevaHistoria
           cerrar={() => setNueva(false)}
           existentes={items}
-          crear={async (dni) => {
-            const clave = await crearHistoria(dni, cat);
+          crear={async (dni, plantilla) => {
+            const clave = await crearHistoria(dni, cat, plantilla);
             setNueva(false);
             ir(rutas.historia(clave, 'filiacion'));
           }}
@@ -188,10 +189,11 @@ function NuevaHistoria({
 }: {
   cerrar: () => void;
   existentes: Item[];
-  crear: (dni: string) => Promise<void>;
+  crear: (dni: string, plantilla: string) => Promise<void>;
   abrir: (i: Item) => void;
 }) {
   const [dni, setDni] = useState('');
+  const [plantilla, setPlantilla] = useState(PLANTILLA_POR_DEFECTO);
   const [creando, setCreando] = useState(false);
   const limpio = dni.trim().toUpperCase();
   const valido = /^[A-Z0-9-]{6,15}$/.test(limpio);
@@ -205,7 +207,7 @@ function NuevaHistoria({
           e.preventDefault();
           if (!valido || creando) return;
           setCreando(true);
-          void crear(limpio).finally(() => setCreando(false));
+          void crear(limpio, plantilla).finally(() => setCreando(false));
         }}
       >
         <label className="campo-ajuste">
@@ -221,6 +223,20 @@ function NuevaHistoria({
           />
         </label>
         {limpio && !/^\d{8}$/.test(limpio) && valido && <span className="aviso-texto pequeno">No tiene 8 dígitos. Verifica si es un DNI.</span>}
+        <div className="pila" style={{ gap: 4 }}>
+          <span className="sub">Plantilla de historia clínica</span>
+          {PLANTILLAS.map((p) => (
+            <label key={p.id} className="fila" style={{ alignItems: 'flex-start', gap: 8 }}>
+              <input type="radio" name="plantilla" checked={plantilla === p.id} onChange={() => setPlantilla(p.id)} />
+              <span>
+                <strong>{p.nombre}</strong>
+                <span className="sub pequeno" style={{ display: 'block' }}>
+                  {p.descripcion}
+                </span>
+              </span>
+            </label>
+          ))}
+        </div>
         {delPaciente.length > 0 && (
           <div className="pila" style={{ gap: 6 }}>
             <span className="sub">Este paciente ya tiene historias:</span>

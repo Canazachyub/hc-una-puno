@@ -11,6 +11,11 @@ function num(v: string): number {
   return Number.isFinite(n) ? n : 0;
 }
 
+/** Los campos de una plantilla, en el orden en que se llenan. */
+export function camposDePlantilla(esquema: Campo[], plantilla: string): Campo[] {
+  return esquema.filter((c) => c.plantilla === plantilla);
+}
+
 export function filasAEsquema(filas: string[][]): Campo[] {
   return filasAObjetos(filas)
     .filter((o) => o.campo_id)
@@ -30,6 +35,8 @@ export function filasAEsquema(filas: string[][]): Campo[] {
           .map((r) => r.trim())
           .filter(Boolean),
         ayuda_kb: o.ayuda_kb ?? '',
+        plantilla: o.plantilla || 'fmh',
+        subtitulo: o.subtitulo ?? '',
       };
     })
     .sort((a, b) => ordenSeccion(a.seccion) - ordenSeccion(b.seccion) || a.orden - b.orden);

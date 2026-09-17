@@ -27,8 +27,8 @@ import { descargarHistoria } from '../lib/sync';
 import type { CatalogoVista } from '../lib/vista';
 
 export function Historia({ clave, seccion, campo = null }: { clave: string; seccion: string | null; campo?: string | null }) {
-  const cat = useCatalogo();
   const h = useLiveQuery(() => db.historias.get(clave), [clave]);
+  const cat = useCatalogo(h?.plantilla);
   const [trayendo, setTrayendo] = useState(false);
 
   // Al abrir, trae lo último de la nube sin pisar lo local.

@@ -97,6 +97,7 @@ async function prepararOps(): Promise<void> {
       payload: {
         dni: h.dni,
         episodio: h.episodio,
+        plantilla: h.plantilla,
         version: h.version,
         campos,
         estado: h.estado,
@@ -225,6 +226,7 @@ async function procesarEntradas(): Promise<void> {
               origen: e.origen,
               dni: h.dni,
               episodio: h.episodio,
+              plantilla: h.plantilla,
               seccion: e.seccion,
               campo_objetivo: e.campoObjetivo || undefined,
               contexto: valoresClinicos(h.valores),

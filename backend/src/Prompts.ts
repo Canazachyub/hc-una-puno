@@ -6,6 +6,23 @@ import { SECCIONES, infoSeccion } from '../../shared/secciones';
 import type { Campo, KnowledgeFila, Opcion, OrigenEntrada } from '../../shared/types';
 import { clave } from '../../shared/valores';
 
+/**
+ * Dónde va cada dato. Sin esto, al dictar toda la historia, un mismo síntoma termina repetido
+ * en síntomas principales, en el relato y en funciones biológicas.
+ */
+export const REPARTO_SECCIONES = `DÓNDE VA CADA DATO (cada dato va en UNA sola sección)
+- Filiación: quién es el paciente (nombre, edad, procedencia, ocupación, con quién vive). Nada clínico.
+- Enfermedad actual: el cuadro que lo trae ahora. Tiempo de enfermedad, forma de inicio, curso, síntomas principales caracterizados, relato cronológico con el síntoma guía como hilo, lo que tomó por su cuenta y la atención que ya recibió por ESTE cuadro.
+- Funciones biológicas: cómo están apetito, sed, sueño, deposiciones, orina, peso, sudoración y ánimo. Si una de ellas está alterada por el cuadro actual (diarrea, disuria, insomnio por el dolor), el detalle va en el relato y aquí solo se anota el cambio respecto a lo habitual, en una línea.
+- Antecedentes personales: cómo vive y sus hábitos, antes de este cuadro.
+- Antecedentes fisiológicos: nacimiento, desarrollo, vida sexual y antecedentes gineco-obstétricos.
+- Antecedentes patológicos: enfermedades ya diagnosticadas antes de este cuadro, con su año y su tratamiento. Nunca los síntomas de ahora.
+- Antecedentes familiares: enfermedades de los familiares, con el parentesco. Nada del paciente.
+- Examen físico: solo lo que el estudiante observa, palpa, percute o ausculta hoy. Nunca lo que el paciente refiere.
+- Exámenes complementarios: resultados, con su fecha.
+- Diagnóstico: interpretación de lo anterior. No aparecen datos nuevos.
+Si un dato ya está en el CONTEXTO YA REGISTRADO de otra sección, no lo repitas: déjalo fuera y explícalo en "descartados".`;
+
 // ---------- Reglas y glosario ----------
 
 export const REGLAS_TEXTO: Record<string, string> = {
@@ -15,6 +32,8 @@ export const REGLAS_TEXTO: Record<string, string> = {
   hilo_sintoma_guia:
     'El síntoma guía es el hilo conductor; los demás síntomas se relatan en el momento en que aparecieron.',
   palabras_paciente: 'Con las propias palabras del paciente, sin tecnicismos y sin comillas.',
+  termino_caracterizacion:
+    'Cada síntoma con su término semiológico y su caracterización principal (tipo, valor, patrón o grado) y, entre paréntesis, el tiempo: «Fiebre intermitente de hasta 39 °C, de predominio vespertino (4 días)». Sin repetir aquí todo el relato.',
   max_3: 'Máximo tres elementos, en el orden en que aparecieron.',
   describir_no_interpretar:
     'Describe el hallazgo, no lo interpretes: "matidez en base derecha" sí, "derrame pleural" no.',
@@ -357,6 +376,8 @@ ESCALAS (solo se sugieren en los campos donde corresponden, según la lista de C
 ${idsEscala.map((id) => `${id}: ${listas.get(id)?.[0].nombre ?? id}`).join(' · ') || '(ninguna en esta sección)'}
 
 ${INSTRUCCION_TIPOS}
+
+${REPARTO_SECCIONES}
 
 REGLAS DE REDACCIÓN DE LAS NOTAS DE SEMIOLOGÍA DEL ESTUDIANTE
 ${kb.length ? kb.map((k) => `### ${k.titulo}\n${k.contenido}`).join('\n\n') : '(sin notas cargadas)'}

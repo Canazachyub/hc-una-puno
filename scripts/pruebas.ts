@@ -1,3 +1,4 @@
+import { COLUMNAS_CONTROL } from '../shared/types';
 // Pruebas: capa compartida y backend completo sobre un Apps Script simulado (Gemini simulado).
 // Uso: npm test   (compila el backend antes)
 
@@ -20,9 +21,11 @@ import { TITULO_AMBITO, ambitoDeSintoma, ambitosDeCampo, cortesDeGuia, interpret
 import { migrarValor, migrarValores } from '../shared/migraciones';
 import { contextoDe } from '../shared/contexto';
 import { ajusteHemoglobina, buscarParametro, interpretarLab, parsearLaboratorio, rangoDeReferencia } from '../shared/laboratorio';
-import { CAMPO_EVOLUCIONES, CAMPO_LABORATORIO, diaHospitalizacion, escribirEvoluciones, escribirLaboratorio, validarSistema } from '../shared/seguimiento';
+import { CAMPOS_SISTEMA, CAMPO_EVOLUCIONES, CAMPO_LABORATORIO, diaHospitalizacion, escribirEvoluciones, escribirLaboratorio, validarSistema } from '../shared/seguimiento';
+import { PLANTILLA_POR_DEFECTO } from '../shared/plantillas';
+import { SECCIONES } from '../shared/secciones';
 import { parsearSindromes, sugerirSindromes } from '../shared/sindromes';
-import type { Respuesta } from '../shared/types';
+import type { Campo, Respuesta } from '../shared/types';
 import { validarValor } from '../shared/valores';
 import { crearEntorno } from '../local/gas-node';
 import type { PeticionHttp } from '../local/gas-node';
@@ -44,7 +47,12 @@ async function prueba(nombre: string, fn: () => void | Promise<void>): Promise<v
   }
 }
 
-const esquema = filasAEsquema(parsearCsv(readFileSync(join(RAIZ, 'seed/esquema.csv'), 'utf8')));
+const filasDeEsquema = (): string[][] => {
+  const [cab, ...fmh] = parsearCsv(readFileSync(join(RAIZ, 'seed/esquema.csv'), 'utf8'));
+  const ochoa = parsearCsv(readFileSync(join(RAIZ, 'seed/esquema-ochoa.csv'), 'utf8')).slice(1);
+  return [cab, ...fmh, ...ochoa].filter((f) => f.some((c) => c !== ''));
+};
+const esquema = filasAEsquema(filasDeEsquema());
 const opciones = filasAOpciones(parsearCsv(readFileSync(join(RAIZ, 'seed/opciones.csv'), 'utf8')));
 const listas = indexarListas(opciones);
 const campo = (id: string) => {
@@ -54,8 +62,9 @@ const campo = (id: string) => {
 };
 
 console.log('Semillas');
-await prueba('152 campos (los de la plantilla, ninguno agregado)', () => {
-  assert.equal(esquema.length, 152);
+await prueba('cada plantilla trae sus campos: 152 la de Clínica Médica, más de 350 la detallada', () => {
+  assert.equal(esquema.filter((c) => c.plantilla === 'fmh').length, 152);
+  assert.ok(esquema.filter((c) => c.plantilla === 'ochoa').length > 350);
 });
 await prueba('todo lista_id del esquema existe en Opciones', () => {
   const faltan = esquema.filter((c) => c.lista_id && !listas.has(c.lista_id)).map((c) => c.lista_id);
@@ -315,7 +324,11 @@ await prueba('las definiciones buscadas en las notas corresponden a opciones rea
   const existe = new Set(opciones.map((o) => `${o.lista_id}|${o.valor}`));
   assert.deepEqual(defs.filter((d) => !existe.has(`${d[0]}|${d[1]}`)).map((d) => `${d[0]}|${d[1]}`), []);
   const conDef = new Set(defs.map((d) => `${d[0]}|${d[1]}`));
-  const frasesSin = opciones.filter((o) => o.tipo === 'frase' && o.valor !== 'n' && !conDef.has(`${o.lista_id}|${o.valor}`));
+  // Las frases de la plantilla de Clínica Médica ya tienen su definición; las de la detallada están en camino.
+  const listasFmh = new Set(esquema.filter((c) => c.plantilla === 'fmh' && c.lista_id).map((c) => c.lista_id));
+  const frasesSin = opciones.filter(
+    (o) => o.tipo === 'frase' && o.valor !== 'n' && listasFmh.has(o.lista_id) && !conDef.has(`${o.lista_id}|${o.valor}`),
+  );
   assert.deepEqual(frasesSin.map((o) => `${o.lista_id}|${o.valor}`), [], 'hallazgos sin significado clínico');
   assert.deepEqual(defs.filter((d) => detectarAbreviaturas(d[2]).length).map((d) => d[2]), []);
 });
@@ -333,6 +346,55 @@ await prueba('la coma decimal no toca fechas ni versiones', () => {
   assert.equal(comaDecimal('Temperatura de 38.6 °C y creatinina 1.9 mg/dl.'), 'Temperatura de 38,6 °C y creatinina 1,9 mg/dl.');
   assert.equal(comaDecimal('El 16.09.2026 a las 10:00, versión 1.2.3; 15 200 por microlitro.'), 'El 16.09.2026 a las 10:00, versión 1.2.3; 15 200 por microlitro.');
   assert.equal(comaDecimal('Frecuencia 104. Luego 37.8.'), 'Frecuencia 104. Luego 37,8.');
+});
+
+await prueba('una fórmula con llaves arma texto, no un número', () => {
+  const campos = [
+    { campo_id: 'afi.gestaciones', seccion: 'ant_fisiologicos', orden: 10, label: 'Gestaciones', tipo: 'numero', obligatorio: false, lista_id: '', valor_normal: '', reglas: [], ayuda_kb: '', plantilla: 'ochoa', subtitulo: '' },
+    { campo_id: 'afi.partos_termino', seccion: 'ant_fisiologicos', orden: 20, label: 'A término', tipo: 'numero', obligatorio: false, lista_id: '', valor_normal: '', reglas: [], ayuda_kb: '', plantilla: 'ochoa', subtitulo: '' },
+    { campo_id: 'afi.formula_obstetrica', seccion: 'ant_fisiologicos', orden: 30, label: 'Fórmula obstétrica', tipo: 'calculado', obligatorio: false, lista_id: '', valor_normal: '', reglas: ['formula:G{gestaciones} P{partos_termino}'], ayuda_kb: '', plantilla: 'ochoa', subtitulo: '' },
+  ] as Campo[];
+  assert.deepEqual(recalcular(campos, { 'afi.gestaciones': '4', 'afi.partos_termino': '3' }), { 'afi.formula_obstetrica': 'G4 P3' });
+  assert.deepEqual(recalcular(campos, {}), {});
+});
+
+console.log('Plantillas de historia clínica');
+await prueba('la plantilla detallada está completa y es coherente', () => {
+  const ochoa = esquema.filter((c) => c.plantilla === 'ochoa');
+  if (ochoa.length === 0) return; // todavía sin armar
+  assert.ok(ochoa.length > 250, `solo ${ochoa.length} campos`);
+  const ids = new Set<string>();
+  for (const c of ochoa) {
+    assert.ok(!ids.has(c.campo_id), `campo repetido: ${c.campo_id}`);
+    ids.add(c.campo_id);
+    assert.ok(SECCIONES.some((s) => s.id === c.seccion), `${c.campo_id}: sección ${c.seccion}`);
+    assert.deepEqual(detectarAbreviaturas(c.label), [], `${c.campo_id}: ${c.label}`);
+    if (c.lista_id) assert.ok(listas.has(c.lista_id), `${c.campo_id}: falta la lista ${c.lista_id}`);
+    if (c.valor_normal && c.lista_id) {
+      const valores = (listas.get(c.lista_id) ?? []).map((o) => o.valor);
+      assert.ok(valores.includes(c.valor_normal), `${c.campo_id}: «${c.valor_normal}» no está en ${c.lista_id}`);
+    }
+  }
+  // Los datos se comparten: los campos que también existen en la otra plantilla guardan lo mismo.
+  const fmh = new Map(esquema.filter((c) => c.plantilla === 'fmh').map((c) => [c.campo_id, c]));
+  for (const c of ochoa) {
+    const otro = fmh.get(c.campo_id);
+    if (otro && otro.tipo !== c.tipo) {
+      assert.ok(
+        ['opcion_otro', 'texto', 'texto_largo', 'calculado'].includes(c.tipo),
+        `${c.campo_id}: ${otro.tipo} en una plantilla y ${c.tipo} en la otra`,
+      );
+    }
+  }
+});
+await prueba('el Word de la plantilla detallada sigue el documento', () => {
+  const vistaOchoa = armarVista({ version: 'x', esquema, opciones, knowledge: [] }, 'ochoa');
+  if (vistaOchoa.esquema.every((c) => c.plantilla !== 'ochoa')) return; // todavía sin armar
+  const doc = armarDocumento({ dni: '40123456', episodio: 1, valores: { 'fil.apellidos': 'PRUEBA' } }, vistaOchoa, { vacios: 'lineas' });
+  const titulos = doc.filter((e) => e.t === 'seccion').map((e) => e.texto);
+  assert.ok(titulos.some((t) => t.includes('EXAMEN CLÍNICO')), titulos.join(' | '));
+  assert.ok(doc.some((e) => e.t === 'sub'), 'sin subtítulos');
+  assert.ok(!doc.some((e) => 'ref' in e && vistaOchoa.porId.get(e.ref)?.plantilla === 'fmh'), 'se coló un campo de la otra plantilla');
 });
 
 console.log('Rangos según la edad y la altitud');
@@ -445,7 +507,7 @@ await prueba('las columnas de sistema validan su JSON', () => {
 });
 
 console.log('Documento (Word y vista previa)');
-const vista = armarVista({ version: 'semilla', esquema, opciones, knowledge: [] });
+const vista = armarVista({ version: 'semilla', esquema, opciones, knowledge: [] }, 'fmh');
 await prueba('con líneas: sale toda la plantilla con etiquetas completas', () => {
   const doc = armarDocumento({ dni: '40123456', episodio: 1, valores: {} }, vista, { vacios: 'lineas' });
   const etiquetas = doc.flatMap((e) => (e.t === 'campo' || e.t === 'narrativa' || e.t === 'lista' ? [e.etiqueta] : []));
@@ -550,9 +612,9 @@ const hoja = (n: string) => libro.getSheetByName(n)!;
 
 await prueba('setup crea las 5 hojas e importa semillas', () => {
   assert.deepEqual(libro.hojas.map((h) => h.nombre).sort(), ['Esquema', 'HC', 'Knowledge', 'Opciones', 'Registro']);
-  assert.equal(hoja('Esquema').getLastRow(), 153);
+  assert.equal(hoja('Esquema').getLastRow(), 1 + esquema.length);
   assert.equal(hoja('Opciones').getLastRow(), parsearCsv(readFileSync(join(RAIZ, 'seed/opciones.csv'), 'utf8')).length);
-  assert.equal(hoja('HC').getLastColumn(), 8 + 152 + 2);
+  assert.equal(hoja('HC').getLastColumn(), COLUMNAS_CONTROL.length + new Set(esquema.map((c) => c.campo_id)).size + CAMPOS_SISTEMA.length);
 });
 
 console.log('Acceso con usuario y contraseña');
@@ -642,7 +704,7 @@ await prueba('ping', () => {
 let version = '';
 await prueba('catalogos.get completo y luego sin cambios', () => {
   const c = ok(post<{ version: string; esquema: unknown[] }>('catalogos.get', {}));
-  assert.equal(c.esquema.length, 152);
+  assert.equal(c.esquema.length, esquema.length);
   version = c.version;
   const s = ok(post<{ sinCambios?: boolean }>('catalogos.get', { desde: version }));
   assert.equal(s.sinCambios, true);
@@ -798,7 +860,17 @@ await prueba('el prompt lleva reglas, glosario, listas y contexto, y pide store=
   assert.ok(texto.includes('ea.sintoma_guia (Síntoma guía): Disnea'));
   assert.ok(!('temperature' in (p.cuerpo.generation_config as object)));
 });
+await prueba('el prompt dice dónde va cada dato y cómo se escriben los síntomas principales', () => {
+  ok(post('entrada.organizar', { texto: 'fiebre hace 4 días', origen: 'texto', dni: '40123456', episodio: 1, seccion: '*', contexto: {} }, randomUUID()));
+  const p = env.llamadasGemini.at(-1)!;
+  const sistema = JSON.stringify(p.cuerpo.instructions ?? p.cuerpo.system ?? '') + JSON.stringify(p.cuerpo.input);
+  assert.match(sistema, /DÓNDE VA CADA DATO/);
+  assert.match(sistema, /cada dato va en UNA sola sección/i);
+  assert.match(sistema, /Fiebre intermitente de hasta 39/);
+  assert.ok(!/palabras del paciente, sin tecnicismos/.test(sistema.split('ea.signos_sintomas')[1] ?? ''), 'el campo ya no pide las palabras del paciente');
+});
 await prueba('organizar escala con detalles en examen físico', () => {
+  // Con la plantilla de Clínica Médica, que tiene el campo de edema con la escala de godet.
   respuestaOrganizar = {
     campos: [
       { id: 'efr.edema_godet', valor: '++/++++', confianza: 0.8, detalles: [{ clave: 'nivel', valor: 'tercio medio de piernas' }, { clave: 'lateralidad', valor: 'bilateral' }] },
@@ -815,6 +887,7 @@ await prueba('organizar escala con detalles en examen físico', () => {
       origen: 'texto',
       dni: '40123456',
       episodio: 1,
+      plantilla: 'fmh',
       seccion: 'ef_regiones',
       contexto: {},
     }),
@@ -823,6 +896,25 @@ await prueba('organizar escala con detalles en examen físico', () => {
   assert.equal(v['efr.edema_godet'], 'Edema ++/++++ hasta tercio medio de piernas, bilateral, con fóvea');
   assert.equal(v['efr.torax_agregados'], 'Se auscultan crepitantes en ambas bases');
   assert.equal(v['efr.pulsos'], 'Pulsos 2+/4+');
+});
+await prueba('cada historia guarda su plantilla y por defecto usa la detallada', () => {
+  const a = ok(post<{ fila: { plantilla: string; episodio: number } }>('hc.crear', { dni: '40123456' }, 'op-crear-plantilla-1'));
+  assert.equal(a.fila.plantilla, PLANTILLA_POR_DEFECTO);
+  const b = ok(post<{ fila: { plantilla: string; episodio: number } }>('hc.crear', { dni: '40123456', plantilla: 'fmh' }, 'op-crear-plantilla-2'));
+  assert.equal(b.fila.plantilla, 'fmh');
+  const c = ok(post<{ fila: { plantilla: string } }>('hc.get', { dni: '40123456', episodio: b.fila.episodio }));
+  assert.equal(c.fila.plantilla, 'fmh');
+  const lista = ok(post<{ filas: { episodio: number; plantilla: string }[] }>('hc.list', {}));
+  assert.equal(lista.filas.find((f) => f.episodio === b.fila.episodio)?.plantilla, 'fmh');
+  const inventada = ok(post<{ fila: { plantilla: string } }>('hc.crear', { dni: '40123456', plantilla: 'inventada' }, 'op-crear-plantilla-3'));
+  assert.equal(inventada.fila.plantilla, PLANTILLA_POR_DEFECTO, 'una plantilla desconocida cae en la de siempre');
+});
+await prueba('el formulario solo muestra los campos de su plantilla', () => {
+  const soloFmh = armarVista({ version: 'x', esquema, opciones, knowledge: [] }, 'fmh');
+  assert.equal(soloFmh.plantilla, 'fmh');
+  assert.ok(soloFmh.esquema.every((c) => c.plantilla === 'fmh'));
+  assert.equal(soloFmh.esquema.length, esquema.filter((c) => c.plantilla === 'fmh').length);
+  assert.ok(soloFmh.porId.has('ea.relato_cronologico'));
 });
 await prueba('guarda evoluciones y laboratorio como columnas de sistema y rechaza JSON dañado', () => {
   const evo = escribirEvoluciones([{ id: 'e1', fecha: '2026-09-16T08:00', vitales: { fc: '110' }, subjetivo: '', objetivo: '', analisis: '', plan: '', creado: '', actualizado: '' }]);
@@ -1043,15 +1135,15 @@ await prueba('el catálogo se lee de la caché en cada ejecución y «calentar»
   const v1 = ok(pedir(ejecucion()));
   assert.ok([...env.cache.keys()].some((k) => k.startsWith('catalogo:1')), 'el catálogo ocupa varios trozos');
   const opciones = hoja('Opciones');
-  const n = opciones.getLastRow() + 1;
-  opciones.getRange(n, 1, 1, 7).setValues([['sintoma', 'Síntomas (teoría)', 'opcion', '999', 'Prurito anal', 'Picazón en la región anal', '']]);
+  const antes = opciones.getRange(2, 6, 1, 1).getDisplayValues()[0][0];
+  opciones.getRange(2, 6, 1, 1).setValues([['definición cambiada a mano']]);
   const v2 = ok(pedir(ejecucion()));
   assert.equal(v2.version, v1.version, 'sin calentar, sigue la caché');
   ejecucion().calentar();
   const v3 = ok(pedir(ejecucion()));
   assert.notEqual(v3.version, v1.version);
-  assert.equal(v3.opciones.length, v1.opciones.length + 1);
-  opciones.getRange(n, 1, 1, 7).setValues([['', '', '', '', '', '', '']]);
+  assert.equal(v3.opciones.length, v1.opciones.length);
+  opciones.getRange(2, 6, 1, 1).setValues([[antes]]);
   ejecucion().calentar();
   assert.equal(ok(pedir(ejecucion())).version, v1.version);
 });

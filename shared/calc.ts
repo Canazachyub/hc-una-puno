@@ -1,4 +1,5 @@
-// Campos calculados. La fórmula va en `reglas` como `formula:peso/talla^2`.
+// Campos calculados. La fórmula va en `reglas` como `formula:peso/talla^2` (aritmética)
+// o como plantilla de texto con llaves: `formula:G{gestaciones} P{partos_termino}{abortos}`.
 // Cada variable es el sufijo de un campo de la misma sección (`peso` → efg.peso, `ao` → efg.glasgow_ao).
 
 import type { Campo } from './types';
@@ -83,6 +84,25 @@ function numeroDe(v: string | undefined): number | null {
   return m ? Number(m[0].replace(',', '.')) : null;
 }
 
+/** Busca el campo del que sale una variable: mismo sección, sufijo del id. */
+function campoDeVariable(esquema: Campo[], campo: Campo, variable: string): Campo | undefined {
+  return esquema.find(
+    (o) => o.seccion === campo.seccion && o.campo_id !== campo.campo_id && (o.campo_id.endsWith(`.${variable}`) || o.campo_id.endsWith(`_${variable}`)),
+  );
+}
+
+/** Plantilla de texto: «G{gestaciones} P{partos_termino}» → «G4 P3». Vacía si falta todo. */
+function armarTexto(plantilla: string, esquema: Campo[], campo: Campo, valores: Record<string, string>): string {
+  let alguno = false;
+  const texto = plantilla.replace(/\{([a-z_][a-z0-9_]*)\}/gi, (_, v: string) => {
+    const origen = campoDeVariable(esquema, campo, v.toLowerCase());
+    const valor = origen ? (valores[origen.campo_id] ?? '').trim() : '';
+    if (valor) alguno = true;
+    return valor;
+  });
+  return alguno ? texto.replace(/\s+/g, ' ').trim() : '';
+}
+
 /** Recalcula todos los campos calculados. Devuelve solo los que cambiaron. */
 export function recalcular(esquema: Campo[], valores: Record<string, string>): Record<string, string> {
   const cambios: Record<string, string> = {};
@@ -90,12 +110,15 @@ export function recalcular(esquema: Campo[], valores: Record<string, string>): R
     if (c.tipo !== 'calculado') continue;
     const f = formulaDe(c);
     if (!f) continue;
+    if (f.includes('{')) {
+      const texto = armarTexto(f, esquema, c, valores);
+      if ((valores[c.campo_id] ?? '') !== texto) cambios[c.campo_id] = texto;
+      continue;
+    }
     const vars: Record<string, number | null> = {};
     for (const tok of tokenizar(f)) {
       if (tok.t !== 'var') continue;
-      const origen = esquema.find(
-        (o) => o.seccion === c.seccion && o.campo_id !== c.campo_id && (o.campo_id.endsWith(`.${tok.v}`) || o.campo_id.endsWith(`_${tok.v}`)),
-      );
+      const origen = campoDeVariable(esquema, c, tok.v);
       vars[tok.v] = origen ? numeroDe(valores[origen.campo_id]) : null;
     }
     const r = evaluar(f, vars);
