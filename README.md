@@ -549,6 +549,18 @@ npm run dev                   # la app en http://localhost:5173, funciona sin ba
 9. Copia `.env.local.example` como `.env.local` (si no lo tienes), pon `VITE_API_URL` (la URL `…/exec`), `HC_USUARIO` y `HC_CLAVE`, y ejecuta `npm run kb:build`: sube los fragmentos de tus notas a `Knowledge`. Vuelve a ejecutarlo cuando cambies tus notas.
 10. Para pasar las historias del servidor local al de Google: `npm run migrar` (usa las mismas variables). Crea cada historia que falte y copia sus campos; si ya existe, solo llena lo vacío y avisa las diferencias. No borra nada del local.
 
+**Sin clasp: pegar el código a mano** (en lugar de los pasos 1 a 3)
+
+1. En Google Drive crea una hoja de cálculo en blanco (por ejemplo «HC App · datos»). No la compartas.
+2. En la hoja: Extensiones → Apps Script. Ponle nombre al proyecto («HC App»).
+3. ⚙ Configuración del proyecto → marca «Mostrar el archivo de manifiesto appsscript.json en el editor». En el editor abre `appsscript.json` y reemplaza todo por el contenido de `salida/apps-script/appsscript.json`.
+4. Abre `Código.gs`, borra todo y pega `salida/apps-script/Code.gs` (lo genera `npm run backend:build`). Guarda.
+5. Elige la función `setup` y ▶ Ejecutar. Acepta los permisos (Configuración avanzada → Ir a HC App). Las cinco hojas se crean **en esa misma hoja de cálculo** (tu «Hoja 1» se queda si tiene algo) y el registro de ejecución muestra el usuario y la contraseña temporal.
+6. ⚙ Configuración del proyecto → Propiedades de la secuencia de comandos → agrega `API_KEY_GEMINI` con tu clave. Ejecuta `probarGemini` para comprobarla.
+7. Implementar → Nueva implementación → ⚙ Aplicación web · Ejecutar como: **Yo** · Quién tiene acceso: **Cualquier usuario** → Implementar. Copia la URL que termina en `/exec` y sigue con el paso 7 de arriba (`HC_API_URL`).
+
+Para actualizar por este camino: vuelve a pegar `Code.gs` y en Implementar → Gestionar implementaciones → ✎ → Versión: **Nueva versión** (así la URL no cambia).
+
 **Actualizar:** `npm run deploy` en `backend/` para el servidor (las semillas nuevas se reimportan solas en la primera petición) y `git push` para la app.
 
 Otras funciones del editor: `restablecerClave` (contraseña temporal nueva y cierra todas las sesiones), `reimportarSemillas` (sobrescribe Esquema y Opciones con los CSV) y `probarGemini`.

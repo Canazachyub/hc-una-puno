@@ -48,3 +48,9 @@ const stubs = GLOBALES.map(
 writeFileSync('dist/Code.js', `${bundle}\n${stubs}\n`);
 copyFileSync('appsscript.json', 'dist/appsscript.json');
 console.log(`dist/Code.js listo (${Math.round((bundle.length + stubs.length) / 1024)} KB)`);
+
+// Copia para pegar a mano en el editor de Apps Script (sin clasp). Fuera de dist/: clasp subiría las dos.
+const PEGAR = '../salida/apps-script';
+mkdirSync(PEGAR, { recursive: true });
+writeFileSync(`${PEGAR}/Code.gs`, `// HC App · servidor (generado por backend/build.mjs, semillas ${SEMILLA_VERSION}). No lo edites: vuelve a compilar.\n${bundle}\n${stubs}\n`);
+copyFileSync('appsscript.json', `${PEGAR}/appsscript.json`);

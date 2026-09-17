@@ -928,6 +928,20 @@ await prueba('kb.cargar llena Knowledge y cambia la versión del catálogo', () 
   assert.equal(c.knowledge.length, 40);
 });
 
+await prueba('creado desde una hoja de cálculo, usa esa hoja y respeta lo que ya tenía', () => {
+  const e = crearEntorno({ estricto: true, gemini, contenedor: [['Mis apuntes'], ['no borrar']] });
+  const c = vm.createContext({ ...e.globales });
+  vm.runInContext(codigo, c);
+  const info = (c as unknown as Record<string, () => { hoja: string }>).setup();
+  assert.equal(e.props.get('SPREADSHEET_ID'), 'contenedor');
+  assert.equal(e.libros.size, 1, 'no crea otro libro');
+  assert.ok(info.hoja);
+  const l = e.libros.get('contenedor')!;
+  assert.deepEqual(l.getSheets().map((h) => h.nombre), ['Hoja 1', 'HC', 'Esquema', 'Opciones', 'Knowledge', 'Registro']);
+  assert.equal(l.getSheetByName('Hoja 1')!.getLastRow(), 2);
+  assert.equal(e.archivosDrive.length, 0);
+});
+
 console.log('Servidor local (datos en disco)');
 await prueba('los datos sobreviven a un reinicio y se respaldan', () => {
   const carpeta = mkdtempSync(join(tmpdir(), 'hc-local-'));

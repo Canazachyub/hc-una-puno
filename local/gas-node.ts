@@ -24,6 +24,8 @@ export interface OpcionesGas {
   entorno?: Record<string, string>;
   /** Copia adicional de los respaldos. */
   respaldosExtra?: string;
+  /** Simula un script creado desde una hoja de cálculo: contenido de su «Hoja 1». */
+  contenedor?: string[][];
   log?: (s: string) => void;
 }
 
@@ -369,6 +371,16 @@ export function crearEntorno(o: OpcionesGas = {}) {
         const l = new Libro(carpeta ? ID_LIBRO : `libro-${libros.size + 1}`, estricto, carpeta);
         l.insertSheet('Hoja 1');
         libros.set(l.id, l);
+        return l;
+      },
+      getActiveSpreadsheet: () => {
+        if (!o.contenedor) return null;
+        let l = libros.get('contenedor');
+        if (!l) {
+          l = new Libro('contenedor', estricto, carpeta);
+          l.insertSheet('Hoja 1').datos = o.contenedor.map((f) => [...f]);
+          libros.set(l.id, l);
+        }
         return l;
       },
       flush: () => undefined,

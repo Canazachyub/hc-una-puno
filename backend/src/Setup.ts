@@ -1,5 +1,6 @@
-// Puesta en marcha: crea las 5 hojas, importa las semillas, el token, la carpeta y el respaldo.
-// Se ejecuta una vez desde el editor de Apps Script: setup().
+// Puesta en marcha: crea las 5 hojas, importa las semillas, el usuario, la carpeta y el respaldo.
+// Se ejecuta una vez: desde el editor (setup) o al abrir la página de configuración (/dev).
+// Si el script está dentro de una hoja de cálculo (Extensiones → Apps Script), usa esa hoja; si no, crea una.
 
 import esquemaCsv from '../../seed/esquema.csv';
 import opcionesCsv from '../../seed/opciones.csv';
@@ -47,6 +48,15 @@ function carpeta(): GoogleAppsScript.Drive.Folder {
   return f;
 }
 
+/** La hoja de cálculo que contiene el script, si el script se creó desde ella. */
+function libroContenedor(): GoogleAppsScript.Spreadsheet.Spreadsheet | null {
+  try {
+    return typeof SpreadsheetApp.getActiveSpreadsheet === 'function' ? SpreadsheetApp.getActiveSpreadsheet() : null;
+  } catch {
+    return null;
+  }
+}
+
 declare const SEMILLA_VERSION: string;
 /** Versión de las semillas con que se cargó la hoja: si cambia al desplegar, se reimportan solas. */
 export const PROP_SEMILLAS = 'SEMILLA_VERSION';
@@ -63,10 +73,16 @@ export function setup(): InfoSetup {
   if (ssId) {
     ss = SpreadsheetApp.openById(ssId);
   } else {
-    ss = SpreadsheetApp.create('HC App · datos (privado)');
-    ssId = ss.getId();
+    const contenedor = libroContenedor();
+    if (contenedor) {
+      ss = contenedor;
+      ssId = ss.getId();
+    } else {
+      ss = SpreadsheetApp.create('HC App · datos (privado)');
+      ssId = ss.getId();
+      DriveApp.getFileById(ssId).moveTo(f);
+    }
     setProp(PROPS.SPREADSHEET_ID, ssId);
-    DriveApp.getFileById(ssId).moveTo(f);
   }
   usarLibro(ss);
 
@@ -76,8 +92,9 @@ export function setup(): InfoSetup {
   asegurarHoja(ss, HOJAS.OPCIONES, CABECERA_OPCIONES);
   asegurarHoja(ss, HOJAS.KNOWLEDGE, [...COLUMNAS_KNOWLEDGE]);
   asegurarHoja(ss, HOJAS.REGISTRO, [...COLUMNAS_REGISTRO]);
+  // La hoja vacía que trae todo libro nuevo sobra; si tiene algo tuyo, se queda.
   const hoja1 = ss.getSheetByName('Hoja 1') ?? ss.getSheetByName('Sheet1');
-  if (hoja1 && ss.getSheets().length > 1) ss.deleteSheet(hoja1);
+  if (hoja1 && hoja1.getLastRow() === 0 && ss.getSheets().length > 1) ss.deleteSheet(hoja1);
 
   // Las semillas solo se importan si la hoja está vacía, para no pisar lo que edites a mano.
   if (hoja(HOJAS.ESQUEMA).getLastRow() <= 1) escribirTabla(HOJAS.ESQUEMA, parsearCsv(esquemaCsv));
