@@ -103,7 +103,7 @@ export function Ingreso() {
         </button>
 
         <p className="sub pequeno" style={{ margin: 0 }}>
-          La sesión queda abierta en este dispositivo hasta que la cierres en Ajustes, aunque no haya señal.
+          La sesión dura 30 días en este dispositivo y funciona aunque no haya señal. Al entrar crearás un PIN que protege las historias guardadas aquí.
         </p>
       </form>
 

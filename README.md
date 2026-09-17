@@ -407,9 +407,11 @@ HISTORIAS CLINICAS/
 ├─ local/                          servidor local: gas-node (Apps Script emulado) · motor · servidor
 ├─ datos/                          (local, no se sube) hojas CSV, audios, respaldos, certificado
 ├─ INICIAR HC.cmd                  arranca el servidor local con doble clic
+├─ DESPLEGAR EN LINEA.cmd          despliegue guiado en Apps Script y GitHub Pages
 ├─ scripts/
 │  ├─ kb-build.ts                  notas de Semiología → hoja Knowledge
 │  ├─ migrar.ts                    historias del servidor local → servidor en Google
+│  ├─ desplegar-en-linea.ts        el despliegue guiado · entorno.ts: .env.local y llamadas a la API
 │  ├─ extraer-membrete.py          recorta encabezado y pie del PDF, genera iconos
 │  ├─ pruebas.ts · gas-simulado.ts pruebas con Apps Script en memoria
 │  ├─ word-ejemplo.ts              Word de muestra con una historia ficticia
@@ -512,9 +514,11 @@ La app y el backend corren en tu PC, sin cuenta de Google. El servidor local (`l
 
 ## Despliegue en línea (Apps Script + GitHub Pages)
 
-La app queda en `https://<tu-usuario>.github.io/<repositorio>/` y el backend en un Web App de Apps Script con tu cuenta de Google. Los datos van a una hoja privada de tu Drive. Quien use la app entra con **usuario y contraseña** (no con cuenta de Google).
+La app queda en **https://canazachyub.github.io/hc-una-puno/** (repositorio `Canazachyub/hc-una-puno`) y el backend en un Web App de Apps Script con tu cuenta de Google. Los datos van a una hoja privada de tu Drive. Quien use la app entra con **usuario y contraseña** (no con cuenta de Google).
 
-Requisitos: Node 24, una cuenta de Google y una de GitHub. Todo se ejecuta desde la carpeta del proyecto.
+Requisitos: Node 24, una cuenta de Google y una de GitHub (con `gh auth login`). Todo se ejecuta desde la carpeta del proyecto.
+
+**Lo más simple: doble clic en `DESPLEGAR EN LINEA.cmd`** (o `npm run desplegar`). Te guía por los pasos 1 a 7, 9 y 10 de abajo: inicia sesión en Google, crea y publica el Web App, pone su dirección en GitHub, vuelve a publicar la app, abre la página de configuración y, si le das la contraseña temporal, sube tus notas y te ofrece pasar las historias locales. Se puede repetir para actualizar.
 
 ```powershell
 npm install
