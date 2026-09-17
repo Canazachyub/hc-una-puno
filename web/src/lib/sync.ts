@@ -246,6 +246,16 @@ async function procesarEntradas(): Promise<void> {
 
 let enCurso: Promise<void> | null = null;
 
+const CADA_CATALOGO = 30 * 60_000;
+
+/** Catálogos: si no llegaron al ingresar (señal cortada) se reintentan; si llegaron, se revisan cada media hora. */
+async function catalogosSiToca(): Promise<void> {
+  if (!hayBackend()) return;
+  const g = await db.catalogos.get('actual');
+  if (g && Date.now() - Date.parse(g.fecha) < CADA_CATALOGO) return;
+  await actualizarCatalogos().catch(() => undefined);
+}
+
 export function sincronizar(): Promise<void> {
   if (enCurso) return enCurso;
   if (!enLinea()) {
@@ -259,6 +269,7 @@ export function sincronizar(): Promise<void> {
       await enviarOps();
       await subirDecisiones();
       await procesarEntradas();
+      await catalogosSiToca();
       fijar({ ultimo: new Date().toISOString(), error: '' });
     } catch (e) {
       fijar({ error: mensaje(e) });

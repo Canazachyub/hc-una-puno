@@ -53,7 +53,10 @@ export function useCatalogo(): CatalogoVista {
 export async function actualizarCatalogos(): Promise<boolean> {
   const g = await db.catalogos.get('actual');
   const r = await llamar('catalogos.get', { desde: g?.catalogos.version });
-  if ('sinCambios' in r) return false;
+  if ('sinCambios' in r) {
+    if (g) await db.catalogos.update('actual', { fecha: new Date().toISOString() });
+    return false;
+  }
   if (r.esquema.length === 0) return false;
   await db.catalogos.put({ id: 'actual', catalogos: r, fecha: new Date().toISOString() });
   return true;
