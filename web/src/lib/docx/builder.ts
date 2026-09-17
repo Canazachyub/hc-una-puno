@@ -223,6 +223,13 @@ function formulario(filas: FilaForma[]): Table {
       spacing: { before: 20, after: 20 },
       children: [new TextRun({ text: texto, bold: negrita, size: 18 })],
     });
+  /** La opción elegida se marca con una equis dentro de su recuadro, como en el papel. */
+  const opcionMarcada = (texto: string) =>
+    new Paragraph({
+      alignment: AlignmentType.CENTER,
+      spacing: { before: 20, after: 20 },
+      children: [new TextRun({ text: 'X ', bold: true, size: 28 }), new TextRun({ text: texto, bold: true, size: 18 })],
+    });
   const celda = (hijos: Paragraph[], columnas: number, opciones: { relleno?: string } = {}) =>
     new TableCell({
       width: { size: unidad * columnas, type: WidthType.DXA },
@@ -252,7 +259,7 @@ function formulario(filas: FilaForma[]): Table {
         children: [
           celda([parrafo(`${f.etiqueta}:`, true)], ETIQUETA, { relleno: 'F2F2F2' }),
           ...f.opciones.map((o, i) =>
-            celda([parrafo(o.texto, o.marcada, true)], base + (i < sobran ? 1 : 0), { relleno: o.marcada ? 'D9E2F3' : undefined }),
+            celda([o.marcada ? opcionMarcada(o.texto) : parrafo(o.texto, false, true)], base + (i < sobran ? 1 : 0)),
           ),
         ],
       });

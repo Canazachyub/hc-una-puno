@@ -1614,7 +1614,7 @@ label.campo-ajuste {
 }
 
 .hoja-forma .opciones .marcada {
-  background: var(--marcado);
+  border: 1.5px solid var(--texto);
   color: var(--texto);
   font-weight: 700;
 }
