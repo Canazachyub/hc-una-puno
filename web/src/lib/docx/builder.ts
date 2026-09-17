@@ -8,6 +8,7 @@ import {
   Footer,
   Header,
   ImageRun,
+  TableLayoutType,
   LeaderType,
   Paragraph,
   TabStopType,
@@ -20,7 +21,7 @@ import {
 } from 'docx';
 import type { CatalogoVista } from '../vista';
 import { armarDocumento } from './documento';
-import type { DatosDocumento, Elemento, OpcionesDocumento } from './documento';
+import type { DatosDocumento, Elemento, FilaForma, OpcionesDocumento } from './documento';
 
 export type DatosWord = DatosDocumento;
 export type { OpcionesDocumento };
@@ -28,6 +29,8 @@ export type { OpcionesDocumento };
 export interface Membrete {
   encabezado: Uint8Array;
   pie: Uint8Array;
+  /** Escudos de la plantilla detallada (su membrete es de texto, como en el documento). */
+  escudos?: { una: Uint8Array; fmh: Uint8Array };
 }
 
 const FUENTE = 'Arial';
@@ -172,6 +175,102 @@ function pares(filas: { etiqueta: string; valor: string }[][]): Table {
   });
 }
 
+/** Membrete de la Cátedra de Semiología: tres líneas a la izquierda y los dos escudos a la derecha. */
+function membreteSemiologia(escudos: { una: Uint8Array; fmh: Uint8Array }): Table {
+  const total = ANCHO_UTIL;
+  const linea = (texto: string) =>
+    new Paragraph({ spacing: { after: 0 }, children: [new TextRun({ text: texto, bold: true, size: 16, color: '1F3864' })] });
+  const escudo = (datos: Uint8Array, tipo: 'png' | 'jpg', ancho: number, alto: number) =>
+    new Paragraph({
+      alignment: AlignmentType.RIGHT,
+      spacing: { after: 0 },
+      children: [new ImageRun({ data: datos, type: tipo, transformation: { width: ancho, height: alto } })],
+    });
+  const celda = (hijos: Paragraph[], ancho: number) =>
+    new TableCell({ width: { size: ancho, type: WidthType.DXA }, margins: { top: 0, bottom: 0, left: 0, right: 0 }, children: hijos });
+  return new Table({
+    width: { size: total, type: WidthType.DXA },
+    columnWidths: [Math.round(total * 0.72), Math.round(total * 0.14), Math.round(total * 0.14)],
+    borders: TableBorders.NONE,
+    rows: [
+      new TableRow({
+        children: [
+          celda(
+            [linea('UNIVERSIDAD NACIONAL DEL ALTIPLANO'), linea('FACULTAD DE MEDICINA HUMANA'), linea('CÁTEDRA DE SEMIOLOGÍA')],
+            Math.round(total * 0.72),
+          ),
+          celda([escudo(escudos.fmh, 'png', 42, 44)], Math.round(total * 0.14)),
+          celda([escudo(escudos.una, 'jpg', 40, 40)], Math.round(total * 0.14)),
+        ],
+      }),
+    ],
+  });
+}
+
+/** Rejilla calcada del documento: etiqueta en gris, casilla al lado y opciones para marcar. */
+function formulario(filas: FilaForma[]): Table {
+  // Rejilla de doce columnas, como las tablas del documento: cada celda ocupa las que necesita.
+  const COLUMNAS = 12;
+  const ETIQUETA = 3;
+  const total = ANCHO_UTIL;
+  const unidad = Math.floor(total / COLUMNAS);
+  const anchoEtiqueta = unidad * ETIQUETA;
+  const borde = { style: BorderStyle.SINGLE, size: 4, color: '808080' };
+  const bordes = { top: borde, bottom: borde, left: borde, right: borde, insideHorizontal: borde, insideVertical: borde };
+  const parrafo = (texto: string, negrita = false, centrado = false) =>
+    new Paragraph({
+      alignment: centrado ? AlignmentType.CENTER : undefined,
+      spacing: { before: 20, after: 20 },
+      children: [new TextRun({ text: texto, bold: negrita, size: 18 })],
+    });
+  const celda = (hijos: Paragraph[], columnas: number, opciones: { relleno?: string } = {}) =>
+    new TableCell({
+      width: { size: unidad * columnas, type: WidthType.DXA },
+      columnSpan: columnas,
+      shading: opciones.relleno ? { fill: opciones.relleno } : undefined,
+      margins: { top: 20, bottom: 20, left: 60, right: 60 },
+      children: hijos,
+    });
+
+  const filasDocx = filas.map((f) => {
+    if (f.f === 'titulo') {
+      return new TableRow({ children: [celda([parrafo(f.texto.toUpperCase(), true, true)], COLUMNAS, { relleno: 'D9D9D9' })] });
+    }
+    if (f.f === 'largo') {
+      const cuerpo = f.parrafos.length ? f.parrafos.map((t) => parrafo(t)) : [parrafo('')];
+      return new TableRow({
+        children: [celda([parrafo(`${f.etiqueta}:`, true)], ETIQUETA, { relleno: 'F2F2F2' }), celda(cuerpo, COLUMNAS - ETIQUETA)],
+      });
+    }
+    if (f.opciones?.length) {
+      // Las columnas libres se reparten entre las opciones para que la fila llegue al margen.
+      const libres = COLUMNAS - ETIQUETA;
+      const n = f.opciones.length;
+      const base = Math.floor(libres / n);
+      const sobran = libres - base * n;
+      return new TableRow({
+        children: [
+          celda([parrafo(`${f.etiqueta}:`, true)], ETIQUETA, { relleno: 'F2F2F2' }),
+          ...f.opciones.map((o, i) =>
+            celda([parrafo(o.texto, o.marcada, true)], base + (i < sobran ? 1 : 0), { relleno: o.marcada ? 'D9E2F3' : undefined }),
+          ),
+        ],
+      });
+    }
+    return new TableRow({
+      children: [celda([parrafo(`${f.etiqueta}:`, true)], ETIQUETA, { relleno: 'F2F2F2' }), celda([parrafo(f.valor)], COLUMNAS - ETIQUETA)],
+    });
+  });
+
+  return new Table({
+    width: { size: unidad * COLUMNAS, type: WidthType.DXA },
+    columnWidths: Array.from({ length: COLUMNAS }, () => unidad),
+    layout: TableLayoutType.FIXED,
+    borders: bordes,
+    rows: filasDocx,
+  });
+}
+
 function aDocx(e: Elemento): (Paragraph | Table)[] {
   switch (e.t) {
     case 'titulo':
@@ -194,6 +293,8 @@ function aDocx(e: Elemento): (Paragraph | Table)[] {
       return lista(e.etiqueta, e.items, e.comillas);
     case 'pares':
       return [pares(e.filas), new Paragraph({ spacing: { after: 40 }, children: [] })];
+    case 'forma':
+      return [formulario(e.filas), new Paragraph({ spacing: { after: 80 }, children: [] })];
     case 'tabla':
       return [
         new Paragraph({ keepNext: true, indent: { left: SANGRIA }, spacing: { before: 120, after: 60 }, children: [new TextRun({ text: `${e.titulo}:`, bold: true })] }),
@@ -272,6 +373,10 @@ export function construirDocumento(
 ): Document {
   const elementos = armarDocumento(h, cat, op);
   const nombre = [h.valores['fil.apellidos'], h.valores['fil.nombres']].filter(Boolean).join(', ');
+  // La plantilla detallada lleva el membrete de la Cátedra de Semiología, como su documento.
+  const propio = cat.plantilla !== 'fmh' && membrete?.escudos;
+  const encabezado = propio && membrete?.escudos ? membreteSemiologia(membrete.escudos) : membrete ? imagen(membrete.encabezado) : null;
+  const pie = propio ? null : membrete ? imagen(membrete.pie) : null;
   return new Document({
     creator: h.valores['fil.elaborado_por'] || 'HC App',
     title: `Historia clínica ${nombre || h.dni}`,
@@ -286,11 +391,11 @@ export function construirDocumento(
         properties: {
           page: {
             size: { width: 11906, height: 16838 },
-            margin: { top: 1700, bottom: 1800, left: 1000, right: 1000, header: 280, footer: 240 },
+            margin: { top: propio ? 1300 : 1700, bottom: propio ? 900 : 1800, left: 1000, right: 1000, header: 280, footer: 240 },
           },
         },
-        headers: membrete ? { default: new Header({ children: [imagen(membrete.encabezado)] }) } : undefined,
-        footers: membrete ? { default: new Footer({ children: [imagen(membrete.pie)] }) } : undefined,
+        headers: encabezado ? { default: new Header({ children: [encabezado] }) } : undefined,
+        footers: pie ? { default: new Footer({ children: [pie] }) } : undefined,
         children: elementos.flatMap(aDocx),
       },
     ],

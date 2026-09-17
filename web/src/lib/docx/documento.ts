@@ -6,6 +6,7 @@ import { partes } from '../../../../shared/valores';
 import { CAMPO_EVOLUCIONES, CAMPO_LABORATORIO, VITALES_DIA, diaHospitalizacion, leerEvoluciones, leerLaboratorio } from '../../../../shared/seguimiento';
 import type { ResultadoLab } from '../../../../shared/seguimiento';
 import { fechaLegible, mostrarValor } from '../texto';
+import type { Campo } from '../../../../shared/types';
 import type { CatalogoVista } from '../vista';
 import { ESTRUCTURA, IDS_VITALES, VITALES } from './estructura';
 import type { Bloque, Lector } from './estructura';
@@ -18,7 +19,14 @@ export type Elemento =
   | { t: 'narrativa'; etiqueta: string; parrafos: string[]; ref: string }
   | { t: 'lista'; etiqueta: string; items: string[]; comillas: boolean; ref: string }
   | { t: 'pares'; filas: { etiqueta: string; valor: string }[][]; ref: string }
+  | { t: 'forma'; filas: FilaForma[]; refs: string[] }
   | { t: 'tabla'; titulo: string; encabezados: string[]; filas: string[][]; ref: string };
+
+/** Una fila del formulario calcado del documento: título de grupo, dato con su casilla, o bloque largo. */
+export type FilaForma =
+  | { f: 'titulo'; texto: string }
+  | { f: 'campo'; etiqueta: string; valor: string; ref: string; opciones?: { texto: string; marcada: boolean }[] }
+  | { f: 'largo'; etiqueta: string; parrafos: string[]; ref: string };
 
 export interface DatosDocumento {
   dni: string;
@@ -59,6 +67,8 @@ function tieneContenido(e: Elemento): boolean {
       return e.items.length > 0;
     case 'pares':
       return e.filas.some((f) => f.some((c) => c.valor));
+    case 'forma':
+      return e.filas.some((f) => (f.f === 'campo' && f.valor) || (f.f === 'largo' && f.parrafos.length > 0));
     case 'tabla':
       return e.filas.length > 0;
     default:
@@ -90,66 +100,57 @@ function soloRegistrado(elementos: Elemento[]): Elemento[] {
   });
 }
 
-/**
- * Word de una plantilla sin estructura escrita a mano: se arma con el propio esquema
- * (cada sección, sus subtítulos y sus campos, en el orden en que se llenan).
- */
-function estructuraDelEsquema(cat: CatalogoVista): Bloque[] {
-  const bloques: Bloque[] = [];
-  for (const s of cat.secciones) {
-    bloques.push({ tipo: 'seccion', titulo: s.titulo.toUpperCase() });
-    let subtitulo = '';
-    for (const c of cat.porSeccion.get(s.id) ?? []) {
-      if (c.subtitulo && c.subtitulo !== subtitulo) bloques.push({ tipo: 'subtitulo', titulo: c.subtitulo });
-      subtitulo = c.subtitulo;
-      if (c.tipo === 'narrativa') bloques.push({ tipo: 'narrativa', id: c.campo_id });
-      else if (c.tipo === 'lista') bloques.push({ tipo: 'lista', id: c.campo_id, label: c.label });
-      else bloques.push({ tipo: 'campo', id: c.campo_id });
-    }
-  }
-  return bloques;
-}
-
-/** Ancho aproximado de un campo en la hoja, para decidir si caben dos por fila. */
-const anchoDe = (e: { etiqueta: string; valor: string }) => e.etiqueta.length + Math.max(e.valor.length, 12);
+/** Hasta cuántas opciones caben en la fila para marcarlas, como en el papel. */
+const MAX_OPCIONES_EN_FILA = 6;
 
 /**
- * La plantilla detallada se llena como el documento de papel: varios datos por fila y,
- * en lo que se elige, las opciones impresas para marcar una.
+ * El documento de la plantilla detallada es una rejilla de tablas: etiqueta en gris, casilla al lado
+ * y las opciones en celdas para marcar. Esto arma esa rejilla, sección por sección.
  */
-function comoFormulario(out: Elemento[], cat: CatalogoVista, op: OpcionesDocumento): Elemento[] {
-  const conOpciones = (e: Elemento): Elemento => {
-    if (e.t !== 'campo' || e.valor || op.vacios === 'omitir') return e;
-    const campo = cat.porId.get(e.ref);
-    if (!campo || !['opcion', 'multi', 'escala'].includes(campo.tipo)) return e;
-    const opciones = cat.listas.get(campo.lista_id) ?? [];
-    if (opciones.length === 0 || opciones.length > 6) return e;
-    return { ...e, valor: opciones.map((o) => o.valor).join(' / ') };
-  };
-
-  const salida: Elemento[] = [];
-  let fila: { etiqueta: string; valor: string; ref: string }[] = [];
-  const cerrar = () => {
-    if (fila.length === 0) return;
-    salida.push(
-      fila.length === 1
-        ? { t: 'campo', etiqueta: fila[0].etiqueta, valor: fila[0].valor, ref: fila[0].ref }
-        : { t: 'pares', filas: [fila.map(({ etiqueta, valor }) => ({ etiqueta, valor }))], ref: fila[0].ref },
-    );
-    fila = [];
-  };
-  for (const bruto of out) {
-    const e = conOpciones(bruto);
-    if (e.t !== 'campo' || anchoDe(e) > 46) {
-      cerrar();
-      salida.push(e);
+function formularioDeSeccion(campos: Campo[], cat: CatalogoVista, lector: Lector, valores: Record<string, string>): Elemento | null {
+  const filas: FilaForma[] = [];
+  const refs: string[] = [];
+  let subtitulo = '';
+  for (const c of campos) {
+    if (CAMPOS_CLAVE.includes(c.campo_id) || !esVisible(c.campo_id, valores)) continue;
+    if (c.subtitulo && c.subtitulo !== subtitulo) filas.push({ f: 'titulo', texto: c.subtitulo });
+    subtitulo = c.subtitulo;
+    refs.push(c.campo_id);
+    const valor = lector.t(c.campo_id);
+    if (NARRATIVOS.has(c.tipo) || c.tipo === 'lista') {
+      filas.push({
+        f: 'largo',
+        etiqueta: c.label,
+        parrafos: c.tipo === 'lista' ? partes(valores[c.campo_id] ?? '') : parrafos(valor),
+        ref: c.campo_id,
+      });
       continue;
     }
-    fila.push({ etiqueta: e.etiqueta, valor: e.valor, ref: e.ref });
-    if (fila.length === 2) cerrar();
+    const opciones = cat.listas.get(c.lista_id) ?? [];
+    const elegidas = new Set(partes(valores[c.campo_id] ?? ''));
+    filas.push({
+      f: 'campo',
+      etiqueta: c.label,
+      valor,
+      ref: c.campo_id,
+      opciones:
+        opciones.length > 0 && opciones.length <= MAX_OPCIONES_EN_FILA
+          ? opciones.map((o) => ({ texto: o.valor, marcada: elegidas.has(o.valor) || valor === o.valor }))
+          : undefined,
+    });
   }
-  cerrar();
-  return salida;
+  return filas.length ? { t: 'forma', filas, refs } : null;
+}
+
+function armarFormulario(cat: CatalogoVista, lector: Lector, valores: Record<string, string>): Elemento[] {
+  const out: Elemento[] = [{ t: 'titulo', texto: 'HISTORIA CLÍNICA' }];
+  for (const s of cat.secciones) {
+    const forma = formularioDeSeccion(cat.porSeccion.get(s.id) ?? [], cat, lector, valores);
+    if (!forma) continue;
+    out.push({ t: 'seccion', texto: s.titulo.toUpperCase() });
+    out.push(forma);
+  }
+  return out;
 }
 
 export function armarDocumento(h: DatosDocumento, cat: CatalogoVista, op: OpcionesDocumento): Elemento[] {
@@ -233,7 +234,12 @@ export function armarDocumento(h: DatosDocumento, cat: CatalogoVista, op: Opcion
         break;
     }
   };
-  const estructura = cat.plantilla === 'fmh' ? ESTRUCTURA : estructuraDelEsquema(cat);
+  if (cat.plantilla !== 'fmh') {
+    const forma = armarFormulario(cat, lector, valores);
+    insertarSeguimiento(forma, valores, op);
+    return op.vacios === 'omitir' ? soloRegistrado(forma) : forma;
+  }
+  const estructura = ESTRUCTURA;
   estructura.forEach(bloque);
 
   // Secciones que el esquema tenga y la estructura no conozca.
@@ -248,8 +254,7 @@ export function armarDocumento(h: DatosDocumento, cat: CatalogoVista, op: Opcion
   }
 
   insertarSeguimiento(out, valores, op);
-  const doc = cat.plantilla === 'fmh' ? out : comoFormulario(out, cat, op);
-  return op.vacios === 'omitir' ? soloRegistrado(doc) : doc;
+  return op.vacios === 'omitir' ? soloRegistrado(out) : out;
 }
 
 const coma = (t: string) => t.replace(/(\d)\.(\d)/g, '$1,$2');

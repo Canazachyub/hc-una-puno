@@ -134,6 +134,43 @@ export function VistaPrevia({ clave }: { clave: string }) {
             </table>
           </div>
         );
+      case 'forma':
+        return (
+          <table key={i} className="hoja-forma">
+            <tbody>
+              {e.filas.map((f, j) =>
+                f.f === 'titulo' ? (
+                  <tr key={j}>
+                    <th colSpan={2}>{f.texto}</th>
+                  </tr>
+                ) : (
+                  <tr key={j} role="button" tabIndex={0} onClick={() => editarEn(f.ref)} title="Tocar para editar">
+                    <td className="etiqueta">{f.etiqueta}:</td>
+                    <td>
+                      {f.f === 'largo' ? (
+                        f.parrafos.length ? (
+                          f.parrafos.map((t, k) => <p key={k}>{t}</p>)
+                        ) : (
+                          <span className="hoja-linea">{LINEA}</span>
+                        )
+                      ) : f.opciones?.length ? (
+                        <span className="opciones">
+                          {f.opciones.map((o) => (
+                            <span key={o.texto} className={o.marcada ? 'marcada' : ''}>
+                              {o.texto}
+                            </span>
+                          ))}
+                        </span>
+                      ) : (
+                        f.valor || <span className="hoja-linea">__________</span>
+                      )}
+                    </td>
+                  </tr>
+                ),
+              )}
+            </tbody>
+          </table>
+        );
       case 'pares':
         return (
           <div key={i} className="hoja-pares" {...tocable}>

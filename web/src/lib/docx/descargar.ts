@@ -17,8 +17,8 @@ function cargarMembrete(): Promise<Membrete | null> {
       if (!r.ok) throw new Error(archivo);
       return new Uint8Array(await r.arrayBuffer());
     };
-    membrete = Promise.all([leer('header.png'), leer('footer.png')])
-      .then(([encabezado, pie]) => ({ encabezado, pie }))
+    membrete = Promise.all([leer('header.png'), leer('footer.png'), leer('escudo-una.jpg'), leer('escudo-fmh.png')])
+      .then(([encabezado, pie, una, fmh]) => ({ encabezado, pie, escudos: { una, fmh } }))
       .catch(() => {
         membrete = null;
         return null;

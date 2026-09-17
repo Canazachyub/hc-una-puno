@@ -1,0 +1,7281 @@
+[
+ {
+  "tipo": "parrafo",
+  "texto": "HISTORIA CLÍNICAN°_____________",
+  "negrita": true,
+  "centrado": false
+ },
+ {
+  "tipo": "parrafo",
+  "texto": "I. ECTOSCOPÍA:",
+  "negrita": true,
+  "centrado": false
+ },
+ {
+  "tipo": "tabla",
+  "anchos": [
+   2224,
+   3520,
+   1693,
+   2192
+  ],
+  "filas": [
+   [
+    {
+     "texto": "Paciente en estado:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1155,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 1828,
+     "rol": "valor"
+    },
+    {
+     "texto": "Edad aparente:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 879,
+     "rol": "etiqueta",
+     "campo": "ect.edad_aparente"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 1138,
+     "rol": "valor",
+     "campo": "ect.edad_aparente"
+    }
+   ],
+   [
+    {
+     "texto": "Signos destacados:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1155,
+     "rol": "etiqueta",
+     "campo": "ect.signos_destacados"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 3,
+     "ancho": 3845,
+     "rol": "valor",
+     "campo": "ect.signos_destacados"
+    }
+   ]
+  ]
+ },
+ {
+  "tipo": "parrafo",
+  "texto": "II. ANAMNESIS:",
+  "negrita": true,
+  "centrado": false
+ },
+ {
+  "tipo": "tabla",
+  "anchos": [
+   3249,
+   3249,
+   3391
+  ],
+  "filas": [
+   [
+    {
+     "texto": "Directa",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 3249,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "Indirecta",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 3249,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "Mixta",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 3391,
+     "rol": "etiqueta"
+    }
+   ],
+   [
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3249,
+     "rol": "valor"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3249,
+     "rol": "valor"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3391,
+     "rol": "valor"
+    }
+   ]
+  ]
+ },
+ {
+  "tipo": "parrafo",
+  "texto": "2.1 FILIACIÓN",
+  "negrita": true,
+  "centrado": false
+ },
+ {
+  "tipo": "tabla",
+  "anchos": [
+   1119,
+   1118,
+   1062,
+   437,
+   196,
+   258,
+   291,
+   635,
+   121,
+   396,
+   494,
+   599,
+   12,
+   6,
+   260,
+   50,
+   342,
+   346,
+   492,
+   8,
+   133,
+   366,
+   1148
+  ],
+  "filas": [
+   [
+    {
+     "texto": "Nombre:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 2237,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 21,
+     "ancho": 7652,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 2,
+     "ancho": 2237,
+     "rol": "valor"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 1062,
+     "rol": "valor"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 3,
+     "ancho": 891,
+     "rol": "valor"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 2,
+     "ancho": 926,
+     "rol": "valor"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 3,
+     "ancho": 1011,
+     "rol": "valor"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 3,
+     "ancho": 617,
+     "rol": "valor"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 3,
+     "ancho": 652,
+     "rol": "valor"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 6,
+     "ancho": 2493,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Edad:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1119,
+     "rol": "etiqueta",
+     "campo": "fil.edad"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 1,
+     "ancho": 1118,
+     "rol": "valor",
+     "campo": "fil.edad"
+    },
+    {
+     "texto": "Raza:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 3,
+     "ancho": 1695,
+     "rol": "etiqueta",
+     "campo": "fil.raza"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 5,
+     "ancho": 1701,
+     "rol": "valor",
+     "campo": "fil.raza"
+    },
+    {
+     "texto": "Sexo:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 5,
+     "ancho": 1371,
+     "rol": "etiqueta",
+     "campo": "fil.sexo"
+    },
+    {
+     "texto": "F",
+     "negrita": false,
+     "relleno": "",
+     "span": 6,
+     "ancho": 1371,
+     "rol": "opcion",
+     "campo": "fil.sexo"
+    },
+    {
+     "texto": "M",
+     "negrita": false,
+     "relleno": "",
+     "span": 2,
+     "ancho": 1514,
+     "rol": "opcion",
+     "campo": "fil.sexo"
+    }
+   ],
+   [
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 23,
+     "ancho": 9889,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Lugar de nacimiento:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 2237,
+     "rol": "etiqueta",
+     "campo": "fil.lugar_nacimiento"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 5,
+     "ancho": 2244,
+     "rol": "valor",
+     "campo": "fil.lugar_nacimiento"
+    },
+    {
+     "texto": "Fecha de nacimiento",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 7,
+     "ancho": 2263,
+     "rol": "etiqueta",
+     "campo": "fil.fecha_nacimiento"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 4,
+     "ancho": 998,
+     "rol": "valor",
+     "campo": "fil.fecha_nacimiento"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 4,
+     "ancho": 999,
+     "rol": "valor",
+     "campo": "fil.fecha_nacimiento"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 1148,
+     "rol": "valor",
+     "campo": "fil.fecha_nacimiento"
+    }
+   ],
+   [
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 23,
+     "ancho": 9889,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Lugar de procedencia:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 2237,
+     "rol": "etiqueta",
+     "campo": "fil.lugar_procedencia"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 21,
+     "ancho": 7652,
+     "rol": "valor",
+     "campo": "fil.lugar_procedencia"
+    }
+   ],
+   [
+    {
+     "texto": "Idioma:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 2237,
+     "rol": "etiqueta",
+     "campo": "fil.idioma"
+    },
+    {
+     "texto": "Castellano",
+     "negrita": false,
+     "relleno": "",
+     "span": 3,
+     "ancho": 1695,
+     "rol": "opcion",
+     "campo": "fil.idioma"
+    },
+    {
+     "texto": "Quechua",
+     "negrita": false,
+     "relleno": "",
+     "span": 5,
+     "ancho": 1701,
+     "rol": "opcion",
+     "campo": "fil.idioma"
+    },
+    {
+     "texto": "Aymara",
+     "negrita": false,
+     "relleno": "",
+     "span": 6,
+     "ancho": 1421,
+     "rol": "opcion",
+     "campo": "fil.idioma"
+    },
+    {
+     "texto": "Otros:",
+     "negrita": false,
+     "relleno": "",
+     "span": 7,
+     "ancho": 2835,
+     "rol": "etiqueta"
+    }
+   ],
+   [
+    {
+     "texto": "Domicilio actual:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 2237,
+     "rol": "etiqueta",
+     "campo": "fil.direccion"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 21,
+     "ancho": 7652,
+     "rol": "valor",
+     "campo": "fil.direccion"
+    }
+   ],
+   [
+    {
+     "texto": "Domicilio anterior:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 2237,
+     "rol": "etiqueta",
+     "campo": "apn.residencias_anteriores"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 21,
+     "ancho": 7652,
+     "rol": "valor",
+     "campo": "apn.residencias_anteriores"
+    }
+   ],
+   [
+    {
+     "texto": "Grado de instrucción:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 2237,
+     "rol": "etiqueta",
+     "campo": "fil.grado_instruccion"
+    },
+    {
+     "texto": "No registra",
+     "negrita": false,
+     "relleno": "",
+     "span": 2,
+     "ancho": 1499,
+     "rol": "opcion",
+     "campo": "fil.grado_instruccion"
+    },
+    {
+     "texto": "Inicial",
+     "negrita": false,
+     "relleno": "",
+     "span": 5,
+     "ancho": 1501,
+     "rol": "opcion",
+     "campo": "fil.grado_instruccion"
+    },
+    {
+     "texto": "Primaria",
+     "negrita": false,
+     "relleno": "",
+     "span": 4,
+     "ancho": 1501,
+     "rol": "opcion",
+     "campo": "fil.grado_instruccion"
+    },
+    {
+     "texto": "Secundaria",
+     "negrita": false,
+     "relleno": "",
+     "span": 7,
+     "ancho": 1504,
+     "rol": "opcion",
+     "campo": "fil.grado_instruccion"
+    },
+    {
+     "texto": "Superior",
+     "negrita": false,
+     "relleno": "",
+     "span": 3,
+     "ancho": 1647,
+     "rol": "opcion",
+     "campo": "fil.grado_instruccion"
+    }
+   ],
+   [
+    {
+     "texto": "Estado civil:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 2237,
+     "rol": "etiqueta",
+     "campo": "fil.estado_civil"
+    },
+    {
+     "texto": "Soltero",
+     "negrita": false,
+     "relleno": "",
+     "span": 2,
+     "ancho": 1499,
+     "rol": "opcion",
+     "campo": "fil.estado_civil"
+    },
+    {
+     "texto": "Casado",
+     "negrita": false,
+     "relleno": "",
+     "span": 5,
+     "ancho": 1501,
+     "rol": "opcion",
+     "campo": "fil.estado_civil"
+    },
+    {
+     "texto": "Divorciado",
+     "negrita": false,
+     "relleno": "",
+     "span": 4,
+     "ancho": 1501,
+     "rol": "opcion",
+     "campo": "fil.estado_civil"
+    },
+    {
+     "texto": "Viudo",
+     "negrita": false,
+     "relleno": "",
+     "span": 7,
+     "ancho": 1504,
+     "rol": "opcion",
+     "campo": "fil.estado_civil"
+    },
+    {
+     "texto": "Conviviente",
+     "negrita": false,
+     "relleno": "",
+     "span": 3,
+     "ancho": 1647,
+     "rol": "opcion",
+     "campo": "fil.estado_civil"
+    }
+   ],
+   [
+    {
+     "texto": "Ocupación actual:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 2237,
+     "rol": "etiqueta",
+     "campo": "fil.ocupacion"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 21,
+     "ancho": 7652,
+     "rol": "valor",
+     "campo": "fil.ocupacion"
+    }
+   ],
+   [
+    {
+     "texto": "Ocupación Anterior:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 2237,
+     "rol": "etiqueta",
+     "campo": "apn.ocupaciones_anteriores"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 21,
+     "ancho": 7652,
+     "rol": "valor",
+     "campo": "apn.ocupaciones_anteriores"
+    }
+   ],
+   [
+    {
+     "texto": "Religión:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 2237,
+     "rol": "etiqueta",
+     "campo": "fil.religion"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 21,
+     "ancho": 7652,
+     "rol": "valor",
+     "campo": "fil.religion"
+    }
+   ],
+   [
+    {
+     "texto": "Fecha de ingreso:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 2237,
+     "rol": "etiqueta",
+     "campo": "fil.fecha_ingreso"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 21,
+     "ancho": 7652,
+     "rol": "valor",
+     "campo": "fil.fecha_ingreso"
+    }
+   ],
+   [
+    {
+     "texto": "Modo de ingreso:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 2237,
+     "rol": "etiqueta",
+     "campo": "fil.modo_ingreso"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 21,
+     "ancho": 7652,
+     "rol": "valor",
+     "campo": "fil.modo_ingreso"
+    }
+   ],
+   [
+    {
+     "texto": "Sala:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 2237,
+     "rol": "etiqueta",
+     "campo": "fil.sala"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 5,
+     "ancho": 2244,
+     "rol": "valor",
+     "campo": "fil.sala"
+    },
+    {
+     "texto": "N° Cama",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 5,
+     "ancho": 2245,
+     "rol": "etiqueta",
+     "campo": "fil.numero_cama"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 11,
+     "ancho": 3163,
+     "rol": "valor",
+     "campo": "fil.numero_cama"
+    }
+   ],
+   [
+    {
+     "texto": "Persona responsable:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 2237,
+     "rol": "etiqueta",
+     "campo": "fil.persona_responsable"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 21,
+     "ancho": 7652,
+     "rol": "valor",
+     "campo": "fil.persona_responsable"
+    }
+   ],
+   [
+    {
+     "texto": "Informante:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 2237,
+     "rol": "etiqueta",
+     "campo": "fil.informante_vinculo"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 5,
+     "ancho": 2244,
+     "rol": "valor",
+     "campo": "fil.informante_vinculo"
+    },
+    {
+     "texto": "Confiable:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 5,
+     "ancho": 2245,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "SI",
+     "negrita": false,
+     "relleno": "",
+     "span": 7,
+     "ancho": 1508,
+     "rol": "opcion"
+    },
+    {
+     "texto": "NO",
+     "negrita": false,
+     "relleno": "",
+     "span": 4,
+     "ancho": 1655,
+     "rol": "opcion"
+    }
+   ]
+  ]
+ },
+ {
+  "tipo": "tabla",
+  "anchos": [
+   2235,
+   8,
+   7646
+  ],
+  "filas": [
+   [
+    {
+     "texto": "Fecha de elaboración de historia clínica:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 2243,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 7646,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Persona responsable de elaborar la historia clínica",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 2235,
+     "rol": "etiqueta",
+     "campo": "fil.elaborado_por"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 2,
+     "ancho": 7654,
+     "rol": "valor",
+     "campo": "fil.elaborado_por"
+    }
+   ]
+  ]
+ },
+ {
+  "tipo": "parrafo",
+  "texto": "2.2. ENFERMEDAD ACTUAL:",
+  "negrita": true,
+  "centrado": false
+ },
+ {
+  "tipo": "tabla",
+  "anchos": [
+   3413,
+   6483
+  ],
+  "filas": [
+   [
+    {
+     "texto": "Tiempo de enfermedad:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1724,
+     "rol": "etiqueta",
+     "campo": "ea.tiempo_valor"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3276,
+     "rol": "valor",
+     "campo": "ea.tiempo_valor"
+    }
+   ],
+   [
+    {
+     "texto": "Episodio actual:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1724,
+     "rol": "etiqueta",
+     "campo": "ea.episodio_actual"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3276,
+     "rol": "valor",
+     "campo": "ea.episodio_actual"
+    }
+   ],
+   [
+    {
+     "texto": "Forma de inicio:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1724,
+     "rol": "etiqueta",
+     "campo": "ea.forma_inicio"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3276,
+     "rol": "valor",
+     "campo": "ea.forma_inicio"
+    }
+   ],
+   [
+    {
+     "texto": "Curso de la enfermedad:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1724,
+     "rol": "etiqueta",
+     "campo": "ea.curso"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3276,
+     "rol": "valor",
+     "campo": "ea.curso"
+    }
+   ],
+   [
+    {
+     "texto": "Síntomas principales:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1724,
+     "rol": "etiqueta",
+     "campo": "ea.signos_sintomas"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3276,
+     "rol": "valor",
+     "campo": "ea.signos_sintomas"
+    }
+   ],
+   [
+    {
+     "texto": "RELATO CRONOLÓGICO",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 4997,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+     "negrita": false,
+     "relleno": "",
+     "span": 2,
+     "ancho": 4997,
+     "rol": "titulo"
+    }
+   ]
+  ]
+ },
+ {
+  "tipo": "parrafo",
+  "texto": "2.3. FUNCIONES BIOLÓGICAS:",
+  "negrita": true,
+  "centrado": false
+ },
+ {
+  "tipo": "tabla",
+  "anchos": [
+   1500,
+   930,
+   1475,
+   930,
+   1328,
+   1135,
+   1172,
+   1419
+  ],
+  "filas": [
+   [
+    {
+     "texto": "Apetito:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1500,
+     "rol": "etiqueta",
+     "campo": "fb.apetito"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 7,
+     "ancho": 8389,
+     "rol": "valor",
+     "campo": "fb.apetito"
+    }
+   ],
+   [
+    {
+     "texto": "Sed:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1500,
+     "rol": "etiqueta",
+     "campo": "fb.sed"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 7,
+     "ancho": 8389,
+     "rol": "valor",
+     "campo": "fb.sed"
+    }
+   ],
+   [
+    {
+     "texto": "Orina:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1500,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 7,
+     "ancho": 8389,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Color:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1500,
+     "rol": "etiqueta",
+     "campo": "fb.orina_color"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 930,
+     "rol": "valor",
+     "campo": "fb.orina_color"
+    },
+    {
+     "texto": "Volumen:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1475,
+     "rol": "etiqueta",
+     "campo": "fb.orina_vol"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 1,
+     "ancho": 930,
+     "rol": "valor",
+     "campo": "fb.orina_vol"
+    },
+    {
+     "texto": "Frecuencia:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1328,
+     "rol": "etiqueta",
+     "campo": "fb.orina_frec"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 1,
+     "ancho": 1135,
+     "rol": "valor",
+     "campo": "fb.orina_frec"
+    },
+    {
+     "texto": "Ritmo:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1172,
+     "rol": "etiqueta",
+     "campo": "fb.orina_ritmo"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 1419,
+     "rol": "valor",
+     "campo": "fb.orina_ritmo"
+    }
+   ],
+   [
+    {
+     "texto": "Deposiciones:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1500,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 7,
+     "ancho": 8389,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Color:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1500,
+     "rol": "etiqueta",
+     "campo": "fb.heces_color"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 930,
+     "rol": "valor",
+     "campo": "fb.heces_color"
+    },
+    {
+     "texto": "Consistencia:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1475,
+     "rol": "etiqueta",
+     "campo": "fb.heces_bristol"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 1,
+     "ancho": 930,
+     "rol": "valor",
+     "campo": "fb.heces_bristol"
+    },
+    {
+     "texto": "Frecuencia:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1328,
+     "rol": "etiqueta",
+     "campo": "fb.heces_frec"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 1,
+     "ancho": 1135,
+     "rol": "valor",
+     "campo": "fb.heces_frec"
+    },
+    {
+     "texto": "Ritmo:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1172,
+     "rol": "etiqueta",
+     "campo": "fb.heces_ritmo"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 1419,
+     "rol": "valor",
+     "campo": "fb.heces_ritmo"
+    }
+   ],
+   [
+    {
+     "texto": "Sueño:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1500,
+     "rol": "etiqueta",
+     "campo": "fb.sueno"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 7,
+     "ancho": 8389,
+     "rol": "valor",
+     "campo": "fb.sueno"
+    }
+   ],
+   [
+    {
+     "texto": "Sudoración:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1500,
+     "rol": "etiqueta",
+     "campo": "fb.sudoracion"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 7,
+     "ancho": 8389,
+     "rol": "valor",
+     "campo": "fb.sudoracion"
+    }
+   ],
+   [
+    {
+     "texto": "Variación de peso:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1500,
+     "rol": "etiqueta",
+     "campo": "fb.peso_var"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 7,
+     "ancho": 8389,
+     "rol": "valor",
+     "campo": "fb.peso_var"
+    }
+   ],
+   [
+    {
+     "texto": "Estado de ánimo:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1500,
+     "rol": "etiqueta",
+     "campo": "fb.estado_animo"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 7,
+     "ancho": 8389,
+     "rol": "valor",
+     "campo": "fb.estado_animo"
+    }
+   ]
+  ]
+ },
+ {
+  "tipo": "parrafo",
+  "texto": "2.4. ANTECEDENTES:",
+  "negrita": true,
+  "centrado": false
+ },
+ {
+  "tipo": "tabla",
+  "anchos": [
+   1952,
+   2310,
+   241,
+   1996,
+   555,
+   2835
+  ],
+  "filas": [
+   [
+    {
+     "texto": "PERSONALES",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 6,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Generales:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 5,
+     "ancho": 7937,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Vivienda:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 5,
+     "ancho": 7937,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Material de construcción:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "apn.vivienda_material"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 2310,
+     "rol": "valor",
+     "campo": "apn.vivienda_material"
+    },
+    {
+     "texto": "Piso:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 2237,
+     "rol": "etiqueta",
+     "campo": "apn.vivienda_piso"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 2,
+     "ancho": 3390,
+     "rol": "valor",
+     "campo": "apn.vivienda_piso"
+    }
+   ],
+   [
+    {
+     "texto": "Techo:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "apn.vivienda_techo"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 2310,
+     "rol": "valor",
+     "campo": "apn.vivienda_techo"
+    },
+    {
+     "texto": "N° habitaciones:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 2237,
+     "rol": "etiqueta",
+     "campo": "apn.vivienda_habitaciones"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 2,
+     "ancho": 3390,
+     "rol": "valor",
+     "campo": "apn.vivienda_habitaciones"
+    }
+   ],
+   [
+    {
+     "texto": "N° personas:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "apn.vivienda_personas"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 2310,
+     "rol": "valor",
+     "campo": "apn.vivienda_personas"
+    },
+    {
+     "texto": "Índice de hacinamiento:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 2237,
+     "rol": "etiqueta",
+     "campo": "apn.hacinamiento_indice"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 2,
+     "ancho": 3390,
+     "rol": "valor",
+     "campo": "apn.hacinamiento_indice"
+    }
+   ],
+   [
+    {
+     "texto": "Agua:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "apn.vivienda_agua"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 2310,
+     "rol": "valor",
+     "campo": "apn.vivienda_agua"
+    },
+    {
+     "texto": "Luz:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 2237,
+     "rol": "etiqueta",
+     "campo": "apn.vivienda_luz"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 2,
+     "ancho": 3390,
+     "rol": "valor",
+     "campo": "apn.vivienda_luz"
+    }
+   ],
+   [
+    {
+     "texto": "Desagüe:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "apn.vivienda_desague"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 2310,
+     "rol": "valor",
+     "campo": "apn.vivienda_desague"
+    },
+    {
+     "texto": "Crianza de animales:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 2237,
+     "rol": "etiqueta",
+     "campo": "apn.crianza_animales"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 2,
+     "ancho": 3390,
+     "rol": "valor",
+     "campo": "apn.crianza_animales"
+    }
+   ],
+   [
+    {
+     "texto": "Residencias anteriores:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 5,
+     "ancho": 7937,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Ocupaciones anteriores:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 5,
+     "ancho": 7937,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Vestido (de acuerdo o no a la estación)",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "apn.vestimenta"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 5,
+     "ancho": 7937,
+     "rol": "valor",
+     "campo": "apn.vestimenta"
+    }
+   ],
+   [
+    {
+     "texto": "Higiene:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "apn.higiene"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 5,
+     "ancho": 7937,
+     "rol": "valor",
+     "campo": "apn.higiene"
+    }
+   ],
+   [
+    {
+     "texto": "Alimentación:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 2310,
+     "rol": "valor"
+    },
+    {
+     "texto": "N° de comidas:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 2237,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 2,
+     "ancho": 3390,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Comida habitual:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "apn.alimentacion_menu"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 5,
+     "ancho": 7937,
+     "rol": "valor",
+     "campo": "apn.alimentacion_menu"
+    }
+   ],
+   [
+    {
+     "texto": "Frutas:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "apn.consumo_frutas"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 2310,
+     "rol": "valor",
+     "campo": "apn.consumo_frutas"
+    },
+    {
+     "texto": "Vegetales:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 2237,
+     "rol": "etiqueta",
+     "campo": "apn.consumo_vegetales"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 2,
+     "ancho": 3390,
+     "rol": "valor",
+     "campo": "apn.consumo_vegetales"
+    }
+   ],
+   [
+    {
+     "texto": "Carnes:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "apn.consumo_carnes"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 2310,
+     "rol": "valor",
+     "campo": "apn.consumo_carnes"
+    },
+    {
+     "texto": "Pescado:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 2237,
+     "rol": "etiqueta",
+     "campo": "apn.consumo_pescado"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 2,
+     "ancho": 3390,
+     "rol": "valor",
+     "campo": "apn.consumo_pescado"
+    }
+   ],
+   [
+    {
+     "texto": "Alergia:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 5,
+     "ancho": 7937,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Hábitos nocivos:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 5,
+     "ancho": 7937,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Alcohol:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "apn.alcohol"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 5,
+     "ancho": 7937,
+     "rol": "valor",
+     "campo": "apn.alcohol"
+    }
+   ],
+   [
+    {
+     "texto": "Frecuencia:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "apn.alcohol_frecuencia"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 2310,
+     "rol": "valor",
+     "campo": "apn.alcohol_frecuencia"
+    },
+    {
+     "texto": "Cantidad:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 2237,
+     "rol": "etiqueta",
+     "campo": "apn.alcohol_cantidad"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 2,
+     "ancho": 3390,
+     "rol": "valor",
+     "campo": "apn.alcohol_cantidad"
+    }
+   ],
+   [
+    {
+     "texto": "Tabaco:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "apn.tabaco"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 5,
+     "ancho": 7937,
+     "rol": "valor",
+     "campo": "apn.tabaco"
+    }
+   ],
+   [
+    {
+     "texto": "Frecuencia:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "apn.tabaco_frecuencia"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 2310,
+     "rol": "valor",
+     "campo": "apn.tabaco_frecuencia"
+    },
+    {
+     "texto": "Cantidad:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 2237,
+     "rol": "etiqueta",
+     "campo": "apn.tabaco_cantidad"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 2,
+     "ancho": 3390,
+     "rol": "valor",
+     "campo": "apn.tabaco_cantidad"
+    }
+   ],
+   [
+    {
+     "texto": "Café:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "apn.cafe_mate_te"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 5,
+     "ancho": 7937,
+     "rol": "valor",
+     "campo": "apn.cafe_mate_te"
+    }
+   ],
+   [
+    {
+     "texto": "Frecuencia:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "apn.cafe_frecuencia"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 2310,
+     "rol": "valor",
+     "campo": "apn.cafe_frecuencia"
+    },
+    {
+     "texto": "Cantidad:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 2237,
+     "rol": "etiqueta",
+     "campo": "apn.cafe_cantidad"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 2,
+     "ancho": 3390,
+     "rol": "valor",
+     "campo": "apn.cafe_cantidad"
+    }
+   ],
+   [
+    {
+     "texto": "Drogas:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "apn.drogas"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 5,
+     "ancho": 7937,
+     "rol": "valor",
+     "campo": "apn.drogas"
+    }
+   ],
+   [
+    {
+     "texto": "Frecuencia:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "apn.drogas_frecuencia"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 2310,
+     "rol": "valor",
+     "campo": "apn.drogas_frecuencia"
+    },
+    {
+     "texto": "Cantidad:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 2237,
+     "rol": "etiqueta",
+     "campo": "apn.drogas_cantidad"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 2,
+     "ancho": 3390,
+     "rol": "valor",
+     "campo": "apn.drogas_cantidad"
+    }
+   ],
+   [
+    {
+     "texto": "Inmunizaciones:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "afi.inmunizaciones"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 5,
+     "ancho": 7937,
+     "rol": "valor",
+     "campo": "afi.inmunizaciones"
+    }
+   ],
+   [
+    {
+     "texto": "Transfusiones:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "afi.transfusiones"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 5,
+     "ancho": 7937,
+     "rol": "valor",
+     "campo": "afi.transfusiones"
+    }
+   ],
+   [
+    {
+     "texto": "Fecha:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "apn.transfusion_fecha"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 2310,
+     "rol": "valor",
+     "campo": "apn.transfusion_fecha"
+    },
+    {
+     "texto": "Razón:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 2237,
+     "rol": "etiqueta",
+     "campo": "apn.transfusion_razon"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 2,
+     "ancho": 3390,
+     "rol": "valor",
+     "campo": "apn.transfusion_razon"
+    }
+   ],
+   [
+    {
+     "texto": "Grupo sanguíneo:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "apn.grupo_sanguineo"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 5,
+     "ancho": 7937,
+     "rol": "valor",
+     "campo": "apn.grupo_sanguineo"
+    }
+   ],
+   [
+    {
+     "texto": "FISIOLÓGICOS:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 6,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Antecedentes prenatales:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 5,
+     "ancho": 7937,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Gestación (patologías):",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 5,
+     "ancho": 7937,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Control prenatal:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "afi.prenatales_control"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 5,
+     "ancho": 7937,
+     "rol": "valor",
+     "campo": "afi.prenatales_control"
+    }
+   ],
+   [
+    {
+     "texto": "Antecedentes posnatales:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 5,
+     "ancho": 7937,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Parto:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "Eutócico",
+     "negrita": false,
+     "relleno": "",
+     "span": 2,
+     "ancho": 2551,
+     "rol": "opcion"
+    },
+    {
+     "texto": "Distócico",
+     "negrita": false,
+     "relleno": "",
+     "span": 2,
+     "ancho": 2551,
+     "rol": "opcion"
+    },
+    {
+     "texto": "Paraeutocico",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 2835,
+     "rol": "opcion"
+    }
+   ],
+   [
+    {
+     "texto": "Peso y talla al nacer:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 5,
+     "ancho": 7937,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Lactancia:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "afi.lactancia"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 5,
+     "ancho": 7937,
+     "rol": "valor",
+     "campo": "afi.lactancia"
+    }
+   ],
+   [
+    {
+     "texto": "Ablactancia:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "afi.ablactancia"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 5,
+     "ancho": 7937,
+     "rol": "valor",
+     "campo": "afi.ablactancia"
+    }
+   ],
+   [
+    {
+     "texto": "Edad de primeros pasos:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 5,
+     "ancho": 7937,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Edad primeras palabras:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 5,
+     "ancho": 7937,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Rendimiento escolar:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "afi.rendimiento_escolar"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 5,
+     "ancho": 7937,
+     "rol": "valor",
+     "campo": "afi.rendimiento_escolar"
+    }
+   ],
+   [
+    {
+     "texto": "Primera relación sexual:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 5,
+     "ancho": 7937,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Preferencia sexual:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "afi.preferencia_sexual"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 5,
+     "ancho": 7937,
+     "rol": "valor",
+     "campo": "afi.preferencia_sexual"
+    }
+   ],
+   [
+    {
+     "texto": "N° de parejas sexuales:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "afi.parejas_sexuales"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 5,
+     "ancho": 7937,
+     "rol": "valor",
+     "campo": "afi.parejas_sexuales"
+    }
+   ],
+   [
+    {
+     "texto": "Ultima relación sexual:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "afi.ultima_relacion_sexual"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 5,
+     "ancho": 7937,
+     "rol": "valor",
+     "campo": "afi.ultima_relacion_sexual"
+    }
+   ],
+   [
+    {
+     "texto": "Uso anticonceptivo:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 5,
+     "ancho": 7937,
+     "rol": "valor"
+    }
+   ]
+  ]
+ },
+ {
+  "tipo": "tabla",
+  "anchos": [
+   1952,
+   7937
+  ],
+  "filas": [
+   [
+    {
+     "texto": "ANTECEDENTES GINECO-OBSTÉTRICOS",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Menarquía:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "afi.menarquia"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 7937,
+     "rol": "valor",
+     "campo": "afi.menarquia"
+    }
+   ],
+   [
+    {
+     "texto": "Fecha de ultima regla:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "afi.fur"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 7937,
+     "rol": "valor",
+     "campo": "afi.fur"
+    }
+   ],
+   [
+    {
+     "texto": "Menopausia:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "afi.menopausia"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 7937,
+     "rol": "valor",
+     "campo": "afi.menopausia"
+    }
+   ],
+   [
+    {
+     "texto": "Régimen catamenial (N° de días de menstruación ∕ duración del ciclo):",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "afi.regimen_catamenial"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 7937,
+     "rol": "valor",
+     "campo": "afi.regimen_catamenial"
+    }
+   ],
+   [
+    {
+     "texto": "Dismenorrea:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "afi.dismenorrea"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 7937,
+     "rol": "valor",
+     "campo": "afi.dismenorrea"
+    }
+   ],
+   [
+    {
+     "texto": "Dispareunia:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "afi.dispareunia"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 7937,
+     "rol": "valor",
+     "campo": "afi.dispareunia"
+    }
+   ],
+   [
+    {
+     "texto": "Leucorrea:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "afi.leucorrea"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 7937,
+     "rol": "valor",
+     "campo": "afi.leucorrea"
+    }
+   ],
+   [
+    {
+     "texto": "FORMULA OBSTÉTRICA",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "N° de gestaciones:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "afi.gestaciones"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 7937,
+     "rol": "valor",
+     "campo": "afi.gestaciones"
+    }
+   ],
+   [
+    {
+     "texto": "Nacidos a término:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "afi.partos_termino"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 7937,
+     "rol": "valor",
+     "campo": "afi.partos_termino"
+    }
+   ],
+   [
+    {
+     "texto": "Nacidos prematuro:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 7937,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Abortos:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "afi.abortos"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 7937,
+     "rol": "valor",
+     "campo": "afi.abortos"
+    }
+   ],
+   [
+    {
+     "texto": "Hijos vivos:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "afi.hijos_vivos"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 7937,
+     "rol": "valor",
+     "campo": "afi.hijos_vivos"
+    }
+   ],
+   [
+    {
+     "texto": "Fecha de ultimo parto:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "afi.fup"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 7937,
+     "rol": "valor",
+     "campo": "afi.fup"
+    }
+   ],
+   [
+    {
+     "texto": "Preeclampsia, eclampsia:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 7937,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Lactancia a los hijos:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "afi.lactancia_hijos"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 7937,
+     "rol": "valor",
+     "campo": "afi.lactancia_hijos"
+    }
+   ],
+   [
+    {
+     "texto": "Ultimo examen ginecológico:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "afi.examen_ginecologico"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 7937,
+     "rol": "valor",
+     "campo": "afi.examen_ginecologico"
+    }
+   ],
+   [
+    {
+     "texto": "Ultimo Papanicolaou:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "afi.papanicolau"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 7937,
+     "rol": "valor",
+     "campo": "afi.papanicolau"
+    }
+   ],
+   [
+    {
+     "texto": "Intervenciones quirúrgicas:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1952,
+     "rol": "etiqueta",
+     "campo": "apa.cirugias"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 7937,
+     "rol": "valor",
+     "campo": "apa.cirugias"
+    }
+   ]
+  ]
+ },
+ {
+  "tipo": "tabla",
+  "anchos": [
+   2324,
+   7565
+  ],
+  "filas": [
+   [
+    {
+     "texto": "PATOLÓGICOS: (QUE, CUANDO, DONDE, RESULTADOS, TRATAMIENTO Y CUMPLIM. DEL MISMO)",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Enfermedades congénitas (malformaciones, criptorquidia):",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 2324,
+     "rol": "etiqueta",
+     "campo": "apa.congenitas"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 7565,
+     "rol": "valor",
+     "campo": "apa.congenitas"
+    }
+   ],
+   [
+    {
+     "texto": "Enfermedades de la infancia y adolescencia (difteria, escarlatina, parotiditis, rubeola, sarampión, tos ferina, varicela):",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 2324,
+     "rol": "etiqueta",
+     "campo": "apa.infancia"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 7565,
+     "rol": "valor",
+     "campo": "apa.infancia"
+    }
+   ],
+   [
+    {
+     "texto": "Enfermedades de la juventud y adultez:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 2324,
+     "rol": "etiqueta",
+     "campo": "apa.otras_patologias"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 7565,
+     "rol": "valor",
+     "campo": "apa.otras_patologias"
+    }
+   ],
+   [
+    {
+     "texto": "Intervenciones quirúrgicas:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 2324,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 7565,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Eliminación de parásitos:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 2324,
+     "rol": "etiqueta",
+     "campo": "apa.parasitos"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 7565,
+     "rol": "valor",
+     "campo": "apa.parasitos"
+    }
+   ],
+   [
+    {
+     "texto": "Accidentes y secuelas:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 2324,
+     "rol": "etiqueta",
+     "campo": "apa.traumatismos"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 7565,
+     "rol": "valor",
+     "campo": "apa.traumatismos"
+    }
+   ],
+   [
+    {
+     "texto": "Alergia medicamentosa (tipo de reacción alérgica):",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 2324,
+     "rol": "etiqueta",
+     "campo": "afi.alergias"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 7565,
+     "rol": "valor",
+     "campo": "afi.alergias"
+    }
+   ],
+   [
+    {
+     "texto": "Intoxicaciones:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 2324,
+     "rol": "etiqueta",
+     "campo": "apa.intoxicaciones"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 7565,
+     "rol": "valor",
+     "campo": "apa.intoxicaciones"
+    }
+   ]
+  ]
+ },
+ {
+  "tipo": "tabla",
+  "anchos": [
+   2660,
+   709,
+   141,
+   426,
+   850,
+   284,
+   756,
+   992,
+   993,
+   992,
+   1086,
+   94
+  ],
+  "filas": [
+   [
+    {
+     "texto": "Historial de enfermedad:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 2660,
+     "rol": "etiqueta",
+     "campo": "apa.historial_enfermedad"
+    },
+    {
+     "texto": "HTA",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 709,
+     "rol": "opcion",
+     "campo": "apa.historial_enfermedad"
+    },
+    {
+     "texto": "DM",
+     "negrita": false,
+     "relleno": "",
+     "span": 3,
+     "ancho": 1417,
+     "rol": "opcion",
+     "campo": "apa.historial_enfermedad"
+    },
+    {
+     "texto": "TBC",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 284,
+     "rol": "opcion",
+     "campo": "apa.historial_enfermedad"
+    },
+    {
+     "texto": "ASMA",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 756,
+     "rol": "opcion",
+     "campo": "apa.historial_enfermedad"
+    },
+    {
+     "texto": "HEPATITIS B",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 992,
+     "rol": "opcion",
+     "campo": "apa.historial_enfermedad"
+    },
+    {
+     "texto": "FIEBRE TIFOIDEA",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 993,
+     "rol": "opcion",
+     "campo": "apa.historial_enfermedad"
+    },
+    {
+     "texto": "OTROS",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 992,
+     "rol": "opcion",
+     "campo": "apa.historial_enfermedad"
+    },
+    {
+     "texto": "NINGUNO",
+     "negrita": false,
+     "relleno": "",
+     "span": 2,
+     "ancho": 1180,
+     "rol": "opcion",
+     "campo": "apa.historial_enfermedad"
+    }
+   ],
+   [
+    {
+     "texto": "Tiempo de inicio:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 2660,
+     "rol": "etiqueta",
+     "campo": "apa.historial_inicio"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 10,
+     "ancho": 7229,
+     "rol": "valor",
+     "campo": "apa.historial_inicio"
+    }
+   ],
+   [
+    {
+     "texto": "Tratamiento:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 2660,
+     "rol": "etiqueta",
+     "campo": "apa.medicamentos"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 10,
+     "ancho": 7229,
+     "rol": "valor",
+     "campo": "apa.medicamentos"
+    }
+   ],
+   [
+    {
+     "texto": "Complicaciones:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 2660,
+     "rol": "etiqueta",
+     "campo": "apa.historial_complicaciones"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 10,
+     "ancho": 7229,
+     "rol": "valor",
+     "campo": "apa.historial_complicaciones"
+    }
+   ],
+   [
+    {
+     "texto": "ANTECEDENTES FAMILIARES",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 11,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Padre:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 2660,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "Vivo:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 850,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "SI",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 426,
+     "rol": "opcion"
+    },
+    {
+     "texto": "NO",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 850,
+     "rol": "opcion"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 6,
+     "ancho": 5103,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Madre:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 2660,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "Viva:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 850,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "SI",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 426,
+     "rol": "opcion"
+    },
+    {
+     "texto": "NO",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 850,
+     "rol": "opcion"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 6,
+     "ancho": 5103,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Hermanos Consanguíneos:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 2660,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "Cuantos:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 850,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 426,
+     "rol": "valor"
+    },
+    {
+     "texto": "Vivos:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 850,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 6,
+     "ancho": 5103,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Descendientes:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 2660,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "Cuantos:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 850,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 426,
+     "rol": "valor"
+    },
+    {
+     "texto": "Vivos:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 850,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 6,
+     "ancho": 5103,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Pareja:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 2660,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 10,
+     "ancho": 7229,
+     "rol": "valor"
+    }
+   ]
+  ]
+ },
+ {
+  "tipo": "parrafo",
+  "texto": "III. EXAMEN CLÍNICO",
+  "negrita": true,
+  "centrado": false
+ },
+ {
+  "tipo": "parrafo",
+  "texto": "3.1. EXAMEN GENERAL",
+  "negrita": true,
+  "centrado": false
+ },
+ {
+  "tipo": "tabla",
+  "anchos": [
+   3011,
+   6640
+  ],
+  "filas": [
+   [
+    {
+     "texto": "Funciones vitales",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 5000,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Temperatura:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1560,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3440,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Frecuencia respiratoria:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1560,
+     "rol": "etiqueta",
+     "campo": "efg.fr"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3440,
+     "rol": "valor",
+     "campo": "efg.fr"
+    }
+   ],
+   [
+    {
+     "texto": "Frecuencia cardiaca:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1560,
+     "rol": "etiqueta",
+     "campo": "efg.fc"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3440,
+     "rol": "valor",
+     "campo": "efg.fc"
+    }
+   ],
+   [
+    {
+     "texto": "Pulso:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1560,
+     "rol": "etiqueta",
+     "campo": "efg.pulso"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3440,
+     "rol": "valor",
+     "campo": "efg.pulso"
+    }
+   ],
+   [
+    {
+     "texto": "Presión arterial:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1560,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3440,
+     "rol": "valor"
+    }
+   ]
+  ]
+ },
+ {
+  "tipo": "tabla",
+  "anchos": [
+   3011,
+   6640
+  ],
+  "filas": [
+   [
+    {
+     "texto": "Somatometría:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 5000,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Peso:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1560,
+     "rol": "etiqueta",
+     "campo": "efg.peso"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3440,
+     "rol": "valor",
+     "campo": "efg.peso"
+    }
+   ],
+   [
+    {
+     "texto": "Talla:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1560,
+     "rol": "etiqueta",
+     "campo": "efg.talla"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3440,
+     "rol": "valor",
+     "campo": "efg.talla"
+    }
+   ],
+   [
+    {
+     "texto": "IMC:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1560,
+     "rol": "etiqueta",
+     "campo": "efg.imc"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3440,
+     "rol": "valor",
+     "campo": "efg.imc"
+    }
+   ]
+  ]
+ },
+ {
+  "tipo": "tabla",
+  "anchos": [
+   3011,
+   6640
+  ],
+  "filas": [
+   [
+    {
+     "texto": "Aspecto General",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 5000,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Estado general:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1560,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3440,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Estado de nutrición:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1560,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3440,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Estado de hidratación, facies:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1560,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3440,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Grado de enfermedad:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1560,
+     "rol": "etiqueta",
+     "campo": "efg.grado_enfermedad"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3440,
+     "rol": "valor",
+     "campo": "efg.grado_enfermedad"
+    }
+   ],
+   [
+    {
+     "texto": "Signo destacado:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1560,
+     "rol": "etiqueta",
+     "campo": "efg.signo_destacado"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3440,
+     "rol": "valor",
+     "campo": "efg.signo_destacado"
+    }
+   ],
+   [
+    {
+     "texto": "Tipo constitucional:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1560,
+     "rol": "etiqueta",
+     "campo": "efg.tipo_constitucional"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3440,
+     "rol": "valor",
+     "campo": "efg.tipo_constitucional"
+    }
+   ]
+  ]
+ },
+ {
+  "tipo": "tabla",
+  "anchos": [
+   3235,
+   6416
+  ],
+  "filas": [
+   [
+    {
+     "texto": "Piel",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 5000,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Color:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1676,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3324,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Temperatura:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1676,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3324,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Elasticidad:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1676,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3324,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Anormalidades:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1676,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3324,
+     "rol": "valor"
+    }
+   ]
+  ]
+ },
+ {
+  "tipo": "tabla",
+  "anchos": [
+   3281,
+   6370
+  ],
+  "filas": [
+   [
+    {
+     "texto": "Uñas",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 5000,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Color:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1700,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3300,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Forma:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1700,
+     "rol": "etiqueta",
+     "campo": "efr.torax_forma"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3300,
+     "rol": "valor",
+     "campo": "efr.torax_forma"
+    }
+   ],
+   [
+    {
+     "texto": "Estrías (longitudinales, transversales):",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1700,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3300,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Llenado capilar:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1700,
+     "rol": "etiqueta",
+     "campo": "efg.llenado_capilar"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3300,
+     "rol": "valor",
+     "campo": "efg.llenado_capilar"
+    }
+   ]
+  ]
+ },
+ {
+  "tipo": "tabla",
+  "anchos": [
+   3284,
+   6206
+  ],
+  "filas": [
+   [
+    {
+     "texto": "Sistema piloso",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 5000,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Color:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1730,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3270,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Sequedad:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1730,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3270,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Fragilidad:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1730,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3270,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Distribución (hirsutismo, alopecia):",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1730,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3270,
+     "rol": "valor"
+    }
+   ]
+  ]
+ },
+ {
+  "tipo": "tabla",
+  "anchos": [
+   3234,
+   6256
+  ],
+  "filas": [
+   [
+    {
+     "texto": "Tejido celular subcutáneo",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 5000,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Cantidad:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1704,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3296,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Distribución:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1704,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3296,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Tumoraciones:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1704,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3296,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Nódulo:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1704,
+     "rol": "etiqueta",
+     "campo": "efg.tcs_nodulo"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3296,
+     "rol": "valor",
+     "campo": "efg.tcs_nodulo"
+    }
+   ],
+   [
+    {
+     "texto": "Edema:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1704,
+     "rol": "etiqueta",
+     "campo": "efg.tcs_edema"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3296,
+     "rol": "valor",
+     "campo": "efg.tcs_edema"
+    }
+   ],
+   [
+    {
+     "texto": "Enfisema:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1704,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3296,
+     "rol": "valor"
+    }
+   ]
+  ]
+ },
+ {
+  "tipo": "parrafo",
+  "texto": "3.2. EXAMEN REGIONAL:",
+  "negrita": true,
+  "centrado": false
+ },
+ {
+  "tipo": "tabla",
+  "anchos": [
+   1195,
+   396,
+   9,
+   311,
+   303,
+   9,
+   168,
+   9,
+   588,
+   150,
+   54,
+   9,
+   243,
+   148,
+   240,
+   229,
+   414,
+   205,
+   113,
+   9,
+   950,
+   158,
+   82,
+   401,
+   10,
+   650,
+   619,
+   85,
+   236,
+   11,
+   369,
+   20,
+   1496
+  ],
+  "filas": [
+   [
+    {
+     "texto": "CABEZA CRÁNEO:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 33,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Forma",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 1196,
+     "rol": "etiqueta",
+     "campo": "efr.abd_forma"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 6,
+     "ancho": 1196,
+     "rol": "valor",
+     "campo": "efr.abd_forma"
+    },
+    {
+     "texto": "Tamaño",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 7,
+     "ancho": 1201,
+     "rol": "etiqueta",
+     "campo": "efr.torax_tamano"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 5,
+     "ancho": 1201,
+     "rol": "valor",
+     "campo": "efr.torax_tamano"
+    },
+    {
+     "texto": "Simetría",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 4,
+     "ancho": 1199,
+     "rol": "etiqueta",
+     "campo": "efr.torax_simetria"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 3,
+     "ancho": 1061,
+     "rol": "valor",
+     "campo": "efr.torax_simetria"
+    },
+    {
+     "texto": "Frente (líneas de expresión)",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 6,
+     "ancho": 1340,
+     "rol": "etiqueta",
+     "campo": "efr.cabeza_frente"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 1,
+     "ancho": 1495,
+     "rol": "valor",
+     "campo": "efr.cabeza_frente"
+    }
+   ],
+   [
+    {
+     "texto": "PARPADOS:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 33,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "(edema, ptosis, tamaño de la hendidura palpebral):",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 17,
+     "ancho": 4476,
+     "rol": "etiqueta",
+     "campo": "efr.parpados"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 16,
+     "ancho": 5413,
+     "rol": "valor",
+     "campo": "efr.parpados"
+    }
+   ],
+   [
+    {
+     "texto": "OJOS:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 33,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "(exoftalmos, enoftalmos, estrabismo, nistagmos, glándula lagrimal):",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 20,
+     "ancho": 4803,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 13,
+     "ancho": 5086,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Conjuntiva (palidez, congestión, ictericia, petequias, hemorragias subconjuntivales):",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 20,
+     "ancho": 4803,
+     "rol": "etiqueta",
+     "campo": "efr.conjuntiva"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 13,
+     "ancho": 5086,
+     "rol": "valor",
+     "campo": "efr.conjuntiva"
+    }
+   ],
+   [
+    {
+     "texto": "Esclerótica (color):",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 20,
+     "ancho": 4803,
+     "rol": "etiqueta",
+     "campo": "efr.esclerotica"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 13,
+     "ancho": 5086,
+     "rol": "valor",
+     "campo": "efr.esclerotica"
+    }
+   ],
+   [
+    {
+     "texto": "Cornea (opacidades, cicatrices, ulceraciones, arco senil, deformaciones):",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 20,
+     "ancho": 4803,
+     "rol": "etiqueta",
+     "campo": "efr.cornea"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 13,
+     "ancho": 5086,
+     "rol": "valor",
+     "campo": "efr.cornea"
+    }
+   ],
+   [
+    {
+     "texto": "Pupilas:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 10,
+     "ancho": 3139,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 23,
+     "ancho": 6750,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Simetría:",
+     "negrita": true,
+     "relleno": "",
+     "span": 12,
+     "ancho": 3202,
+     "rol": "etiqueta",
+     "campo": "efr.abd_simetria"
+    },
+    {
+     "texto": "Tamaño:",
+     "negrita": true,
+     "relleno": "",
+     "span": 13,
+     "ancho": 3202,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "Forma:",
+     "negrita": true,
+     "relleno": "",
+     "span": 8,
+     "ancho": 3485,
+     "rol": "etiqueta"
+    }
+   ],
+   [
+    {
+     "texto": "Reflejo fotomotor:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 19,
+     "ancho": 4793,
+     "rol": "etiqueta",
+     "campo": "efr.reflejo_fotomotor"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 14,
+     "ancho": 5096,
+     "rol": "valor",
+     "campo": "efr.reflejo_fotomotor"
+    }
+   ],
+   [
+    {
+     "texto": "Reflejo consensual:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 8,
+     "ancho": 2401,
+     "rol": "etiqueta",
+     "campo": "efr.reflejo_consensual"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 12,
+     "ancho": 2402,
+     "rol": "valor",
+     "campo": "efr.reflejo_consensual"
+    },
+    {
+     "texto": "Reflejo acomodación:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 6,
+     "ancho": 2251,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 7,
+     "ancho": 2835,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Cristalino (cataratas)",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 20,
+     "ancho": 4803,
+     "rol": "etiqueta",
+     "campo": "efr.cristalino"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 13,
+     "ancho": 5086,
+     "rol": "valor",
+     "campo": "efr.cristalino"
+    }
+   ],
+   [
+    {
+     "texto": "NARIZ:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 33,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Forma:",
+     "negrita": true,
+     "relleno": "",
+     "span": 7,
+     "ancho": 2392,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "Aleteo nasal:",
+     "negrita": true,
+     "relleno": "",
+     "span": 12,
+     "ancho": 2402,
+     "rol": "etiqueta",
+     "campo": "efr.nariz_aleteo"
+    },
+    {
+     "texto": "Mucosa nasal (congestión,secreción, hemorragias,pólipos)",
+     "negrita": true,
+     "relleno": "",
+     "span": 7,
+     "ancho": 2260,
+     "rol": "opcion",
+     "campo": "efr.nariz_aleteo"
+    },
+    {
+     "texto": "Tabique (desviación, perforación):",
+     "negrita": true,
+     "relleno": "",
+     "span": 7,
+     "ancho": 2835,
+     "rol": "etiqueta"
+    }
+   ],
+   [
+    {
+     "texto": "OÍDOS:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 33,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Pabellones auriculares (simetría, implantación, deformaciones, tofos):",
+     "negrita": true,
+     "relleno": "",
+     "span": 19,
+     "ancho": 4794,
+     "rol": "etiqueta",
+     "campo": "efr.pabellones_auriculares"
+    },
+    {
+     "texto": "Conducto auditivo externo (permeabilidad, alteraciones):",
+     "negrita": true,
+     "relleno": "",
+     "span": 14,
+     "ancho": 5095,
+     "rol": "etiqueta",
+     "campo": "efr.conducto_auditivo"
+    }
+   ],
+   [
+    {
+     "texto": "BOCA:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 33,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Olor del aliento:",
+     "negrita": true,
+     "relleno": "",
+     "span": 7,
+     "ancho": 2392,
+     "rol": "etiqueta",
+     "campo": "efr.aliento"
+    },
+    {
+     "texto": "Labios (simetría, cianosis, queilosis, herpes):",
+     "negrita": true,
+     "relleno": "",
+     "span": 12,
+     "ancho": 2402,
+     "rol": "etiqueta",
+     "campo": "efr.labios"
+    },
+    {
+     "texto": "Dientes (forma, caries, piezas que faltan, prótesis parciales o totales):",
+     "negrita": true,
+     "relleno": "",
+     "span": 7,
+     "ancho": 2260,
+     "rol": "etiqueta",
+     "campo": "efr.dientes"
+    },
+    {
+     "texto": "Encías (palidez, tumefacción, supuración, sangrado, pigmentaciones, hiperplasia):",
+     "negrita": true,
+     "relleno": "",
+     "span": 7,
+     "ancho": 2835,
+     "rol": "etiqueta",
+     "campo": "efr.encias"
+    }
+   ],
+   [
+    {
+     "texto": "Mucosa oral (color, palidez, enantemas, ulceraciones, pigmentaciones, petequias, varices, Muguet, secreciones):",
+     "negrita": true,
+     "relleno": "",
+     "span": 7,
+     "ancho": 2392,
+     "rol": "etiqueta",
+     "campo": "efr.mucosa_oral"
+    },
+    {
+     "texto": "Lengua (tamaño, color, superficie, atrofia papilar, humedad, saburra, ulceraciones, posición, tremor, fasciculaciones, base de lengua):",
+     "negrita": true,
+     "relleno": "",
+     "span": 12,
+     "ancho": 2402,
+     "rol": "etiqueta",
+     "campo": "efr.lengua"
+    },
+    {
+     "texto": "Orofaringe (color, exudados, paladar duro y blando, úvula, pilares, amígdalas, orificio faríngeo):",
+     "negrita": true,
+     "relleno": "",
+     "span": 7,
+     "ancho": 2260,
+     "rol": "etiqueta",
+     "campo": "efr.orofaringe"
+    },
+    {
+     "texto": "Glándulas salivales (hipertrofias, sensibilidad):",
+     "negrita": true,
+     "relleno": "",
+     "span": 7,
+     "ancho": 2835,
+     "rol": "etiqueta",
+     "campo": "efr.glandulas_salivales"
+    }
+   ],
+   [
+    {
+     "texto": "CUELLO:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 33,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Longitud:",
+     "negrita": true,
+     "relleno": "",
+     "span": 11,
+     "ancho": 3193,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "Forma:",
+     "negrita": true,
+     "relleno": "",
+     "span": 13,
+     "ancho": 3201,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "Movilidad:",
+     "negrita": true,
+     "relleno": "",
+     "span": 9,
+     "ancho": 3495,
+     "rol": "etiqueta"
+    }
+   ],
+   [
+    {
+     "texto": "Rigidez:",
+     "negrita": true,
+     "relleno": "",
+     "span": 11,
+     "ancho": 3193,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "Dolor:",
+     "negrita": true,
+     "relleno": "",
+     "span": 13,
+     "ancho": 3201,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "Cicatrices/Tumoraciones:",
+     "negrita": true,
+     "relleno": "",
+     "span": 9,
+     "ancho": 3495,
+     "rol": "etiqueta"
+    }
+   ],
+   [
+    {
+     "texto": "TIROIDES:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 33,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Tamaño:",
+     "negrita": true,
+     "relleno": "",
+     "span": 11,
+     "ancho": 3193,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "Simetría:",
+     "negrita": true,
+     "relleno": "",
+     "span": 13,
+     "ancho": 3201,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "Consistencia:",
+     "negrita": true,
+     "relleno": "",
+     "span": 9,
+     "ancho": 3495,
+     "rol": "etiqueta"
+    }
+   ],
+   [
+    {
+     "texto": "Movilidad nódulos:",
+     "negrita": true,
+     "relleno": "",
+     "span": 11,
+     "ancho": 3193,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "Sensibilidad:",
+     "negrita": true,
+     "relleno": "",
+     "span": 13,
+     "ancho": 3201,
+     "rol": "etiqueta",
+     "campo": "efr.gu_sensibilidad"
+    },
+    {
+     "texto": "Soplos:",
+     "negrita": true,
+     "relleno": "",
+     "span": 9,
+     "ancho": 3495,
+     "rol": "etiqueta",
+     "campo": "efr.torax_soplos"
+    }
+   ],
+   [
+    {
+     "texto": "TRÁQUEA:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 33,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Posición:",
+     "negrita": true,
+     "relleno": "",
+     "span": 19,
+     "ancho": 4794,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "Movilidad:",
+     "negrita": true,
+     "relleno": "",
+     "span": 14,
+     "ancho": 5095,
+     "rol": "etiqueta"
+    }
+   ],
+   [
+    {
+     "texto": "Examen del sistema vascular del cuello (frémitos, soplos):",
+     "negrita": true,
+     "relleno": "",
+     "span": 19,
+     "ancho": 4794,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 14,
+     "ancho": 5095,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "MAMAS:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 33,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Desarrollo:",
+     "negrita": true,
+     "relleno": "",
+     "span": 4,
+     "ancho": 1912,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "Simetría:",
+     "negrita": true,
+     "relleno": "",
+     "span": 11,
+     "ancho": 1921,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "Características de los pezones y areolas:",
+     "negrita": true,
+     "relleno": "",
+     "span": 6,
+     "ancho": 1920,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "Secreciones:",
+     "negrita": true,
+     "relleno": "",
+     "span": 6,
+     "ancho": 1920,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "Ulceraciones:",
+     "negrita": true,
+     "relleno": "",
+     "span": 6,
+     "ancho": 2216,
+     "rol": "etiqueta"
+    }
+   ],
+   [
+    {
+     "texto": "Pigmentación:",
+     "negrita": true,
+     "relleno": "",
+     "span": 4,
+     "ancho": 1912,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "Sensibilidad:",
+     "negrita": true,
+     "relleno": "",
+     "span": 11,
+     "ancho": 1921,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "Inflamación:",
+     "negrita": true,
+     "relleno": "",
+     "span": 6,
+     "ancho": 1920,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "Tumoración (localización, consistencia, tamaño, movilidad):",
+     "negrita": true,
+     "relleno": "",
+     "span": 6,
+     "ancho": 1920,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 6,
+     "ancho": 2216,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "TÓRAX Y PULMONES:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 33,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Inspección estática:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 33,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Forma:",
+     "negrita": true,
+     "relleno": "",
+     "span": 7,
+     "ancho": 2392,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "Simetría:",
+     "negrita": true,
+     "relleno": "",
+     "span": 12,
+     "ancho": 2402,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "Tamaño:",
+     "negrita": true,
+     "relleno": "",
+     "span": 7,
+     "ancho": 2260,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "Diámetro antero posterior y transverso:",
+     "negrita": true,
+     "relleno": "",
+     "span": 7,
+     "ancho": 2835,
+     "rol": "etiqueta"
+    }
+   ],
+   [
+    {
+     "texto": "Dirección de las costillas:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 17,
+     "ancho": 4476,
+     "rol": "etiqueta",
+     "campo": "efr.torax_costillas"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 16,
+     "ancho": 5413,
+     "rol": "valor",
+     "campo": "efr.torax_costillas"
+    }
+   ],
+   [
+    {
+     "texto": "Angulo subcostal:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 17,
+     "ancho": 4476,
+     "rol": "etiqueta",
+     "campo": "efr.torax_angulo_subcostal"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 16,
+     "ancho": 5413,
+     "rol": "valor",
+     "campo": "efr.torax_angulo_subcostal"
+    }
+   ],
+   [
+    {
+     "texto": "Deformidades:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 17,
+     "ancho": 4476,
+     "rol": "etiqueta",
+     "campo": "efr.torax_deformidades"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 16,
+     "ancho": 5413,
+     "rol": "valor",
+     "campo": "efr.torax_deformidades"
+    }
+   ],
+   [
+    {
+     "texto": "Inspección dinámica",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 33,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Tipo de respiración (normal, Kussamul, atáxica, Biot, apnéustica, respiración enfisematosa):",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 17,
+     "ancho": 4476,
+     "rol": "etiqueta",
+     "campo": "efr.torax_tipo_respiracion"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 16,
+     "ancho": 5413,
+     "rol": "valor",
+     "campo": "efr.torax_tipo_respiracion"
+    }
+   ],
+   [
+    {
+     "texto": "Frecuencia respiratoria:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 17,
+     "ancho": 4476,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 16,
+     "ancho": 5413,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Amplitud:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 17,
+     "ancho": 4476,
+     "rol": "etiqueta",
+     "campo": "efr.torax_amplitud"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 16,
+     "ancho": 5413,
+     "rol": "valor",
+     "campo": "efr.torax_amplitud"
+    }
+   ],
+   [
+    {
+     "texto": "Ritmos respiratorios (bradipnea, taquipnea, polipnea, batipnea):",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 17,
+     "ancho": 4476,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 16,
+     "ancho": 5413,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Retracciones (supraclavicular, supraesternal, intercostal, subcostal):",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 17,
+     "ancho": 4476,
+     "rol": "etiqueta",
+     "campo": "efr.torax_retracciones"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 16,
+     "ancho": 5413,
+     "rol": "valor",
+     "campo": "efr.torax_retracciones"
+    }
+   ],
+   [
+    {
+     "texto": "Palpación",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 33,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Amplexación:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 11,
+     "ancho": 3193,
+     "rol": "etiqueta",
+     "campo": "efr.torax_amplexacion"
+    },
+    {
+     "texto": "V V:",
+     "negrita": true,
+     "relleno": "",
+     "span": 13,
+     "ancho": 3201,
+     "rol": "etiqueta",
+     "campo": "efr.torax_vv"
+    },
+    {
+     "texto": "Dolorabilidad, frémitos, enfisema subcutáneo:",
+     "negrita": true,
+     "relleno": "",
+     "span": 9,
+     "ancho": 3495,
+     "rol": "etiqueta"
+    }
+   ],
+   [
+    {
+     "texto": "Percusión",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 33,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Sonoridad:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 6,
+     "ancho": 2224,
+     "rol": "etiqueta",
+     "campo": "efr.torax_sonoridad"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 27,
+     "ancho": 7665,
+     "rol": "valor",
+     "campo": "efr.torax_sonoridad"
+    }
+   ],
+   [
+    {
+     "texto": "Auscultación",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 33,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Ruidos respiratorios normales",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 33,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Ruido traqueal:",
+     "negrita": true,
+     "relleno": "",
+     "span": 11,
+     "ancho": 3193,
+     "rol": "etiqueta",
+     "campo": "efr.torax_ruido_traqueal"
+    },
+    {
+     "texto": "Ruido traqueobronquial:",
+     "negrita": true,
+     "relleno": "",
+     "span": 13,
+     "ancho": 3201,
+     "rol": "etiqueta",
+     "campo": "efr.torax_ruido_traqueobronquial"
+    },
+    {
+     "texto": "Murmullo Vesicular:",
+     "negrita": true,
+     "relleno": "",
+     "span": 9,
+     "ancho": 3495,
+     "rol": "etiqueta",
+     "campo": "efr.torax_mv"
+    }
+   ],
+   [
+    {
+     "texto": "Ruidos respiratorios anormales",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 33,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Soplos:",
+     "negrita": true,
+     "relleno": "",
+     "span": 11,
+     "ancho": 3193,
+     "rol": "etiqueta",
+     "campo": "efr.cuello_soplo"
+    },
+    {
+     "texto": "Ruidos agregados:",
+     "negrita": true,
+     "relleno": "",
+     "span": 13,
+     "ancho": 3201,
+     "rol": "etiqueta",
+     "campo": "efr.torax_agregados"
+    },
+    {
+     "texto": "Frote pleural:",
+     "negrita": true,
+     "relleno": "",
+     "span": 9,
+     "ancho": 3495,
+     "rol": "etiqueta",
+     "campo": "efr.torax_frote_pleural"
+    }
+   ],
+   [
+    {
+     "texto": "Alteraciones de la auscultación de la voz:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 33,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Broncofonía:",
+     "negrita": true,
+     "relleno": "",
+     "span": 7,
+     "ancho": 2392,
+     "rol": "etiqueta",
+     "campo": "efr.torax_broncofonia"
+    },
+    {
+     "texto": "Pectoriloquia:",
+     "negrita": true,
+     "relleno": "",
+     "span": 12,
+     "ancho": 2402,
+     "rol": "etiqueta",
+     "campo": "efr.torax_pectoriloquia"
+    },
+    {
+     "texto": "Pectoriloquia áfona:",
+     "negrita": true,
+     "relleno": "",
+     "span": 7,
+     "ancho": 2260,
+     "rol": "etiqueta",
+     "campo": "efr.torax_pectoriloquia_afona"
+    },
+    {
+     "texto": "Egofonía:",
+     "negrita": true,
+     "relleno": "",
+     "span": 7,
+     "ancho": 2835,
+     "rol": "etiqueta",
+     "campo": "efr.torax_egofonia"
+    }
+   ],
+   [
+    {
+     "texto": "Auscultación de la tos:",
+     "negrita": true,
+     "relleno": "",
+     "span": 19,
+     "ancho": 4794,
+     "rol": "etiqueta",
+     "campo": "efr.torax_ausc_tos"
+    },
+    {
+     "texto": "Percusión auscultatoria:",
+     "negrita": true,
+     "relleno": "",
+     "span": 14,
+     "ancho": 5095,
+     "rol": "etiqueta",
+     "campo": "efr.torax_percusion_auscultatoria"
+    }
+   ],
+   [
+    {
+     "texto": "CARDIOVASCULAR - REGIÓN DEL CUELLO:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 33,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Examen de vasos arteriales y venosos (latidos normales y patológicos):",
+     "negrita": true,
+     "relleno": "",
+     "span": 7,
+     "ancho": 2392,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "Ingurgitación yugular:",
+     "negrita": true,
+     "relleno": "",
+     "span": 12,
+     "ancho": 2402,
+     "rol": "etiqueta",
+     "campo": "efr.ingurgitacion_yugular"
+    },
+    {
+     "texto": "Frémitos:",
+     "negrita": true,
+     "relleno": "",
+     "span": 7,
+     "ancho": 2260,
+     "rol": "etiqueta",
+     "campo": "efr.cuello_fremito"
+    },
+    {
+     "texto": "Soplos:",
+     "negrita": true,
+     "relleno": "",
+     "span": 7,
+     "ancho": 2835,
+     "rol": "etiqueta",
+     "campo": "efr.soplos_cardiacos"
+    }
+   ],
+   [
+    {
+     "texto": "REGIÓN PRECORDIAL:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 33,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Inspección:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 33,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Choque de punta (situación: V EIC izq a nivel de línea media clavicular izquierda):",
+     "negrita": true,
+     "relleno": "",
+     "span": 19,
+     "ancho": 4794,
+     "rol": "etiqueta",
+     "campo": "efr.choque_punta"
+    },
+    {
+     "texto": "Deformaciones:",
+     "negrita": true,
+     "relleno": "",
+     "span": 14,
+     "ancho": 5095,
+     "rol": "etiqueta",
+     "campo": "efr.precordio_deformaciones"
+    }
+   ],
+   [
+    {
+     "texto": "Palpación",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 33,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Vibraciones valvulares:",
+     "negrita": true,
+     "relleno": "",
+     "span": 19,
+     "ancho": 4794,
+     "rol": "etiqueta",
+     "campo": "efr.vibraciones_valvulares"
+    },
+    {
+     "texto": "Frémitos:",
+     "negrita": true,
+     "relleno": "",
+     "span": 14,
+     "ancho": 5095,
+     "rol": "etiqueta",
+     "campo": "efr.fremito_precordial"
+    }
+   ],
+   [
+    {
+     "texto": "Auscultación:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 33,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Intensidad primer y segundo ruido:",
+     "negrita": true,
+     "relleno": "",
+     "span": 11,
+     "ancho": 3193,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "Frote:",
+     "negrita": true,
+     "relleno": "",
+     "span": 13,
+     "ancho": 3201,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "Pericárdico:",
+     "negrita": true,
+     "relleno": "",
+     "span": 9,
+     "ancho": 3495,
+     "rol": "etiqueta"
+    }
+   ],
+   [
+    {
+     "texto": "Chasquidos:",
+     "negrita": true,
+     "relleno": "",
+     "span": 11,
+     "ancho": 3193,
+     "rol": "etiqueta",
+     "campo": "efr.chasquidos"
+    },
+    {
+     "texto": "Soplos:",
+     "negrita": true,
+     "relleno": "",
+     "span": 13,
+     "ancho": 3201,
+     "rol": "etiqueta",
+     "campo": "efr.abd_soplos"
+    },
+    {
+     "texto": "Desdoblamientos:",
+     "negrita": true,
+     "relleno": "",
+     "span": 9,
+     "ancho": 3495,
+     "rol": "etiqueta",
+     "campo": "efr.desdoblamientos"
+    }
+   ],
+   [
+    {
+     "texto": "REGIÓN EPIGÁSTRICA:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 33,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Latidos aórticos, ventricular derecho, hepático:",
+     "negrita": true,
+     "relleno": "",
+     "span": 19,
+     "ancho": 4794,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "Reflujo hepatoyugular:",
+     "negrita": true,
+     "relleno": "",
+     "span": 14,
+     "ancho": 5095,
+     "rol": "etiqueta",
+     "campo": "efr.reflujo_hepatoyugular"
+    }
+   ],
+   [
+    {
+     "texto": "REGIÓN EXAMEN DEL PULSO ARTERIAL PERIFÉRICO:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 33,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Evaluar (a. temporales, carótidas, humerales, radiales, femorales, poplíteas, tíbiales posteriores y pedias):",
+     "negrita": true,
+     "relleno": "",
+     "span": 19,
+     "ancho": 4794,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 14,
+     "ancho": 5095,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "EXAMEN DEL SISTEMA VENOSO:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 33,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Varices, dilatación venosa, flebitis, ulceras varicosas, cambios tróficos, signo de Hoffman",
+     "negrita": true,
+     "relleno": "",
+     "span": 19,
+     "ancho": 4794,
+     "rol": "opcion"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 14,
+     "ancho": 5095,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "ABDOMEN:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 33,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Inspección",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 33,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Forma:",
+     "negrita": true,
+     "relleno": "",
+     "span": 7,
+     "ancho": 2392,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "Volumen:",
+     "negrita": true,
+     "relleno": "",
+     "span": 12,
+     "ancho": 2402,
+     "rol": "etiqueta",
+     "campo": "efr.abd_volumen"
+    },
+    {
+     "texto": "Simetría:",
+     "negrita": true,
+     "relleno": "",
+     "span": 7,
+     "ancho": 2260,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "Movilidad:",
+     "negrita": true,
+     "relleno": "",
+     "span": 7,
+     "ancho": 2835,
+     "rol": "etiqueta"
+    }
+   ],
+   [
+    {
+     "texto": "Cicatrices:",
+     "negrita": true,
+     "relleno": "",
+     "span": 7,
+     "ancho": 2392,
+     "rol": "etiqueta",
+     "campo": "efr.abd_cicatrices"
+    },
+    {
+     "texto": "Circulación colateral:",
+     "negrita": true,
+     "relleno": "",
+     "span": 12,
+     "ancho": 2402,
+     "rol": "etiqueta",
+     "campo": "efr.abd_circulacion_colateral"
+    },
+    {
+     "texto": "Caput medusae:",
+     "negrita": true,
+     "relleno": "",
+     "span": 7,
+     "ancho": 2260,
+     "rol": "etiqueta",
+     "campo": "efr.abd_caput_medusae"
+    },
+    {
+     "texto": "Peristaltismo visible:",
+     "negrita": true,
+     "relleno": "",
+     "span": 7,
+     "ancho": 2835,
+     "rol": "etiqueta",
+     "campo": "efr.abd_peristaltismo"
+    }
+   ],
+   [
+    {
+     "texto": "Región umbilical:",
+     "negrita": true,
+     "relleno": "",
+     "span": 7,
+     "ancho": 2392,
+     "rol": "etiqueta",
+     "campo": "efr.abd_region_umbilical"
+    },
+    {
+     "texto": "Retracciones:",
+     "negrita": true,
+     "relleno": "",
+     "span": 12,
+     "ancho": 2402,
+     "rol": "etiqueta",
+     "campo": "efr.abd_retracciones"
+    },
+    {
+     "texto": "Desplazamientos:",
+     "negrita": true,
+     "relleno": "",
+     "span": 7,
+     "ancho": 2260,
+     "rol": "etiqueta",
+     "campo": "efr.abd_desplazamientos"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 7,
+     "ancho": 2835,
+     "rol": "valor",
+     "campo": "efr.abd_desplazamientos"
+    }
+   ],
+   [
+    {
+     "texto": "Auscultación",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 33,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Ruidos hidroaéreos:",
+     "negrita": true,
+     "relleno": "",
+     "span": 19,
+     "ancho": 4794,
+     "rol": "etiqueta",
+     "campo": "efr.abd_ruidos_hidroaereos"
+    },
+    {
+     "texto": "Soplos:",
+     "negrita": true,
+     "relleno": "",
+     "span": 14,
+     "ancho": 5095,
+     "rol": "etiqueta"
+    }
+   ],
+   [
+    {
+     "texto": "Frotes:",
+     "negrita": true,
+     "relleno": "",
+     "span": 19,
+     "ancho": 4794,
+     "rol": "etiqueta",
+     "campo": "efr.abd_frotes"
+    },
+    {
+     "texto": "Signo del Bazuqueo:",
+     "negrita": true,
+     "relleno": "",
+     "span": 14,
+     "ancho": 5095,
+     "rol": "etiqueta"
+    }
+   ],
+   [
+    {
+     "texto": "Palpación",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 33,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Superficial (tono, tensión abdominal, contracturas musculares, sensibilidad):",
+     "negrita": true,
+     "relleno": "",
+     "span": 19,
+     "ancho": 4794,
+     "rol": "etiqueta",
+     "campo": "efr.abd_palpacion_superficial"
+    },
+    {
+     "texto": "Profunda (órganos intraabdominales: tamaño, forma, consistencia, movilidad, dolorabilidad, desplazamiento a la inspiración):",
+     "negrita": true,
+     "relleno": "",
+     "span": 14,
+     "ancho": 5095,
+     "rol": "etiqueta",
+     "campo": "efr.abdomen_palpacion"
+    }
+   ],
+   [
+    {
+     "texto": "Puntos dolorosos:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 33,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Murphy",
+     "negrita": true,
+     "relleno": "",
+     "span": 2,
+     "ancho": 1592,
+     "rol": "opcion"
+    },
+    {
+     "texto": "Mc Burney",
+     "negrita": true,
+     "relleno": "",
+     "span": 9,
+     "ancho": 1601,
+     "rol": "opcion"
+    },
+    {
+     "texto": "Blumberg",
+     "negrita": true,
+     "relleno": "",
+     "span": 8,
+     "ancho": 1601,
+     "rol": "opcion"
+    },
+    {
+     "texto": "Chauffard",
+     "negrita": true,
+     "relleno": "",
+     "span": 5,
+     "ancho": 1600,
+     "rol": "opcion"
+    },
+    {
+     "texto": "Signo de la oleada",
+     "negrita": true,
+     "relleno": "",
+     "span": 5,
+     "ancho": 1600,
+     "rol": "opcion"
+    },
+    {
+     "texto": "Signo del peloteo",
+     "negrita": false,
+     "relleno": "",
+     "span": 4,
+     "ancho": 1895,
+     "rol": "opcion"
+    }
+   ],
+   [
+    {
+     "texto": "APARATO GENITOURINARIO:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 33,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Puño percusión lumbar",
+     "negrita": true,
+     "relleno": "",
+     "span": 3,
+     "ancho": 1601,
+     "rol": "opcion"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 9,
+     "ancho": 1601,
+     "rol": "valor"
+    },
+    {
+     "texto": "Derecha",
+     "negrita": true,
+     "relleno": "",
+     "span": 8,
+     "ancho": 1601,
+     "rol": "opcion"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 5,
+     "ancho": 1601,
+     "rol": "valor"
+    },
+    {
+     "texto": "Izquierda",
+     "negrita": true,
+     "relleno": "",
+     "span": 5,
+     "ancho": 1601,
+     "rol": "opcion"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 3,
+     "ancho": 1884,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Tacto vaginal",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 9,
+     "ancho": 2989,
+     "rol": "etiqueta",
+     "campo": "efr.gu_tacto_vaginal"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 24,
+     "ancho": 6900,
+     "rol": "valor",
+     "campo": "efr.gu_tacto_vaginal"
+    }
+   ],
+   [
+    {
+     "texto": "Vulva",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 9,
+     "ancho": 2989,
+     "rol": "etiqueta",
+     "campo": "efr.gu_vulva"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 24,
+     "ancho": 6900,
+     "rol": "valor",
+     "campo": "efr.gu_vulva"
+    }
+   ],
+   [
+    {
+     "texto": "Flujo",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 9,
+     "ancho": 2989,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 24,
+     "ancho": 6900,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Sensibilidad",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 9,
+     "ancho": 2989,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 24,
+     "ancho": 6900,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Fondo de saco vaginal",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 9,
+     "ancho": 2989,
+     "rol": "etiqueta",
+     "campo": "efr.gu_fondo_saco"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 24,
+     "ancho": 6900,
+     "rol": "valor",
+     "campo": "efr.gu_fondo_saco"
+    }
+   ],
+   [
+    {
+     "texto": "Cuello uterino",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 9,
+     "ancho": 2989,
+     "rol": "etiqueta",
+     "campo": "efr.gu_cuello_uterino"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 24,
+     "ancho": 6900,
+     "rol": "valor",
+     "campo": "efr.gu_cuello_uterino"
+    }
+   ],
+   [
+    {
+     "texto": "SISTEMA NERVIOSO",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 33,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Estado de conciencia",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 5,
+     "ancho": 2215,
+     "rol": "etiqueta",
+     "campo": "efg.conciencia"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 28,
+     "ancho": 7674,
+     "rol": "valor",
+     "campo": "efg.conciencia"
+    }
+   ],
+   [
+    {
+     "texto": "Glasgow",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 5,
+     "ancho": 2215,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "Ocular:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 8,
+     "ancho": 1230,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 5,
+     "ancho": 1236,
+     "rol": "valor"
+    },
+    {
+     "texto": "Motor:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 4,
+     "ancho": 1230,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 4,
+     "ancho": 1143,
+     "rol": "valor"
+    },
+    {
+     "texto": "Verbal:",
+     "negrita": false,
+     "relleno": "D9D9D9",
+     "span": 5,
+     "ancho": 1320,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 2,
+     "ancho": 1515,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Conducta",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 5,
+     "ancho": 2215,
+     "rol": "etiqueta",
+     "campo": "efr.neuro_conducta"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 28,
+     "ancho": 7674,
+     "rol": "valor",
+     "campo": "efr.neuro_conducta"
+    }
+   ],
+   [
+    {
+     "texto": "Lenguaje",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 5,
+     "ancho": 2215,
+     "rol": "etiqueta",
+     "campo": "efr.neuro_lenguaje"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 28,
+     "ancho": 7674,
+     "rol": "valor",
+     "campo": "efr.neuro_lenguaje"
+    }
+   ],
+   [
+    {
+     "texto": "Pares craneales",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 5,
+     "ancho": 2215,
+     "rol": "etiqueta",
+     "campo": "efr.neuro_pares_craneales"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 28,
+     "ancho": 7674,
+     "rol": "valor",
+     "campo": "efr.neuro_pares_craneales"
+    }
+   ],
+   [
+    {
+     "texto": "Reflejos",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 5,
+     "ancho": 2215,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "Fotomotor:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 11,
+     "ancho": 1847,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 6,
+     "ancho": 1849,
+     "rol": "valor"
+    },
+    {
+     "texto": "Acomodación:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 6,
+     "ancho": 1847,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 5,
+     "ancho": 2131,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Reflejos osteotendinosos:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 5,
+     "ancho": 2215,
+     "rol": "etiqueta",
+     "campo": "efr.rot"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 13,
+     "ancho": 2466,
+     "rol": "valor",
+     "campo": "efr.rot"
+    },
+    {
+     "texto": "Babinski",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 8,
+     "ancho": 2373,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 7,
+     "ancho": 2835,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Hoffmann",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 5,
+     "ancho": 2215,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 13,
+     "ancho": 2466,
+     "rol": "valor"
+    },
+    {
+     "texto": "Temblor:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 8,
+     "ancho": 2373,
+     "rol": "etiqueta",
+     "campo": "efr.neuro_temblor"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 7,
+     "ancho": 2835,
+     "rol": "valor",
+     "campo": "efr.neuro_temblor"
+    }
+   ],
+   [
+    {
+     "texto": "Romberg:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 5,
+     "ancho": 2215,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 13,
+     "ancho": 2466,
+     "rol": "valor"
+    },
+    {
+     "texto": "Taxia:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 8,
+     "ancho": 2373,
+     "rol": "etiqueta",
+     "campo": "efr.neuro_taxia"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 7,
+     "ancho": 2835,
+     "rol": "valor",
+     "campo": "efr.neuro_taxia"
+    }
+   ],
+   [
+    {
+     "texto": "Dismetría:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 5,
+     "ancho": 2215,
+     "rol": "etiqueta",
+     "campo": "efr.neuro_dismetria"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 13,
+     "ancho": 2466,
+     "rol": "valor",
+     "campo": "efr.neuro_dismetria"
+    },
+    {
+     "texto": "Rigidez de nuca:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 8,
+     "ancho": 2373,
+     "rol": "etiqueta",
+     "campo": "efr.neuro_rigidez_nuca"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 7,
+     "ancho": 2835,
+     "rol": "valor",
+     "campo": "efr.neuro_rigidez_nuca"
+    }
+   ],
+   [
+    {
+     "texto": "Sensibilidad Profunda",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 5,
+     "ancho": 2215,
+     "rol": "etiqueta",
+     "campo": "efr.neuro_sens_profunda"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 13,
+     "ancho": 2466,
+     "rol": "valor",
+     "campo": "efr.neuro_sens_profunda"
+    },
+    {
+     "texto": "Superficial",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 8,
+     "ancho": 2373,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 7,
+     "ancho": 2835,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Fondo de ojo:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 5,
+     "ancho": 2215,
+     "rol": "etiqueta",
+     "campo": "efr.neuro_fondo_ojo"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 28,
+     "ancho": 7674,
+     "rol": "valor",
+     "campo": "efr.neuro_fondo_ojo"
+    }
+   ],
+   [
+    {
+     "texto": "OSTEOMIOARTICULAR",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 33,
+     "ancho": 9889,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Marcha:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 6,
+     "ancho": 2224,
+     "rol": "etiqueta",
+     "campo": "efr.oma_marcha"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 27,
+     "ancho": 7665,
+     "rol": "valor",
+     "campo": "efr.oma_marcha"
+    }
+   ],
+   [
+    {
+     "texto": "Postura:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 6,
+     "ancho": 2224,
+     "rol": "etiqueta",
+     "campo": "efr.oma_postura"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 27,
+     "ancho": 7665,
+     "rol": "valor",
+     "campo": "efr.oma_postura"
+    }
+   ],
+   [
+    {
+     "texto": "Columna vertebral:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 6,
+     "ancho": 2224,
+     "rol": "etiqueta",
+     "campo": "efr.columna"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 12,
+     "ancho": 2457,
+     "rol": "valor",
+     "campo": "efr.columna"
+    },
+    {
+     "texto": "Lasègue:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 8,
+     "ancho": 2373,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 7,
+     "ancho": 2835,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Ejes óseos:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 6,
+     "ancho": 2224,
+     "rol": "etiqueta",
+     "campo": "efr.oma_ejes_oseos"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 12,
+     "ancho": 2457,
+     "rol": "valor",
+     "campo": "efr.oma_ejes_oseos"
+    },
+    {
+     "texto": "Articulaciones:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 8,
+     "ancho": 2373,
+     "rol": "etiqueta",
+     "campo": "efr.oma_articulaciones"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 7,
+     "ancho": 2835,
+     "rol": "valor",
+     "campo": "efr.oma_articulaciones"
+    }
+   ],
+   [
+    {
+     "texto": "Miembros:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 6,
+     "ancho": 2224,
+     "rol": "etiqueta",
+     "campo": "efr.oma_miembros"
+    },
+    {
+     "texto": "",
+     "negrita": true,
+     "relleno": "",
+     "span": 12,
+     "ancho": 2457,
+     "rol": "valor",
+     "campo": "efr.oma_miembros"
+    },
+    {
+     "texto": "Trofismo muscular:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 8,
+     "ancho": 2373,
+     "rol": "etiqueta",
+     "campo": "efr.oma_trofismo"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 7,
+     "ancho": 2835,
+     "rol": "valor",
+     "campo": "efr.oma_trofismo"
+    }
+   ]
+  ]
+ },
+ {
+  "tipo": "parrafo",
+  "texto": "IV. EXÁMENES COMPLEMENTARIOS:",
+  "negrita": true,
+  "centrado": false
+ },
+ {
+  "tipo": "tabla",
+  "anchos": [
+   2278,
+   949,
+   949,
+   2853,
+   1228,
+   1229
+  ],
+  "filas": [
+   [
+    {
+     "texto": "LABORATORIO:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 6,
+     "ancho": 9486,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "HEMOGRAMA: LEUCOCITOS:ABASTONADOS:SEGMENTADOS:MONOCITOS:LINFOCITOS:HEMOGLOBINA:HEMATOCRITO:TIEMPO DE COAGULACIÓN:TIEMPO DE SANGRÍA:PLAQUETAS:TIEMPO DE PROTROMBINA:Dímero D:LEUCOCITOS:NEUTRÓFILOS:EOSINÓFILOS:BASÓFILOS:TIEMPO DE TROMBOPLASTINA:BIOQUÍMICO:GLUCOSA: UREA: CREATININA:ACIDO ÚRICO:Glutamato Oxalacetato Transaminasa Glutamato Piruvato Transaminasa BIOQUÍMICO Y SEDIMENTO EN ORINA: DENSIDAD:HEMATÍES:LEUCOCITOS:CÉLULAS EPITELIALES:GÉRMENES:HEMOGLOBINA GLICOSILADA REACCIÓN DE VIDAL: PCR:",
+     "negrita": true,
+     "relleno": "",
+     "span": 6,
+     "ancho": 9486,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Hemocultivo",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 2278,
+     "rol": "etiqueta",
+     "campo": "exc.hemocultivo"
+    },
+    {
+     "texto": "SI",
+     "negrita": true,
+     "relleno": "",
+     "span": 1,
+     "ancho": 949,
+     "rol": "opcion",
+     "campo": "exc.hemocultivo"
+    },
+    {
+     "texto": "NO",
+     "negrita": true,
+     "relleno": "",
+     "span": 1,
+     "ancho": 949,
+     "rol": "opcion",
+     "campo": "exc.hemocultivo"
+    },
+    {
+     "texto": "Urocultivo:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 2853,
+     "rol": "etiqueta",
+     "campo": "exc.urocultivo"
+    },
+    {
+     "texto": "SI",
+     "negrita": true,
+     "relleno": "",
+     "span": 1,
+     "ancho": 1228,
+     "rol": "opcion",
+     "campo": "exc.urocultivo"
+    },
+    {
+     "texto": "NO",
+     "negrita": true,
+     "relleno": "",
+     "span": 1,
+     "ancho": 1229,
+     "rol": "opcion",
+     "campo": "exc.urocultivo"
+    }
+   ],
+   [
+    {
+     "texto": "Otros",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 2278,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 5,
+     "ancho": 7208,
+     "rol": "valor"
+    }
+   ]
+  ]
+ },
+ {
+  "tipo": "tabla",
+  "anchos": [
+   3202,
+   3202,
+   3202
+  ],
+  "filas": [
+   [
+    {
+     "texto": "PRUEBAS DE COAGULACIÓN",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 3,
+     "ancho": 9606,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "FECHA",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 3202,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "TIEMPO DE PROTROMBINA",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 3202,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "INR",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 3202,
+     "rol": "etiqueta"
+    }
+   ],
+   [
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3202,
+     "rol": "valor"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3202,
+     "rol": "valor"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3202,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3202,
+     "rol": "valor"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3202,
+     "rol": "valor"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3202,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3202,
+     "rol": "valor"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3202,
+     "rol": "valor"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3202,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3202,
+     "rol": "valor"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3202,
+     "rol": "valor"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3202,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3202,
+     "rol": "valor"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3202,
+     "rol": "valor"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3202,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3202,
+     "rol": "valor"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3202,
+     "rol": "valor"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 3202,
+     "rol": "valor"
+    }
+   ]
+  ]
+ },
+ {
+  "tipo": "parrafo",
+  "texto": "ELECTROCARDIOGRAMA:",
+  "negrita": false,
+  "centrado": false
+ },
+ {
+  "tipo": "parrafo",
+  "texto": "Ritmo..............................................................................FC..............Eje QRS...................................",
+  "negrita": false,
+  "centrado": false
+ },
+ {
+  "tipo": "parrafo",
+  "texto": "Onda P.............................................................................QRS..........................................................",
+  "negrita": false,
+  "centrado": false
+ },
+ {
+  "tipo": "parrafo",
+  "texto": "Onda T.............................................................................ST.............................................................",
+  "negrita": false,
+  "centrado": false
+ },
+ {
+  "tipo": "parrafo",
+  "texto": "PR............QTc..........Conclusión.......................................................................................................",
+  "negrita": false,
+  "centrado": false
+ },
+ {
+  "tipo": "parrafo",
+  "texto": "RADIOGRAFÍA DE TÓRAX:",
+  "negrita": false,
+  "centrado": false
+ },
+ {
+  "tipo": "parrafo",
+  "texto": "Partes Blandas: ...............................................................................................................................",
+  "negrita": false,
+  "centrado": false
+ },
+ {
+  "tipo": "parrafo",
+  "texto": "Partes Óseas: ..................................................................................................................................",
+  "negrita": false,
+  "centrado": false
+ },
+ {
+  "tipo": "parrafo",
+  "texto": "Campos Pulmonares: ......................................................................................................................",
+  "negrita": false,
+  "centrado": false
+ },
+ {
+  "tipo": "parrafo",
+  "texto": "Silueta cardiovascular: ....................................................................................................................",
+  "negrita": false,
+  "centrado": false
+ },
+ {
+  "tipo": "parrafo",
+  "texto": "Índice cardiotorácico: .....................................................................................................................",
+  "negrita": false,
+  "centrado": false
+ },
+ {
+  "tipo": "parrafo",
+  "texto": "Conclusiones: ..................................................................................................................................",
+  "negrita": false,
+  "centrado": false
+ },
+ {
+  "tipo": "parrafo",
+  "texto": "OTROS ESTUDIOS:",
+  "negrita": false,
+  "centrado": false
+ },
+ {
+  "tipo": "tabla",
+  "anchos": [
+   2802,
+   6804
+  ],
+  "filas": [
+   [
+    {
+     "texto": "IMPRESIÓN DE DIAGNOSTICO",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 2,
+     "ancho": 9606,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "Diagnostico Sindrómico:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 2802,
+     "rol": "etiqueta",
+     "campo": "dx.sindromico"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 6804,
+     "rol": "valor",
+     "campo": "dx.sindromico"
+    }
+   ],
+   [
+    {
+     "texto": "Diagnóstico Clínico:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 2802,
+     "rol": "etiqueta",
+     "campo": "dx.presuntivo"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 6804,
+     "rol": "valor",
+     "campo": "dx.presuntivo"
+    }
+   ],
+   [
+    {
+     "texto": "Diagnostico Funcional:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 2802,
+     "rol": "etiqueta",
+     "campo": "dx.funcional"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 6804,
+     "rol": "valor",
+     "campo": "dx.funcional"
+    }
+   ],
+   [
+    {
+     "texto": "Diagnostico Anatomo-patológico:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 2802,
+     "rol": "etiqueta"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 6804,
+     "rol": "valor"
+    }
+   ],
+   [
+    {
+     "texto": "Diagnostico Etiológico:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 2802,
+     "rol": "etiqueta",
+     "campo": "dx.etiologico"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 6804,
+     "rol": "valor",
+     "campo": "dx.etiologico"
+    }
+   ],
+   [
+    {
+     "texto": "Diagnóstico Definitivo:",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 2802,
+     "rol": "etiqueta",
+     "campo": "dx.definitivo"
+    },
+    {
+     "texto": "",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 6804,
+     "rol": "valor",
+     "campo": "dx.definitivo"
+    }
+   ]
+  ]
+ },
+ {
+  "tipo": "tabla",
+  "anchos": [
+   9896
+  ],
+  "filas": [
+   [
+    {
+     "texto": "TRATAMIENTO",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 9606,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 9606,
+     "rol": "titulo"
+    }
+   ]
+  ]
+ },
+ {
+  "tipo": "tabla",
+  "anchos": [
+   9896
+  ],
+  "filas": [
+   [
+    {
+     "texto": "EPICRISIS",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 9606,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 9606,
+     "rol": "titulo"
+    }
+   ]
+  ]
+ },
+ {
+  "tipo": "tabla",
+  "anchos": [
+   9896
+  ],
+  "filas": [
+   [
+    {
+     "texto": "PLAN DE TRABAJO",
+     "negrita": true,
+     "relleno": "D9D9D9",
+     "span": 1,
+     "ancho": 9606,
+     "rol": "titulo"
+    }
+   ],
+   [
+    {
+     "texto": "________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+     "negrita": false,
+     "relleno": "",
+     "span": 1,
+     "ancho": 9606,
+     "rol": "titulo"
+    }
+   ]
+  ]
+ }
+]

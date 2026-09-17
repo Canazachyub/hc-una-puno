@@ -393,8 +393,14 @@ await prueba('el Word de la plantilla detallada sigue el documento', () => {
   const doc = armarDocumento({ dni: '40123456', episodio: 1, valores: { 'fil.apellidos': 'PRUEBA' } }, vistaOchoa, { vacios: 'lineas' });
   const titulos = doc.filter((e) => e.t === 'seccion').map((e) => e.texto);
   assert.ok(titulos.some((t) => t.includes('EXAMEN CLÍNICO')), titulos.join(' | '));
-  assert.ok(doc.some((e) => e.t === 'sub'), 'sin subtítulos');
-  assert.ok(!doc.some((e) => 'ref' in e && vistaOchoa.porId.get(e.ref)?.plantilla === 'fmh'), 'se coló un campo de la otra plantilla');
+  // Sale como el documento: una rejilla por sección, con títulos de grupo y opciones para marcar.
+  const formas = doc.filter((e) => e.t === 'forma');
+  assert.ok(formas.length >= 10, `${formas.length} rejillas`);
+  const filas = formas.flatMap((e) => e.filas);
+  assert.ok(filas.some((f) => f.f === 'titulo' && /pupilas/i.test(f.texto)), 'sin títulos de grupo');
+  const sexo = filas.find((f) => f.f === 'campo' && f.ref === 'fil.sexo');
+  assert.ok(sexo && sexo.f === 'campo' && sexo.opciones?.map((o) => o.texto).join('/') === 'Masculino/Femenino', JSON.stringify(sexo));
+  assert.ok(filas.every((f) => f.f === 'titulo' || vistaOchoa.porId.get(f.ref)?.plantilla !== 'fmh'), 'se coló un campo de la otra plantilla');
 });
 
 console.log('Rangos según la edad y la altitud');
