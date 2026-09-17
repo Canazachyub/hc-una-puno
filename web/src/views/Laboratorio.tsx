@@ -12,7 +12,7 @@ import { Girador } from '../components/Basicos';
 import { InsigniaGravedad, LeyendaSemaforo, claseGravedad } from '../components/Semaforo';
 import { enLinea, llamar, mensaje, uuid } from '../lib/api';
 import { avisar } from '../lib/avisos';
-import { db } from '../lib/db';
+import { db, plantillaDe } from '../lib/db';
 import type { HistoriaLocal } from '../lib/db';
 import { NOMBRES_LAB, leerResultado, nombreCanonico, prepararFoto } from '../lib/laboratorio';
 import { editar, nombrePaciente } from '../lib/historia';
@@ -113,7 +113,7 @@ function Revision({ h, filas, setFilas, fecha, setFecha, advertencias, guardar, 
 
 export function Laboratorio({ clave }: { clave: string }) {
   const h = useLiveQuery(() => db.historias.get(clave), [clave]);
-  const cat = useCatalogo(h?.plantilla);
+  const cat = useCatalogo(plantillaDe(h));
   const archivo = useRef<HTMLInputElement>(null);
   const [leyendo, setLeyendo] = useState(false);
   const [filas, setFilas] = useState<Fila[] | null>(null);

@@ -7,7 +7,7 @@ import { CAMPO_EVOLUCIONES, CAMPO_LABORATORIO } from '../../../shared/seguimient
 import { Girador } from '../components/Basicos';
 import { avisar } from '../lib/avisos';
 import { mensaje } from '../lib/api';
-import { db } from '../lib/db';
+import { db, plantillaDe } from '../lib/db';
 import { armarDocumento } from '../lib/docx/documento';
 import type { Elemento, OpcionesDocumento } from '../lib/docx/documento';
 import { compartirWord, descargarWord, guardarOpcionWord, opcionWord, opcionesCompletas, puedeCompartirArchivos } from '../lib/docx/descargar';
@@ -22,7 +22,7 @@ export function VistaPrevia({ clave }: { clave: string }) {
   const h = useLiveQuery(() => db.historias.get(clave), [clave]);
   // La historia se llenó con una plantilla, pero el Word puede salir con cualquiera de las dos.
   const [formato, setFormato] = useState('');
-  const cat = useCatalogo(formato || h?.plantilla);
+  const cat = useCatalogo(formato || plantillaDe(h));
   const [op, setOp] = useState<OpcionesDocumento>(opcionWord);
   const [generando, setGenerando] = useState(false);
   const elementos = useMemo(() => (h ? armarDocumento(h, cat, opcionesCompletas(h, op)) : []), [h, cat, op]);

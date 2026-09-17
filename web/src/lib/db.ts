@@ -3,7 +3,7 @@
 
 import Dexie from 'dexie';
 import type { DBCore, DBCoreTable, Table } from 'dexie';
-import { PLANTILLA_POR_DEFECTO, plantillaValida } from '../../../shared/plantillas';
+import { PLANTILLA_POR_DEFECTO, plantillaGuardada, plantillaValida } from '../../../shared/plantillas';
 import { aBase64, cifradoActivo, cifrar, deBase64, descifrar } from './cifrado';
 import type {
   Catalogos,
@@ -152,6 +152,11 @@ function sellar(tabla: string, v: unknown): unknown {
   libre._c = aBase64(cifrar(texto.encode(JSON.stringify(resto))));
   if (bytes) libre._a = cifrar(bytes);
   return libre;
+}
+
+/** Historia guardada antes de que hubiera dos plantillas: es de la de Clínica Médica. */
+export function plantillaDe(h: { plantilla?: string } | undefined): string {
+  return plantillaGuardada(h?.plantilla);
 }
 
 function abrir(tabla: string, v: unknown): unknown {

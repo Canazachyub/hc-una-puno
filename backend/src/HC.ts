@@ -1,6 +1,6 @@
 // Acciones sobre las historias: listar, obtener, crear y guardar.
 
-import { PLANTILLA_POR_DEFECTO, plantillaValida } from '../../shared/plantillas';
+import { PLANTILLA_POR_DEFECTO, plantillaGuardada, plantillaValida } from '../../shared/plantillas';
 import { CAMPOS_CLAVE } from '../../shared/secciones';
 import { CAMPOS_SISTEMA, esCampoSistema, validarSistema } from '../../shared/seguimiento';
 import { COLUMNAS_CONTROL } from '../../shared/types';
@@ -48,7 +48,7 @@ export function plantillaDeHistoria(pedida: string | undefined, dni: string, epi
   try {
     const cab = asegurarColumnas([]);
     const n = buscarFila(dniValido(dni), Number(episodio) || 0, cab);
-    if (n !== null) return plantillaValida(leerFilaHC(n, cab).plantilla ?? '');
+    if (n !== null) return plantillaGuardada(leerFilaHC(n, cab).plantilla);
   } catch {
     // historia todavía sin fila: se usa la de siempre
   }

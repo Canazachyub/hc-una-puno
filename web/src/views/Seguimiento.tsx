@@ -13,7 +13,7 @@ import { Dictado } from '../components/Dictado';
 import { InsigniaGravedad, LeyendaSemaforo, claseGravedad } from '../components/Semaforo';
 import { enLinea, llamar, mensaje, uuid } from '../lib/api';
 import { avisar } from '../lib/avisos';
-import { db } from '../lib/db';
+import { db, plantillaDe } from '../lib/db';
 import type { HistoriaLocal } from '../lib/db';
 import { UMBRALES, contextoHistoria } from '../lib/guias';
 import { editar, nombrePaciente } from '../lib/historia';
@@ -237,7 +237,7 @@ function Formulario({ h, cat, inicial, anterior, cerrar }: { h: HistoriaLocal; c
 
 export function Seguimiento({ clave }: { clave: string }) {
   const h = useLiveQuery(() => db.historias.get(clave), [clave]);
-  const cat = useCatalogo(h?.plantilla);
+  const cat = useCatalogo(plantillaDe(h));
   const [editando, setEditando] = useState<Evolucion | null>(null);
   if (!h) return <div className="pagina vacio">Cargando…</div>;
 

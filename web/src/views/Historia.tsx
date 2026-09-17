@@ -17,7 +17,7 @@ import { revisarEscritura } from '../lib/escritura';
 import { PanelConflictos, PanelDudas } from '../components/Paneles';
 import { avisar } from '../lib/avisos';
 import { enLinea, mensaje } from '../lib/api';
-import { db, partirClave } from '../lib/db';
+import { db, plantillaDe, partirClave } from '../lib/db';
 import type { HistoriaLocal } from '../lib/db';
 import { compartirWord, descargarWord, puedeCompartirArchivos } from '../lib/docx/descargar';
 import { borrarLocal, calcularCompletitud, camposVisibles, editar, nombrePaciente } from '../lib/historia';
@@ -28,7 +28,7 @@ import type { CatalogoVista } from '../lib/vista';
 
 export function Historia({ clave, seccion, campo = null }: { clave: string; seccion: string | null; campo?: string | null }) {
   const h = useLiveQuery(() => db.historias.get(clave), [clave]);
-  const cat = useCatalogo(h?.plantilla);
+  const cat = useCatalogo(plantillaDe(h));
   const [trayendo, setTrayendo] = useState(false);
 
   // Al abrir, trae lo último de la nube sin pisar lo local.

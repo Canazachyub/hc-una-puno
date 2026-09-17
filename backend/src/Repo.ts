@@ -1,7 +1,7 @@
 // Único acceso a la hoja de cálculo. Cabeceras por nombre, nunca por posición.
 // Si Sheets se queda corto, se cambia este archivo y nada más.
 
-import { plantillaValida } from '../../shared/plantillas';
+import { plantillaGuardada } from '../../shared/plantillas';
 import { COLUMNAS_CONTROL, COLUMNAS_REGISTRO } from '../../shared/types';
 import type { Duda, EstadoHC, FilaHC, ResumenHC, TipoRegistro } from '../../shared/types';
 import { ErrorApi, PROPS, ahora, prop, recortarCelda, uuid } from './Util';
@@ -208,7 +208,7 @@ export function mapaAFila(mapa: Record<string, string>): FilaHC {
   return {
     dni: mapa.dni ?? '',
     episodio: Number(mapa.episodio) || 0,
-    plantilla: plantillaValida(mapa.plantilla ?? ''),
+    plantilla: plantillaGuardada(mapa.plantilla),
     estado: (mapa.estado === 'completa' ? 'completa' : 'borrador') as EstadoHC,
     completitud: Number(mapa.completitud) || 0,
     version: Number(mapa.version) || 0,
@@ -242,7 +242,7 @@ export function listarResumenes(): ResumenHC[] {
     .map((f) => ({
       dni: get(f, i.dni),
       episodio: Number(get(f, i.episodio)) || 0,
-      plantilla: plantillaValida(get(f, i.plantilla)),
+      plantilla: plantillaGuardada(get(f, i.plantilla)),
       estado: (get(f, i.estado) === 'completa' ? 'completa' : 'borrador') as EstadoHC,
       completitud: Number(get(f, i.completitud)) || 0,
       version: Number(get(f, i.version)) || 0,

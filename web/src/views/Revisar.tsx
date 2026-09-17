@@ -10,7 +10,7 @@ import { partes } from '../../../shared/valores';
 import { Girador } from '../components/Basicos';
 import { avisar } from '../lib/avisos';
 import { enLinea, llamar, mensaje } from '../lib/api';
-import { db } from '../lib/db';
+import { db, plantillaDe } from '../lib/db';
 import { compartirWord, descargarWord, puedeCompartirArchivos } from '../lib/docx/descargar';
 import { calcularCompletitud, editar, marcarEstado, nombrePaciente } from '../lib/historia';
 import { avisoEscritura, expandirEnHistoria, revisarEscritura } from '../lib/escritura';
@@ -19,7 +19,7 @@ import { useCatalogo } from '../lib/schema';
 
 export function Revisar({ clave }: { clave: string }) {
   const h = useLiveQuery(() => db.historias.get(clave), [clave]);
-  const cat = useCatalogo(h?.plantilla);
+  const cat = useCatalogo(plantillaDe(h));
   const [revisando, setRevisando] = useState(false);
   const [revision, setRevision] = useState<RevisarRespuesta | null>(null);
   const [aplicados, setAplicados] = useState<string[]>([]);

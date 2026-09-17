@@ -908,6 +908,18 @@ await prueba('cada historia guarda su plantilla y por defecto usa la detallada',
   assert.equal(lista.filas.find((f) => f.episodio === b.fila.episodio)?.plantilla, 'fmh');
   const inventada = ok(post<{ fila: { plantilla: string } }>('hc.crear', { dni: '40123456', plantilla: 'inventada' }, 'op-crear-plantilla-3'));
   assert.equal(inventada.fila.plantilla, PLANTILLA_POR_DEFECTO, 'una plantilla desconocida cae en la de siempre');
+  // Historias de antes de que hubiera dos plantillas: la columna está vacía y son de Clínica Médica.
+  const hc = hoja('HC');
+  const col = hc.getRange(1, 1, 1, hc.getLastColumn()).getDisplayValues()[0].indexOf('plantilla') + 1;
+  const antes = hc.getRange(2, col, 1, 1).getDisplayValues()[0][0];
+  hc.getRange(2, col, 1, 1).setValues([['']]);
+  const cab = hc.getRange(1, 1, 1, hc.getLastColumn()).getDisplayValues()[0];
+  const fila2 = hc.getRange(2, 1, 1, hc.getLastColumn()).getDisplayValues()[0];
+  const dni2 = fila2[cab.indexOf('dni')];
+  const ep2 = Number(fila2[cab.indexOf('episodio')]);
+  const vieja = ok(post<{ filas: { dni: string; episodio: number; plantilla: string }[] }>('hc.list', {}));
+  assert.equal(vieja.filas.find((f) => f.dni === dni2 && f.episodio === ep2)?.plantilla, 'fmh');
+  hc.getRange(2, col, 1, 1).setValues([[antes]]);
 });
 await prueba('el formulario solo muestra los campos de su plantilla', () => {
   const soloFmh = armarVista({ version: 'x', esquema, opciones, knowledge: [] }, 'fmh');

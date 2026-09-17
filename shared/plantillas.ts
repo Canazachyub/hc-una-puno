@@ -32,6 +32,14 @@ export function plantillaValida(id: string): string {
   return PLANTILLAS.some((p) => p.id === id) ? id : PLANTILLA_POR_DEFECTO;
 }
 
+/**
+ * La plantilla de una historia ya guardada. Las de antes de que existieran dos plantillas
+ * no tienen el dato: son de la de Clínica Médica, que era la única.
+ */
+export function plantillaGuardada(valor: string | undefined): string {
+  return valor ? plantillaValida(valor) : 'fmh';
+}
+
 export function infoPlantilla(id: string): Plantilla {
   return PLANTILLAS.find((p) => p.id === id) ?? PLANTILLAS[0];
 }
