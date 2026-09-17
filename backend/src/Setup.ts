@@ -153,13 +153,20 @@ export function setup(): InfoSetup {
   return { hoja: ss.getUrl(), carpeta: f.getUrl(), usuario: prop(PROPS.USUARIO) };
 }
 
-/** Sobrescribe Esquema y Opciones con los CSV semilla del repositorio. */
-export function reimportarSemillas(): void {
+/**
+ * Sobrescribe Esquema y Opciones con los CSV semilla del repositorio.
+ * Con `soloSiCambio`, dentro del candado comprueba que otra ejecución no lo haya hecho ya.
+ */
+export function reimportarSemillas(soloSiCambio = false): void {
+  let hecho = false;
   conLock(() => {
+    if (soloSiCambio && prop(PROP_SEMILLAS) === SEMILLA_VERSION) return;
+    hecho = true;
     escribirTabla(HOJAS.ESQUEMA, filasEsquema());
     escribirTabla(HOJAS.OPCIONES, parsearCsv(opcionesCsv));
     asegurarColumnas([...filasAEsquema(filasEsquema()).map((c) => c.campo_id), ...CAMPOS_SISTEMA]);
   });
+  if (!hecho) return;
   setProp(PROP_SEMILLAS, SEMILLA_VERSION);
   olvidarCatalogos();
   Logger.log('Esquema y Opciones reimportados.');

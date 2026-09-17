@@ -110,6 +110,48 @@ function estructuraDelEsquema(cat: CatalogoVista): Bloque[] {
   return bloques;
 }
 
+/** Ancho aproximado de un campo en la hoja, para decidir si caben dos por fila. */
+const anchoDe = (e: { etiqueta: string; valor: string }) => e.etiqueta.length + Math.max(e.valor.length, 12);
+
+/**
+ * La plantilla detallada se llena como el documento de papel: varios datos por fila y,
+ * en lo que se elige, las opciones impresas para marcar una.
+ */
+function comoFormulario(out: Elemento[], cat: CatalogoVista, op: OpcionesDocumento): Elemento[] {
+  const conOpciones = (e: Elemento): Elemento => {
+    if (e.t !== 'campo' || e.valor || op.vacios === 'omitir') return e;
+    const campo = cat.porId.get(e.ref);
+    if (!campo || !['opcion', 'multi', 'escala'].includes(campo.tipo)) return e;
+    const opciones = cat.listas.get(campo.lista_id) ?? [];
+    if (opciones.length === 0 || opciones.length > 6) return e;
+    return { ...e, valor: opciones.map((o) => o.valor).join(' / ') };
+  };
+
+  const salida: Elemento[] = [];
+  let fila: { etiqueta: string; valor: string; ref: string }[] = [];
+  const cerrar = () => {
+    if (fila.length === 0) return;
+    salida.push(
+      fila.length === 1
+        ? { t: 'campo', etiqueta: fila[0].etiqueta, valor: fila[0].valor, ref: fila[0].ref }
+        : { t: 'pares', filas: [fila.map(({ etiqueta, valor }) => ({ etiqueta, valor }))], ref: fila[0].ref },
+    );
+    fila = [];
+  };
+  for (const bruto of out) {
+    const e = conOpciones(bruto);
+    if (e.t !== 'campo' || anchoDe(e) > 46) {
+      cerrar();
+      salida.push(e);
+      continue;
+    }
+    fila.push({ etiqueta: e.etiqueta, valor: e.valor, ref: e.ref });
+    if (fila.length === 2) cerrar();
+  }
+  cerrar();
+  return salida;
+}
+
 export function armarDocumento(h: DatosDocumento, cat: CatalogoVista, op: OpcionesDocumento): Elemento[] {
   const valores: Record<string, string> = { ...h.valores, 'fil.dni': h.dni };
   const impresos = new Set<string>(IDS_VITALES);
@@ -206,7 +248,8 @@ export function armarDocumento(h: DatosDocumento, cat: CatalogoVista, op: Opcion
   }
 
   insertarSeguimiento(out, valores, op);
-  return op.vacios === 'omitir' ? soloRegistrado(out) : out;
+  const doc = cat.plantilla === 'fmh' ? out : comoFormulario(out, cat, op);
+  return op.vacios === 'omitir' ? soloRegistrado(doc) : doc;
 }
 
 const coma = (t: string) => t.replace(/(\d)\.(\d)/g, '$1,$2');

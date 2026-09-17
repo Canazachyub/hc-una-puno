@@ -39,7 +39,8 @@ declare const SEMILLA_VERSION: string;
 function asegurarSemillas(): void {
   if (!SEMILLA_VERSION || prop('SPREADSHEET_ID') === '') return;
   if (prop(PROP_SEMILLAS) === SEMILLA_VERSION) return;
-  reimportarSemillas();
+  // Varias peticiones a la vez tras un despliegue: la primera reimporta y las demás solo esperan.
+  reimportarSemillas(true);
 }
 
 function desdeHoja(): Guardado {

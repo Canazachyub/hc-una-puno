@@ -220,10 +220,19 @@ export function mapaAFila(mapa: Record<string, string>): FilaHC {
 }
 
 export function listarResumenes(): ResumenHC[] {
-  const tabla = leerTabla(HOJAS.HC);
-  const [cab, ...filas] = tabla;
-  if (!cab) return [];
-  const idx = (k: string) => cab.indexOf(k);
+  const h = hoja(HOJAS.HC);
+  const ultima = h.getLastRow();
+  if (ultima < 2) return [];
+  const cab = cabeceraHC();
+  // Con dos plantillas la hoja pasa de 500 columnas: se leen solo las diez que hacen falta.
+  const nombres = ['dni', 'episodio', 'plantilla', 'estado', 'completitud', 'version', 'actualizado_en', 'fil.apellidos', 'fil.nombres', 'ea.sintoma_guia'];
+  const columnas: Record<string, string[]> = {};
+  for (const n of nombres) {
+    const c = cab.indexOf(n);
+    columnas[n] = c < 0 ? [] : h.getRange(2, c + 1, ultima - 1, 1).getDisplayValues().map((f) => deCelda(f[0]));
+  }
+  const filas = Array.from({ length: ultima - 1 }, (_, n) => nombres.map((k) => columnas[k][n] ?? ''));
+  const idx = (k: string) => nombres.indexOf(k);
   const i = {
     dni: idx('dni'),
     episodio: idx('episodio'),
