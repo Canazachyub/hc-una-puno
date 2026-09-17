@@ -549,12 +549,14 @@ npm run dev                   # la app en http://localhost:5173, funciona sin ba
 9. Copia `.env.local.example` como `.env.local` (si no lo tienes), pon `VITE_API_URL` (la URL `…/exec`), `HC_USUARIO` y `HC_CLAVE`, y ejecuta `npm run kb:build`: sube los fragmentos de tus notas a `Knowledge`. Vuelve a ejecutarlo cuando cambies tus notas.
 10. Para pasar las historias del servidor local al de Google: `npm run migrar` (usa las mismas variables). Crea cada historia que falte y copia sus campos; si ya existe, solo llena lo vacío y avisa las diferencias. No borra nada del local.
 
+**Tu propia hoja y tu propia carpeta.** En `.env.local` pon `HC_HOJA` (enlace de la hoja de cálculo) y `HC_CARPETA_DRIVE` (enlace de la carpeta para audios, fotos y respaldos). `npm run backend:build` los escribe en `backend/dist/Config.js` (para clasp) y al inicio de `salida/apps-script/Code.gs` (para pegar), en el bloque `HC_CONFIG`, que también puedes llenar a mano. Sin enlaces, usa la hoja donde está el script o crea una, y crea la carpeta «HC App». **Si la hoja o la carpeta están compartidas con «cualquier persona con el enlace», el servidor no las usa** (ni al instalar, ni para guardar audios o fotos, ni para el respaldo): cámbialas a «Restringido».
+
 **Sin clasp: pegar el código a mano** (en lugar de los pasos 1 a 3)
 
 1. En Google Drive crea una hoja de cálculo en blanco (por ejemplo «HC App · datos»). No la compartas.
 2. En la hoja: Extensiones → Apps Script. Ponle nombre al proyecto («HC App»).
 3. ⚙ Configuración del proyecto → marca «Mostrar el archivo de manifiesto appsscript.json en el editor». En el editor abre `appsscript.json` y reemplaza todo por el contenido de `salida/apps-script/appsscript.json`.
-4. Abre `Código.gs`, borra todo y pega `salida/apps-script/Code.gs` (lo genera `npm run backend:build`). Guarda.
+4. Abre `Código.gs`, borra todo y pega `salida/apps-script/Code.gs` (lo genera `npm run backend:build`). Revisa arriba el bloque `HC_CONFIG` (hoja y carpeta). Guarda.
 5. Elige la función `setup` y ▶ Ejecutar. Acepta los permisos (Configuración avanzada → Ir a HC App). Las cinco hojas se crean **en esa misma hoja de cálculo** (tu «Hoja 1» se queda si tiene algo) y el registro de ejecución muestra el usuario y la contraseña temporal.
 6. ⚙ Configuración del proyecto → Propiedades de la secuencia de comandos → agrega `API_KEY_GEMINI` con tu clave. Ejecuta `probarGemini` para comprobarla.
 7. Implementar → Nueva implementación → ⚙ Aplicación web · Ejecutar como: **Yo** · Quién tiene acceso: **Cualquier usuario** → Implementar. Copia la URL que termina en `/exec` y sigue con el paso 7 de arriba (`HC_API_URL`).

@@ -6,6 +6,7 @@
 import { geminiConfigurado, llamarGemini, modelo } from './Gemini';
 import { PROPS, prop, setProp } from './Util';
 import { setup } from './Setup';
+import type { InfoSetup } from './Setup';
 
 declare const SEMILLA_VERSION: string;
 
@@ -25,21 +26,18 @@ function escapar(t: string): string {
 
 export function doGet(): GoogleAppsScript.Content.TextOutput | GoogleAppsScript.HTML.HtmlOutput {
   if (!esDueno()) return ContentService.createTextOutput('HC App: servidor activo.');
-  const info = setup();
+  let info: InfoSetup | null = null;
+  let problema = '';
+  try {
+    info = setup();
+  } catch (e) {
+    problema = e instanceof Error ? e.message : String(e);
+  }
   const temporal = prop(PROPS.CLAVE_INICIAL);
-  const html = `<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<style>
-body{font:16px system-ui,sans-serif;max-width:640px;margin:24px auto;padding:0 16px;color:#14262b}
-h1{font-size:1.4rem;color:#0f5f6b}.ok{color:#1d7a46}.falta{color:#b42318}
-.caja{border:1px solid #d6e0e2;border-radius:12px;padding:14px;margin:12px 0}
-input{width:100%;padding:10px;font:inherit;box-sizing:border-box;margin:6px 0}
-button{padding:10px 16px;font:inherit;border-radius:10px;border:0;background:#0f5f6b;color:#fff;cursor:pointer}
-code{background:#eef3f4;padding:2px 6px;border-radius:6px;word-break:break-all}
-</style>
-<h1>HC App · configuración del servidor</h1>
-<div class="caja">
-  <p class="ok">✓ Hoja de datos y carpeta listas.</p>
-  <p>Hoja (privada, no la compartas): <a href="${escapar(info.hoja)}" target="_blank">abrir</a></p>
+  const caja = info
+    ? `<div class="caja">
+  <p class="ok">✓ Hoja de datos y carpeta listas. Déjalas en «Restringido»: no las compartas.</p>
+  <p>Hoja de cálculo: <a href="${escapar(info.hoja)}" target="_blank">abrir</a> · Carpeta de audios, fotos y respaldos: <a href="${escapar(info.carpeta)}" target="_blank">abrir</a></p>
   <p>Usuario de la app: <code>${escapar(info.usuario)}</code></p>
   ${
     temporal
@@ -47,7 +45,19 @@ code{background:#eef3f4;padding:2px 6px;border-radius:6px;word-break:break-all}
       : '<p>La contraseña ya fue cambiada. Si la olvidaste, ejecuta <code>restablecerClave</code> en el editor.</p>'
   }
   <p>Versión de semillas: <code>${escapar(SEMILLA_VERSION)}</code> · Modelo: <code>${escapar(modelo())}</code></p>
-</div>
+</div>`
+    : `<div class="caja alerta"><p class="falta"><strong>✗ No se pudo preparar el servidor.</strong></p><p>${escapar(problema)}</p></div>`;
+  const html = `<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+body{font:16px system-ui,sans-serif;max-width:640px;margin:24px auto;padding:0 16px;color:#14262b}
+h1{font-size:1.4rem;color:#0f5f6b}.ok{color:#1d7a46}.falta{color:#b42318}
+.caja{border:1px solid #d6e0e2;border-radius:12px;padding:14px;margin:12px 0}.alerta{border-color:#b42318;background:#fef3f2}
+input{width:100%;padding:10px;font:inherit;box-sizing:border-box;margin:6px 0}
+button{padding:10px 16px;font:inherit;border-radius:10px;border:0;background:#0f5f6b;color:#fff;cursor:pointer}
+code{background:#eef3f4;padding:2px 6px;border-radius:6px;word-break:break-all}
+</style>
+<h1>HC App · configuración del servidor</h1>
+${caja}
 <div class="caja">
   <p id="estado" class="${geminiConfigurado() ? 'ok' : 'falta'}">${geminiConfigurado() ? '✓ Clave de Gemini guardada.' : '✗ Falta la clave de Gemini.'}</p>
   <p>Pega tu clave de <a href="https://aistudio.google.com/apikey" target="_blank">Google AI Studio</a> (solo queda en este servidor; el navegador nunca la ve):</p>

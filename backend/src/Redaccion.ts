@@ -9,9 +9,10 @@ import { SECCIONES } from '../../shared/secciones';
 import { CAMPO_EVOLUCIONES, CAMPO_LABORATORIO, VITALES_DIA, diaHospitalizacion, leerEvoluciones, leerLaboratorio, valoresClinicos } from '../../shared/seguimiento';
 import type { LaboratorioPayload, LaboratorioRespuesta, RedactarPayload, RedactarRespuesta } from '../../shared/types';
 import { catalogos } from './Catalogos';
+import { carpetaDatos } from './Drive';
 import { geminiJson } from './Gemini';
 import { conLock, registrar } from './Repo';
-import { ErrorApi, PROPS, prop, requerir, requerirEpisodio } from './Util';
+import { ErrorApi, requerir, requerirEpisodio } from './Util';
 
 const CATALOGO_LAB = parsearLaboratorio(laboratorioCsv);
 const TIPOS_IMAGEN = new Set(['image/jpeg', 'image/png', 'image/webp', 'image/heic', 'image/heif']);
@@ -27,13 +28,12 @@ const REGLAS_REDACCION = `REDACCIÓN
 // ---------- Laboratorio ----------
 
 function guardarImagen(p: LaboratorioPayload, mime: string): string {
-  const carpetaId = prop(PROPS.CARPETA_DRIVE_ID);
-  if (!carpetaId) throw new ErrorApi('Falta CARPETA_DRIVE_ID: abre la configuración del servidor', 'config');
+  const carpeta = carpetaDatos();
   const bytes = Utilities.base64Decode(p.imagenBase64);
   const sello = Utilities.formatDate(new Date(), 'America/Lima', 'yyyyMMdd-HHmmss');
   const ext = mime.split('/')[1] === 'jpeg' ? 'jpg' : mime.split('/')[1];
   const nombre = `${p.dni}-ep${p.episodio}-laboratorio-${sello}.${ext}`;
-  return DriveApp.getFolderById(carpetaId).createFile(Utilities.newBlob(bytes, mime, nombre)).getId();
+  return carpeta.createFile(Utilities.newBlob(bytes, mime, nombre)).getId();
 }
 
 const ESQUEMA_LAB = {

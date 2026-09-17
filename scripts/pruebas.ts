@@ -3,6 +3,7 @@
 
 import assert from 'node:assert/strict';
 import { execSync } from 'node:child_process';
+import { randomUUID } from 'node:crypto';
 import { mkdtempSync, readFileSync, readdirSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
@@ -939,6 +940,41 @@ await prueba('creado desde una hoja de cálculo, usa esa hoja y respeta lo que y
   const l = e.libros.get('contenedor')!;
   assert.deepEqual(l.getSheets().map((h) => h.nombre), ['Hoja 1', 'HC', 'Esquema', 'Opciones', 'Knowledge', 'Registro']);
   assert.equal(l.getSheetByName('Hoja 1')!.getLastRow(), 2);
+  assert.equal(e.archivosDrive.length, 0);
+});
+
+await prueba('usa la hoja y la carpeta de los enlaces de HC_CONFIG', () => {
+  const e = crearEntorno({ estricto: true, gemini, contenedor: [] });
+  const c = vm.createContext({
+    ...e.globales,
+    HC_CONFIG: {
+      hoja: 'https://docs.google.com/spreadsheets/d/contenedor/edit?gid=0#gid=0',
+      carpeta: 'https://drive.google.com/drive/folders/audios?usp=sharing',
+    },
+  });
+  vm.runInContext(codigo, c);
+  (c as unknown as Record<string, () => unknown>).setup();
+  assert.equal(e.props.get('SPREADSHEET_ID'), 'contenedor');
+  assert.equal(e.props.get('CARPETA_DRIVE_ID'), 'audios');
+  assert.equal(e.libros.size, 1);
+});
+await prueba('no usa una carpeta compartida con cualquiera: ni al instalar ni al guardar audios', () => {
+  const opciones: Parameters<typeof crearEntorno>[0] = { estricto: true, gemini, carpetaPublica: true };
+  const e = crearEntorno(opciones);
+  const c = vm.createContext({ ...e.globales });
+  vm.runInContext(codigo, c);
+  const g = c as unknown as Record<string, (...a: unknown[]) => unknown>;
+  assert.throws(() => g.setup(), /Restringido/);
+  assert.equal(e.libros.size, 0, 'no creó la hoja');
+  opciones.carpetaPublica = false;
+  g.setup();
+  const clave = /Contraseña temporal: (\S+)/.exec(e.logs.find((l) => l.startsWith('ACCESO')) ?? '')?.[1] ?? '';
+  const llamar = (action: string, payload: unknown, tk = '') =>
+    JSON.parse((g.doPost({ postData: { contents: JSON.stringify({ action, token: tk, opId: randomUUID(), payload }) } }) as { getContent(): string }).getContent()) as Respuesta<{ token: string }>;
+  const tk = ok(llamar('auth.login', { usuario: 'admin', clave })).token;
+  opciones.carpetaPublica = true;
+  const r = llamar('entrada.transcribir', { audioBase64: 'eA==', mime: 'audio/webm', dni: '40123456', episodio: 1, seccion: 'enfermedad_actual' }, tk);
+  assert.ok(!r.ok && /Restringido/.test(r.error), JSON.stringify(r));
   assert.equal(e.archivosDrive.length, 0);
 });
 

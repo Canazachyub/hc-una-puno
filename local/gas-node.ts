@@ -26,6 +26,8 @@ export interface OpcionesGas {
   respaldosExtra?: string;
   /** Simula un script creado desde una hoja de cálculo: contenido de su «Hoja 1». */
   contenedor?: string[][];
+  /** Simula la carpeta de Drive compartida con cualquiera que tenga el enlace (se lee en cada llamada). */
+  carpetaPublica?: boolean;
   log?: (s: string) => void;
 }
 
@@ -286,6 +288,12 @@ export function crearEntorno(o: OpcionesGas = {}) {
     libros.set(l.id, l);
   }
 
+  if (o.contenedor) {
+    const l = new Libro('contenedor', estricto, carpeta);
+    l.insertSheet('Hoja 1').datos = o.contenedor.map((f) => [...f]);
+    libros.set(l.id, l);
+  }
+
   /** Escribe en disco las hojas que cambiaron. */
   const guardar = () => {
     if (!carpeta) return;
@@ -325,7 +333,9 @@ export function crearEntorno(o: OpcionesGas = {}) {
     },
   };
 
+  const acceso = () => (o.carpetaPublica ? 'ANYONE_WITH_LINK' : 'PRIVATE');
   const carpetaAudios = {
+    getSharingAccess: acceso,
     getId: () => ID_AUDIOS,
     getUrl: () => dirAudios || 'memoria://audios',
     createFile: (blob: { nombre: string; bytes: Buffer }) => {
@@ -373,16 +383,7 @@ export function crearEntorno(o: OpcionesGas = {}) {
         libros.set(l.id, l);
         return l;
       },
-      getActiveSpreadsheet: () => {
-        if (!o.contenedor) return null;
-        let l = libros.get('contenedor');
-        if (!l) {
-          l = new Libro('contenedor', estricto, carpeta);
-          l.insertSheet('Hoja 1').datos = o.contenedor.map((f) => [...f]);
-          libros.set(l.id, l);
-        }
-        return l;
-      },
+      getActiveSpreadsheet: () => (o.contenedor ? (libros.get('contenedor') ?? null) : null),
       flush: () => undefined,
     },
     LockService: { getScriptLock: () => ({ tryLock: () => true, waitLock: () => undefined, releaseLock: () => undefined }) },
@@ -442,9 +443,11 @@ export function crearEntorno(o: OpcionesGas = {}) {
       },
     },
     DriveApp: {
+      Access: { ANYONE: 'ANYONE', ANYONE_WITH_LINK: 'ANYONE_WITH_LINK', PRIVATE: 'PRIVATE' },
       createFolder: () => carpetaAudios,
       getFolderById: (id: string) => (id === 'respaldos' ? carpetaRespaldos : carpetaAudios),
       getFileById: () => ({
+        getSharingAccess: () => 'PRIVATE',
         moveTo: () => undefined,
         makeCopy: (nombre: string) => carpetaRespaldos.copiar(nombre),
       }),

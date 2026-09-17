@@ -20,7 +20,8 @@ import { catalogos, knowledge } from './Catalogos';
 import { geminiJson, llamarGemini } from './Gemini';
 import { PROMPT_TRANSCRIBIR, promptOrganizar } from './Prompts';
 import { conLock, registrar } from './Repo';
-import { ErrorApi, PROPS, ahora, hoy, prop, requerir, requerirEpisodio } from './Util';
+import { carpetaDatos } from './Drive';
+import { ErrorApi, ahora, hoy, requerir, requerirEpisodio } from './Util';
 
 const EXTENSIONES: Record<string, string> = {
   'audio/webm': 'webm',
@@ -43,12 +44,11 @@ function mimeLimpio(mime: string): string {
 }
 
 function guardarAudio(p: TranscribirPayload, mime: string): string {
-  const carpetaId = prop(PROPS.CARPETA_DRIVE_ID);
-  if (!carpetaId) throw new ErrorApi('Falta CARPETA_DRIVE_ID: ejecuta setup()', 'config');
+  const carpeta = carpetaDatos();
   const bytes = Utilities.base64Decode(p.audioBase64);
   const sello = Utilities.formatDate(new Date(), 'America/Lima', 'yyyyMMdd-HHmmss');
   const nombre = `${p.dni}-ep${p.episodio}-${p.seccion.replace(/\*/g, 'todo')}-${sello}.${EXTENSIONES[mime] ?? 'audio'}`;
-  const archivo = DriveApp.getFolderById(carpetaId).createFile(Utilities.newBlob(bytes, mime, nombre));
+  const archivo = carpeta.createFile(Utilities.newBlob(bytes, mime, nombre));
   return archivo.getId();
 }
 

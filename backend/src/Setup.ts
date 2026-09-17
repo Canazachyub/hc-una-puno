@@ -1,6 +1,7 @@
 // Puesta en marcha: crea las 5 hojas, importa las semillas, el usuario, la carpeta y el respaldo.
 // Se ejecuta una vez: desde el editor (setup) o al abrir la página de configuración (/dev).
-// Si el script está dentro de una hoja de cálculo (Extensiones → Apps Script), usa esa hoja; si no, crea una.
+// La hoja y la carpeta salen de HC_CONFIG (inicio de Code.gs); si no, de la hoja que contiene el script
+// (Extensiones → Apps Script); si no, se crean. Si alguna está compartida con cualquiera, no se usa.
 
 import esquemaCsv from '../../seed/esquema.csv';
 import opcionesCsv from '../../seed/opciones.csv';
@@ -24,6 +25,7 @@ import {
   usarLibro,
 } from './Repo';
 import { asegurarUsuario } from './Auth';
+import { AVISO_CARPETA_PUBLICA, AVISO_HOJA_PUBLICA, configurado, esPublico } from './Drive';
 import { ErrorApi, MODELO_POR_DEFECTO, PROPS, prop, setProp, uuid } from './Util';
 
 const CARPETA_RESPALDOS = 'Respaldos';
@@ -41,11 +43,28 @@ function asegurarHoja(ss: GoogleAppsScript.Spreadsheet.Spreadsheet, nombre: stri
 }
 
 function carpeta(): GoogleAppsScript.Drive.Folder {
-  const id = prop(PROPS.CARPETA_DRIVE_ID);
-  if (id) return DriveApp.getFolderById(id);
-  const f = DriveApp.createFolder('HC App');
-  setProp(PROPS.CARPETA_DRIVE_ID, f.getId());
+  const id = configurado('carpeta') || prop(PROPS.CARPETA_DRIVE_ID);
+  let f: GoogleAppsScript.Drive.Folder;
+  if (id) {
+    try {
+      f = DriveApp.getFolderById(id);
+    } catch {
+      throw new ErrorApi(`No se puede abrir la carpeta de Drive ${id}: revisa el enlace y que sea de esta cuenta`, 'config');
+    }
+  } else {
+    f = DriveApp.createFolder('HC App');
+  }
+  if (esPublico(f)) throw new ErrorApi(AVISO_CARPETA_PUBLICA, 'config');
+  if (f.getId() !== prop(PROPS.CARPETA_DRIVE_ID)) setProp(PROPS.CARPETA_DRIVE_ID, f.getId());
   return f;
+}
+
+function abrirHoja(id: string): GoogleAppsScript.Spreadsheet.Spreadsheet {
+  try {
+    return SpreadsheetApp.openById(id);
+  } catch {
+    throw new ErrorApi(`No se puede abrir la hoja de cálculo ${id}: revisa el enlace y que sea de esta cuenta`, 'config');
+  }
 }
 
 /** La hoja de cálculo que contiene el script, si el script se creó desde ella. */
@@ -63,27 +82,30 @@ export const PROP_SEMILLAS = 'SEMILLA_VERSION';
 
 export interface InfoSetup {
   hoja: string;
+  carpeta: string;
   usuario: string;
 }
 
 export function setup(): InfoSetup {
   const f = carpeta();
-  let ssId = prop(PROPS.SPREADSHEET_ID);
+  let ssId = configurado('hoja') || prop(PROPS.SPREADSHEET_ID);
   let ss: GoogleAppsScript.Spreadsheet.Spreadsheet;
+  let creada = false;
   if (ssId) {
-    ss = SpreadsheetApp.openById(ssId);
+    ss = abrirHoja(ssId);
   } else {
     const contenedor = libroContenedor();
     if (contenedor) {
       ss = contenedor;
-      ssId = ss.getId();
     } else {
       ss = SpreadsheetApp.create('HC App · datos (privado)');
-      ssId = ss.getId();
-      DriveApp.getFileById(ssId).moveTo(f);
+      creada = true;
     }
-    setProp(PROPS.SPREADSHEET_ID, ssId);
+    ssId = ss.getId();
   }
+  if (!creada && esPublico(DriveApp.getFileById(ssId))) throw new ErrorApi(AVISO_HOJA_PUBLICA, 'config');
+  if (creada) DriveApp.getFileById(ssId).moveTo(f);
+  if (ssId !== prop(PROPS.SPREADSHEET_ID)) setProp(PROPS.SPREADSHEET_ID, ssId);
   usarLibro(ss);
 
   const esquema = filasAEsquema(parsearCsv(esquemaCsv));
@@ -118,8 +140,8 @@ export function setup(): InfoSetup {
   if (!prop(PROPS.API_KEY_GEMINI)) {
     Logger.log('Falta API_KEY_GEMINI: pégala en la página de configuración (URL /dev del script).');
   }
-  Logger.log('No compartas la hoja: contiene nombres y DNI de pacientes.');
-  return { hoja: ss.getUrl(), usuario: prop(PROPS.USUARIO) };
+  Logger.log('No compartas la hoja ni la carpeta: contienen nombres y DNI de pacientes.');
+  return { hoja: ss.getUrl(), carpeta: f.getUrl(), usuario: prop(PROPS.USUARIO) };
 }
 
 /** Sobrescribe Esquema y Opciones con los CSV semilla del repositorio. */
@@ -145,6 +167,7 @@ export function instalarRespaldo(): void {
 export function respaldoDiario(): void {
   const ssId = prop(PROPS.SPREADSHEET_ID);
   if (!ssId) return;
+  // Si la carpeta se volvió pública, falla a propósito: Google avisa por correo al dueño.
   const base = carpeta();
   const it = base.getFoldersByName(CARPETA_RESPALDOS);
   const destino = it.hasNext() ? it.next() : base.createFolder(CARPETA_RESPALDOS);
