@@ -10,7 +10,7 @@ import { filasAEsquema } from '../../shared/catalogo';
 import { CAMPOS_SISTEMA } from '../../shared/seguimiento';
 import { COLUMNAS_CONTROL, COLUMNAS_KNOWLEDGE, COLUMNAS_REGISTRO } from '../../shared/types';
 import type { KbCargarPayload } from '../../shared/types';
-import { KB_VERSION, olvidarCatalogos } from './Catalogos';
+import { KB_VERSION, calentar, olvidarCatalogos } from './Catalogos';
 import { llamarGemini, modelo } from './Gemini';
 import {
   CABECERA_ESQUEMA,
@@ -156,11 +156,28 @@ export function reimportarSemillas(): void {
   Logger.log('Esquema y Opciones reimportados.');
 }
 
+/** Versión de las tareas programadas: al cambiar, se reinstalan solas en la próxima petición. */
+const TAREAS = 'TAREAS';
+const VERSION_TAREAS = '2';
+
+/** Respaldo diario (3 a. m.) y `calentar` cada media hora. */
 export function instalarRespaldo(): void {
   for (const t of ScriptApp.getProjectTriggers()) {
-    if (t.getHandlerFunction() === 'respaldoDiario') ScriptApp.deleteTrigger(t);
+    if (['respaldoDiario', 'calentar'].includes(t.getHandlerFunction())) ScriptApp.deleteTrigger(t);
   }
   ScriptApp.newTrigger('respaldoDiario').timeBased().everyDays(1).atHour(3).create();
+  ScriptApp.newTrigger('calentar').timeBased().everyMinutes(30).create();
+  setProp(TAREAS, VERSION_TAREAS);
+}
+
+export function asegurarTareas(): void {
+  if (prop(TAREAS) === VERSION_TAREAS || !prop(PROPS.SPREADSHEET_ID)) return;
+  try {
+    instalarRespaldo();
+    calentar();
+  } catch (e) {
+    console.error(`No se pudieron instalar las tareas: ${e instanceof Error ? e.message : String(e)}`);
+  }
 }
 
 /** Copia diaria de la hoja, con 30 días de retención. */

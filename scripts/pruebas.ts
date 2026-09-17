@@ -91,6 +91,9 @@ await prueba('opción fuera de lista se rechaza', () => {
 });
 await prueba('opcion_otro acepta texto libre', () => {
   assert.deepEqual(validarValor(campo('fil.ocupacion'), 'Artesano textil', listas), { ok: true, valor: 'Artesano textil' });
+  // Gemini a veces copia la opción con su definición, como se la muestra el prompt.
+  assert.deepEqual(validarValor(campo('ea.sintoma_guia'), 'Edema (Acumulación de líquido en el intersticio)', listas), { ok: true, valor: 'Edema' });
+  assert.deepEqual(validarValor(campo('ea.sintoma_guia'), 'Dolor raro (sin definición)', listas), { ok: true, valor: 'Dolor raro (sin definición)' });
 });
 await prueba('escala con detalles arma la frase', () => {
   assert.deepEqual(validarValor(campo('efr.edema_godet'), '+++/++++', listas, { nivel: 'rodillas', lateralidad: 'bilateral' }), {
@@ -976,6 +979,84 @@ await prueba('no usa una carpeta compartida con cualquiera: ni al instalar ni al
   const r = llamar('entrada.transcribir', { audioBase64: 'eA==', mime: 'audio/webm', dni: '40123456', episodio: 1, seccion: 'enfermedad_actual' }, tk);
   assert.ok(!r.ok && /Restringido/.test(r.error), JSON.stringify(r));
   assert.equal(e.archivosDrive.length, 0);
+});
+
+console.log('Respuestas que Google pierde (más de 30 segundos)');
+await prueba('un reintento con el mismo opId espera a la primera ejecución en vez de repetirla', () => {
+  const opId = randomUUID();
+  const antes = env.llamadasGemini.length;
+  let esperas = 0;
+  env.cache.set(`op:${opId}:en_curso`, '1');
+  const original = env.globales.Utilities.sleep;
+  // Mientras «duerme», la primera ejecución termina y deja su resultado.
+  (env.globales.Utilities as { sleep: (ms: number) => void }).sleep = () => {
+    esperas++;
+    if (esperas === 3) {
+      env.cache.set(`op:${opId}`, JSON.stringify({ ok: true, data: { campos: [], dudas: [], escalas_sugeridas: [], conflictos: [], descartados: [], registro_id: 'primera' } }));
+      env.cache.delete(`op:${opId}:en_curso`);
+    }
+  };
+  try {
+    const r = ok(post<{ registro_id: string }>('entrada.organizar', { texto: 'tos hace 3 días', origen: 'texto', dni: '40123456', episodio: 1, seccion: 'enfermedad_actual', contexto: {} }, opId));
+    assert.equal(r.registro_id, 'primera');
+    assert.equal(env.llamadasGemini.length, antes, 'no volvió a llamar a Gemini');
+  } finally {
+    (env.globales.Utilities as { sleep: unknown }).sleep = original;
+  }
+});
+await prueba('si la primera sigue corriendo, responde «pendiente» antes de los 30 segundos', () => {
+  const opId = randomUUID();
+  env.cache.set(`op:${opId}:en_curso`, '1');
+  const original = env.globales.Utilities.sleep;
+  let esperado = 0;
+  (env.globales.Utilities as { sleep: (ms: number) => void }).sleep = (ms: number) => {
+    esperado += ms;
+  };
+  try {
+    const r = post('entrada.transcribir', { audioBase64: 'eA==', mime: 'audio/webm', dni: '40123456', episodio: 1, seccion: 'enfermedad_actual' }, opId);
+    assert.ok(!r.ok && r.codigo === 'pendiente', JSON.stringify(r));
+    assert.ok(esperado <= 20_000, `esperó ${esperado} ms`);
+  } finally {
+    (env.globales.Utilities as { sleep: unknown }).sleep = original;
+    env.cache.delete(`op:${opId}:en_curso`);
+  }
+});
+await prueba('la revisión con Gemini se recupera por opId sin repetirse y sin llenar Registro', () => {
+  const opId = randomUUID();
+  const filasAntes = hoja('Registro').getLastRow();
+  const antes = env.llamadasGemini.length;
+  const payload = { dni: '40123456', episodio: 1, valores: { 'efr.columna': 'le duele la espalda', 'fil.sexo': 'Femenino' } };
+  const a = ok(post<{ redaccion: unknown[] }>('hc.revisar', payload, opId));
+  const b = ok(post<{ redaccion: unknown[] }>('hc.revisar', payload, opId));
+  assert.deepEqual(a, b);
+  assert.equal(env.llamadasGemini.length, antes + 1);
+  assert.equal(hoja('Registro').getLastRow(), filasAntes);
+});
+await prueba('el catálogo se lee de la caché en cada ejecución y «calentar» nota los cambios hechos a mano', () => {
+  const ejecucion = () => {
+    const c = vm.createContext({ ...env.globales });
+    vm.runInContext(codigo, c);
+    return c as unknown as Record<string, (...a: unknown[]) => unknown>;
+  };
+  const pedir = (g: Record<string, (...a: unknown[]) => unknown>) =>
+    (JSON.parse((g.doPost({ postData: { contents: JSON.stringify({ action: 'catalogos.get', token, payload: {} }) } }) as { getContent(): string }).getContent()) as Respuesta<{ version: string; opciones: unknown[] }>);
+  const v1 = ok(pedir(ejecucion()));
+  assert.ok([...env.cache.keys()].some((k) => k.startsWith('catalogo:1')), 'el catálogo ocupa varios trozos');
+  const opciones = hoja('Opciones');
+  const n = opciones.getLastRow() + 1;
+  opciones.getRange(n, 1, 1, 7).setValues([['sintoma', 'Síntomas (teoría)', 'opcion', '999', 'Prurito anal', 'Picazón en la región anal', '']]);
+  const v2 = ok(pedir(ejecucion()));
+  assert.equal(v2.version, v1.version, 'sin calentar, sigue la caché');
+  ejecucion().calentar();
+  const v3 = ok(pedir(ejecucion()));
+  assert.notEqual(v3.version, v1.version);
+  assert.equal(v3.opciones.length, v1.opciones.length + 1);
+  opciones.getRange(n, 1, 1, 7).setValues([['', '', '', '', '', '', '']]);
+  ejecucion().calentar();
+  assert.equal(ok(pedir(ejecucion())).version, v1.version);
+});
+await prueba('las tareas (respaldo y calentar) se instalan solas una vez', () => {
+  assert.equal(env.props.get('TAREAS'), '2');
 });
 
 console.log('Servidor local (datos en disco)');

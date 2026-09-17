@@ -4,3 +4,4 @@ export { doPost } from './Router';
 export { doGet, guardarClaveGemini } from './Configuracion';
 export { restablecerClave } from './Auth';
 export { instalarRespaldo, probarGemini, reimportarSemillas, respaldoDiario, setup } from './Setup';
+export { calentar } from './Catalogos';

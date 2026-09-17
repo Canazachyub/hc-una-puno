@@ -46,7 +46,12 @@ export type Validacion = { ok: true; valor: string } | { ok: false; motivo: stri
 
 function opcionPorValor(lista: Opcion[], v: string): Opcion | undefined {
   const k = clave(v);
-  return lista.find((o) => clave(o.valor) === k) ?? lista.find((o) => clave(o.etiqueta) === k && o.etiqueta !== '');
+  const exacta = lista.find((o) => clave(o.valor) === k) ?? lista.find((o) => clave(o.etiqueta) === k && o.etiqueta !== '');
+  if (exacta) return exacta;
+  // «Edema (Acumulación de líquido en el intersticio)»: el valor seguido de su definición entre paréntesis.
+  const m = /^(.+?)\s*\((.+)\)$/.exec(v.trim());
+  if (!m) return undefined;
+  return lista.find((o) => clave(o.valor) === clave(m[1]) && (!o.etiqueta || clave(o.etiqueta) === clave(m[2])));
 }
 
 function validarItemLista(lista: Opcion[], v: string, detalles: Record<string, string>): Validacion {

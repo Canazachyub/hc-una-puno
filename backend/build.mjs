@@ -16,6 +16,7 @@ const GLOBALES = [
   'respaldoDiario',
   'probarGemini',
   'guardarClaveGemini',
+  'calentar',
 ];
 
 // Si cambian las semillas, el servidor desplegado reimporta Esquema y Opciones en la primera petición.

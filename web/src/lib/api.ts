@@ -27,8 +27,12 @@ export function enLinea(): boolean {
   return navigator.onLine && hayBackend();
 }
 
-/** Esperas antes de reintentar cuando Google pierde la respuesta en el camino. */
-const REINTENTOS = [1500, 4000];
+/** Esperas antes de cada reintento; el último valor se repite hasta agotar el tiempo de la operación. */
+const REINTENTOS = [1500, 3000, 5000, 8000];
+/** El servidor todavía procesa la primera ejecución, o la hoja está ocupada: se reintenta. */
+const CODIGOS_REINTENTO = new Set(['pendiente', 'ocupado']);
+/** Pocas llamadas a la vez: Apps Script y la hoja se atascan con muchas y las respuestas se pierden. */
+const MAX_SIMULTANEAS = 3;
 
 /** Error de entrega: la acción pudo ejecutarse en el servidor, pero la respuesta no llegó. */
 class ErrorEntrega extends ErrorApi {
@@ -39,10 +43,25 @@ class ErrorEntrega extends ErrorApi {
 
 const esperar = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
+let activas = 0;
+const cola: (() => void)[] = [];
+
+async function turno<T>(fn: () => Promise<T>): Promise<T> {
+  if (activas >= MAX_SIMULTANEAS) await new Promise<void>((r) => cola.push(r));
+  activas++;
+  try {
+    return await fn();
+  } finally {
+    activas--;
+    cola.shift()?.();
+  }
+}
+
 /**
  * Apps Script entrega cada respuesta por un enlace de un solo uso (script.googleusercontent.com/macros/echo).
  * A veces ese enlace ya no está cuando el navegador lo pide y Google responde 404 u otra página.
- * Se reintenta con el mismo opId: las acciones que escriben devuelven lo que ya hicieron, sin repetirlo.
+ * Google además deja de esperar a los 30 segundos. Se reintenta con el mismo opId hasta el tiempo límite:
+ * el servidor devuelve lo que ya hizo (o espera a que termine), sin repetirlo.
  */
 export async function llamar<A extends Accion>(
   action: A,
@@ -50,12 +69,18 @@ export async function llamar<A extends Accion>(
   opciones: { opId?: string; timeoutMs?: number; url?: string } = {},
 ): Promise<ApiMapa[A][1]> {
   const opId = opciones.opId ?? uuid();
+  const limite = Date.now() + (opciones.timeoutMs ?? 90_000);
   for (let intento = 0; ; intento++) {
     try {
-      return await unaLlamada(action, payload, { ...opciones, opId });
+      const restante = limite - Date.now();
+      return await turno(() => unaLlamada(action, payload, { ...opciones, opId, timeoutMs: Math.max(restante, 15_000) }));
     } catch (e) {
-      if (!(e instanceof ErrorEntrega) || intento >= REINTENTOS.length || !navigator.onLine) throw e;
-      await esperar(REINTENTOS[intento]);
+      const reintentable = e instanceof ErrorEntrega || (e instanceof ErrorApi && CODIGOS_REINTENTO.has(e.codigo));
+      const pausa = REINTENTOS[Math.min(intento, REINTENTOS.length - 1)];
+      if (!reintentable || !navigator.onLine || Date.now() + pausa >= limite) {
+        throw e instanceof ErrorApi && CODIGOS_REINTENTO.has(e.codigo) ? new ErrorApi('El servidor está ocupado. Intenta de nuevo en un momento.', 'red') : e;
+      }
+      await esperar(pausa);
     }
   }
 }
@@ -113,7 +138,8 @@ async function unaLlamada<A extends Accion>(
 
 export async function iniciarSesion(usuario: string, clave: string, url: string): Promise<void> {
   const destino = resolverUrl(url);
-  const r = await llamar('auth.login', { usuario: usuario.trim(), clave }, { url: destino, timeoutMs: 30_000 });
+  // Tras un rato sin uso, Apps Script tarda en despertar: el ingreso puede necesitar reintentos.
+  const r = await llamar('auth.login', { usuario: usuario.trim(), clave }, { url: destino, timeoutMs: 90_000 });
   guardarAjustes({ token: r.token, usuario: r.usuario, soloLocal: false, url: esUrlCompilada(destino) ? '' : destino });
 }
 

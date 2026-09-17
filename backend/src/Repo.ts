@@ -54,7 +54,8 @@ export function hoja(nombre: string): Sheet {
 /** Toda escritura va dentro del lock del script. */
 export function conLock<T>(fn: () => T): T {
   const lock = LockService.getScriptLock();
-  if (!lock.tryLock(30000)) throw new ErrorApi('La hoja está ocupada, reintenta', 'ocupado');
+  // Google abandona la respuesta a los 30 segundos: mejor avisar antes y que la app reintente.
+  if (!lock.tryLock(15000)) throw new ErrorApi('La hoja está ocupada, reintentando…', 'ocupado');
   try {
     const r = fn();
     SpreadsheetApp.flush();

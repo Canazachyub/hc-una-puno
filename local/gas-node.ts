@@ -28,6 +28,8 @@ export interface OpcionesGas {
   contenedor?: string[][];
   /** Simula la carpeta de Drive compartida con cualquiera que tenga el enlace (se lee en cada llamada). */
   carpetaPublica?: boolean;
+  /** Reemplaza Utilities.sleep (las pruebas no esperan de verdad). */
+  dormir?: (ms: number) => void;
   log?: (s: string) => void;
 }
 
@@ -388,24 +390,31 @@ export function crearEntorno(o: OpcionesGas = {}) {
     },
     LockService: { getScriptLock: () => ({ tryLock: () => true, waitLock: () => undefined, releaseLock: () => undefined }) },
     CacheService: {
-      getScriptCache: () => ({
-        get: (k: string) => {
+      getScriptCache: () => {
+        const leer = (k: string) => {
           const v = vence.get(k);
           if (v !== undefined && v < Date.now()) {
             cache.delete(k);
             vence.delete(k);
           }
           return cache.get(k) ?? null;
-        },
-        put: (k: string, v: string, segundos = 600) => {
+        };
+        const poner = (k: string, v: string, segundos = 600) => {
+          if (v.length > 100_000) throw new Error(`Valor de caché demasiado grande (${v.length})`);
           cache.set(k, v);
           vence.set(k, Date.now() + segundos * 1000);
-        },
-        remove: (k: string) => {
-          cache.delete(k);
-          vence.delete(k);
-        },
-      }),
+        };
+        return {
+          get: leer,
+          put: poner,
+          getAll: (ks: string[]) => Object.fromEntries(ks.map((k) => [k, leer(k)]).filter(([, v]) => v !== null)),
+          putAll: (vs: Record<string, string>, segundos = 600) => Object.entries(vs).forEach(([k, v]) => poner(k, v, segundos)),
+          remove: (k: string) => {
+            cache.delete(k);
+            vence.delete(k);
+          },
+        };
+      },
     },
     Utilities: {
       DigestAlgorithm: { SHA_256: 'sha256', MD5: 'md5' },
@@ -416,7 +425,7 @@ export function crearEntorno(o: OpcionesGas = {}) {
       formatDate: formatearFecha,
       base64Decode: (s: string) => Buffer.from(s, 'base64'),
       newBlob: (bytes: Buffer, _mime: string, nombre: string) => ({ bytes, nombre }),
-      sleep: (ms: number) => Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, ms),
+      sleep: (ms: number) => (o.dormir ? o.dormir(ms) : Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, ms)),
     },
     ContentService: {
       MimeType: { JSON: 'json' },
@@ -456,7 +465,7 @@ export function crearEntorno(o: OpcionesGas = {}) {
       getProjectTriggers: () => [],
       deleteTrigger: () => undefined,
       newTrigger: () => {
-        const t = { timeBased: () => t, everyDays: () => t, atHour: () => t, create: () => t };
+        const t = { timeBased: () => t, everyDays: () => t, everyMinutes: () => t, atHour: () => t, create: () => t };
         return t;
       },
     },
